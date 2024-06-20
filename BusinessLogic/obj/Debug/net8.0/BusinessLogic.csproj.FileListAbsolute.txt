@@ -1,0 +1,17 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\BusinessLogic.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\BusinessLogic.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\Business.CF5D6E35.Up2Date
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\refint\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DTOs.pdb
