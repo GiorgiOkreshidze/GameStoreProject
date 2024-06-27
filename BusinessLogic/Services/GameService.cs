@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text.RegularExpressions;
 using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
@@ -10,31 +11,18 @@ using DTOs.PlatformDtos;
 
 namespace BusinessLogic.Services;
 
-public class GameService : IGameService
+public class GameService(IGameDbService gameDbService, IMapper gameMapper) : IGameService
 {
-
-    private readonly IMapper _gameMapper;
-    private readonly IGameDbService _gameDbService;
-    private readonly IGenreDbService _genreDbService;
-    private readonly IPlatformDbService _platformDbService;
-
-    public GameService(IGameDbService gameDbService, IGenreDbService genreDbService, IPlatformDbService platformDbService, IMapper gameMapper)
-    {
-        _gameDbService = gameDbService;
-        _genreDbService = genreDbService;
-        _platformDbService = platformDbService;
-        _gameMapper = gameMapper;
-    }
     public ICollection<GetGameDto> GetAllGames()
     {
-        var gameEntities = _gameDbService.GetAllGamesDb();
+        var gameEntities = gameDbService.GetAllGamesDb();
 
         var gameDtos = new List<GetGameDto>();
         
         foreach (var gameEntity in gameEntities)
         {
-            var game = _gameMapper.Map<GameEntity, Game>(gameEntity);
-            var gameDto = _gameMapper.Map<Game, GetGameDto>(game);
+            var game = gameMapper.Map<GameEntity, Game>(gameEntity);
+            var gameDto = gameMapper.Map<Game, GetGameDto>(game);
             gameDtos.Add(gameDto);
         }
         
@@ -43,7 +31,7 @@ public class GameService : IGameService
     
     public void CreateGame(CreateGameDto createGameDto)
     {
-        Game game = _gameMapper.Map<CreateGameDto, Game>(createGameDto);
+        Game game = gameMapper.Map<CreateGameDto, Game>(createGameDto);
 
         game.Id = Guid.NewGuid();
 
@@ -52,7 +40,7 @@ public class GameService : IGameService
             game.Key = GenerateKeyFromName(game.Name);
         }
 
-        GameEntity gameEntity = _gameMapper.Map<Game, GameEntity>(game);
+        GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
         
         gameEntity.GenreEntities = new List<GenreEntity>();
         gameEntity.PlatformEntities = new List<PlatformEntity>();
@@ -74,38 +62,27 @@ public class GameService : IGameService
             };
             gameEntity.PlatformEntities.Add(stubPlatform);
         }
-        
-        /*
-        gameEntity.GenreEntities = new List<GenreEntity>();
-        gameEntity.PlatformEntities = new List<PlatformEntity>();
-        
-        foreach (Guid guid in game.Genres)
-        {
-            gameEntity.GenreEntities.Add(_genreDbService.GetGenreByGuid(guid));
-        }
-        
-        foreach (Guid guid in game.Platforms)
-        {
-            gameEntity.PlatformEntities.Add(_platformDbService.GetPlatformByGuid(guid));
-        }*/
 
-        _gameDbService.CreateGameDb(gameEntity);
+        gameDbService.CreateGameDb(gameEntity);
     }
     
     private string GenerateKeyFromName(string name)
     {
-        var key = name.ToLowerInvariant()
-            .Replace(" ", "-")
-            .Replace("'", "")
-            .Trim();
-        return key;
+        var normalizedGameName = Regex.Replace(name, @"\s+", "").ToLower();
+
+        var baseKey = normalizedGameName.Length > 8 ? normalizedGameName.Substring(0, 8) : normalizedGameName;
+
+        var uniqueId = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+
+        var uniqueKey = $"{baseKey}-{uniqueId%1000}";
+        return uniqueKey;
     }
 
     public void UpdateGame(UpdateGameDto updateGameDto)
     {
-        Game game = _gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
+        Game game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
         
-        GameEntity gameEntity = _gameMapper.Map<Game, GameEntity>(game);
+        GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
         
         gameEntity.GenreEntities = new List<GenreEntity>();
         gameEntity.PlatformEntities = new List<PlatformEntity>();
@@ -127,61 +104,51 @@ public class GameService : IGameService
             };
             gameEntity.PlatformEntities.Add(stubPlatform);
         }
-        
-        /*foreach (Guid guid in game.Genres)
-        {
-            gameEntity.GenreEntities.Add(_genreDbService.GetGenreByGuid(guid));
-        }
-        
-        foreach (Guid guid in game.Platforms)
-        {
-            gameEntity.PlatformEntities.Add(_platformDbService.GetPlatformByGuid(guid));
-        }*/
 
-        _gameDbService.UpdateGameDb(gameEntity);
+        gameDbService.UpdateGameDb(gameEntity);
     }
 
     public void DeleteGame(string key)
     {
-        _gameDbService.DeleteGameDb(key);
+        gameDbService.DeleteGameDb(key);
     }
 
     public GetGameDto GetGameByKey(string key)
     {
-        var gameEntity = _gameDbService.GetGameByKeyDb(key);
+        var gameEntity = gameDbService.GetGameByKeyDb(key);
         
-        var game = _gameMapper.Map<GameEntity, Game>(gameEntity);
-        var gameDto = _gameMapper.Map<Game, GetGameDto>(game);
+        var game = gameMapper.Map<GameEntity, Game>(gameEntity);
+        var gameDto = gameMapper.Map<Game, GetGameDto>(game);
         
         return gameDto;
     }
 
     public GetGameDto GetGameById(Guid id)
     {
-        var gameEntity = _gameDbService.GetGameByIdDb(id);
+        var gameEntity = gameDbService.GetGameByIdDb(id);
         
-        var game = _gameMapper.Map<GameEntity, Game>(gameEntity);
-        var gameDto = _gameMapper.Map<Game, GetGameDto>(game);
+        var game = gameMapper.Map<GameEntity, Game>(gameEntity);
+        var gameDto = gameMapper.Map<Game, GetGameDto>(game);
         
         return gameDto;
     }
 
     public ICollection<GenreDto> GetGenresOfGame(string key)
     {
-        var genreEntities =_gameDbService.GetGenresOfGameDb(key);
+        var genreEntities =gameDbService.GetGenresOfGameDb(key);
         
-        var genre = _gameMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
-        var genreDtos = _gameMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
+        var genre = gameMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
+        var genreDtos = gameMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
 
         return genreDtos;
     }
 
     public ICollection<PlatformDto> GetPlatformsOfGame(string key)
     {
-        var platformEntities = _gameDbService.GetPlatformsOfGameDb(key);
+        var platformEntities = gameDbService.GetPlatformsOfGameDb(key);
 
-        var platform = _gameMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
-        var platformDtos = _gameMapper.Map<ICollection<Platform>, ICollection<PlatformDto>>(platform);
+        var platform = gameMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
+        var platformDtos = gameMapper.Map<ICollection<Platform>, ICollection<PlatformDto>>(platform);
         
         return platformDtos;
     }

@@ -3,10 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.DataContext;
 
-public class GameDbContext : DbContext
+public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(options)
 {
-    public GameDbContext(DbContextOptions<GameDbContext> options) : base(options) { }
-    
     public DbSet<GameEntity> GameEntities { get; set; }
     public DbSet<PlatformEntity> PlatformEntities { get; set; }
     public DbSet<GenreEntity> GenreEntities { get; set; }   

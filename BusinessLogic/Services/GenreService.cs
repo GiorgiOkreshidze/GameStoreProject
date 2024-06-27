@@ -8,79 +8,69 @@ using DTOs.GenreDtos;
 
 namespace BusinessLogic.Services;
 
-public class GenreService : IGenreService
+public class GenreService(IGenreDbService genreDbService, IMapper genreMapper) : IGenreService
 {
-    private readonly IMapper _genreMapper;
-    private readonly IGenreDbService _genreDbService;
-
-    public GenreService(IGenreDbService genreDbService, IMapper genreMapper)
-    {
-        _genreDbService = genreDbService;
-        _genreMapper = genreMapper;
-
-    }
-
     public void CreateGenre(CreateGenreDto createGenreDto)
     {
-        var genre = _genreMapper.Map<CreateGenreDto, Genre>(createGenreDto);
+        var genre = genreMapper.Map<CreateGenreDto, Genre>(createGenreDto);
         
         genre.Id = Guid.NewGuid();
 
-        var genreEntity = _genreMapper.Map<Genre, GenreEntity>(genre);
+        var genreEntity = genreMapper.Map<Genre, GenreEntity>(genre);
         
-        _genreDbService.CreateGenreDb(genreEntity);
+        genreDbService.CreateGenreDb(genreEntity);
         
     }
 
     public ICollection<GenreDto> GetAllGenres()
     {
-        var genreEntities = _genreDbService.GetAllGenresDb();
+        var genreEntities = genreDbService.GetAllGenresDb();
 
-        var genre = _genreMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
-        var genreDtos = _genreMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
+        var genre = genreMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
+        var genreDtos = genreMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
 
         return genreDtos;
     }
 
     public void UpdateGenre(UpdateGenreDto updateGenreDto)
     {
-        var updateGenre = _genreMapper.Map<UpdateGenreDto, Genre>(updateGenreDto);
-        var updateGenreEntity = _genreMapper.Map<Genre, GenreEntity>(updateGenre);
+        var updateGenre = genreMapper.Map<UpdateGenreDto, Genre>(updateGenreDto);
+        var updateGenreEntity = genreMapper.Map<Genre, GenreEntity>(updateGenre);
 
-        _genreDbService.UpdateGenreDb(updateGenreEntity);
+        genreDbService.UpdateGenreDb(updateGenreEntity);
     }
 
     public void DeleteGenre(Guid id)
     {
-        _genreDbService.DeleteGenreDb(id);
+        genreDbService.DeleteGenreDb(id);
     }
 
     public GetGenreDto GetGenre(Guid id)
     {
-        var genreEntity = _genreDbService.GetGenreByGuid(id);
+        var genreEntity = genreDbService.GetGenreByGuid(id);
         
-        var genre = _genreMapper.Map<GenreEntity, Genre>(genreEntity);
-        var getGenreDto = _genreMapper.Map<Genre, GetGenreDto>(genre);
+        var genre = genreMapper.Map<GenreEntity, Genre>(genreEntity);
+        var getGenreDto = genreMapper.Map<Genre, GetGenreDto>(genre);
 
         return getGenreDto;
     }
 
     public ICollection<GetGameDto> GetGamesByGenreId(Guid id)
     {
-        var gameEntities = _genreDbService.GetGamesByGenreId(id);
+        var gameEntities = genreDbService.GetGamesByGenreId(id);
         
-        var game = _genreMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
-        var gameDtos = _genreMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
+        var game = genreMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
+        var gameDtos = genreMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
         
         return gameDtos;
     }
 
     public ICollection<GenreDto> GetSubGenres(Guid id)
     {
-        var genreEntities = _genreDbService.GetSubGenresDb(id);
+        var genreEntities = genreDbService.GetSubGenresDb(id);
 
-        var genre = _genreMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
-        var genreDtos = _genreMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
+        var genre = genreMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
+        var genreDtos = genreMapper.Map<ICollection<Genre>, ICollection<GenreDto>>(genre);
 
         return genreDtos;
     }

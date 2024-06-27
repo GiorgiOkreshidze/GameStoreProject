@@ -2,12 +2,8 @@ using System.Net;
 
 namespace Gamestore.Middlewares.Exception;
 
-public class BaseException : System.Exception
+public class BaseException(string message, HttpStatusCode statusCode = HttpStatusCode.InternalServerError)
+    : System.Exception(message)
 {
-    public HttpStatusCode StatusCode { get; }
-    public BaseException(string message, HttpStatusCode statusCode = HttpStatusCode.InternalServerError)
-        : base(message)
-    {
-        StatusCode = statusCode;
-    }
+    public HttpStatusCode StatusCode { get; } = statusCode;
 }

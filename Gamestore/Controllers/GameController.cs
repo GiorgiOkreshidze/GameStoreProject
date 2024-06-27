@@ -14,19 +14,12 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GameController : Controller
+public class GameController(IGameService gameService) : Controller
 {
-    private readonly IGameService _gameService;
-
-    public GameController(IGameService gameService)
-    {
-        _gameService = gameService;
-    }
-      
     [HttpPost]
     public IActionResult Create(CreateGameDto createGameDto)
     {
-        _gameService.CreateGame(createGameDto);
+        gameService.CreateGame(createGameDto);
 
         return Ok();
     }
@@ -34,7 +27,7 @@ public class GameController : Controller
     [HttpGet]
     public ICollection<GetGameDto> Read()
     {
-        var games = _gameService.GetAllGames();
+        var games = gameService.GetAllGames();
         
         return games;
     }
@@ -42,7 +35,7 @@ public class GameController : Controller
     [HttpPut]
     public IActionResult Update(UpdateGameDto updateGameDto)
     {
-        _gameService.UpdateGame(updateGameDto);
+        gameService.UpdateGame(updateGameDto);
         
         return Ok();
     }
@@ -50,7 +43,7 @@ public class GameController : Controller
     [HttpDelete("{key}")]
     public IActionResult Delete(string key)
     {
-        _gameService.DeleteGame(key);
+        gameService.DeleteGame(key);
 
         return Ok();
     }
@@ -59,7 +52,7 @@ public class GameController : Controller
     [HttpGet("{key}")]
     public GetGameDto GetGameByKey(string key)
     {
-        var game = _gameService.GetGameByKey(key);
+        var game = gameService.GetGameByKey(key);
         
         return game;
     }
@@ -67,7 +60,7 @@ public class GameController : Controller
     [HttpGet("find/{id}")]
     public GetGameDto GetGameById(Guid id)
     {
-        var game = _gameService.GetGameById(id);
+        var game = gameService.GetGameById(id);
         
         return game;
     }
@@ -75,19 +68,19 @@ public class GameController : Controller
     [HttpGet("{key}/genres")]
     public ICollection<GenreDto> GetGenresOfGame(string key)
     {
-        return _gameService.GetGenresOfGame(key);
+        return gameService.GetGenresOfGame(key);
     }
 
     [HttpGet("{key}/platforms")]
     public ICollection<PlatformDto> GetPlatformsOfGame(string key)
     {
-        return _gameService.GetPlatformsOfGame(key);
+        return gameService.GetPlatformsOfGame(key);
     }
 
     [HttpGet("{key}/file")]
     public IActionResult DownloadGameFile(string key)
     {
-        var game = _gameService.GetGameByKey(key);
+        var game = gameService.GetGameByKey(key);
 
         var fileName = $"{game.Name}_{DateTime.UtcNow:yyyyMMddHHmmss}.txt";
         var fileContent = Newtonsoft.Json.JsonConvert.SerializeObject(game);

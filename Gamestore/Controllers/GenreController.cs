@@ -8,14 +8,9 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GenreController : Controller
+public class GenreController(IGenreService genreService) : Controller
 {
-    public readonly IGenreService GenreService;
-    
-    public GenreController(IGenreService genreService)
-    {
-        GenreService = genreService;
-    }
+    public readonly IGenreService GenreService = genreService;
 
     [HttpPost]
     public IActionResult CreateGenre(CreateGenreDto createGenreDto)

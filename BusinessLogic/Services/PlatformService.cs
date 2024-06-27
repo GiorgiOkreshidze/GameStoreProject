@@ -8,68 +8,60 @@ using DTOs.PlatformDtos;
 
 namespace BusinessLogic.Services;
 
-public class PlatformService : IPlatformService
+public class PlatformService(IPlatformDbService platformDbService, IMapper platformMapper)
+    : IPlatformService
 {
-    private readonly IMapper _platformMapper;
-    private readonly IPlatformDbService _platformDbService;
-
-    public PlatformService(IPlatformDbService platformDbService, IMapper platformMapper)
-    {
-        _platformDbService = platformDbService;
-        _platformMapper = platformMapper;
-    }
-
     public void CreatePlatform(CreatePlatformDto createPlatformDto)
     {
-        var platform = _platformMapper.Map<CreatePlatformDto, Platform>(createPlatformDto);
+        var platform = platformMapper.Map<CreatePlatformDto, Platform>(createPlatformDto);
 
         platform.Id = Guid.NewGuid();
 
-        var platformEntity = _platformMapper.Map<Platform, PlatformEntity>(platform);
+        var platformEntity = platformMapper.Map<Platform, PlatformEntity>(platform);
 
-        _platformDbService.CreatePlatformDb(platformEntity);
+        platformDbService.CreatePlatformDb(platformEntity);
     }
 
     public ICollection<PlatformDto> GetAllPlatforms()
     {
-        var platformEntities = _platformDbService.GetAllPlatformsDb();
+        var platformEntities = platformDbService.GetAllPlatformsDb();
 
-        var platform = _platformMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
-        var platformDtos = _platformMapper.Map<ICollection<Platform>, ICollection<PlatformDto>>(platform);
+        var platform = platformMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
+        var platformDtos = platformMapper.Map<ICollection<Platform>, ICollection<PlatformDto>>(platform);
 
         return platformDtos;
     }
 
     public void UpdatePlatform(UpdatePlatformDto updatePlatformDto)
     {
-        var platform = _platformMapper.Map<UpdatePlatformDto, Platform>(updatePlatformDto);
-        var platformEntity = _platformMapper.Map<Platform, PlatformEntity>(platform);
+        var platform = platformMapper.Map<UpdatePlatformDto, Platform>(updatePlatformDto);
+        var platformEntity = platformMapper.Map<Platform, PlatformEntity>(platform);
 
-        _platformDbService.UpdatePlatformDb(platformEntity);
+        platformDbService.UpdatePlatformDb(platformEntity);
 
     }
 
     public void DeletePlatform(Guid id)
     {
-        _platformDbService.DeletePlatformDb(id);
+        platformDbService.DeletePlatformDb(id);
     }
 
     public PlatformDto GetPlatformById(Guid id)
     {
-        var platformEntity = _platformDbService.GetPlatformByGuid(id);
+        var platformEntity = platformDbService.GetPlatformByGuid(id);
 
-        var platform = _platformMapper.Map<PlatformEntity, Platform>(platformEntity);
-        var platformDto = _platformMapper.Map<Platform, PlatformDto>(platform);
+        var platform = platformMapper.Map<PlatformEntity, Platform>(platformEntity);
+        var platformDto = platformMapper.Map<Platform, PlatformDto>(platform);
 
         return platformDto;
     }
 
     public ICollection<GetGameDto> GetGamesByPlatformId(Guid id)
     {
-        var gameEntities = _platformDbService.GetGamesByPlatformId(id);
+        var gameEntities = platformDbService.GetGamesByPlatformId(id);
         
-        var game = _platformMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
-        var gameDtos = _platformMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
+        var game = platformMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
+        var gameDtos = platformMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
         
         return gameDtos;
     }

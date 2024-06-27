@@ -9,14 +9,9 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PlatformController : Controller
+public class PlatformController(IPlatformService platformService) : Controller
 {
-    public readonly IPlatformService PlatformService;
-    
-    public PlatformController(IPlatformService platformService)
-    {
-        PlatformService = platformService;
-    }
+    public readonly IPlatformService PlatformService = platformService;
 
     [HttpPost]
     public IActionResult CreatePlatform(CreatePlatformDto createPlatformDto)
