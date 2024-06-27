@@ -1,4 +1,4 @@
-namespace Gamestore.Dtos;
+namespace DTOs.GameDtos;
 
 public class CreateGameDto
 {
@@ -6,7 +6,7 @@ public class CreateGameDto
 
     public string Key { get; set; }
 
-    public string description { get; set; }
+    public string Description { get; set; }
     
     public ICollection<Guid> Platforms { get; set; }
     

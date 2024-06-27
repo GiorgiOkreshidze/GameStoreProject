@@ -1,4 +1,4 @@
-namespace Gamestore.Dtos;
+namespace DTOs.GameDtos;
 
 public class GetGameDto
 {
@@ -8,5 +8,5 @@ public class GetGameDto
 
     public string Key { get; set; }
 
-    public string description { get; set; }
+    public string Description { get; set; }
 }

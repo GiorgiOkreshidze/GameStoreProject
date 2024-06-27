@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Entities;
 
+[Index(nameof(PlatformEntity.Type), IsUnique = true)]
 public class PlatformEntity
 {
     [Key]

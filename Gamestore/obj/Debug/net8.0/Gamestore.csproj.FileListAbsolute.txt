@@ -171,3 +171,4 @@ C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\zh
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DTOs.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Newtonsoft.Json.dll

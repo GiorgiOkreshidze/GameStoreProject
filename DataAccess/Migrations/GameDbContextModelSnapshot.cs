@@ -28,19 +28,22 @@ namespace DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Key")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("Key")
+                        .IsUnique();
 
                     b.ToTable("GameEntities");
                 });
@@ -53,12 +56,15 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<Guid?>("ParentGenreId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
 
                     b.HasIndex("ParentGenreId");
 
@@ -67,85 +73,85 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8678fa5c-2ae8-4443-8d26-e4ff10689547"),
+                            Id = new Guid("e6b02ab2-12a7-4105-ac60-f388186f8c71"),
                             Name = "Strategy"
                         },
                         new
                         {
-                            Id = new Guid("0f444308-dd13-42b1-8cc3-af4ed8e89bd3"),
+                            Id = new Guid("7aa18673-2b49-4c0a-824c-774e5cc4147f"),
                             Name = "RTS",
-                            ParentGenreId = new Guid("8678fa5c-2ae8-4443-8d26-e4ff10689547")
+                            ParentGenreId = new Guid("e6b02ab2-12a7-4105-ac60-f388186f8c71")
                         },
                         new
                         {
-                            Id = new Guid("b5117a1c-28d3-4d91-a96c-244fb41f20e9"),
+                            Id = new Guid("55a74458-3aa5-4aa0-aced-1aca041edc8c"),
                             Name = "TBS",
-                            ParentGenreId = new Guid("8678fa5c-2ae8-4443-8d26-e4ff10689547")
+                            ParentGenreId = new Guid("e6b02ab2-12a7-4105-ac60-f388186f8c71")
                         },
                         new
                         {
-                            Id = new Guid("2734ae8a-9dc3-4367-955a-429f425b6198"),
+                            Id = new Guid("7a5d9ca3-2a8b-4c22-923b-b9f08432e8c4"),
                             Name = "RPG"
                         },
                         new
                         {
-                            Id = new Guid("1b8b72f1-042a-429b-ba5c-09697a4fdf72"),
+                            Id = new Guid("86921cfe-7eed-4fe1-8171-c315825ff38b"),
                             Name = "Sports"
                         },
                         new
                         {
-                            Id = new Guid("3c33edf2-3698-4000-b1fb-462129d0c954"),
+                            Id = new Guid("2664d92e-382b-4ce7-be57-5beacb642aaf"),
                             Name = "Races"
                         },
                         new
                         {
-                            Id = new Guid("66ec2d72-6208-4178-9ea0-9f0c66d98293"),
+                            Id = new Guid("4598a335-3f58-459e-bc10-044d2f121f8e"),
                             Name = "Rally",
-                            ParentGenreId = new Guid("3c33edf2-3698-4000-b1fb-462129d0c954")
+                            ParentGenreId = new Guid("2664d92e-382b-4ce7-be57-5beacb642aaf")
                         },
                         new
                         {
-                            Id = new Guid("b22e712c-34ce-422f-9fde-614e0d69664f"),
+                            Id = new Guid("d58d611e-ecdf-4b15-911a-cfcc1417e3ba"),
                             Name = "Arcade",
-                            ParentGenreId = new Guid("3c33edf2-3698-4000-b1fb-462129d0c954")
+                            ParentGenreId = new Guid("2664d92e-382b-4ce7-be57-5beacb642aaf")
                         },
                         new
                         {
-                            Id = new Guid("1902c41b-310b-4efc-81c4-7a3ff7820337"),
+                            Id = new Guid("7744e708-10db-4a68-b002-9eedc1195e18"),
                             Name = "Formula",
-                            ParentGenreId = new Guid("3c33edf2-3698-4000-b1fb-462129d0c954")
+                            ParentGenreId = new Guid("2664d92e-382b-4ce7-be57-5beacb642aaf")
                         },
                         new
                         {
-                            Id = new Guid("7ae46eee-aa6a-448a-a1c6-d20daa2bc506"),
+                            Id = new Guid("8d8115c3-fe7a-4b2d-80c2-56358fd7daeb"),
                             Name = "Off-road",
-                            ParentGenreId = new Guid("3c33edf2-3698-4000-b1fb-462129d0c954")
+                            ParentGenreId = new Guid("2664d92e-382b-4ce7-be57-5beacb642aaf")
                         },
                         new
                         {
-                            Id = new Guid("836301c7-7b07-4dcf-83ec-705b25946c63"),
+                            Id = new Guid("ecb19068-a2db-4eb2-b871-0664e3e23b96"),
                             Name = "Action"
                         },
                         new
                         {
-                            Id = new Guid("056c55ea-4f32-4a10-b002-615568469c19"),
+                            Id = new Guid("05c723dd-dfb5-4e2a-8ef2-2a3f2a0e0258"),
                             Name = "FPS",
-                            ParentGenreId = new Guid("836301c7-7b07-4dcf-83ec-705b25946c63")
+                            ParentGenreId = new Guid("ecb19068-a2db-4eb2-b871-0664e3e23b96")
                         },
                         new
                         {
-                            Id = new Guid("fae914d8-1a86-42c8-992d-f7f12d1138f4"),
+                            Id = new Guid("68344482-1cf7-47a8-8133-4d896cd60ffc"),
                             Name = "TPS",
-                            ParentGenreId = new Guid("836301c7-7b07-4dcf-83ec-705b25946c63")
+                            ParentGenreId = new Guid("ecb19068-a2db-4eb2-b871-0664e3e23b96")
                         },
                         new
                         {
-                            Id = new Guid("342fa136-fa19-47e1-96d1-53e75ed85a0e"),
+                            Id = new Guid("690d7e38-2752-4b79-9b7b-3d5e218cd9bd"),
                             Name = "Adventure"
                         },
                         new
                         {
-                            Id = new Guid("cd615658-4c0f-4acc-b3c3-9ab3fb7a2bd5"),
+                            Id = new Guid("8096feab-2415-4b4b-82b9-c37e0f367535"),
                             Name = "Puzzle & Skill"
                         });
                 });
@@ -158,31 +164,34 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Type")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Type")
+                        .IsUnique();
 
                     b.ToTable("PlatformEntities");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("90a1e9e8-e3de-4298-a4b3-936c7d99451e"),
+                            Id = new Guid("cf6fb34c-ac9a-4af9-aaf2-2a4e3f0a4790"),
                             Type = "Mobile"
                         },
                         new
                         {
-                            Id = new Guid("924dc40d-1f67-44dc-af83-aad13124186e"),
+                            Id = new Guid("8dfd6dce-51c7-464e-939b-6c0170bf954f"),
                             Type = "Browser"
                         },
                         new
                         {
-                            Id = new Guid("4249a843-f8f3-4147-8b9c-8022dc03222e"),
+                            Id = new Guid("c10e61e0-dc44-4195-80f3-e227b51b3586"),
                             Type = "Desktop"
                         },
                         new
                         {
-                            Id = new Guid("95e2b27c-3c93-4c7c-95a8-52affc9c04ff"),
+                            Id = new Guid("34ef5e1c-cefa-499a-b770-da4752ecf826"),
                             Type = "Console"
                         });
                 });

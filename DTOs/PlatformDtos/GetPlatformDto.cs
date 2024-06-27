@@ -1,4 +1,4 @@
-namespace Gamestore.Dtos;
+namespace DTOs.PlatformDtos;
 
 public class GetPlatformDto
 {

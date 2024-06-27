@@ -1,7 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Entities;
 
+
+[Index(nameof(GameEntity.Key), IsUnique = true)]
 public class GameEntity
 {
     [Key]
@@ -13,7 +16,7 @@ public class GameEntity
     [Required]
     public string Key { get; set; }
 
-    public string description { get; set; }
+    public string Description { get; set; }
 
     public ICollection<PlatformEntity> PlatformEntities { get; set; }
     

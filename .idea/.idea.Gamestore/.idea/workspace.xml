@@ -9,7 +9,125 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6f0916-3f3e-4aba-93b7-7c776f6fa568" name="Changes" comment="" />
+    <list default="true" id="8a6f0916-3f3e-4aba-93b7-7c776f6fa568" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/BusinessLogic.Tests/BusinessLogic.Tests.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GameServiceTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGenreService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IPlatformService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GenreProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PlatformProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/PlatformService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/GameDtos/UpdateGameDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/GenreDtos/CreateGenreDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/GenreDtos/GenreDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/GenreDtos/UpdateGenreDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/PlatformDtos/CreatePlatformDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/PlatformDtos/PlatformDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/PlatformDtos/UpdatePlatformDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGenreDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IPlatformDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Services/GenreDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Services/PlatformDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gamestore/CustomMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gamestore/Middlewares/Exception/BaseException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gamestore/Middlewares/Exception/ExceptionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/IGameService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/BusinessLogic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/BusinessLogic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/BusinessLogic.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/BusinessLogic.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DTOs.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DTOs.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/bin/Debug/net8.0/DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/BusinessLogic.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/ref/BusinessLogic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/ref/BusinessLogic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/refint/BusinessLogic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/Debug/net8.0/refint/BusinessLogic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/CreateGameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/CreateGameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GetGameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GetGameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GenreDtos/GetGenreDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GenreDtos/GetGenreDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/PlatformDtos/GetPlatformDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PlatformDtos/GetPlatformDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/bin/Debug/net8.0/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/bin/Debug/net8.0/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/bin/Debug/net8.0/DTOs.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/bin/Debug/net8.0/DTOs.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/DTOs.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/ref/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/ref/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/refint/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/Debug/net8.0/refint/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GenreEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GenreEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/GameDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/GenreDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/IGameDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/IGenreDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/IPlatformDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Interface/PlatformDbService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/bin/Debug/net8.0/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/bin/Debug/net8.0/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/bin/Debug/net8.0/DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/bin/Debug/net8.0/DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/ref/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/ref/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/refint/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/Debug/net8.0/refint/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/PlatformController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/PlatformController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Gamestore.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Gamestore.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/BusinessLogic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/BusinessLogic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/BusinessLogic.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/BusinessLogic.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DTOs.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DTOs.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DTOs.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DTOs.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DataAccess.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DataAccess.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DataAccess.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/DataAccess.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/bin/Debug/net8.0/Gamestore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/Gamestore.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/ref/Gamestore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/ref/Gamestore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/refint/Gamestore.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Debug/net8.0/refint/Gamestore.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +136,16 @@
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/Diagnostics/src/DeveloperExceptionPage/DeveloperExceptionPageMiddlewareImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Security/Authorization/Policy/src/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Servers/Kestrel/Core/src/Internal/Http/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3684e888fd93508450e2f4b0d7d38bee648cba98882592491596fc79375185f/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/781ebca67bd71532948352c2c24f8db410449e3c21f7191a17bf21348cd4fed4/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Gamestore/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Gamestore/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -30,26 +157,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Gamestore: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Gamestore: https.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Gamestore: IIS Express.executor": "Run",
+    ".NET Launch Settings Profile.Gamestore: https.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.47929937",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Giorgi Okreshidze\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Giorgi Okreshidze\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Gamestore: https">
     <configuration name="Gamestore: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Gamestore/Gamestore.csproj" />
@@ -117,6 +247,11 @@
       <workItem from="1718370361821" duration="11241000" />
       <workItem from="1718543155550" duration="10239000" />
       <workItem from="1718879018585" duration="209000" />
+      <workItem from="1718880446551" duration="16214000" />
+      <workItem from="1718973485286" duration="11914000" />
+      <workItem from="1719228695817" duration="7263000" />
+      <workItem from="1719255145990" duration="7408000" />
+      <workItem from="1719316583667" duration="10490000" />
     </task>
     <servers />
   </component>
@@ -124,26 +259,18 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/DataAccess/Interface/GameDbService.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\Interface\GameDbService.cs" containingFunctionPresentation="Method 'getGamesNumber'">
-            <startOffsets>
-              <option value="594" />
-            </startOffsets>
-            <endOffsets>
-              <option value="595" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
