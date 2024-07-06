@@ -13,5 +13,6 @@ public class GenreEntity
     
     public Guid? ParentGenreId { get; set; }
     public GenreEntity? ParentGenre { get; set; }
+    
     public ICollection<GameEntity> GameEntities { get; set; }
 }

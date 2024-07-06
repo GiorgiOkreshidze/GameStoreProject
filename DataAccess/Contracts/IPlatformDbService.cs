@@ -10,8 +10,12 @@ public interface IPlatformDbService
 
     public void UpdatePlatformDb(PlatformEntity platformEntity);
 
-    public void DeletePlatformDb(Guid id);
+    public void DeletePlatformDb(PlatformEntity platformEntity);
     public PlatformEntity GetPlatformByGuid(Guid guid);
 
     public ICollection<GameEntity> GetGamesByPlatformId(Guid id);
+
+    public bool NotExists(Guid id);
+
+    public bool TypeExists(string type);
 }

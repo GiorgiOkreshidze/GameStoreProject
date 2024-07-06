@@ -14,4 +14,5 @@ public class PlatformEntity
     public string Type { get; set; }
 
     public ICollection<GameEntity> GameEntities { get; set; }
+    
 }

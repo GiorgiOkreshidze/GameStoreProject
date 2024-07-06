@@ -10,7 +10,7 @@ public interface IGameDbService
 
     public void UpdateGameDb(GameEntity gameEntity);
 
-    public void DeleteGameDb(string key);
+    public void DeleteGameDb(GameEntity gameEntity);
 
     public GameEntity GetGameByKeyDb(string key);
 
@@ -21,4 +21,11 @@ public interface IGameDbService
     public ICollection<GenreEntity> GetGenresOfGameDb(string key);
 
     public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key);
+
+    public void ClearGenresByGameId(Guid id);
+    public void ClearPlatformsByGameId(Guid id);
+
+    public bool NotExists(Guid id);
+
+    public bool KeyNotExists(string key);
 }

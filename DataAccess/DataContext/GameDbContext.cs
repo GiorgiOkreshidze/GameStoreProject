@@ -7,23 +7,29 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
 {
     public DbSet<GameEntity> GameEntities { get; set; }
     public DbSet<PlatformEntity> PlatformEntities { get; set; }
-    public DbSet<GenreEntity> GenreEntities { get; set; }   
+    public DbSet<GenreEntity> GenreEntities { get; set; }
+    
+    public DbSet<GameGenre> GameGenres { get; set; }
+    
+    public DbSet<GamePlatform> GamePlatforms { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<GameEntity>()
-            .HasMany(x => x.PlatformEntities)
-            .WithMany(x => x.GameEntities)
-            .UsingEntity(j => j.ToTable("GamePlatform"));
+            .HasMany(g => g.GenreEntities)
+            .WithMany(ge => ge.GameEntities)
+            .UsingEntity<GameGenre>(
+                l => l.HasOne<GenreEntity>().WithMany().HasForeignKey(e => e.GenreEntityId),
+                r => r.HasOne<GameEntity>().WithMany().HasForeignKey(e => e.GameEntityId));
         
+        modelBuilder.Entity<GameEntity>()
+            .HasMany(g => g.PlatformEntities)
+            .WithMany(ge => ge.GameEntities)
+            .UsingEntity<GamePlatform>(
+                l => l.HasOne<PlatformEntity>().WithMany().HasForeignKey(e => e.PlatformEntityId),
+                r => r.HasOne<GameEntity>().WithMany().HasForeignKey(e => e.GameEntityId));
+            
         
-        modelBuilder.Entity<GenreEntity>()
-            .HasMany(x => x.GameEntities)
-            .WithMany(x => x.GenreEntities)
-            .UsingEntity(j => j.ToTable("GameGenre"));
-        // we need to specify on delete behaviour
-        
-        // This is questionable 
         modelBuilder.Entity<GenreEntity>()
             .HasOne(x => x.ParentGenre)
             .WithMany()

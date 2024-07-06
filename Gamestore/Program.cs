@@ -15,9 +15,20 @@ builder.Services.AddScoped<CustomMiddleware>();
 
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 
+var exposeHeadersPolicy = "ExposeHeadersPolicy";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(exposeHeadersPolicy,
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .WithExposedHeaders("x-total-numbers-of-games");
+        });
+});
+
+
 var app = builder.Build();
-
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -25,9 +36,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseExceptionHandler(_ => { });
-
 app.UseHttpsRedirection();
+
+app.UseCors(exposeHeadersPolicy);
+
+app.UseExceptionHandler(_ => { });
 
 app.UseAuthorization();
 

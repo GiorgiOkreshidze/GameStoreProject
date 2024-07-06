@@ -17,8 +17,10 @@ public class GameEntity
     public string Key { get; set; }
 
     public string Description { get; set; }
-
+    
     public ICollection<PlatformEntity> PlatformEntities { get; set; }
     
     public ICollection<GenreEntity> GenreEntities { get; set; }
+
+    
 }

@@ -20,34 +20,40 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 
     public void UpdatePlatformDb(PlatformEntity platformEntity)
     {
-        var entity = gameDbContext.PlatformEntities.First(x => x.Id == platformEntity.Id);
-
-        entity.Id = platformEntity.Id;
-        entity.Type = platformEntity.Type;
-
+        gameDbContext.Entry(platformEntity).State = EntityState.Modified;
         gameDbContext.SaveChanges();
     }
 
-    public void DeletePlatformDb(Guid id)
+    public void DeletePlatformDb(PlatformEntity platformEntity)
     {
-        var entity = (from t in gameDbContext.PlatformEntities
+        gameDbContext.Entry(platformEntity).State = EntityState.Deleted;
+        gameDbContext.SaveChanges();
+    }
+
+    public PlatformEntity GetPlatformByGuid(Guid id)
+    {
+        return (from t in gameDbContext.PlatformEntities
             where t.Id == id
             select t).First();
-        gameDbContext.Entry(entity).State = EntityState.Deleted;
-        gameDbContext.SaveChanges();
-    }
-
-    public PlatformEntity GetPlatformByGuid(Guid guid)
-    {
-        return gameDbContext.Set<PlatformEntity>().Where(g => g.Id == guid).First();;
     }
 
     public ICollection<GameEntity> GetGamesByPlatformId(Guid id)
     {
-        var platform = (from t in gameDbContext.GameEntities
-            where t.PlatformEntities.Any(a => a.Id == id)
-            select t).ToList();
+        
+        var platform = (from t in gameDbContext.PlatformEntities
+            where t.Id == id
+            select t).First();
 
-        return platform;
+        return platform.GameEntities;
+    }
+
+    public bool NotExists(Guid id)
+    {
+        return !gameDbContext.GenreEntities.Any(t => t.Id == id);
+    }
+    
+    public bool TypeExists(string type)
+    {
+        return gameDbContext.PlatformEntities.Any(t => t.Type == type);
     }
 }

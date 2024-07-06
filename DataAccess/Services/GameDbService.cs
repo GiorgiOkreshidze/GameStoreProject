@@ -14,49 +14,49 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     
     public void CreateGameDb(GameEntity gameEntity)
     {
-        gameDbContext.AttachRange(gameEntity.GenreEntities);
         gameDbContext.AttachRange(gameEntity.PlatformEntities);
+        gameDbContext.AttachRange(gameEntity.GenreEntities);
         gameDbContext.GameEntities.Add(gameEntity);
         gameDbContext.SaveChanges();
     }
 
     public void UpdateGameDb(GameEntity gameEntity)
     {
-        var entity = gameDbContext.GameEntities
-            .Include(x => x.GenreEntities)
-            .Include(x => x.PlatformEntities)
-            .FirstOrDefault(x => x.Id == gameEntity.Id);
-
-        entity.Description = gameEntity.Description;
-        entity.Key = gameEntity.Key;
-        entity.Name = gameEntity.Name;
         
-        entity.GenreEntities.Clear();
-        entity.PlatformEntities.Clear();
-        gameDbContext.SaveChanges();
-
-        var genresToAdd = (
-            from g in gameDbContext.GenreEntities
-            where gameEntity.GenreEntities.Select(ge => ge.Id).Contains(g.Id)
-            select g).ToList();
-
-        var platformsToAdd = (
-            from p in gameDbContext.PlatformEntities
-            where gameEntity.PlatformEntities.Select(pe => pe.Id).Contains(p.Id)
-            select p).ToList();
-        
-        entity.GenreEntities = genresToAdd;
-        entity.PlatformEntities = platformsToAdd;
-
+        gameDbContext.AttachRange(gameEntity.PlatformEntities);
+        gameDbContext.AttachRange(gameEntity.GenreEntities);
+        gameDbContext.Entry(gameEntity).State = EntityState.Modified;
         gameDbContext.SaveChanges();
     }
 
-    public void DeleteGameDb(string key)
+
+    public void ClearGenresByGameId(Guid gameId)
     {
-        var entity = (from t in gameDbContext.GameEntities
-            where t.Key == key
-            select t).First();
-        gameDbContext.Entry(entity).State = EntityState.Deleted;
+        var gameGenres = gameDbContext.GameGenres.Where(g => g.GameEntityId == gameId).ToList();
+        
+        foreach(var gameGenre in gameGenres)
+        {
+            gameDbContext.Remove(gameGenre);
+        }
+
+        gameDbContext.SaveChanges();
+    }
+    
+    public void ClearPlatformsByGameId(Guid gameId)
+    {
+        var platforms = gameDbContext.GamePlatforms.Where(g => g.GameEntityId == gameId).ToList();
+        
+        foreach(var platform in platforms)
+        {
+            gameDbContext.Remove(platform);
+        }
+
+        gameDbContext.SaveChanges();
+    }
+    
+    public void DeleteGameDb(GameEntity gameEntity)
+    {
+        gameDbContext.Entry(gameEntity).State = EntityState.Deleted;
         gameDbContext.SaveChanges();
     }
 
@@ -85,7 +85,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         var entity = (from t in gameDbContext.GameEntities.Include(x => x.GenreEntities)
             where t.Key == key
             select t).First();
-
+        
         return entity.GenreEntities;
     }
 
@@ -94,7 +94,19 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         var entity = (from t in gameDbContext.GameEntities.Include(x => x.PlatformEntities)
             where t.Key == key
             select t).First();
-
+        
         return entity.PlatformEntities;
+    }
+    
+    
+    
+    public bool NotExists(Guid id)
+    {
+        return !gameDbContext.GameEntities.Any(t => t.Id == id);
+    }
+    
+    public bool KeyNotExists(string key)
+    {
+        return !gameDbContext.GameEntities.Any(t => t.Key == key);
     }
 }
