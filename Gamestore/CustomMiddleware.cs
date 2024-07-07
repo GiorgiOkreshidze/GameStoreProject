@@ -1,19 +1,24 @@
 using DataAccess.Contracts;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Gamestore;
 
-public class CustomMiddleware : IMiddleware
+public class CustomMiddleware(IMemoryCache cache) : IMiddleware
 {
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
+        var gameDbService = context.RequestServices.GetService<IGameDbService>();
+        if (!cache.TryGetValue("TotalGamesCount", out int number))
+        {
+            number = gameDbService.GetGamesNumber();
+            cache.Set("TotalGamesCount", number, TimeSpan.FromMinutes(1));
+        }
         context.Response.OnStarting(state => {
             var httpContext = (HttpContext)state;
 
-        
-            var gameDbService = context.RequestServices.GetService<IGameDbService>();
-            string gamesCount = gameDbService.GetGamesNumber().ToString();
-            httpContext.Response.Headers.Add("x-total-numbers-of-games",gamesCount);
-        
+            string gamesCount = number.ToString();
+            httpContext.Response.Headers.Append("x-total-numbers-of-games",gamesCount);
+            
             return Task.CompletedTask;
         }, context);
 

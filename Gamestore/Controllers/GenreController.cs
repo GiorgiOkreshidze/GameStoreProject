@@ -21,9 +21,9 @@ public class GenreController(IGenreService genreService) : Controller
     }
 
     [HttpGet]
-    public ICollection<GenreDto> GetAllGenres()
+    public IActionResult GetAllGenres()
     {
-        return GenreService.GetAllGenres();
+        return Ok(GenreService.GetAllGenres());
     }
 
     [HttpPut]
@@ -42,22 +42,22 @@ public class GenreController(IGenreService genreService) : Controller
 
 
     [HttpGet("{id}")]
-    public GetGenreDto GetGenre(Guid id)
+    public IActionResult GetGenre(Guid id)
     {
-        return GenreService.GetGenre(id);
+        return Ok(GenreService.GetGenre(id));
     }
     
     [HttpGet("{id}/games")]
-    public ICollection<GetGameDto> GetGamesByGerneId(Guid id)
+    public IActionResult GetGamesByGerneId(Guid id)
     {
         var gameDtos = GenreService.GetGamesByGenreId(id);
         
-        return gameDtos;
+        return Ok(gameDtos);
     }
     
     [HttpGet("{id}/genres")]
-    public ICollection<GenreDto> GetSubGenres(Guid id)
+    public IActionResult GetSubGenres(Guid id)
     {
-        return GenreService.GetSubGenres(id);
+        return Ok(GenreService.GetSubGenres(id));
     }
 }

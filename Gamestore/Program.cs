@@ -15,6 +15,8 @@ builder.Services.AddScoped<CustomMiddleware>();
 
 builder.Services.AddExceptionHandler<ExceptionHandler>();
 
+builder.Services.AddMemoryCache();
+
 var exposeHeadersPolicy = "ExposeHeadersPolicy";
 
 builder.Services.AddCors(options =>

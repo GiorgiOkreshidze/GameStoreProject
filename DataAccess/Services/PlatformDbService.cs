@@ -49,7 +49,7 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 
     public bool NotExists(Guid id)
     {
-        return !gameDbContext.GenreEntities.Any(t => t.Id == id);
+        return !gameDbContext.PlatformEntities.Any(t => t.Id == id);
     }
     
     public bool TypeExists(string type)

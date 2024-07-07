@@ -1,13 +1,6 @@
-using System.Collections;
-using System.IO.Enumeration;
 using System.Text;
-using System.Text.Json.Serialization;
 using BusinessLogic.Contracts;
-using BusinessLogic.Models;
-using BusinessLogic.Services;
 using DTOs.GameDtos;
-using DTOs.GenreDtos;
-using DTOs.PlatformDtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
@@ -25,11 +18,11 @@ public class GameController(IGameService gameService) : Controller
     }
     
     [HttpGet]
-    public ICollection<GetGameDto> Read()
+    public IActionResult Read()
     {
         var games = gameService.GetAllGames();
         
-        return games;
+        return Ok(games);
     }
     
     [HttpPut]
@@ -50,31 +43,31 @@ public class GameController(IGameService gameService) : Controller
     
 
     [HttpGet("{key}")]
-    public GetGameDto GetGameByKey(string key)
+    public IActionResult GetGameByKey(string key)
     {
         var game = gameService.GetGameByKey(key);
         
-        return game;
+        return Ok(game);
     }
     
     [HttpGet("find/{id}")]
-    public GetGameDto GetGameById(Guid id)
+    public IActionResult GetGameById(Guid id)
     {
         var game = gameService.GetGameById(id);
         
-        return game;
+        return Ok(game);
     }
 
     [HttpGet("{key}/genres")]
-    public ICollection<GenreDto> GetGenresOfGame(string key)
+    public IActionResult GetGenresOfGame(string key)
     {
-        return gameService.GetGenresOfGame(key);
+        return Ok(gameService.GetGenresOfGame(key));
     }
 
     [HttpGet("{key}/platforms")]
-    public ICollection<PlatformDto> GetPlatformsOfGame(string key)
+    public IActionResult GetPlatformsOfGame(string key)
     {
-        return gameService.GetPlatformsOfGame(key);
+        return Ok(gameService.GetPlatformsOfGame(key));
     }
 
     [HttpGet("{key}/file")]

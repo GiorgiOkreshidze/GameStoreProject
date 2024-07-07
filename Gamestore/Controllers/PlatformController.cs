@@ -11,25 +11,23 @@ namespace Gamestore.Controllers;
 [Route("[controller]")]
 public class PlatformController(IPlatformService platformService) : Controller
 {
-    public readonly IPlatformService PlatformService = platformService;
-
     [HttpPost]
     public IActionResult CreatePlatform(CreatePlatformDto createPlatformDto)
     {
-        PlatformService.CreatePlatform(createPlatformDto);
+        platformService.CreatePlatform(createPlatformDto);
         return Ok();
     }
 
     [HttpGet]
-    public ICollection<PlatformDto> GetAllPlatforms()
+    public IActionResult GetAllPlatforms()
     {
-        return PlatformService.GetAllPlatforms();
+        return Ok(platformService.GetAllPlatforms());
     }
 
     [HttpPut]
     public IActionResult UpdatePlatform(UpdatePlatformDto updatePlatformDto)
     {
-        PlatformService.UpdatePlatform(updatePlatformDto);
+        platformService.UpdatePlatform(updatePlatformDto);
         
         return Ok();
     }
@@ -37,22 +35,22 @@ public class PlatformController(IPlatformService platformService) : Controller
     [HttpDelete("{id}")]
     public IActionResult DeletePlatform(Guid id)
     {
-        PlatformService.DeletePlatform(id);
+        platformService.DeletePlatform(id);
         return Ok();
     }
 
     [HttpGet("{id}")]
-    public PlatformDto GetPlatformById(Guid id)
+    public IActionResult GetPlatformById(Guid id)
     {
-        return PlatformService.GetPlatformById(id);
+        return Ok(platformService.GetPlatformById(id));
     }
     
     
     [HttpGet("{id}/games")]
-    public ICollection<GetGameDto> GetGamesByPlatformId(Guid id)
+    public IActionResult GetGamesByPlatformId(Guid id)
     {
-        var gameDtos = PlatformService.GetGamesByPlatformId(id);
+        var gameDtos = platformService.GetGamesByPlatformId(id);
         
-        return gameDtos;
+        return Ok(gameDtos);
     }
 }
