@@ -2,6 +2,8 @@ using BusinessLogic;
 using DataAccess;
 using Gamestore;
 using Gamestore.Middlewares.Exception;
+using Gamestore.Middlewares.Logging;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,8 +31,22 @@ builder.Services.AddCors(options =>
         });
 });
 
+/*Log.Logger = new LoggerConfiguration()
+            .WriteTo.Logger(lc => lc
+                .Filter.ByExcluding(e => e.Level == Serilog.Events.LogEventLevel.Error || e.Level == Serilog.Events.LogEventLevel.Fatal
+                    || e.Level == Serilog.Events.LogEventLevel.Warning)
+                .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day))
+            .WriteTo.Logger(lc => lc
+                .Filter.ByIncludingOnly(e => e.Level == Serilog.Events.LogEventLevel.Error || e.Level == Serilog.Events.LogEventLevel.Fatal
+                    || e.Level == Serilog.Events.LogEventLevel.Warning)
+                .WriteTo.File("logs/exceptions-.txt", rollingInterval: RollingInterval.Day))
+            .CreateLogger();*/
+
+
 
 var app = builder.Build();
+
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -41,6 +57,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(exposeHeadersPolicy);
+
+//app.UseMiddleware<RequestLoggingMiddleware>();
 
 app.UseExceptionHandler(_ => { });
 

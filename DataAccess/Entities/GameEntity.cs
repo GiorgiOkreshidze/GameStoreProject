@@ -17,7 +17,21 @@ public class GameEntity
     public string Key { get; set; }
 
     public string Description { get; set; }
+
+    [Required]
+    public double Price { get; set; }
+
+    [Required]
+    public int UnitInStock { get; set; }
+
+    [Required]
+    public int Discount { get; set; }
     
+    [Required]
+    public Guid? PublisherId { get; set; }
+    
+    public PublisherEntity PublisherEntity { get; set; }
+
     public ICollection<PlatformEntity> PlatformEntities { get; set; }
     
     public ICollection<GenreEntity> GenreEntities { get; set; }

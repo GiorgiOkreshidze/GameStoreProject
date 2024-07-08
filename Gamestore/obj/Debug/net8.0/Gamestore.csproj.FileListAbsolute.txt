@@ -172,3 +172,12 @@ C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\ru
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DTOs.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DTOs.pdb
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Sinks.File.dll

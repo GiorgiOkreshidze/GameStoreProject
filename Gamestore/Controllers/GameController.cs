@@ -70,6 +70,12 @@ public class GameController(IGameService gameService) : Controller
         return Ok(gameService.GetPlatformsOfGame(key));
     }
 
+    [HttpGet("{key}/publisher")]
+    public IActionResult GetPublisherOfGame(string key)
+    {
+        return Ok(gameService.GetPublisherOfGame(key));
+    }
+
     [HttpGet("{key}/file")]
     public IActionResult DownloadGameFile(string key)
     {

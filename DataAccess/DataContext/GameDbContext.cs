@@ -12,6 +12,8 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
     public DbSet<GameGenre> GameGenres { get; set; }
     
     public DbSet<GamePlatform> GamePlatforms { get; set; }
+    
+    public DbSet<PublisherEntity> PublisherEntities { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -28,12 +30,18 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             .UsingEntity<GamePlatform>(
                 l => l.HasOne<PlatformEntity>().WithMany().HasForeignKey(e => e.PlatformEntityId),
                 r => r.HasOne<GameEntity>().WithMany().HasForeignKey(e => e.GameEntityId));
-            
+        
+        modelBuilder.Entity<GameEntity>()
+            .HasOne(g => g.PublisherEntity)
+            .WithMany(p => p.GameEntities)
+            .HasForeignKey(g => g.PublisherId);
         
         modelBuilder.Entity<GenreEntity>()
             .HasOne(x => x.ParentGenre)
             .WithMany()
             .HasForeignKey(x => x.ParentGenreId);
+        
+        
         
         modelBuilder.Entity<PlatformEntity>().HasData(
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Mobile" },

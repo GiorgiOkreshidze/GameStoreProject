@@ -1,6 +1,8 @@
+using System.Collections;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
+using DTOs.PublisherDtos;
 
 namespace BusinessLogic.Contracts;
 
@@ -20,4 +22,6 @@ public interface IGameService
     public ICollection<GenreDto> GetGenresOfGame(string key);
 
     public ICollection<PlatformDto> GetPlatformsOfGame(string key);
+
+    public GetPublisherDto GetPublisherOfGame(string key);
 }

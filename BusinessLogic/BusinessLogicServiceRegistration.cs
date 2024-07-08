@@ -15,6 +15,7 @@ public static class BusinessLogicServiceRegistration
         services.AddScoped<IGameService, GameService>();
         services.AddScoped<IPlatformService, PlatformService>();
         services.AddScoped<IGenreService, GenreService>();
+        services.AddScoped<IPublisherService, PublisherService>();
 
         return services;
     }

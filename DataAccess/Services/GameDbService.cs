@@ -30,6 +30,8 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     }
 
 
+   
+
     public void ClearGenresByGameId(Guid gameId)
     {
         var gameGenres = gameDbContext.GameGenres.Where(g => g.GameEntityId == gameId).ToList();
@@ -98,7 +100,14 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         return entity.PlatformEntities;
     }
     
-    
+    public PublisherEntity GetPublisherOfGameDb(string key)
+    {
+        var entity = (from t in gameDbContext.GameEntities.Include(x => x.PublisherEntity)
+            where t.Key == key
+            select t).First();
+        
+        return entity.PublisherEntity;
+    }
     
     public bool NotExists(Guid id)
     {

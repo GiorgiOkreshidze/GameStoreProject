@@ -1,6 +1,4 @@
 using BusinessLogic.Contracts;
-using BusinessLogic.Services;
-using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using Microsoft.AspNetCore.Mvc;
 

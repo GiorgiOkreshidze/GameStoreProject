@@ -22,6 +22,8 @@ public interface IGameDbService
 
     public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key);
 
+    public PublisherEntity GetPublisherOfGameDb(string key);
+
     public void ClearGenresByGameId(Guid id);
     public void ClearPlatformsByGameId(Guid id);
 

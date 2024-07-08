@@ -18,6 +18,7 @@ public class GameServiceTests
     private readonly Mock<IGameDbService> _gameDbServiceMock = new Mock<IGameDbService>();
     private readonly Mock<IGenreDbService> _genreDbServiceMock = new Mock<IGenreDbService>();
     private readonly Mock<IPlatformDbService> _platformDbServiceMock = new Mock<IPlatformDbService>();
+    private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new Mock<IPublisherDbService>();
     private readonly IMapper _gameMapper;
 
     public GameServiceTests()
@@ -34,7 +35,7 @@ public class GameServiceTests
         });
         _gameMapper = config.CreateMapper();
         _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _genreDbServiceMock.Object,
-            _platformDbServiceMock.Object);
+            _platformDbServiceMock.Object, _publisherDbServiceMock.Object);
     }
 
     [Fact]

@@ -17,6 +17,7 @@ public static class DatabaseServiceRegistration
         services.AddScoped<IGameDbService, GameDbService>();
         services.AddScoped<IPlatformDbService, PlatformDbService>();
         services.AddScoped<IGenreDbService, GenreDbService>();
+        services.AddScoped<IPublisherDbService, PublisherDbService>();
 
         return services;
     }

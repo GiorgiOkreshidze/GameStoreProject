@@ -9,10 +9,12 @@ using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
+using DTOs.PublisherDtos;
 
 namespace BusinessLogic.Services;
 
-public class GameService(IGameDbService gameDbService, IMapper gameMapper, IGenreDbService genreDbService, IPlatformDbService platformDbService) : IGameService
+public class GameService(IGameDbService gameDbService, IMapper gameMapper,
+    IGenreDbService genreDbService, IPlatformDbService platformDbService, IPublisherDbService publisherDbService) : IGameService
 {
     public ICollection<GetGameDto> GetAllGames()
     {
@@ -43,6 +45,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper, IGenr
         
         ValidateGenres(game);
         ValidatePlatforms(game);
+        ValidatePublisherId(game.PublisherId);
 
         GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
         
@@ -82,6 +85,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper, IGenr
         ValidateGameId(game.Id);
         ValidateGenres(game);
         ValidatePlatforms(game);
+        ValidatePublisherId(game.PublisherId);
         
         GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
 
@@ -166,10 +170,19 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper, IGenr
         
         return platformDtos;
     }
-    
-    
-    
-    
+
+    public GetPublisherDto GetPublisherOfGame(string key)
+    {
+        ValidateGameKey(key);
+        var publisherEntity = gameDbService.GetPublisherOfGameDb(key);
+        
+        var publisher = gameMapper.Map<PublisherEntity, Publisher>(publisherEntity);
+        var publisherDto = gameMapper.Map<Publisher, GetPublisherDto>(publisher);
+
+        return publisherDto;
+    }
+
+
     private string GenerateKeyFromName(string name)
     {
         var normalizedGameName = Regex.Replace(name, @"\s+", "").ToLower();
@@ -220,6 +233,14 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper, IGenr
         if (gameDbService.KeyNotExists(key))
         {
             throw new KeyNotFoundException();
+        }
+    }
+
+    private void ValidatePublisherId(Guid? id)
+    {
+        if (publisherDbService.PublisherNotExists(id))
+        {
+            throw new PublisherNotExistsException("Publisher with that Id doesn't exists");
         }
     }
 }
