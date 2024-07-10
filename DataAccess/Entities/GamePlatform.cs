@@ -7,6 +7,4 @@ public class GamePlatform
     public Guid GameEntityId { get; set; }
     public Guid PlatformEntityId { get; set; }
     
-    // Test
-    // Test
 }
