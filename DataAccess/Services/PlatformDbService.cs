@@ -5,7 +5,7 @@ using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Services;
-
+#pragma warning disable IDE0305
 public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 {
     public void CreatePlatformDb(PlatformEntity platformEntity)
@@ -33,7 +33,7 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 
     public PlatformEntity GetPlatformByGuid(Guid id)
     {
-        return gameDbContext.PlatformEntities.FirstOrDefault(t => t.Id == id)?? throw new SqlNullValueException();
+        return gameDbContext.PlatformEntities.FirstOrDefault(t => t.Id == id) ?? throw new SqlNullValueException();
     }
 
     public ICollection<GameEntity> GetGamesByPlatformId(Guid id)
@@ -48,7 +48,7 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
     {
         return !gameDbContext.PlatformEntities.Any(t => t.Id == id);
     }
-    
+
     public bool TypeExists(string type)
     {
         return gameDbContext.PlatformEntities.Any(t => t.Type == type);

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uU3kNimHbDk0VdnGjxGb/T4PzZzzVDIIkW9c1WTHLvv18OXwXtSekRtgp7kLh8fzYkiqZnozkP7o1VCvbwIC6A==",
+  "dgSpecHash": "MGKCmnz3/17E3r1PeXrVzCcbbLXnbJfGdzW4jaQcSHhfXKFWjCYEwaq4F9VCVCfypPmY+VPf4Cjxjd/szFOqDw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512"
+  ],
   "logs": []
 }

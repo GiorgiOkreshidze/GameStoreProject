@@ -1,5 +1,4 @@
 using BusinessLogic.Contracts;
-using DataAccess.Entities;
 using DTOs.PublisherDtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,13 +6,13 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PublisherController (IPublisherService publisherService) : Controller
+public class PublisherController(IPublisherService publisherService) : Controller
 {
     [HttpPost]
     public IActionResult Create(CreatePublisherDto publisherDto)
     {
         publisherService.CreatePublisher(publisherDto);
-        
+
         return Ok();
     }
 
@@ -56,5 +55,4 @@ public class PublisherController (IPublisherService publisherService) : Controll
 
         return Ok(gameDtos);
     }
-    
 }

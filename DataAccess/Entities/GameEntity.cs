@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Entities;
 
-
 [Index(nameof(GameEntity.Key), IsUnique = true)]
 public class GameEntity
 {
@@ -26,15 +25,13 @@ public class GameEntity
 
     [Required]
     public int Discount { get; set; }
-    
+
     [Required]
     public Guid? PublisherId { get; set; }
-    
+
     public PublisherEntity PublisherEntity { get; set; }
 
     public ICollection<PlatformEntity> PlatformEntities { get; set; }
-    
-    public ICollection<GenreEntity> GenreEntities { get; set; }
 
-    
+    public ICollection<GenreEntity> GenreEntities { get; set; }
 }

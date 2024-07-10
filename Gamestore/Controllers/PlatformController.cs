@@ -1,7 +1,4 @@
-using System.Collections;
 using BusinessLogic.Contracts;
-using BusinessLogic.Services;
-using DTOs.GameDtos;
 using DTOs.PlatformDtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,7 +25,7 @@ public class PlatformController(IPlatformService platformService) : Controller
     public IActionResult UpdatePlatform(UpdatePlatformDto updatePlatformDto)
     {
         platformService.UpdatePlatform(updatePlatformDto);
-        
+
         return Ok();
     }
 
@@ -44,13 +41,12 @@ public class PlatformController(IPlatformService platformService) : Controller
     {
         return Ok(platformService.GetPlatformById(id));
     }
-    
-    
+
     [HttpGet("{id}/games")]
     public IActionResult GetGamesByPlatformId(Guid id)
     {
         var gameDtos = platformService.GetGamesByPlatformId(id);
-        
+
         return Ok(gameDtos);
     }
 }

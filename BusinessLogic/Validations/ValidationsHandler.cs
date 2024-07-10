@@ -1,10 +1,9 @@
 using BusinessLogic.Exceptions;
-using BusinessLogic.Models;
 using DataAccess.Contracts;
 
 namespace BusinessLogic.Validations;
 
-public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService genreDbService, IPlatformDbService platformDbService, 
+public class ValidationsHandler(IGameDbService gameDbService, IGenreDbService genreDbService, IPlatformDbService platformDbService,
     IPublisherDbService publisherDbService) : IValidationsHandler
 {
     public void ValidateGenres(ICollection<Guid> genreIds)
@@ -18,9 +17,9 @@ public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService g
         }
     }
 
-    public void ValidatePlatforms(ICollection<Guid> platfomrIds)
+    public void ValidatePlatforms(ICollection<Guid> platformIds)
     {
-        foreach (var platformId in platfomrIds)
+        foreach (var platformId in platformIds)
         {
             if (platformDbService.NotExists(platformId))
             {
@@ -28,7 +27,7 @@ public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService g
             }
         }
     }
-    
+
     public void ValidateGameId(Guid id)
     {
         if (gameDbService.NotExists(id))
@@ -52,7 +51,7 @@ public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService g
             throw new PublisherNotExistsException("Publisher with that Id doesn't exists");
         }
     }
-    
+
     public void ValidatePlatform(Guid id)
     {
         if (platformDbService.NotExists(id))
@@ -60,7 +59,7 @@ public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService g
             throw new PlatformNotExistsException("Platform with platformId not exists");
         }
     }
-    
+
     public void ValidatePlatformType(string type)
     {
         if (platformDbService.TypeExists(type))
@@ -92,5 +91,4 @@ public class ValidationsHandler( IGameDbService gameDbService, IGenreDbService g
             throw new Exception("CompanyName Not Exists");
         }
     }
-
 }

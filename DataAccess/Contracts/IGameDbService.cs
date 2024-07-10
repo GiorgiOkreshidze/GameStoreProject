@@ -5,7 +5,7 @@ namespace DataAccess.Contracts;
 public interface IGameDbService
 {
     public ICollection<GameEntity> GetAllGamesDb();
-    
+
     public void CreateGameDb(GameEntity gameEntity);
 
     public void UpdateGameDb(GameEntity gameEntity);
@@ -25,6 +25,7 @@ public interface IGameDbService
     public PublisherEntity GetPublisherOfGameDb(string key);
 
     public void ClearGenresByGameId(Guid id);
+
     public void ClearPlatformsByGameId(Guid id);
 
     public bool NotExists(Guid id);

@@ -1,10 +1,14 @@
-﻿using System;
+﻿#pragma warning disable IDE0005
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
+#pragma warning disable IDE0300
+#pragma warning disable CA1861
+#pragma warning disable IDE0160
+#pragma warning disable IDE0161
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
@@ -20,7 +24,7 @@ namespace DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Key = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -33,7 +37,7 @@ namespace DataAccess.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ParentGenreId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    ParentGenreId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                 },
                 constraints: table =>
                 {
@@ -50,7 +54,7 @@ namespace DataAccess.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Type = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Type = table.Column<string>(type: "nvarchar(450)", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -62,7 +66,7 @@ namespace DataAccess.Migrations
                 columns: table => new
                 {
                     GameEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    GenreEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    GenreEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -86,7 +90,7 @@ namespace DataAccess.Migrations
                 columns: table => new
                 {
                     GameEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PlatformEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    PlatformEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -116,7 +120,7 @@ namespace DataAccess.Migrations
                     { new Guid("aa09e067-200c-4b5f-8ca2-76cbc273d80a"), "Sports", null },
                     { new Guid("e5807121-9457-4e8d-a372-ce1f15152dc3"), "Puzzle & Skill", null },
                     { new Guid("eba938cb-c257-4079-82e4-1d4a22753786"), "Races", null },
-                    { new Guid("f76974be-8105-478b-9876-16106a993671"), "RPG", null }
+                    { new Guid("f76974be-8105-478b-9876-16106a993671"), "RPG", null },
                 });
 
             migrationBuilder.InsertData(
@@ -127,7 +131,7 @@ namespace DataAccess.Migrations
                     { new Guid("39dfa3f4-f5d8-4715-9bfd-996afb42ad68"), "Console" },
                     { new Guid("3f4e76bd-49f0-45e2-863b-1d23447f03f6"), "Desktop" },
                     { new Guid("81c6e194-40e2-43af-a3fc-3aa2acad8415"), "Mobile" },
-                    { new Guid("c4c9689d-c96d-4996-b6a7-14de9b9d35d7"), "Browser" }
+                    { new Guid("c4c9689d-c96d-4996-b6a7-14de9b9d35d7"), "Browser" },
                 });
 
             migrationBuilder.InsertData(
@@ -142,7 +146,7 @@ namespace DataAccess.Migrations
                     { new Guid("b4fbb613-5cd0-486e-8863-c1159df5adb9"), "TPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") },
                     { new Guid("b7b49741-1b5e-4d13-a437-6fd6d48220fc"), "Arcade", new Guid("eba938cb-c257-4079-82e4-1d4a22753786") },
                     { new Guid("bb28cab6-bb51-4682-ba9d-2458517101b8"), "Rally", new Guid("eba938cb-c257-4079-82e4-1d4a22753786") },
-                    { new Guid("e96878b2-0479-492c-9491-efef4d36ed1b"), "FPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") }
+                    { new Guid("e96878b2-0479-492c-9491-efef4d36ed1b"), "FPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") },
                 });
 
             migrationBuilder.CreateIndex(

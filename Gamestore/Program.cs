@@ -23,7 +23,8 @@ var exposeHeadersPolicy = "ExposeHeadersPolicy";
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(exposeHeadersPolicy,
+    options.AddPolicy(
+        exposeHeadersPolicy,
         policy =>
         {
             policy.AllowAnyOrigin()
@@ -33,20 +34,16 @@ builder.Services.AddCors(options =>
 
 Log.Logger = new LoggerConfiguration()
             .WriteTo.Logger(lc => lc
-                .Filter.ByExcluding(e => e.Level == Serilog.Events.LogEventLevel.Error || e.Level == Serilog.Events.LogEventLevel.Fatal
-                    || e.Level == Serilog.Events.LogEventLevel.Warning)
+                .Filter.ByExcluding(e => e.Level is Serilog.Events.LogEventLevel.Error or Serilog.Events.LogEventLevel.Fatal
+                    or Serilog.Events.LogEventLevel.Warning)
                 .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day))
             .WriteTo.Logger(lc => lc
-                .Filter.ByIncludingOnly(e => e.Level == Serilog.Events.LogEventLevel.Error || e.Level == Serilog.Events.LogEventLevel.Fatal
-                    || e.Level == Serilog.Events.LogEventLevel.Warning)
+                .Filter.ByIncludingOnly(e => e.Level is Serilog.Events.LogEventLevel.Error or Serilog.Events.LogEventLevel.Fatal
+                    or Serilog.Events.LogEventLevel.Warning)
                 .WriteTo.File("logs/exceptions-.txt", rollingInterval: RollingInterval.Day))
             .CreateLogger();
 
-
-
 var app = builder.Build();
-
-
 
 if (app.Environment.IsDevelopment())
 {

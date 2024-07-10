@@ -1,6 +1,5 @@
 using AutoMapper;
 using BusinessLogic.Contracts;
-using BusinessLogic.Exceptions;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
 using DataAccess.Contracts;
@@ -68,11 +67,10 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
     {
         validator.ValidatePlatform(id);
         var gameEntities = platformDbService.GetGamesByPlatformId(id);
-        
+
         var game = platformMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
         var gameDtos = platformMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
-        
+
         return gameDtos;
     }
-    
 }

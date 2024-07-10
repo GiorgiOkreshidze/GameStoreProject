@@ -9,3 +9,5 @@ C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net8.0\DTOs.dl
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net8.0\refint\DTOs.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net8.0\DTOs.pdb
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net8.0\ref\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\bin\Debug\net8.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net8.0\DTOs.xml

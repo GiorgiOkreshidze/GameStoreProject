@@ -1,4 +1,3 @@
-using System.Collections;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
@@ -9,6 +8,7 @@ namespace BusinessLogic.Contracts;
 public interface IGameService
 {
     public ICollection<GetGameDto> GetAllGames();
+
     public void CreateGame(CreateGameDto createGameDto);
 
     public void UpdateGame(UpdateGameDto updateGameDto);

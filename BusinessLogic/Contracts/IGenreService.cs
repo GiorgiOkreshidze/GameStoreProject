@@ -14,7 +14,7 @@ public interface IGenreService
     public void DeleteGenre(Guid id);
 
     public GetGenreDto GetGenre(Guid id);
-    
+
     public ICollection<GetGameDto> GetGamesByGenreId(Guid id);
 
     public ICollection<GenreDto> GetSubGenres(Guid id);

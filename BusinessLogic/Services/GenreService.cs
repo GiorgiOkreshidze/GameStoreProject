@@ -1,6 +1,5 @@
 using AutoMapper;
 using BusinessLogic.Contracts;
-using BusinessLogic.Exceptions;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
 using DataAccess.Contracts;
@@ -19,9 +18,8 @@ public class GenreService(IGenreDbService genreDbService, IMapper genreMapper, I
         genre.Id = Guid.NewGuid();
 
         var genreEntity = genreMapper.Map<Genre, GenreEntity>(genre);
-        
+
         genreDbService.CreateGenreDb(genreEntity);
-        
     }
 
     public ICollection<GenreDto> GetAllGenres()
@@ -55,7 +53,7 @@ public class GenreService(IGenreDbService genreDbService, IMapper genreMapper, I
     {
         validator.ValidateGenre(id);
         var genreEntity = genreDbService.GetGenreByGuid(id);
-        
+
         var genre = genreMapper.Map<GenreEntity, Genre>(genreEntity);
         var getGenreDto = genreMapper.Map<Genre, GetGenreDto>(genre);
 
@@ -66,10 +64,10 @@ public class GenreService(IGenreDbService genreDbService, IMapper genreMapper, I
     {
         validator.ValidateGenre(id);
         var gameEntities = genreDbService.GetGamesByGenreId(id);
-        
+
         var game = genreMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
         var gameDtos = genreMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
-        
+
         return gameDtos;
     }
 

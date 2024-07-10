@@ -14,7 +14,7 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
     public void CreatePublisher(CreatePublisherDto publisherDto)
     {
         var publisher = publisherMapper.Map<CreatePublisherDto, Publisher>(publisherDto);
-        
+
         publisher.Id = Guid.NewGuid();
 
         var publisherEntity = publisherMapper.Map<Publisher, PublisherEntity>(publisher);
@@ -47,9 +47,9 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
     public void UpdatePublisher(UpdatePublisherDto publisherDto)
     {
         var publisher = publisherMapper.Map<UpdatePublisherDto, Publisher>(publisherDto);
-        
+
         validator.ValidatePublisherId(publisher.Id);
-        
+
         var publisherEntity = publisherMapper.Map<Publisher, PublisherEntity>(publisher);
 
         publisherDbService.UpdatePublisherDb(publisherEntity);

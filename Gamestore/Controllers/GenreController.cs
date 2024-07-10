@@ -8,12 +8,10 @@ namespace Gamestore.Controllers;
 [Route("[controller]")]
 public class GenreController(IGenreService genreService) : Controller
 {
-    public readonly IGenreService GenreService = genreService;
-
     [HttpPost]
     public IActionResult CreateGenre(CreateGenreDto createGenreDto)
     {
-        GenreService.CreateGenre(createGenreDto);
+        genreService.CreateGenre(createGenreDto);
 
         return Ok();
     }
@@ -21,41 +19,40 @@ public class GenreController(IGenreService genreService) : Controller
     [HttpGet]
     public IActionResult GetAllGenres()
     {
-        return Ok(GenreService.GetAllGenres());
+        return Ok(genreService.GetAllGenres());
     }
 
     [HttpPut]
     public IActionResult UpdateGenre(UpdateGenreDto updateGenreDto)
     {
-        GenreService.UpdateGenre(updateGenreDto);
+        genreService.UpdateGenre(updateGenreDto);
         return Ok();
     }
 
     [HttpDelete("{id}")]
     public IActionResult DeleteGenre(Guid id)
     {
-        GenreService.DeleteGenre(id);
+        genreService.DeleteGenre(id);
         return Ok();
     }
-
 
     [HttpGet("{id}")]
     public IActionResult GetGenre(Guid id)
     {
-        return Ok(GenreService.GetGenre(id));
+        return Ok(genreService.GetGenre(id));
     }
-    
+
     [HttpGet("{id}/games")]
     public IActionResult GetGamesByGerneId(Guid id)
     {
-        var gameDtos = GenreService.GetGamesByGenreId(id);
-        
+        var gameDtos = genreService.GetGamesByGenreId(id);
+
         return Ok(gameDtos);
     }
-    
+
     [HttpGet("{id}/genres")]
     public IActionResult GetSubGenres(Guid id)
     {
-        return Ok(GenreService.GetSubGenres(id));
+        return Ok(genreService.GetSubGenres(id));
     }
 }

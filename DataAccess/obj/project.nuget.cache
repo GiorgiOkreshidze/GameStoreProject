@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ncf2Nap+2rZ47QPApUZ0FLWT27V1DN3B7yeQSlATTgPBHkRwHE/3qlM/ZPyjixk3zWPH9SAy+QgyuOUPf/dsSA==",
+  "dgSpecHash": "OBQ4pOe1ynPz1mi0D74SGlGDOVAXdLGF4Gaf1WNEDlABsdROh+hsrU61o5kSjYI7NsRJdjVBx4bQ0N2JIy4Y4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -49,6 +49,7 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\mono.texttemplating\\3.0.0-preview-0052-g5d0f76c785\\mono.texttemplating.3.0.0-preview-0052-g5d0f76c785.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",

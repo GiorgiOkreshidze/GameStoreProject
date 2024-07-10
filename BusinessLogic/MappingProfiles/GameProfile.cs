@@ -11,7 +11,7 @@ namespace BusinessLogic.MappingProfiles;
 public class GameProfile : Profile
 {
     public GameProfile()
-    {   
+    {
         CreateMap<GameEntity, Game>().ReverseMap();
         CreateMap<Game, GetGameDto>().ReverseMap();
         CreateMap<Game, CreateGameDto>().ReverseMap();

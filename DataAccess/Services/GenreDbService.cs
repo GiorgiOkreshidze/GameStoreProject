@@ -5,7 +5,7 @@ using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Services;
-
+#pragma warning disable IDE0305
 public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
 {
     public void CreateGenreDb(GenreEntity genreEntity)
@@ -14,9 +14,9 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
         gameDbContext.SaveChanges();
     }
 
-    public GenreEntity GetGenreByGuid(Guid guid)
-    { 
-        return gameDbContext.GenreEntities.FirstOrDefault(t => t.Id == guid)?? throw new SqlNullValueException();
+    public GenreEntity GetGenreByGuid(Guid id)
+    {
+        return gameDbContext.GenreEntities.FirstOrDefault(t => t.Id == id) ?? throw new SqlNullValueException();
     }
 
     public ICollection<GenreEntity> GetAllGenresDb()

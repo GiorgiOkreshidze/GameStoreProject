@@ -12,6 +12,8 @@ public interface IPlatformService
     public void UpdatePlatform(UpdatePlatformDto updatePlatformDto);
 
     public void DeletePlatform(Guid id);
+
     public PlatformDto GetPlatformById(Guid id);
+
     public ICollection<GetGameDto> GetGamesByPlatformId(Guid id);
 }

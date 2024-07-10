@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5MyBsTy11IN4QVd+UMnKjlX3ebkAfB2wiNoGpJUpoSqYXkTBFw9MGX58yTCPGEQ0dlbrsqI4pKaCZL7EJkp7IQ==",
+  "dgSpecHash": "59skT3gco1EgzfLVDk0K22IaOI6+z1rjuG8tDBpsQ4hIklq0SAMrImNfE+wmoZotOUJ5rO/MeEISAsPe0723YA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,7 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\serilog.sinks.console\\5.0.0\\serilog.sinks.console.5.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\serilog.sinks.file\\6.0.0\\serilog.sinks.file.6.0.0.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

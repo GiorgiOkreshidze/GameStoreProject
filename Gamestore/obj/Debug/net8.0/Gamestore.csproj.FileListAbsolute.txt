@@ -182,3 +182,8 @@ C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Se
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Serilog.Sinks.File.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Gamestore.staticwebassets.runtime.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\Gamestore.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DataAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net8.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net8.0\Gamestore.xml

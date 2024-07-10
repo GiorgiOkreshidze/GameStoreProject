@@ -4,7 +4,6 @@ public static partial class ConstantsPublisher
 {
     public static class PublisherEntityTest
     {
-        public static readonly Guid Id = Guid.NewGuid();
         public const string CompanyName = "Publisher Company Name";
         public const string HomePage = "Publisher Home Page";
         public const string Description = "Publishers Description";
@@ -12,8 +11,12 @@ public static partial class ConstantsPublisher
         public const string GameKey = "Game Key";
         public const string GameDescription = "Game Description";
 
+        public static readonly Guid Id = Guid.NewGuid();
+
         public static string GameNameFromIndex(int index) => $"{GameName} {index}";
+
         public static string GameKeyFromIndex(int index) => $"{GameKey} {index}";
+
         public static string GameDescriptionFromIndex(int index) => $"{GameDescription} {index}";
     }
 }

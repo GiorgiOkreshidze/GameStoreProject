@@ -1,10 +1,14 @@
-﻿using System;
+﻿#pragma warning disable IDE0005
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
+#pragma warning disable IDE0300
+#pragma warning disable CA1861
+#pragma warning disable IDE0160
+#pragma warning disable IDE0161
 namespace DataAccess.Migrations
 {
     /// <inheritdoc />
@@ -143,7 +147,7 @@ namespace DataAccess.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CompanyName = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     HomePage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                 },
                 constraints: table =>
                 {
@@ -161,7 +165,7 @@ namespace DataAccess.Migrations
                     { new Guid("2a78bcf1-d627-4fd1-a179-c27d1650f654"), "Strategy", null },
                     { new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad"), "Races", null },
                     { new Guid("c810e50c-55ba-42f9-8d31-a29cee42bf90"), "Puzzle & Skill", null },
-                    { new Guid("d9eb95e7-5be6-4ae2-9185-6a985413e7ff"), "Sports", null }
+                    { new Guid("d9eb95e7-5be6-4ae2-9185-6a985413e7ff"), "Sports", null },
                 });
 
             migrationBuilder.InsertData(
@@ -172,7 +176,7 @@ namespace DataAccess.Migrations
                     { new Guid("1b5cdf01-f7cb-4714-b6d6-c534c5bb7863"), "Mobile" },
                     { new Guid("6bd1a416-4966-4cf5-927c-037dbaf1c2ee"), "Browser" },
                     { new Guid("95e32a44-a290-41f5-b09b-1076a2818da6"), "Console" },
-                    { new Guid("cada2521-bdcd-4915-86fc-33feadc1124a"), "Desktop" }
+                    { new Guid("cada2521-bdcd-4915-86fc-33feadc1124a"), "Desktop" },
                 });
 
             migrationBuilder.InsertData(
@@ -187,7 +191,7 @@ namespace DataAccess.Migrations
                     { new Guid("9a9f279f-c51a-4055-b7b7-a3d10482e2ed"), "TBS", new Guid("2a78bcf1-d627-4fd1-a179-c27d1650f654") },
                     { new Guid("caa3e07e-e0e3-4f0e-b0bd-8aa255503d06"), "Off-road", new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad") },
                     { new Guid("cf047ced-7dc8-4238-bac3-115ea37cce09"), "TPS", new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae") },
-                    { new Guid("ebb58d0e-795a-4a0d-8597-73c7c1f51ac8"), "FPS", new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae") }
+                    { new Guid("ebb58d0e-795a-4a0d-8597-73c7c1f51ac8"), "FPS", new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae") },
                 });
 
             migrationBuilder.CreateIndex(
@@ -346,7 +350,7 @@ namespace DataAccess.Migrations
                     { new Guid("aa09e067-200c-4b5f-8ca2-76cbc273d80a"), "Sports", null },
                     { new Guid("e5807121-9457-4e8d-a372-ce1f15152dc3"), "Puzzle & Skill", null },
                     { new Guid("eba938cb-c257-4079-82e4-1d4a22753786"), "Races", null },
-                    { new Guid("f76974be-8105-478b-9876-16106a993671"), "RPG", null }
+                    { new Guid("f76974be-8105-478b-9876-16106a993671"), "RPG", null },
                 });
 
             migrationBuilder.InsertData(
@@ -357,7 +361,7 @@ namespace DataAccess.Migrations
                     { new Guid("39dfa3f4-f5d8-4715-9bfd-996afb42ad68"), "Console" },
                     { new Guid("3f4e76bd-49f0-45e2-863b-1d23447f03f6"), "Desktop" },
                     { new Guid("81c6e194-40e2-43af-a3fc-3aa2acad8415"), "Mobile" },
-                    { new Guid("c4c9689d-c96d-4996-b6a7-14de9b9d35d7"), "Browser" }
+                    { new Guid("c4c9689d-c96d-4996-b6a7-14de9b9d35d7"), "Browser" },
                 });
 
             migrationBuilder.InsertData(
@@ -372,7 +376,7 @@ namespace DataAccess.Migrations
                     { new Guid("b4fbb613-5cd0-486e-8863-c1159df5adb9"), "TPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") },
                     { new Guid("b7b49741-1b5e-4d13-a437-6fd6d48220fc"), "Arcade", new Guid("eba938cb-c257-4079-82e4-1d4a22753786") },
                     { new Guid("bb28cab6-bb51-4682-ba9d-2458517101b8"), "Rally", new Guid("eba938cb-c257-4079-82e4-1d4a22753786") },
-                    { new Guid("e96878b2-0479-492c-9491-efef4d36ed1b"), "FPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") }
+                    { new Guid("e96878b2-0479-492c-9491-efef4d36ed1b"), "FPS", new Guid("8cfa6a94-798a-49e6-a197-77814b9adec7") },
                 });
         }
     }

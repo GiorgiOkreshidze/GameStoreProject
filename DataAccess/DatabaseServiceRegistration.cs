@@ -12,7 +12,7 @@ public static class DatabaseServiceRegistration
     public static IServiceCollection AddDatabaseServices(this IServiceCollection services, IConfiguration configuration)
     {
         var connString = configuration.GetConnectionString("GamestoreDbConnection");
-        
+
         services.AddDbContext<GameDbContext>(options => options.UseSqlServer(connString));
         services.AddScoped<IGameDbService, GameDbService>();
         services.AddScoped<IPlatformDbService, PlatformDbService>();

@@ -15,3 +15,7 @@ C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\ref\BusinessLogic.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DTOs.dll
 C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net8.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DataAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net8.0\DTOs.xml

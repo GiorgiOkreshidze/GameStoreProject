@@ -10,20 +10,19 @@ public class RequestLoggingMiddleware(RequestDelegate next)
         var stopwatch = Stopwatch.StartNew();
         var originalBodyStream = context.Response.Body;
 
-        using (var responseBody = new MemoryStream())
-        {
-            context.Response.Body = responseBody;
+        using var responseBody = new MemoryStream();
+        context.Response.Body = responseBody;
 
-            await next(context);
-            stopwatch.Stop();
-            var response = await FormatResponse(context.Response);
-            LogRequestDetails(context, response, stopwatch.ElapsedMilliseconds);
-            await responseBody.CopyToAsync(originalBodyStream);
-            //LogExceptionDetails(context, stopwatch.ElapsedMilliseconds);
-        }
+        await next(context);
+        stopwatch.Stop();
+        var response = await FormatResponse(context.Response);
+        LogRequestDetails(context, response, stopwatch.ElapsedMilliseconds);
+        await responseBody.CopyToAsync(originalBodyStream);
+
+        // LogExceptionDetails(context, stopwatch.ElapsedMilliseconds);
     }
 
-    private async Task<string> FormatResponse(HttpResponse response)
+    private static async Task<string> FormatResponse(HttpResponse response)
     {
         response.Body.Seek(0, SeekOrigin.Begin);
         var text = await new StreamReader(response.Body).ReadToEndAsync();
@@ -31,9 +30,10 @@ public class RequestLoggingMiddleware(RequestDelegate next)
         return text;
     }
 
-    private void LogRequestDetails(HttpContext context, string response, long elapsedMilliseconds)
+    private static void LogRequestDetails(HttpContext context, string response, long elapsedMilliseconds)
     {
-        Log.Information("Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nResponse Body: {ResponseBody}",
+        Log.Information(
+            "Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nResponse Body: {ResponseBody}",
             context.Request.Method,
             context.Request.Path,
             context.Response.StatusCode,

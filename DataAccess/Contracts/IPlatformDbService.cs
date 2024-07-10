@@ -11,7 +11,8 @@ public interface IPlatformDbService
     public void UpdatePlatformDb(PlatformEntity platformEntity);
 
     public void DeletePlatformDb(PlatformEntity platformEntity);
-    public PlatformEntity GetPlatformByGuid(Guid guid);
+
+    public PlatformEntity GetPlatformByGuid(Guid id);
 
     public ICollection<GameEntity> GetGamesByPlatformId(Guid id);
 

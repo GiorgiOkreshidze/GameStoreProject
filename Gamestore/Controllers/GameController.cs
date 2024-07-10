@@ -16,20 +16,20 @@ public class GameController(IGameService gameService) : Controller
 
         return Ok();
     }
-    
+
     [HttpGet]
     public IActionResult Read()
     {
         var games = gameService.GetAllGames();
-        
+
         return Ok(games);
     }
-    
+
     [HttpPut]
     public IActionResult Update(UpdateGameDto updateGameDto)
     {
         gameService.UpdateGame(updateGameDto);
-        
+
         return Ok();
     }
 
@@ -40,21 +40,20 @@ public class GameController(IGameService gameService) : Controller
 
         return Ok();
     }
-    
 
     [HttpGet("{key}")]
     public IActionResult GetGameByKey(string key)
     {
         var game = gameService.GetGameByKey(key);
-        
+
         return Ok(game);
     }
-    
+
     [HttpGet("find/{id}")]
     public IActionResult GetGameById(Guid id)
     {
         var game = gameService.GetGameById(id);
-        
+
         return Ok(game);
     }
 
@@ -87,5 +86,4 @@ public class GameController(IGameService gameService) : Controller
 
         return File(fileBytes, "text/plain", fileName);
     }
-    
 }
