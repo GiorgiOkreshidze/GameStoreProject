@@ -1,11 +1,13 @@
 using AutoMapper;
 using BusinessLogic.Models;
 using BusinessLogic.Services;
+using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
+using DTOs.PublisherDtos;
 using FluentAssertions;
 using Moq;
 
@@ -16,10 +18,8 @@ public class GameServiceTests
     private readonly GameService _gameServiceTest;
 
     private readonly Mock<IGameDbService> _gameDbServiceMock = new Mock<IGameDbService>();
-    private readonly Mock<IGenreDbService> _genreDbServiceMock = new Mock<IGenreDbService>();
-    private readonly Mock<IPlatformDbService> _platformDbServiceMock = new Mock<IPlatformDbService>();
-    private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new Mock<IPublisherDbService>();
     private readonly IMapper _gameMapper;
+    private readonly Mock<IValidationsHandler> _validatorMock = new Mock<IValidationsHandler>();
 
     public GameServiceTests()
     {
@@ -32,18 +32,30 @@ public class GameServiceTests
             cfg.CreateMap<Genre, GenreDto>().ReverseMap();
             cfg.CreateMap<PlatformEntity, Platform>().ReverseMap();
             cfg.CreateMap<Platform, PlatformDto>().ReverseMap();
+            cfg.CreateMap<PublisherEntity, Publisher>().ReverseMap();
+            cfg.CreateMap<Publisher, GetPublisherDto>().ReverseMap();
         });
         _gameMapper = config.CreateMapper();
-        _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _genreDbServiceMock.Object,
-            _platformDbServiceMock.Object, _publisherDbServiceMock.Object);
+        _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _validatorMock.Object);
     }
 
     [Fact]
     public void GameService_GetAllGames_ReturnsAllGameDtos()
     {
+        //Arrange
+        var gameEntities = TestUtils.GameEntityUtil.CreateGameEntities();
+        _gameDbServiceMock.Setup(x => x.GetAllGamesDb()).Returns(gameEntities);
         
+        var games = _gameMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
+        var gameDtos = _gameMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(games);
+        
+        //Act
+        var result = _gameServiceTest.GetAllGames();
+        
+        //Assert
+        result.Should().NotBeNull();
+        result.Should().BeEquivalentTo(gameDtos);
     }
-
 
     [Fact]
     public void GameService_GetGameByKey_ReturnsGameDtoByKey()
@@ -59,10 +71,26 @@ public class GameServiceTests
         var result = _gameServiceTest.GetGameByKey(gameEntity.Key);
         
         //Assert
-        Assert.Equal(gameDto.Id, result.Id);
-        Assert.Equal(gameDto.Name, result.Name);
-        Assert.Equal(gameDto.Key, result.Key);
-        Assert.Equal(gameDto.Description, result.Description);
+        result.Should().NotBeNull();
+        result.Should().BeEquivalentTo(gameDto);
+    }
+
+    [Fact]
+    public void GameService_GetPublisherOfGame_ReturnsPublisherDto()
+    {
+        //Arrange
+        var gameEntity = TestUtils.GameEntityUtil.CreateGameEntity();
+        _gameDbServiceMock.Setup(x => x.GetPublisherOfGameDb(gameEntity.Key)).Returns(gameEntity.PublisherEntity);
+        
+        var publisher = _gameMapper.Map<PublisherEntity, Publisher>(gameEntity.PublisherEntity);
+        var publisherDto = _gameMapper.Map<Publisher, GetPublisherDto>(publisher);
+        
+        //Act
+        var result = _gameServiceTest.GetPublisherOfGame(gameEntity.Key);
+        
+        //Assert
+        result.Should().NotBeNull();
+        result.Should().BeEquivalentTo(publisherDto);
     }
 
     [Fact]
@@ -79,10 +107,8 @@ public class GameServiceTests
         var result = _gameServiceTest.GetGameById(gameEntity.Id);
 
         //Assert
-        Assert.Equal(gameDto.Id, result.Id);
-        Assert.Equal(gameDto.Name, result.Name);
-        Assert.Equal(gameDto.Key, result.Key);
-        Assert.Equal(gameDto.Description, result.Description);
+        result.Should().NotBeNull();
+        result.Should().BeEquivalentTo(gameDto);
     }
 
     [Fact]
@@ -99,6 +125,7 @@ public class GameServiceTests
         var result = _gameServiceTest.GetGenresOfGame(gameEntity.Key);
         
         //Assert
+        result.Should().NotBeNull();
         genreDtos.Zip(result).ToList().ForEach(pair => ValidateGenres(pair.First, pair.Second));
     }
 
@@ -122,10 +149,11 @@ public class GameServiceTests
         var result = _gameServiceTest.GetPlatformsOfGame(gameEntity.Key);
         
         //Assert
-        platformDtos.Zip(result).ToList().ForEach(pair => ValidateGenres(pair.First, pair.Second));
+        result.Should().NotBeNull();
+        platformDtos.Zip(result).ToList().ForEach(pair => ValidatePlatforms(pair.First, pair.Second));
     }
 
-    private void ValidateGenres(PlatformDto platformDto, PlatformDto result)
+    private void ValidatePlatforms(PlatformDto platformDto, PlatformDto result)
     {
         platformDto.Type.Should().Be(result.Type);
         platformDto.Id.Should().Be(result.Id);
@@ -142,7 +170,41 @@ public class GameServiceTests
         //Act
         _gameServiceTest.DeleteGame(gameEntity.Key);
         
-        //Assert=
-        Assert.Null(_gameDbServiceMock.Object.GetGameByKeyDb(gameEntity.Key));
+        //Assert
+        _gameDbServiceMock.Verify(s => s.GetGameByKeyDb(gameEntity.Key), Times.Once);
+        _gameDbServiceMock.Verify(s => s.DeleteGameDb(gameEntity), Times.Once);
+    }
+    
+    
+    [Fact]
+    public void GameService_CreateGame_CreatesGameEntity()
+    {
+        //Arrange
+        var gameDto = TestUtils.GameEntityUtil.CreateGameDto();
+        var game = _gameMapper.Map<CreateGameDto, Game>(gameDto);
+        var gameEntity = _gameMapper.Map<Game, GameEntity>(game);
+        _gameDbServiceMock.Setup(x => x.CreateGameDb(gameEntity));
+        
+        //Act
+        _gameServiceTest.CreateGame(gameDto);
+        
+        //Assert
+        _gameDbServiceMock.Verify(db => db.CreateGameDb(It.IsAny<GameEntity>()), Times.Once);
+    }
+    
+    [Fact]
+    public void GameService_UpdateGame_UpdatesGameEntity()
+    {
+        //Arrange
+        var gameDto = TestUtils.GameEntityUtil.CreateUpdateGameDto();
+        var game = _gameMapper.Map<UpdateGameDto, Game>(gameDto);
+        var gameEntity = _gameMapper.Map<Game, GameEntity>(game);
+        _gameDbServiceMock.Setup(x => x.UpdateGameDb(gameEntity));
+        
+        //Act
+        _gameServiceTest.UpdateGame(gameDto);
+        
+        //Assert
+        _gameDbServiceMock.Verify(s => s.UpdateGameDb(It.IsAny<GameEntity>()), Times.Once);
     }
 }

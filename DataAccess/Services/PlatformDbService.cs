@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -20,7 +21,7 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 
     public void UpdatePlatformDb(PlatformEntity platformEntity)
     {
-        gameDbContext.Entry(platformEntity).State = EntityState.Modified;
+        gameDbContext.PlatformEntities.Update(platformEntity);
         gameDbContext.SaveChanges();
     }
 
@@ -32,19 +33,15 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
 
     public PlatformEntity GetPlatformByGuid(Guid id)
     {
-        return (from t in gameDbContext.PlatformEntities
-            where t.Id == id
-            select t).First();
+        return gameDbContext.PlatformEntities.FirstOrDefault(t => t.Id == id)?? throw new SqlNullValueException();
     }
 
     public ICollection<GameEntity> GetGamesByPlatformId(Guid id)
     {
-        
-        var platform = (from t in gameDbContext.PlatformEntities
-            where t.Id == id
-            select t).First();
-
-        return platform.GameEntities;
+        return gameDbContext.PlatformEntities
+            .Where(t => t.Id == id)
+            .SelectMany(t => t.GameEntities)
+            .ToList();
     }
 
     public bool NotExists(Guid id)

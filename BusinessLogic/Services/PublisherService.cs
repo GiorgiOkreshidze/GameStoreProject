@@ -1,7 +1,7 @@
-using System.Collections;
 using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
+using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
@@ -9,7 +9,7 @@ using DTOs.PublisherDtos;
 
 namespace BusinessLogic.Services;
 
-public class PublisherService(IPublisherDbService publisherDbService, IMapper publisherMapper) : IPublisherService
+public class PublisherService(IPublisherDbService publisherDbService, IMapper publisherMapper, IValidationsHandler validator) : IPublisherService
 {
     public void CreatePublisher(CreatePublisherDto publisherDto)
     {
@@ -24,7 +24,7 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
 
     public GetPublisherDto GetPublisherByCompanyName(string companyName)
     {
-        //ValidateCompanyName(companyName);
+        validator.ValidateCompanyName(companyName);
 
         var publisherEntity = publisherDbService.GetPublisherByCompanyNameDb(companyName);
 
@@ -47,8 +47,8 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
     public void UpdatePublisher(UpdatePublisherDto publisherDto)
     {
         var publisher = publisherMapper.Map<UpdatePublisherDto, Publisher>(publisherDto);
-        //Validate publisher Id
-        // Validate Publisher CompanyName
+        
+        validator.ValidatePublisherId(publisher.Id);
         
         var publisherEntity = publisherMapper.Map<Publisher, PublisherEntity>(publisher);
 
@@ -57,14 +57,14 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
 
     public void DeletePublisher(Guid id)
     {
-        //validate Id
+        validator.ValidatePublisherId(id);
 
         publisherDbService.DeletePublisherDb(id);
     }
 
     public ICollection<GetGameDto> GetGamesOfPublisher(string companyName)
     {
-        //validate CompanyName
+        validator.ValidateCompanyName(companyName);
 
         var gameEntities = publisherDbService.GetGamesOfPublisherDb(companyName);
 

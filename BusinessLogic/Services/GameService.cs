@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Text.RegularExpressions;
 using AutoMapper;
 using BusinessLogic.Contracts;
-using BusinessLogic.Exceptions;
 using BusinessLogic.Models;
+using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
@@ -14,7 +13,7 @@ using DTOs.PublisherDtos;
 namespace BusinessLogic.Services;
 
 public class GameService(IGameDbService gameDbService, IMapper gameMapper,
-    IGenreDbService genreDbService, IPlatformDbService platformDbService, IPublisherDbService publisherDbService) : IGameService
+    IValidationsHandler validator) : IGameService
 {
     public ICollection<GetGameDto> GetAllGames()
     {
@@ -43,9 +42,9 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             game.Key = GenerateKeyFromName(game.Name);
         }
         
-        ValidateGenres(game);
-        ValidatePlatforms(game);
-        ValidatePublisherId(game.PublisherId);
+        validator.ValidateGenres(game.Genres);
+        validator.ValidatePlatforms(game.Platforms);
+        validator.ValidatePublisherId(game.PublisherId);
 
         GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
         
@@ -82,10 +81,10 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     {
         Game game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
         
-        ValidateGameId(game.Id);
-        ValidateGenres(game);
-        ValidatePlatforms(game);
-        ValidatePublisherId(game.PublisherId);
+        validator.ValidateGameId(game.Id);
+        validator.ValidateGenres(game.Genres);
+        validator.ValidatePlatforms(game.Platforms);
+        validator.ValidatePublisherId(game.PublisherId);
         
         GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
 
@@ -115,21 +114,20 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             gameEntity.PlatformEntities.Add(stubPlatform);
         }
         
-        gameDbService.ClearGenresByGameId(gameEntity.Id);
-        gameDbService.ClearPlatformsByGameId(gameEntity.Id);
+        
         gameDbService.UpdateGameDb(gameEntity);
     }
 
     public void DeleteGame(string key)
     {
-        ValidateGameKey(key);
+        validator.ValidateGameKey(key);
         var entity = gameDbService.GetGameByKeyDb(key);
         gameDbService.DeleteGameDb(entity);
     }
 
     public GetGameDto GetGameByKey(string key)
     {
-        ValidateGameKey(key);
+        validator.ValidateGameKey(key);
         var gameEntity = gameDbService.GetGameByKeyDb(key);
         
         var game = gameMapper.Map<GameEntity, Game>(gameEntity);
@@ -140,7 +138,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public GetGameDto GetGameById(Guid id)
     {
-        ValidateGameId(id);
+        validator.ValidateGameId(id);
         var gameEntity = gameDbService.GetGameByIdDb(id);
         
         var game = gameMapper.Map<GameEntity, Game>(gameEntity);
@@ -151,7 +149,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public ICollection<GenreDto> GetGenresOfGame(string key)
     {
-        ValidateGameKey(key);
+        validator.ValidateGameKey(key);
         var genreEntities =gameDbService.GetGenresOfGameDb(key);
         
         var genres = gameMapper.Map<ICollection<GenreEntity>, ICollection<Genre>>(genreEntities);
@@ -162,7 +160,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public ICollection<PlatformDto> GetPlatformsOfGame(string key)
     {
-        ValidateGameKey(key);
+        validator.ValidateGameKey(key);
         var platformEntities = gameDbService.GetPlatformsOfGameDb(key);
 
         var platform = gameMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
@@ -173,7 +171,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public GetPublisherDto GetPublisherOfGame(string key)
     {
-        ValidateGameKey(key);
+        validator.ValidateGameKey(key);
         var publisherEntity = gameDbService.GetPublisherOfGameDb(key);
         
         var publisher = gameMapper.Map<PublisherEntity, Publisher>(publisherEntity);
@@ -195,52 +193,4 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
         return uniqueKey;
     }
     
-    
-    
-    
-    private void ValidateGenres(Game game)
-    {
-        foreach (var genreId in game.Genres)
-        {
-            if (genreDbService.NotExists(genreId))
-            {
-                throw new GenreNotExistsException("Genre with genreId not exists");
-            }
-        }
-    }
-
-    private void ValidatePlatforms(Game game)
-    {
-        foreach (var platformId in game.Platforms)
-        {
-            if (platformDbService.NotExists(platformId))
-            {
-                throw new PlatformNotExistsException("Platform with platformId not exists");
-            }
-        }
-    }
-    
-    private void ValidateGameId(Guid id)
-    {
-        if (gameDbService.NotExists(id))
-        {
-            throw new GameNotExistsException("Game not exists");
-        }
-    }
-
-    private void ValidateGameKey(string key)
-    {
-        if (gameDbService.KeyNotExists(key))
-        {
-            throw new KeyNotFoundException();
-        }
-    }
-
-    private void ValidatePublisherId(Guid? id)
-    {
-        if (publisherDbService.PublisherNotExists(id))
-        {
-            throw new PublisherNotExistsException("Publisher with that Id doesn't exists");
-        }
-    }
 }

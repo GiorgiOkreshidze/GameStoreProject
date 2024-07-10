@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -15,7 +16,7 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
 
     public PublisherEntity GetPublisherByCompanyNameDb(string companyName)
     {
-        var publisherEntity = gameDbContext.PublisherEntities.First(x => x.CompanyName == companyName);
+        var publisherEntity = gameDbContext.PublisherEntities.FirstOrDefault(x => x.CompanyName == companyName)?? throw new SqlNullValueException();
 
         return publisherEntity;
     }
@@ -27,15 +28,13 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
 
     public void UpdatePublisherDb(PublisherEntity publisherEntity)
     {
-        gameDbContext.Entry(publisherEntity).State = EntityState.Modified;
+        gameDbContext.PublisherEntities.Update(publisherEntity);
         gameDbContext.SaveChanges();
     }
 
     public void DeletePublisherDb(Guid id)
     {
-        var publisherEntity = (from t in gameDbContext.PublisherEntities
-            where t.Id == id
-            select t).First();
+        var publisherEntity = gameDbContext.PublisherEntities.FirstOrDefault(t => t.Id == id)?? throw new SqlNullValueException();
         
         gameDbContext.Entry(publisherEntity).State = EntityState.Deleted;
         gameDbContext.SaveChanges();
@@ -43,13 +42,18 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
 
     public ICollection<GameEntity> GetGamesOfPublisherDb(string companyName)
     {
-        return (from t in gameDbContext.GameEntities
-            where t.PublisherEntity.CompanyName == companyName
-            select t).ToList();
+        return gameDbContext.GameEntities
+            .Where(t => t.PublisherEntity.CompanyName == companyName)
+            .ToList();
     }
 
     public bool PublisherNotExists(Guid? id)
     {
         return !gameDbContext.PublisherEntities.Any(t => t.Id == id);
+    }
+    
+    public bool CompanyNameNotExists(string companyName)
+    {
+        return !gameDbContext.PublisherEntities.Any(t => t.CompanyName == companyName);
     }
 }

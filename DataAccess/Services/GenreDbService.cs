@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -15,9 +16,7 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
 
     public GenreEntity GetGenreByGuid(Guid guid)
     { 
-        return (from t in gameDbContext.GenreEntities
-            where t.Id == guid
-            select t).First();
+        return gameDbContext.GenreEntities.FirstOrDefault(t => t.Id == guid)?? throw new SqlNullValueException();
     }
 
     public ICollection<GenreEntity> GetAllGenresDb()
@@ -27,7 +26,7 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
 
     public void UpdateGenreDb(GenreEntity updateGenreEntity)
     {
-        gameDbContext.Entry(updateGenreEntity).State = EntityState.Modified;
+        gameDbContext.GenreEntities.Update(updateGenreEntity);
         gameDbContext.SaveChanges();
     }
 
@@ -39,18 +38,17 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
 
     public ICollection<GameEntity> GetGamesByGenreId(Guid id)
     {
-         var entity = (from t in gameDbContext.GenreEntities
-            where t.Id == id
-            select t).First();
-
-         return entity.GameEntities;
+        return gameDbContext.GenreEntities
+            .Where(t => t.Id == id)
+            .SelectMany(t => t.GameEntities)
+            .ToList();
     }
 
     public ICollection<GenreEntity> GetSubGenresDb(Guid id)
     {
-        return (from t in gameDbContext.GenreEntities
-            where t.ParentGenreId == id
-            select t).ToList();
+        return gameDbContext.GenreEntities
+            .Where(t => t.ParentGenreId == id)
+            .ToList();
     }
 
     public bool NotExists(Guid id)

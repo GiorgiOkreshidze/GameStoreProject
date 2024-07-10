@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -22,10 +23,11 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public void UpdateGameDb(GameEntity gameEntity)
     {
-        
+        ClearGenresByGameId(gameEntity.Id);
+        ClearPlatformsByGameId(gameEntity.Id);
         gameDbContext.AttachRange(gameEntity.PlatformEntities);
         gameDbContext.AttachRange(gameEntity.GenreEntities);
-        gameDbContext.Entry(gameEntity).State = EntityState.Modified;
+        gameDbContext.GameEntities.Update(gameEntity);
         gameDbContext.SaveChanges();
     }
 
@@ -64,17 +66,12 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public GameEntity GetGameByKeyDb(string key)
     {
-        
-        return (from t in gameDbContext.GameEntities
-            where t.Key == key
-            select t).First();
+        return gameDbContext.GameEntities.FirstOrDefault(t => t.Key == key) ?? throw new SqlNullValueException();
     }
 
     public GameEntity GetGameByIdDb(Guid id)
     {
-        return (from t in gameDbContext.GameEntities
-            where t.Id == id
-            select t).First();
+        return gameDbContext.GameEntities.FirstOrDefault(t => t.Id == id)?? throw new SqlNullValueException();
     }
 
     public int GetGamesNumber()
@@ -84,27 +81,27 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public ICollection<GenreEntity> GetGenresOfGameDb(string key)
     {
-        var entity = (from t in gameDbContext.GameEntities.Include(x => x.GenreEntities)
-            where t.Key == key
-            select t).First();
+        var entity = gameDbContext.GameEntities
+            .Include(x => x.GenreEntities)
+            .FirstOrDefault(t => t.Key == key)?? throw new SqlNullValueException();
         
         return entity.GenreEntities;
     }
 
     public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key)
     {
-        var entity = (from t in gameDbContext.GameEntities.Include(x => x.PlatformEntities)
-            where t.Key == key
-            select t).First();
+        var entity = gameDbContext.GameEntities
+            .Include(x => x.PlatformEntities)
+            .FirstOrDefault(t => t.Key == key)?? throw new SqlNullValueException();
         
         return entity.PlatformEntities;
     }
     
     public PublisherEntity GetPublisherOfGameDb(string key)
     {
-        var entity = (from t in gameDbContext.GameEntities.Include(x => x.PublisherEntity)
-            where t.Key == key
-            select t).First();
+        var entity = gameDbContext.GameEntities
+            .Include(x => x.PublisherEntity)
+            .FirstOrDefault(t => t.Key == key)?? throw new SqlNullValueException();
         
         return entity.PublisherEntity;
     }

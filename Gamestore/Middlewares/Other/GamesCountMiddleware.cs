@@ -1,9 +1,9 @@
 using DataAccess.Contracts;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace Gamestore;
+namespace Gamestore.Middlewares.Other;
 
-public class CustomMiddleware(IMemoryCache cache) : IMiddleware
+public class GamesCountMiddleware(IMemoryCache cache) : IMiddleware
 {
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
@@ -26,11 +26,11 @@ public class CustomMiddleware(IMemoryCache cache) : IMiddleware
     }
 }
 
-public static class CustomMiddlewareExtensions
+public static class GamesCountMiddlewareExtensions
 {
-    public static IApplicationBuilder UseCustomMiddleware(
+    public static IApplicationBuilder UseGamesCountMiddleware(
         this IApplicationBuilder builder)
     {
-        return builder.UseMiddleware<CustomMiddleware>();
+        return builder.UseMiddleware<GamesCountMiddleware>();
     }
 }

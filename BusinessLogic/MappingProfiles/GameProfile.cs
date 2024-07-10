@@ -4,6 +4,7 @@ using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
+using DTOs.PublisherDtos;
 
 namespace BusinessLogic.MappingProfiles;
 
@@ -19,5 +20,7 @@ public class GameProfile : Profile
         CreateMap<Genre, GenreDto>().ReverseMap();
         CreateMap<PlatformEntity, Platform>().ReverseMap();
         CreateMap<Platform, PlatformDto>().ReverseMap();
+        CreateMap<PublisherEntity, Publisher>().ReverseMap();
+        CreateMap<Publisher, GetPublisherDto>().ReverseMap();
     }
 }

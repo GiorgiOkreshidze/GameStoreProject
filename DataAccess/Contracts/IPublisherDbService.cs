@@ -17,4 +17,6 @@ public interface IPublisherDbService
     public ICollection<GameEntity> GetGamesOfPublisherDb(string companyName);
     
     public bool PublisherNotExists(Guid? id);
+
+    public bool CompanyNameNotExists(string companyName);
 }

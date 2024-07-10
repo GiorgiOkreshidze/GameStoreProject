@@ -8,7 +8,6 @@ public class RequestLoggingMiddleware(RequestDelegate next)
     public async Task InvokeAsync(HttpContext context)
     {
         var stopwatch = Stopwatch.StartNew();
-        var request = await FormatRequest(context.Request);
         var originalBodyStream = context.Response.Body;
 
         using (var responseBody = new MemoryStream())
@@ -18,21 +17,10 @@ public class RequestLoggingMiddleware(RequestDelegate next)
             await next(context);
             stopwatch.Stop();
             var response = await FormatResponse(context.Response);
-            LogRequestDetails(context, request, response, stopwatch.ElapsedMilliseconds);
+            LogRequestDetails(context, response, stopwatch.ElapsedMilliseconds);
             await responseBody.CopyToAsync(originalBodyStream);
             //LogExceptionDetails(context, stopwatch.ElapsedMilliseconds);
         }
-    }
-
-    private async Task<string> FormatRequest(HttpRequest request)
-    {
-        request.EnableBuffering();
-        var body = request.Body;
-        var buffer = new byte[Convert.ToInt32(request.ContentLength)];
-        await request.Body.ReadAsync(buffer, 0, buffer.Length);
-        var bodyAsText = System.Text.Encoding.UTF8.GetString(buffer);
-        request.Body = body;
-        return $"{request.Scheme} {request.Host}{request.Path} {request.QueryString} {bodyAsText}";
     }
 
     private async Task<string> FormatResponse(HttpResponse response)
@@ -43,14 +31,13 @@ public class RequestLoggingMiddleware(RequestDelegate next)
         return text;
     }
 
-    private void LogRequestDetails(HttpContext context, string request, string response, long elapsedMilliseconds)
+    private void LogRequestDetails(HttpContext context, string response, long elapsedMilliseconds)
     {
-        Log.Information("Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nRequest Body: {RequestBody}\nResponse Body: {ResponseBody}",
+        Log.Information("Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nResponse Body: {ResponseBody}",
             context.Request.Method,
             context.Request.Path,
             context.Response.StatusCode,
             elapsedMilliseconds,
-            request,
             response);
     }
 
