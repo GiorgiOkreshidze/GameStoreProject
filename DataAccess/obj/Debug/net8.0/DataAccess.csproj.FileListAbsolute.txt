@@ -1,0 +1,14 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\bin\Debug\net8.0\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
