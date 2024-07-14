@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "wq7gEVKKZkOYtZH2Eiz4WhKD6EFwRWIQtypjwmy0DjA=",
+  "Hash": "SnTNYt28kvQX7hbAedkXPPPHNJ12/WtE4lQ8+HlU5n4=",
   "Source": "Gamestore",
   "BasePath": "_content/Gamestore",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Gamestore\\wwwroot",
+      "Source": "Gamestore",
+      "ContentRoot": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\wwwroot\\",
+      "BasePath": "_content/Gamestore",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

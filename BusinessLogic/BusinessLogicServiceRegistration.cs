@@ -1,6 +1,7 @@
 using System.Reflection;
 using BusinessLogic.Contracts;
 using BusinessLogic.Services;
+using BusinessLogic.Validations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BusinessLogic;
@@ -15,6 +16,7 @@ public static class BusinessLogicServiceRegistration
         services.AddScoped<IPlatformService, PlatformService>();
         services.AddScoped<IGenreService, GenreService>();
         services.AddScoped<IPublisherService, PublisherService>();
+        services.AddScoped<IValidationsHandler, ValidationsHandler>();
 
         return services;
     }
