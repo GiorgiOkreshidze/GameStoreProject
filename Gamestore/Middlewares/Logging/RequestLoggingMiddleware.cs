@@ -9,44 +9,43 @@ public class RequestLoggingMiddleware(RequestDelegate next)
     {
         var stopwatch = Stopwatch.StartNew();
         var originalBodyStream = context.Response.Body;
+        var requestBody = await ReadRequestBody(context.Request);
 
         using var responseBody = new MemoryStream();
         context.Response.Body = responseBody;
 
         await next(context);
         stopwatch.Stop();
-        var response = await FormatResponse(context.Response);
-        LogRequestDetails(context, response, stopwatch.ElapsedMilliseconds);
+        var response = await ReadResponseBody(context.Response);
+        LogRequestDetails(context, requestBody, response, stopwatch.ElapsedMilliseconds);
         await responseBody.CopyToAsync(originalBodyStream);
-
-        // LogExceptionDetails(context, stopwatch.ElapsedMilliseconds);
     }
 
-    private static async Task<string> FormatResponse(HttpResponse response)
+    private static async Task<string> ReadResponseBody(HttpResponse response)
     {
         response.Body.Seek(0, SeekOrigin.Begin);
-        var text = await new StreamReader(response.Body).ReadToEndAsync();
+        var body = await new StreamReader(response.Body).ReadToEndAsync();
         response.Body.Seek(0, SeekOrigin.Begin);
-        return text;
+        return body;
     }
 
-    private static void LogRequestDetails(HttpContext context, string response, long elapsedMilliseconds)
+    private static void LogRequestDetails(HttpContext context, string requestBody, string responseBody, long elapsedMilliseconds)
     {
         Log.Information(
-            "Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nResponse Body: {ResponseBody}",
+            "Request {Method} {Url} from {IpAddress} => {StatusCode} in {ElapsedMilliseconds}ms\nRequest Body: {RequestBody}\nResponse Body: {ResponseBody}",
             context.Request.Method,
             context.Request.Path,
+            context.Connection.RemoteIpAddress,
             context.Response.StatusCode,
             elapsedMilliseconds,
-            response);
+            requestBody,
+            responseBody);
     }
 
-    /*private void LogExceptionDetails(HttpContext context, long elapsedMilliseconds)
+    private static async Task<string> ReadRequestBody(HttpRequest request)
     {
-        Log.Error("Request {Method} {Url} => {StatusCode} in {ElapsedMilliseconds}ms\nException: {Exception}",
-            context.Request.Method,
-            context.Request.Path,
-            context.Response.StatusCode,
-            elapsedMilliseconds);
-    }*/
+        request.EnableBuffering();
+        var body = await new StreamReader(request.Body).ReadToEndAsync();
+        return body;
+    }
 }
