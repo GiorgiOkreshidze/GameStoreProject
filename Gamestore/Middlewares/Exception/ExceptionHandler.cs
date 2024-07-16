@@ -1,13 +1,26 @@
+#pragma warning disable IDE0005
 using BusinessLogic.Exceptions;
-using Microsoft.AspNetCore.Diagnostics;
+#pragma warning restore IDE0005
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
 namespace Gamestore.Middlewares.Exception;
 
-public class ExceptionHandler : IExceptionHandler
+public class ExceptionHandler(RequestDelegate next)
 {
-    public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, System.Exception exception, CancellationToken cancellationToken)
+    public async Task InvokeAsync(HttpContext httpContext)
+    {
+        try
+        {
+            await next(httpContext);
+        }
+        catch (System.Exception ex)
+        {
+            await HandleExceptionAsync(httpContext, ex);
+        }
+    }
+
+    private static async ValueTask<bool> HandleExceptionAsync(HttpContext httpContext, System.Exception exception)
     {
         var problemDetails = new ProblemDetails
         {
@@ -52,7 +65,7 @@ public class ExceptionHandler : IExceptionHandler
 
         problemDetails.Status = httpContext.Response.StatusCode;
 
-        await httpContext.Response.WriteAsJsonAsync(problemDetails, cancellationToken).ConfigureAwait(false);
+        await httpContext.Response.WriteAsJsonAsync(problemDetails).ConfigureAwait(false);
 
         return true;
     }

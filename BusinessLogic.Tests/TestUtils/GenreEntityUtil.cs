@@ -22,8 +22,11 @@ public static class GenreEntityUtil
     {
         return new CreateGenreDto
         {
-            Name = GenreEntityTest.Name,
-            ParentGenreId = GenreEntityTest.ParentGenreId,
+            Genre = new GGenreDto
+            {
+                Name = GenreEntityTest.Name,
+                ParentGenreId = GenreEntityTest.ParentGenreId,
+            },
         };
     }
 

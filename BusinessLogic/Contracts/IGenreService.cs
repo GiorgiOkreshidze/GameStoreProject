@@ -1,5 +1,7 @@
+#pragma warning disable IDE0005
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
+#pragma warning restore IDE0005
 
 namespace BusinessLogic.Contracts;
 

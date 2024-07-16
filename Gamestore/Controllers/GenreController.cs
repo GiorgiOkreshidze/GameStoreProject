@@ -1,5 +1,7 @@
+#pragma warning disable IDE0005
 using BusinessLogic.Contracts;
 using DTOs.GenreDtos;
+#pragma warning restore IDE0005
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
@@ -9,7 +11,7 @@ namespace Gamestore.Controllers;
 public class GenreController(IGenreService genreService) : Controller
 {
     [HttpPost]
-    public IActionResult CreateGenre(CreateGenreDto createGenreDto)
+    public IActionResult CreateGenre([FromBody] CreateGenreDto createGenreDto)
     {
         genreService.CreateGenre(createGenreDto);
 

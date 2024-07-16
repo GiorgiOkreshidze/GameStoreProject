@@ -80,13 +80,15 @@ public static class GameEntityUtil
     {
         return new CreateGameDto
         {
-            Name = GameEntityTest.Name,
-            Key = GameEntityTest.Key,
-            Description = GameEntityTest.Description,
-            UnitInStock = GameEntityTest.UnitInStock,
-            Discount = GameEntityTest.Discount,
-            Price = GameEntityTest.Price,
-            PublisherId = GameEntityTest.PublisherId,
+            Game = new GameDto
+            {
+                Name = GameEntityTest.Name,
+                Key = GameEntityTest.Key,
+                Description = GameEntityTest.Description,
+                UnitInStock = GameEntityTest.UnitInStock,
+                Discount = GameEntityTest.Discount,
+                Price = GameEntityTest.Price,
+            },
             Genres = CreateGenreEntityIds(),
             Platforms = CreatePlatformEntityIds(),
         };

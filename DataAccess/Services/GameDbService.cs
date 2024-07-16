@@ -63,7 +63,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public GameEntity GetGameByKeyDb(string key)
     {
-        return gameDbContext.GameEntities.FirstOrDefault(t => t.Key == key) ?? throw new SqlNullValueException();
+        return gameDbContext.GameEntities.FirstOrDefault(t => t.Key == key);
     }
 
     public GameEntity GetGameByIdDb(Guid id)

@@ -34,9 +34,12 @@ public static class PublisherEntityUtil
     {
         return new CreatePublisherDto
         {
-            CompanyName = PublisherEntityTest.CompanyName,
-            HomePage = PublisherEntityTest.HomePage,
-            Description = PublisherEntityTest.Description,
+            Publisher = new PublisherDto
+            {
+                CompanyName = PublisherEntityTest.CompanyName,
+                HomePage = PublisherEntityTest.HomePage,
+                Description = PublisherEntityTest.Description,
+            },
         };
     }
 

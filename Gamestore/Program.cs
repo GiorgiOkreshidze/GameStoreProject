@@ -1,11 +1,16 @@
+#pragma warning disable IDE0005
 using BusinessLogic;
 using DataAccess;
+#pragma warning restore IDE0005
 using Gamestore.Middlewares.Exception;
+
 using Gamestore.Middlewares.Logging;
 using Gamestore.Middlewares.Other;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMvc();
 
 builder.Services.AddBusinessLogicServices();
 builder.Services.AddDatabaseServices(builder.Configuration);
@@ -14,8 +19,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<GamesCountMiddleware>();
-
-builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 builder.Services.AddMemoryCache();
 
@@ -28,6 +31,8 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod()
                 .WithExposedHeaders("x-total-numbers-of-games");
         });
 });
@@ -53,12 +58,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
 app.UseCors(exposeHeadersPolicy);
 
 app.UseMiddleware<RequestLoggingMiddleware>();
-
-app.UseExceptionHandler(_ => { });
-
+app.UseMiddleware<ExceptionHandler>();
 app.UseAuthorization();
 
 app.MapControllers();

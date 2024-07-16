@@ -1,10 +1,12 @@
 using AutoMapper;
 using BusinessLogic.Models;
+#pragma warning disable IDE0005
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
+#pragma warning restore IDE0005
 
 namespace BusinessLogic.MappingProfiles;
 
@@ -15,6 +17,7 @@ public class GameProfile : Profile
         CreateMap<GameEntity, Game>().ReverseMap();
         CreateMap<Game, GetGameDto>().ReverseMap();
         CreateMap<Game, CreateGameDto>().ReverseMap();
+        CreateMap<GameDto, Game>().ReverseMap();
         CreateMap<Game, UpdateGameDto>().ReverseMap();
         CreateMap<GenreEntity, Genre>().ReverseMap();
         CreateMap<Genre, GenreDto>().ReverseMap();

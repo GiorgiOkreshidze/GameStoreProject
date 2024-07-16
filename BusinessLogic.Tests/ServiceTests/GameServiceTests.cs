@@ -35,6 +35,7 @@ public class GameServiceTests
             cfg.CreateMap<Platform, PlatformDto>().ReverseMap();
             cfg.CreateMap<PublisherEntity, Publisher>().ReverseMap();
             cfg.CreateMap<Publisher, GetPublisherDto>().ReverseMap();
+            cfg.CreateMap<GameDto, Game>().ReverseMap();
         });
         _gameMapper = config.CreateMapper();
         _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _validatorMock.Object);
@@ -169,7 +170,10 @@ public class GameServiceTests
     {
         // Arrange
         var gameDto = TestUtils.GameEntityUtil.CreateGameDto();
-        var game = _gameMapper.Map<CreateGameDto, Game>(gameDto);
+        Game game = _gameMapper.Map<GameDto, Game>(gameDto.Game);
+        game.Genres = gameDto.Genres;
+        game.Platforms = gameDto.Platforms;
+        game.PublisherId = gameDto.Publisher;
         var gameEntity = _gameMapper.Map<Game, GameEntity>(game);
         _gameDbServiceMock.Setup(x => x.CreateGameDb(gameEntity));
 

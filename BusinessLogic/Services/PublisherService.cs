@@ -2,10 +2,12 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.PublisherDtos;
+#pragma warning restore IDE0005
 
 namespace BusinessLogic.Services;
 
@@ -13,7 +15,7 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
 {
     public void CreatePublisher(CreatePublisherDto publisherDto)
     {
-        var publisher = publisherMapper.Map<CreatePublisherDto, Publisher>(publisherDto);
+        var publisher = publisherMapper.Map<PublisherDto, Publisher>(publisherDto.Publisher);
 
         publisher.Id = Guid.NewGuid();
 

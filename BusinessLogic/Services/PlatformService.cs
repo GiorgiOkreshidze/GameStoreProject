@@ -2,10 +2,12 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.PlatformDtos;
+#pragma warning restore IDE0005
 
 namespace BusinessLogic.Services;
 
@@ -14,7 +16,7 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
 {
     public void CreatePlatform(CreatePlatformDto createPlatformDto)
     {
-        var platform = platformMapper.Map<CreatePlatformDto, Platform>(createPlatformDto);
+        var platform = platformMapper.Map<PPlatformDto, Platform>(createPlatformDto.Platform);
 
         platform.Id = Guid.NewGuid();
 

@@ -30,6 +30,7 @@ public class PublisherServiceTests
             cfg.CreateMap<Publisher, CreatePublisherDto>().ReverseMap();
             cfg.CreateMap<Publisher, GetPublisherDto>().ReverseMap();
             cfg.CreateMap<Publisher, UpdatePublisherDto>().ReverseMap();
+            cfg.CreateMap<PublisherDto, Publisher>().ReverseMap();
         });
         _publisherMapper = config.CreateMapper();
         _publisherServiceTest = new PublisherService(_publisherDbServiceMock.Object, _publisherMapper, _validatorMock.Object);
@@ -74,7 +75,7 @@ public class PublisherServiceTests
     {
         // Arrange
         var publisherDto = TestUtils.PublisherEntityUtil.CreatePublisherDto();
-        var publisher = _publisherMapper.Map<CreatePublisherDto, Publisher>(publisherDto);
+        var publisher = _publisherMapper.Map<PublisherDto, Publisher>(publisherDto.Publisher);
         var publisherEntity = _publisherMapper.Map<Publisher, PublisherEntity>(publisher);
         _publisherDbServiceMock.Setup(x => x.CreatePublisherDb(publisherEntity));
 

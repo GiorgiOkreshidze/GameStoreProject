@@ -31,6 +31,7 @@ public class PlatformServiceTests
             cfg.CreateMap<Platform, CreatePlatformDto>().ReverseMap();
             cfg.CreateMap<Platform, PlatformDto>().ReverseMap();
             cfg.CreateMap<Platform, UpdatePlatformDto>().ReverseMap();
+            cfg.CreateMap<PPlatformDto, Platform>().ReverseMap();
         });
         _platformMapper = config.CreateMapper();
         _platformServiceTest = new PlatformService(_platformDbServiceMock.Object, _platformMapper, _validatorMock.Object);
@@ -92,7 +93,7 @@ public class PlatformServiceTests
     {
         // Arrange
         var platformDto = TestUtils.PlatformEntityUtil.CreatePlatformDto();
-        var platform = _platformMapper.Map<CreatePlatformDto, Platform>(platformDto);
+        var platform = _platformMapper.Map<PPlatformDto, Platform>(platformDto.Platform);
         var platformEntity = _platformMapper.Map<Platform, PlatformEntity>(platform);
         _platformDbServiceMock.Setup(x => x.CreatePlatformDb(platformEntity));
 

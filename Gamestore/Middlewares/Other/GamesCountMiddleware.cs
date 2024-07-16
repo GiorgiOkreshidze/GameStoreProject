@@ -1,4 +1,6 @@
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
+#pragma warning restore IDE0005
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Gamestore.Middlewares.Other;

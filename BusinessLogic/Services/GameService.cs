@@ -3,18 +3,23 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
+#pragma warning restore IDE0005
+using System.Globalization;
 
 namespace BusinessLogic.Services;
 
 public partial class GameService(IGameDbService gameDbService, IMapper gameMapper,
     IValidationsHandler validator) : IGameService
 {
+    private static readonly Regex MyRegex = new(@"\s+", RegexOptions.Compiled);
+
     public ICollection<GetGameDto> GetAllGames()
     {
         var gameEntities = gameDbService.GetAllGamesDb();
@@ -33,7 +38,10 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
 
     public void CreateGame(CreateGameDto createGameDto)
     {
-        Game game = gameMapper.Map<CreateGameDto, Game>(createGameDto);
+        Game game = gameMapper.Map<GameDto, Game>(createGameDto.Game);
+        game.Genres = createGameDto.Genres;
+        game.Platforms = createGameDto.Platforms;
+        game.PublisherId = createGameDto.Publisher;
 
         game.Id = Guid.NewGuid();
 
@@ -174,7 +182,7 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
 
     private static string GenerateKeyFromName(string name)
     {
-        var normalizedGameName = MyRegex().Replace(name, string.Empty).ToLower(System.Globalization.CultureInfo.CurrentCulture);
+        var normalizedGameName = MyRegex.Replace(name, string.Empty).ToLower(CultureInfo.CurrentCulture);
 
         var baseKey = normalizedGameName.Length > 8 ? normalizedGameName[..8] : normalizedGameName;
 
@@ -183,7 +191,4 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
         var uniqueKey = $"{baseKey}-{uniqueId % 1000}";
         return uniqueKey;
     }
-
-    [GeneratedRegex(@"\s+")]
-    private static partial Regex MyRegex();
 }

@@ -2,10 +2,12 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
+#pragma warning restore IDE0005
 
 namespace BusinessLogic.Services;
 
@@ -13,7 +15,7 @@ public class GenreService(IGenreDbService genreDbService, IMapper genreMapper, I
 {
     public void CreateGenre(CreateGenreDto createGenreDto)
     {
-        var genre = genreMapper.Map<CreateGenreDto, Genre>(createGenreDto);
+        var genre = genreMapper.Map<GGenreDto, Genre>(createGenreDto.Genre);
         validator.ValidateGenreName(genre.Name);
         genre.Id = Guid.NewGuid();
 

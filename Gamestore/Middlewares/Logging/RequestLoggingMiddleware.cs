@@ -9,13 +9,12 @@ public class RequestLoggingMiddleware(RequestDelegate next)
     {
         var stopwatch = Stopwatch.StartNew();
         var originalBodyStream = context.Response.Body;
-        var requestBody = await ReadRequestBody(context.Request);
-
         using var responseBody = new MemoryStream();
         context.Response.Body = responseBody;
 
         await next(context);
         stopwatch.Stop();
+        var requestBody = await ReadRequestBody(context.Request);
         var response = await ReadResponseBody(context.Response);
         LogRequestDetails(context, requestBody, response, stopwatch.ElapsedMilliseconds);
         await responseBody.CopyToAsync(originalBodyStream);

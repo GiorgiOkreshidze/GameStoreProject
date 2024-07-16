@@ -39,7 +39,10 @@ public static class PlatformEntityUtil
     {
         return new CreatePlatformDto
         {
-            Type = PlatformEntityTest.Type,
+            Platform = new PPlatformDto
+            {
+                Type = PlatformEntityTest.Type,
+            },
         };
     }
 
