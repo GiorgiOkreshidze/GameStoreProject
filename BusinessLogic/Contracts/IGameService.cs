@@ -26,4 +26,6 @@ public interface IGameService
     public ICollection<PlatformDto> GetPlatformsOfGame(string key);
 
     public GetPublisherDto GetPublisherOfGame(string key);
+
+    public void AddGameInCart(string key);
 }

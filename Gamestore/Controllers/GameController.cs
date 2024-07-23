@@ -1,9 +1,8 @@
 using System.Text;
-#pragma warning disable IDE0005
 using BusinessLogic.Contracts;
 using DTOs.GameDtos;
-#pragma warning restore IDE0005
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Gamestore.Controllers;
 
@@ -83,9 +82,16 @@ public class GameController(IGameService gameService) : Controller
         var game = gameService.GetGameByKey(key);
 
         var fileName = $"{game.Name}_{DateTime.UtcNow:yyyyMMddHHmmss}.txt";
-        var fileContent = Newtonsoft.Json.JsonConvert.SerializeObject(game);
+        var fileContent = JsonConvert.SerializeObject(game);
         var fileBytes = Encoding.UTF8.GetBytes(fileContent);
 
         return File(fileBytes, "text/plain", fileName);
+    }
+
+    [HttpPost("{key}/buy")]
+    public IActionResult AddGameInCart(string key)
+    {
+        gameService.AddGameInCart(key);
+        return Ok();
     }
 }

@@ -180,6 +180,13 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
         return publisherDto;
     }
 
+    public void AddGameInCart(string key)
+    {
+        validator.ValidateGameKey(key);
+        var gameEntity = gameDbService.GetGameByKeyDb(key);
+        gameDbService.AddGameEntityToCartDb(gameEntity);
+    }
+
     private static string GenerateKeyFromName(string name)
     {
         var normalizedGameName = MyRegex.Replace(name, string.Empty).ToLower(CultureInfo.CurrentCulture);

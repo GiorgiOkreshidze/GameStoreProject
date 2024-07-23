@@ -3,12 +3,13 @@ using BusinessLogic;
 using DataAccess;
 #pragma warning restore IDE0005
 using Gamestore.Middlewares.Exception;
-
 using Gamestore.Middlewares.Logging;
 using Gamestore.Middlewares.Other;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpClient();
 
 builder.Services.AddMvc();
 
@@ -63,6 +64,7 @@ app.UseRouting();
 app.UseCors(exposeHeadersPolicy);
 
 app.UseMiddleware<RequestLoggingMiddleware>();
+
 app.UseMiddleware<ExceptionHandler>();
 app.UseAuthorization();
 

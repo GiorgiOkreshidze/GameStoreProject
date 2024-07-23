@@ -24,9 +24,7 @@ public interface IGameDbService
 
     public PublisherEntity GetPublisherOfGameDb(string key);
 
-    public void ClearGenresByGameId(Guid id);
-
-    public void ClearPlatformsByGameId(Guid id);
+    public void AddGameEntityToCartDb(GameEntity gameEntity);
 
     public bool NotExists(Guid id);
 

@@ -1,6 +1,6 @@
 using DataAccess.Entities;
 using DTOs.GenreDtos;
-using static BusinessLogicTests.Constants.ConstantsGerne;
+using static BusinessLogicTests.Constants.Constants;
 
 namespace BusinessLogicTests.TestUtils;
 

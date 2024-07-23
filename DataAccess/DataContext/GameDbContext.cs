@@ -17,6 +17,12 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
 
     public DbSet<PublisherEntity> PublisherEntities { get; set; }
 
+    public DbSet<OrderEntity> OrderEntities { get; set; }
+
+    public DbSet<OrderGame> OrderGames { get; set; }
+
+    public DbSet<PaymentMethod> PaymentMethods { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<GameEntity>()
@@ -42,6 +48,13 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             .HasOne(x => x.ParentGenre)
             .WithMany()
             .HasForeignKey(x => x.ParentGenreId);
+
+        modelBuilder.Entity<GameEntity>()
+            .HasMany(g => g.OrderEntities)
+            .WithMany(ge => ge.GameEntities)
+            .UsingEntity<OrderGame>(
+                l => l.HasOne<OrderEntity>().WithMany().HasForeignKey(e => e.OrderId),
+                r => r.HasOne<GameEntity>().WithMany().HasForeignKey(e => e.ProductId));
 
         modelBuilder.Entity<PlatformEntity>().HasData(
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Mobile" },
@@ -69,6 +82,11 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             new GenreEntity { Id = Guid.NewGuid(), Name = "TPS", ParentGenreId = actionId },
             new GenreEntity { Id = Guid.NewGuid(), Name = "Adventure", ParentGenreId = null },
             new GenreEntity { Id = Guid.NewGuid(), Name = "Puzzle & Skill", ParentGenreId = null });
+
+        modelBuilder.Entity<PaymentMethod>().HasData(
+            new PaymentMethod { Title = "Bank", Description = "Bank Method Description", Url = "Bank Method URL" },
+            new PaymentMethod { Title = "IBox Terminal", Description = "IBox Terminal Method Description", Url = "IBox Terminal Method URL" },
+            new PaymentMethod { Title = "Visa", Description = "Visa Method Description", Url = "Visa Method URL" });
 
         base.OnModelCreating(modelBuilder);
     }

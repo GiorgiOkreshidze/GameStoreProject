@@ -1,7 +1,5 @@
-#pragma warning disable IDE0005
 using BusinessLogic.Contracts;
 using DTOs.PlatformDtos;
-#pragma warning restore IDE0005
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;

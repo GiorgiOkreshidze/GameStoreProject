@@ -1,4 +1,3 @@
-using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -68,7 +67,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public GameEntity GetGameByIdDb(Guid id)
     {
-        return gameDbContext.GameEntities.FirstOrDefault(t => t.Id == id) ?? throw new SqlNullValueException();
+        return gameDbContext.GameEntities.FirstOrDefault(t => t.Id == id) ?? throw new ArgumentNullException();
     }
 
     public int GetGamesNumber()
@@ -80,7 +79,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         var entity = gameDbContext.GameEntities
             .Include(x => x.GenreEntities)
-            .FirstOrDefault(t => t.Key == key) ?? throw new SqlNullValueException();
+            .FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
 
         return entity.GenreEntities;
     }
@@ -89,7 +88,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         var entity = gameDbContext.GameEntities
             .Include(x => x.PlatformEntities)
-            .FirstOrDefault(t => t.Key == key) ?? throw new SqlNullValueException();
+            .FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
 
         return entity.PlatformEntities;
     }
@@ -98,9 +97,49 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         var entity = gameDbContext.GameEntities
             .Include(x => x.PublisherEntity)
-            .FirstOrDefault(t => t.Key == key) ?? throw new SqlNullValueException();
+            .FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
 
         return entity.PublisherEntity;
+    }
+
+    public void AddGameEntityToCartDb(GameEntity gameEntity)
+    {
+        OrderEntity entity;
+        OrderGame orderGame;
+
+        if (gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == Guid.Empty) is null)
+        {
+            entity = new OrderEntity();
+            orderGame = new OrderGame
+            {
+                OrderId = entity.Id,
+                ProductId = gameEntity.Id,
+                Price = gameEntity.Price,
+                Discount = gameEntity.Discount,
+                Quantity = 0,
+            };
+            gameDbContext.OrderEntities.Add(entity);
+            gameDbContext.OrderGames.Add(orderGame);
+            gameDbContext.SaveChanges();
+        }
+        else
+        {
+            entity = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities)
+                .FirstOrDefault(o => o.CustomerId == Guid.Empty) ?? throw new ArgumentNullException();
+        }
+
+        if (entity.GameEntities.Contains(gameEntity))
+        {
+            orderGame = gameDbContext.OrderGames.FirstOrDefault(o => o.OrderId == entity.Id) ??
+                            throw new ArgumentNullException();
+            orderGame.Quantity += 1;
+        }
+        else
+        {
+            entity.GameEntities.Add(gameEntity);
+        }
+
+        gameDbContext.SaveChanges();
     }
 
     public bool NotExists(Guid id)

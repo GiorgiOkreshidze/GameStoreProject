@@ -1,6 +1,6 @@
 using DataAccess.Entities;
 using DTOs.PublisherDtos;
-using static BusinessLogicTests.Constants.ConstantsPublisher;
+using static BusinessLogicTests.Constants.Constants;
 
 namespace BusinessLogicTests.TestUtils;
 

@@ -34,4 +34,6 @@ public class GameEntity
     public ICollection<PlatformEntity> PlatformEntities { get; set; }
 
     public ICollection<GenreEntity> GenreEntities { get; set; }
+
+    public ICollection<OrderEntity> OrderEntities { get; set; }
 }

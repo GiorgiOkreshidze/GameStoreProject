@@ -17,7 +17,7 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.0-preview.5.24306.3")
+                .HasAnnotation("ProductVersion", "7.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -46,7 +46,8 @@ namespace DataAccess.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<Guid>("PublisherId")
+                    b.Property<Guid?>("PublisherId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("UnitInStock")
@@ -117,86 +118,168 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2a78bcf1-d627-4fd1-a179-c27d1650f654"),
+                            Id = new Guid("5a2e31bc-a552-40c0-bc8d-fbdab228e4a3"),
                             Name = "Strategy"
                         },
                         new
                         {
-                            Id = new Guid("3cf2a4ec-c87e-4006-abaf-3dd26f1e7db2"),
+                            Id = new Guid("444db216-064c-402f-b85c-efb0ccc799d6"),
                             Name = "RTS",
-                            ParentGenreId = new Guid("2a78bcf1-d627-4fd1-a179-c27d1650f654")
+                            ParentGenreId = new Guid("5a2e31bc-a552-40c0-bc8d-fbdab228e4a3")
                         },
                         new
                         {
-                            Id = new Guid("9a9f279f-c51a-4055-b7b7-a3d10482e2ed"),
+                            Id = new Guid("f11e9e17-6b99-4c36-ad34-90b4ffdac2cd"),
                             Name = "TBS",
-                            ParentGenreId = new Guid("2a78bcf1-d627-4fd1-a179-c27d1650f654")
+                            ParentGenreId = new Guid("5a2e31bc-a552-40c0-bc8d-fbdab228e4a3")
                         },
                         new
                         {
-                            Id = new Guid("159aa1b6-6674-4f4a-9ee5-636f3b121d92"),
+                            Id = new Guid("8087aa04-a17f-4693-b039-e90f610de819"),
                             Name = "RPG"
                         },
                         new
                         {
-                            Id = new Guid("d9eb95e7-5be6-4ae2-9185-6a985413e7ff"),
+                            Id = new Guid("7e487d68-fcc2-4520-920c-4b69b6d88d41"),
                             Name = "Sports"
                         },
                         new
                         {
-                            Id = new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad"),
+                            Id = new Guid("377e0f8b-8742-4dc8-bedb-f1fab2c323d5"),
                             Name = "Races"
                         },
                         new
                         {
-                            Id = new Guid("4af9f656-7ac6-44b7-8616-c6a69ffaf552"),
+                            Id = new Guid("7253af67-c104-4cb7-867a-c929ba24a7ea"),
                             Name = "Rally",
-                            ParentGenreId = new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad")
+                            ParentGenreId = new Guid("377e0f8b-8742-4dc8-bedb-f1fab2c323d5")
                         },
                         new
                         {
-                            Id = new Guid("43ede327-16f4-4d7b-ac16-eb090789f2a9"),
+                            Id = new Guid("526ccb64-d39c-40ce-965c-0908633737da"),
                             Name = "Arcade",
-                            ParentGenreId = new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad")
+                            ParentGenreId = new Guid("377e0f8b-8742-4dc8-bedb-f1fab2c323d5")
                         },
                         new
                         {
-                            Id = new Guid("0698b891-2e51-4b40-a01b-458aeabd6172"),
+                            Id = new Guid("7d55723b-290e-49eb-826c-0ed66a7d479e"),
                             Name = "Formula",
-                            ParentGenreId = new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad")
+                            ParentGenreId = new Guid("377e0f8b-8742-4dc8-bedb-f1fab2c323d5")
                         },
                         new
                         {
-                            Id = new Guid("caa3e07e-e0e3-4f0e-b0bd-8aa255503d06"),
+                            Id = new Guid("4453160f-dd38-4f69-87bb-c12a1847af4e"),
                             Name = "Off-road",
-                            ParentGenreId = new Guid("745a261f-9805-4d03-ba51-1c80cfce50ad")
+                            ParentGenreId = new Guid("377e0f8b-8742-4dc8-bedb-f1fab2c323d5")
                         },
                         new
                         {
-                            Id = new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae"),
+                            Id = new Guid("9fb95638-a74c-4dd5-9f28-f15a2b122f17"),
                             Name = "Action"
                         },
                         new
                         {
-                            Id = new Guid("ebb58d0e-795a-4a0d-8597-73c7c1f51ac8"),
+                            Id = new Guid("30e4b92c-83ef-4049-8f57-9d2caa2e3dc2"),
                             Name = "FPS",
-                            ParentGenreId = new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae")
+                            ParentGenreId = new Guid("9fb95638-a74c-4dd5-9f28-f15a2b122f17")
                         },
                         new
                         {
-                            Id = new Guid("cf047ced-7dc8-4238-bac3-115ea37cce09"),
+                            Id = new Guid("da9ff1cb-5978-4023-ad27-dcbf70266282"),
                             Name = "TPS",
-                            ParentGenreId = new Guid("0bda1c48-8b0f-4f0a-a912-f4319cecb9ae")
+                            ParentGenreId = new Guid("9fb95638-a74c-4dd5-9f28-f15a2b122f17")
                         },
                         new
                         {
-                            Id = new Guid("11e3023e-197a-4863-8c5a-bc221ebae4be"),
+                            Id = new Guid("611f231d-6252-4914-a579-3dfee9672ae6"),
                             Name = "Adventure"
                         },
                         new
                         {
-                            Id = new Guid("c810e50c-55ba-42f9-8d31-a29cee42bf90"),
+                            Id = new Guid("dabe0717-c93f-4023-b638-40fa79554705"),
                             Name = "Puzzle & Skill"
+                        });
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.OrderEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderEntities");
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.OrderGame", b =>
+                {
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Discount")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderGames");
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.PaymentMethod", b =>
+                {
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Title");
+
+                    b.ToTable("PaymentMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Title = "Bank",
+                            Description = "Bank Method Description",
+                            Url = "Bank Method URL"
+                        },
+                        new
+                        {
+                            Title = "IBox Terminal",
+                            Description = "IBox Terminal Method Description",
+                            Url = "IBox Terminal Method URL"
+                        },
+                        new
+                        {
+                            Title = "Visa",
+                            Description = "Visa Method Description",
+                            Url = "Visa Method URL"
                         });
                 });
 
@@ -220,22 +303,22 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1b5cdf01-f7cb-4714-b6d6-c534c5bb7863"),
+                            Id = new Guid("ae8d2f3b-9691-48d9-819d-39eced79c0cd"),
                             Type = "Mobile"
                         },
                         new
                         {
-                            Id = new Guid("6bd1a416-4966-4cf5-927c-037dbaf1c2ee"),
+                            Id = new Guid("0d3ba892-0eeb-49f3-9d51-eb4a962843e8"),
                             Type = "Browser"
                         },
                         new
                         {
-                            Id = new Guid("cada2521-bdcd-4915-86fc-33feadc1124a"),
+                            Id = new Guid("aa20094e-8f68-47cb-b380-84c83d2939a1"),
                             Type = "Desktop"
                         },
                         new
                         {
-                            Id = new Guid("95e32a44-a290-41f5-b09b-1076a2818da6"),
+                            Id = new Guid("f6bd67fc-9cc7-4649-a333-8f30467644b3"),
                             Type = "Console"
                         });
                 });
@@ -314,6 +397,21 @@ namespace DataAccess.Migrations
                         .HasForeignKey("ParentGenreId");
 
                     b.Navigation("ParentGenre");
+                });
+
+            modelBuilder.Entity("DataAccess.Entities.OrderGame", b =>
+                {
+                    b.HasOne("DataAccess.Entities.OrderEntity", null)
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DataAccess.Entities.GameEntity", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DataAccess.Entities.PublisherEntity", b =>

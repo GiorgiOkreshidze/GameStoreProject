@@ -1,6 +1,6 @@
 namespace BusinessLogicTests.Constants;
 
-public static partial class ConstantsPlatform
+public static partial class Constants
 {
     public static class PlatformEntityTest
     {

@@ -1,6 +1,6 @@
 namespace BusinessLogicTests.Constants;
 
-public static partial class ConstantsGerne
+public static partial class Constants
 {
     public static class GenreEntityTest
     {
