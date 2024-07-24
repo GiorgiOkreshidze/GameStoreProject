@@ -18,7 +18,7 @@ public class PlatformProfile : Profile
         CreateMap<PlatformEntity, Platform>().ReverseMap();
         CreateMap<Platform, GetPlatformDto>().ReverseMap();
         CreateMap<Platform, CreatePlatformDto>().ReverseMap();
-        CreateMap<PPlatformDto, Platform>().ReverseMap();
+        CreateMap<PlatformDtoWithoutId, Platform>().ReverseMap();
         CreateMap<Platform, PlatformDto>().ReverseMap();
         CreateMap<Platform, UpdatePlatformDto>().ReverseMap();
     }

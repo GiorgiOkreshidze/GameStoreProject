@@ -1,6 +1,7 @@
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
+using DataAccess.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Services;
@@ -57,5 +58,20 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
     public OrderEntity GetOrderEntity()
     {
         return gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == Guid.Empty) ?? throw new ArgumentNullException();
+    }
+
+    public void OrderStatusChangeDb(bool nextStatus)
+    {
+        var orderEntity = GetOrderEntity();
+        if (nextStatus)
+        {
+            orderEntity.Status += 1;
+        }
+        else
+        {
+            orderEntity.Status = OrderStatus.Cancelled;
+        }
+
+        gameDbContext.SaveChanges();
     }
 }

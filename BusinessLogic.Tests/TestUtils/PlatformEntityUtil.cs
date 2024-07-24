@@ -30,8 +30,11 @@ public static class PlatformEntityUtil
     {
         return new UpdatePlatformDto
         {
-            Id = PlatformEntityTest.Id,
-            Type = PlatformEntityTest.Type,
+            Platform = new PlatformDto
+            {
+                Id = PlatformEntityTest.Id,
+                Type = PlatformEntityTest.Type,
+            },
         };
     }
 
@@ -39,7 +42,7 @@ public static class PlatformEntityUtil
     {
         return new CreatePlatformDto
         {
-            Platform = new PPlatformDto
+            Platform = new PlatformDtoWithoutId
             {
                 Type = PlatformEntityTest.Type,
             },

@@ -31,7 +31,7 @@ public class GenreServiceTests
             cfg.CreateMap<Genre, GetGenreDto>().ReverseMap();
             cfg.CreateMap<Genre, GenreDto>().ReverseMap();
             cfg.CreateMap<UpdateGenreDto, Genre>().ReverseMap();
-            cfg.CreateMap<GGenreDto, Genre>().ReverseMap();
+            cfg.CreateMap<GenreDtoWithParentId, Genre>().ReverseMap();
         });
         _genreMapper = config.CreateMapper();
         _genreServiceTest = new GenreService(_genreDbServiceMock.Object, _genreMapper, _validatorMock.Object);
@@ -93,7 +93,7 @@ public class GenreServiceTests
     {
         // Arrange
         var genreDto = TestUtils.GenreEntityUtil.CreateGenreDto();
-        var genre = _genreMapper.Map<GGenreDto, Genre>(genreDto.Genre);
+        var genre = _genreMapper.Map<GenreDtoWithParentId, Genre>(genreDto.Genre);
         var genreEntity = _genreMapper.Map<Genre, GenreEntity>(genre);
         _genreDbServiceMock.Setup(x => x.CreateGenreDb(genreEntity));
 

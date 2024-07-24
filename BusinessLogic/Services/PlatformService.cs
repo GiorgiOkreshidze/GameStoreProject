@@ -16,7 +16,7 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
 {
     public void CreatePlatform(CreatePlatformDto createPlatformDto)
     {
-        var platform = platformMapper.Map<PPlatformDto, Platform>(createPlatformDto.Platform);
+        var platform = platformMapper.Map<PlatformDtoWithoutId, Platform>(createPlatformDto.Platform);
 
         platform.Id = Guid.NewGuid();
 

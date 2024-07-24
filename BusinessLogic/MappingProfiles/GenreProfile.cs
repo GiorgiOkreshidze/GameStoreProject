@@ -17,7 +17,7 @@ public class GenreProfile : Profile
         CreateMap<Game, CreateGameDto>().ReverseMap();
         CreateMap<GenreEntity, Genre>().ReverseMap();
         CreateMap<Genre, CreateGenreDto>().ReverseMap();
-        CreateMap<GGenreDto, Genre>().ReverseMap();
+        CreateMap<GenreDtoWithParentId, Genre>().ReverseMap();
         CreateMap<Genre, GetGenreDto>().ReverseMap();
         CreateMap<Genre, GenreDto>().ReverseMap();
         CreateMap<UpdateGenreDto, Genre>().ReverseMap();

@@ -46,13 +46,16 @@ public static class GameEntityUtil
     {
         return new UpdateGameDto
         {
-            Id = GameEntityTest.Id,
-            Name = GameEntityTest.Name,
-            Key = GameEntityTest.Key,
-            Description = GameEntityTest.Description,
-            UnitInStock = GameEntityTest.UnitInStock,
-            Discount = GameEntityTest.Discount,
-            Price = GameEntityTest.Price,
+            Game = new GameDtoWithId
+            {
+                Id = GameEntityTest.Id,
+                Name = GameEntityTest.Name,
+                Key = GameEntityTest.Key,
+                Description = GameEntityTest.Description,
+                UnitInStock = GameEntityTest.UnitInStock,
+                Discount = GameEntityTest.Discount,
+                Price = GameEntityTest.Price,
+            },
             PublisherId = GameEntityTest.PublisherId,
             Genres = CreateGenreEntityIds(),
             Platforms = CreatePlatformEntityIds(),
@@ -91,6 +94,7 @@ public static class GameEntityUtil
             },
             Genres = CreateGenreEntityIds(),
             Platforms = CreatePlatformEntityIds(),
+            Publisher = GameEntityTest.PublisherId,
         };
     }
 

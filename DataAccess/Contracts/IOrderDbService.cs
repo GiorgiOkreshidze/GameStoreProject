@@ -17,4 +17,6 @@ public interface IOrderDbService
     public ICollection<PaymentMethod> GetPaymentMethodsDb();
 
     public OrderEntity GetOrderEntity();
+
+    public void OrderStatusChangeDb(bool nextStatus);
 }

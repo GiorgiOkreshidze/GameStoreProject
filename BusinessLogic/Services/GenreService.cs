@@ -15,7 +15,7 @@ public class GenreService(IGenreDbService genreDbService, IMapper genreMapper, I
 {
     public void CreateGenre(CreateGenreDto createGenreDto)
     {
-        var genre = genreMapper.Map<GGenreDto, Genre>(createGenreDto.Genre);
+        var genre = genreMapper.Map<GenreDtoWithParentId, Genre>(createGenreDto.Genre);
         validator.ValidateGenreName(genre.Name);
         genre.Id = Guid.NewGuid();
 

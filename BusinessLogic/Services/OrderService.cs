@@ -79,6 +79,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
     public (byte[] FileBytes, string FileName) PaymentByBank(PaymentDto paymentDto)
     {
         var orderEntity = orderDbService.GetOrderEntity();
+        orderDbService.OrderStatusChangeDb(true);
         var invoice = GenerateInvoice(orderEntity);
         var fileName = $"Invoice_{Guid.Empty}.pdf";
         var filePath = Path.Combine(Path.GetTempPath(), fileName);
@@ -90,6 +91,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         }
 
         var fileBytes = File.ReadAllBytes(filePath);
+        orderDbService.OrderStatusChangeDb(true);
         return (fileBytes, fileName);
     }
 
@@ -98,6 +100,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         var baseUrl = configuration["Microservice:BaseUrl"];
         httpClient.BaseAddress = baseUrl != null ? new Uri(baseUrl) : throw new ArgumentNullException("baseUrl of Microservice is Null");
         var orderEntity = orderDbService.GetOrderEntity();
+        orderDbService.OrderStatusChangeDb(true);
         var orderGames = orderDbService.GetAllOrdersDetailsDb(orderEntity.Id);
 
         var transactionAmount = CountSumOfPrices(orderGames);
@@ -119,9 +122,11 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         {
             string data = response.Content.ReadAsStringAsync().Result;
             iboxResponse = JsonConvert.DeserializeObject<IBoxTerminalResponseDto>(data);
+            orderDbService.OrderStatusChangeDb(true);
         }
         else
         {
+            orderDbService.OrderStatusChangeDb(false);
             throw new ApplicationException(response.Content.ReadAsStringAsync().Result);
         }
 
@@ -133,6 +138,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         var baseUrl = configuration["Microservice:BaseUrl"];
         httpClient.BaseAddress = baseUrl != null ? new Uri(baseUrl) : throw new ArgumentNullException("baseUrl of Microservice is Null");
         var orderEntity = orderDbService.GetOrderEntity();
+        orderDbService.OrderStatusChangeDb(true);
         var orderGames = orderDbService.GetAllOrdersDetailsDb(orderEntity.Id);
 
         var transactionAmount = CountSumOfPrices(orderGames);
@@ -155,9 +161,11 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
 
         if (response.IsSuccessStatusCode)
         {
+            orderDbService.OrderStatusChangeDb(true);
         }
         else
         {
+            orderDbService.OrderStatusChangeDb(false);
             throw new ApplicationException(response.Content.ReadAsStringAsync().Result);
         }
     }
@@ -197,6 +205,6 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
             sum += (int)orderGame.Price;
         }
 
-        return sum + sum;
+        return sum;
     }
 }

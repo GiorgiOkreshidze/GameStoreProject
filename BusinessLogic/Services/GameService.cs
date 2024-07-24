@@ -84,7 +84,10 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
 
     public void UpdateGame(UpdateGameDto updateGameDto)
     {
-        Game game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
+        Game game = gameMapper.Map<GameDtoWithId, Game>(updateGameDto.Game);
+        game.Genres = updateGameDto.Genres;
+        game.Platforms = updateGameDto.Platforms;
+        game.PublisherId = updateGameDto.PublisherId;
 
         validator.ValidateGameId(game.Id);
         validator.ValidateGenres(game.Genres);

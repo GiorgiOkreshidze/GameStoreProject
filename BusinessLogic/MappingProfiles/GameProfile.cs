@@ -25,5 +25,6 @@ public class GameProfile : Profile
         CreateMap<Platform, PlatformDto>().ReverseMap();
         CreateMap<PublisherEntity, Publisher>().ReverseMap();
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
+        CreateMap<GameDtoWithId, Game>().ReverseMap();
     }
 }

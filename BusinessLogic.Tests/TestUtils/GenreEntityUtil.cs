@@ -22,7 +22,7 @@ public static class GenreEntityUtil
     {
         return new CreateGenreDto
         {
-            Genre = new GGenreDto
+            Genre = new GenreDtoWithParentId()
             {
                 Name = GenreEntityTest.Name,
                 ParentGenreId = GenreEntityTest.ParentGenreId,
@@ -34,9 +34,12 @@ public static class GenreEntityUtil
     {
         return new UpdateGenreDto
         {
-            Id = GenreEntityTest.Id,
-            Name = GenreEntityTest.Name,
-            ParentGenreId = GenreEntityTest.ParentGenreId,
+            Genre = new GetGenreDto
+            {
+                Id = GenreEntityTest.Id,
+                Name = GenreEntityTest.Name,
+                ParentGenreId = GenreEntityTest.ParentGenreId,
+            },
         };
     }
 

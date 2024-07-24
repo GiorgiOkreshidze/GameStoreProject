@@ -10,20 +10,3 @@ public class CreateGameDto
 
     public Guid? Publisher { get; set; }
 }
-
-#pragma warning disable SA1402
-public class GameDto
-#pragma warning restore SA1402
-{
-    public string Name { get; set; }
-
-    public string Key { get; set; }
-
-    public string Description { get; set; }
-
-    public double Price { get; set; }
-
-    public int UnitInStock { get; set; }
-
-    public int Discount { get; set; }
-}
