@@ -1,7 +1,5 @@
 using BusinessLogic.Contracts;
-#pragma warning disable IDE0005
 using DTOs.PaymentDtos;
-#pragma warning restore IDE0005
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
@@ -58,12 +56,13 @@ public class OrderController(IOrderService orderService) : Controller
 
         if (paymentDto.Method == "IBox terminal")
         {
-            Ok(orderService.PaymentByIBoxTermianl());
+            return Ok(orderService.PaymentByIBoxTermianl());
         }
 
         if (paymentDto.Method == "Visa")
         {
             orderService.PaymentByVisa(paymentDto);
+            return Ok();
         }
 
         return BadRequest("Unsupported payment method.");

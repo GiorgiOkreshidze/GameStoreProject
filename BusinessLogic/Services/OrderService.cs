@@ -6,17 +6,13 @@ using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.OrderDtos;
-#pragma warning disable IDE0005
+using DTOs.PaymentDtos;
 using DTOs.PaymentMethodDtos;
-#pragma warning restore IDE0005
 using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-#pragma warning disable IDE0005
-using DTOs.PaymentDtos;
-#pragma warning restore IDE0005
 
 namespace BusinessLogic.Services;
 
@@ -67,11 +63,15 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         return cartDtos;
     }
 
-    public ICollection<GetPaymentMethodDto> GetPaymentMethods()
+    public GetPaymentMethodDto GetPaymentMethods()
     {
         var paymentMethodsDb = orderDbService.GetPaymentMethodsDb();
         var paymentMethods = orderMapper.Map<ICollection<PaymentMethod>, ICollection<PaymentMethodModel>>(paymentMethodsDb);
-        var paymentMethodDtos = orderMapper.Map<ICollection<PaymentMethodModel>, ICollection<GetPaymentMethodDto>>(paymentMethods);
+        var paymentMethodsDtos = orderMapper.Map<ICollection<PaymentMethodModel>, ICollection<PaymentMethods>>(paymentMethods);
+        GetPaymentMethodDto paymentMethodDtos = new()
+        {
+            PaymentMethods = paymentMethodsDtos,
+        };
 
         return paymentMethodDtos;
     }
@@ -79,8 +79,10 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
     public (byte[] FileBytes, string FileName) PaymentByBank(PaymentDto paymentDto)
     {
         var orderEntity = orderDbService.GetOrderEntity();
+        var orderGames = orderDbService.GetAllOrdersDetailsDb(orderEntity.Id);
+        var sumOfPrices = CountSumOfPrices(orderGames);
         orderDbService.OrderStatusChangeDb(true);
-        var invoice = GenerateInvoice(orderEntity);
+        var invoice = GenerateInvoice(orderEntity, sumOfPrices);
         var fileName = $"Invoice_{Guid.Empty}.pdf";
         var filePath = Path.Combine(Path.GetTempPath(), fileName);
 
@@ -170,7 +172,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         }
     }
 
-    private MemoryStream GenerateInvoice(OrderEntity orderEntity)
+    private MemoryStream GenerateInvoice(OrderEntity orderEntity, int sumOfPrices)
     {
         var stream = new MemoryStream();
         var writer = new PdfWriter(stream);
@@ -182,7 +184,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         document.Add(new Paragraph($"Order ID: {orderEntity.Id}"));
         document.Add(new Paragraph($"Creation Date: {orderEntity.Date}"));
         document.Add(new Paragraph($"Date of Validity: {orderEntity.Date.AddDays(GetInvoiceValidityDays())}"));
-        document.Add(new Paragraph($"Sum: {orderEntity.Status}"));
+        document.Add(new Paragraph($"Sum: {sumOfPrices}"));
 
         document.Close();
         var byteArray = stream.ToArray();

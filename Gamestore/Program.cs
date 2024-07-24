@@ -1,6 +1,7 @@
 #pragma warning disable IDE0005
 using BusinessLogic;
 using DataAccess;
+using DTOs.CustomConvertor;
 #pragma warning restore IDE0005
 using Gamestore.Middlewares.Exception;
 using Gamestore.Middlewares.Logging;
@@ -16,7 +17,10 @@ builder.Services.AddMvc();
 builder.Services.AddBusinessLogicServices();
 builder.Services.AddDatabaseServices(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new NullableGuidConverter());
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<GamesCountMiddleware>();

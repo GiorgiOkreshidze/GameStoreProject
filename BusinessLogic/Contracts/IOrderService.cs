@@ -18,7 +18,7 @@ public interface IOrderService
 
     public ICollection<GetOrderDetailsDto> GetCart();
 
-    public ICollection<GetPaymentMethodDto> GetPaymentMethods();
+    public GetPaymentMethodDto GetPaymentMethods();
 
     public (byte[] FileBytes, string FileName) PaymentByBank(PaymentDto paymentDto);
 

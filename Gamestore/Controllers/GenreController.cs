@@ -11,7 +11,7 @@ namespace Gamestore.Controllers;
 public class GenreController(IGenreService genreService) : Controller
 {
     [HttpPost]
-    public IActionResult CreateGenre([FromBody] CreateGenreDto createGenreDto)
+    public IActionResult CreateGenre(CreateGenreDto createGenreDto)
     {
         genreService.CreateGenre(createGenreDto);
 

@@ -11,7 +11,7 @@ public class OrderEntity
     public DateTime Date { get; set; } = DateTime.Now;
 
     [Required]
-    public Guid CustomerId { get; set; } = Guid.Empty;
+    public Guid CustomerId { get; set; } = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
 
     [Required]
     public OrderStatus Status { get; set; } = OrderStatus.Open;

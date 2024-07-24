@@ -1,14 +1,10 @@
-using System.ComponentModel.DataAnnotations;
+namespace DTOs.PaymentMethodDtos;
 
-namespace DataAccess.Entities;
-
-public class PaymentMethod
+public class PaymentMethods
 {
-    [Key]
     public string Title { get; set; }
 
     public string Description { get; set; }
 
-    [Required]
     public string ImageUrl { get; set; }
 }

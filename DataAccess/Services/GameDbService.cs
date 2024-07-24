@@ -106,8 +106,9 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         OrderEntity entity;
         OrderGame orderGame;
+        var newGuid = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
 
-        if (gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == Guid.Empty) is null)
+        if (gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == newGuid) is null)
         {
             entity = new OrderEntity();
             orderGame = new OrderGame
@@ -125,7 +126,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         else
         {
             entity = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities)
-                .FirstOrDefault(o => o.CustomerId == Guid.Empty) ?? throw new ArgumentNullException();
+                .FirstOrDefault(o => o.CustomerId == newGuid) ?? throw new ArgumentNullException();
         }
 
         if (entity.GameEntities.Contains(gameEntity))

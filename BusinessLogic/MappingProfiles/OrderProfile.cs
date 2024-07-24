@@ -19,6 +19,6 @@ public class OrderProfile : Profile
         CreateMap<OrderGameModel, OrderGame>().ReverseMap();
         CreateMap<OrderGameModel, GetOrderDetailsDto>().ReverseMap();
         CreateMap<PaymentMethodModel, PaymentMethod>().ReverseMap();
-        CreateMap<PaymentMethodModel, GetPaymentMethodDto>().ReverseMap();
+        CreateMap<PaymentMethodModel, PaymentMethods>().ReverseMap();
     }
 }

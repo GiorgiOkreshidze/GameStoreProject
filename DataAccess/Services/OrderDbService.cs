@@ -9,6 +9,8 @@ namespace DataAccess.Services;
 #pragma warning disable IDE0305
 public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 {
+    private static readonly Guid VirtualCustomerGuid = new("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+
     public ICollection<OrderEntity> GetAllOrdersDb()
     {
         return gameDbContext.OrderEntities.AsNoTracking().ToList();
@@ -28,7 +30,7 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
     {
         var gameEntity = gameDbContext.GameEntities.FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
         var orderEntity = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities)
-                              .FirstOrDefault(o => o.CustomerId == Guid.Empty) ??
+                              .FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ??
                           throw new ArgumentNullException();
         if (orderEntity.GameEntities.Count == 1)
         {
@@ -45,7 +47,7 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public ICollection<OrderGame> GetCartDb()
     {
-        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == Guid.Empty) ?? throw new ArgumentNullException();
+        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ?? throw new ArgumentNullException();
 
         return gameDbContext.OrderGames.Where(o => o.OrderId == orderEntity.Id).ToList();
     }
@@ -57,7 +59,7 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public OrderEntity GetOrderEntity()
     {
-        return gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == Guid.Empty) ?? throw new ArgumentNullException();
+        return gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ?? throw new ArgumentNullException();
     }
 
     public void OrderStatusChangeDb(bool nextStatus)

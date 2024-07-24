@@ -84,9 +84,9 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             new GenreEntity { Id = Guid.NewGuid(), Name = "Puzzle & Skill", ParentGenreId = null });
 
         modelBuilder.Entity<PaymentMethod>().HasData(
-            new PaymentMethod { Title = "Bank", Description = "Bank Method Description", Url = "Bank Method URL" },
-            new PaymentMethod { Title = "IBox Terminal", Description = "IBox Terminal Method Description", Url = "IBox Terminal Method URL" },
-            new PaymentMethod { Title = "Visa", Description = "Visa Method Description", Url = "Visa Method URL" });
+            new PaymentMethod { Title = "Bank", Description = "Bank Method Description", ImageUrl = "Bank Method URL" },
+            new PaymentMethod { Title = "IBox terminal", Description = "IBox Terminal Method Description", ImageUrl = "IBox Terminal Method URL" },
+            new PaymentMethod { Title = "Visa", Description = "Visa Method Description", ImageUrl = "Visa Method URL" });
 
         base.OnModelCreating(modelBuilder);
     }
