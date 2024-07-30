@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text.RegularExpressions;
 using AutoMapper;
 using BusinessLogic.Contracts;
@@ -6,16 +7,16 @@ using BusinessLogic.Validations;
 #pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
+using DTOs.CommentDtos;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
 #pragma warning restore IDE0005
-using System.Globalization;
 
 namespace BusinessLogic.Services;
 
-public partial class GameService(IGameDbService gameDbService, IMapper gameMapper,
+public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     IValidationsHandler validator) : IGameService
 {
     private static readonly Regex MyRegex = new(@"\s+", RegexOptions.Compiled);
@@ -188,6 +189,112 @@ public partial class GameService(IGameDbService gameDbService, IMapper gameMappe
         validator.ValidateGameKey(key);
         var gameEntity = gameDbService.GetGameByKeyDb(key);
         gameDbService.AddGameEntityToCartDb(gameEntity);
+    }
+
+    public void AddCommentAsQuote(string key, AddCommentDto addCommentDto)
+    {
+        validator.ValidateGameKey(key);
+        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        {
+            throw new Exception("User is banned.");
+        }*/
+        var parentComment = gameDbService.GetCommentById(addCommentDto.ParentId);
+        var gameId = gameDbService.GetGameIdByKey(key);
+        var comment = new Comment
+        {
+            Id = Guid.NewGuid(),
+            Name = addCommentDto.Comment.Name,
+            Body = $"{parentComment.Body}, {addCommentDto.Comment.Body}",
+            GameId = gameId,
+            ParentCommentId = addCommentDto.ParentId,
+        };
+
+        var commentEntity = gameMapper.Map<Comment, CommentEntity>(comment);
+
+        gameDbService.AddCommentDb(key, commentEntity);
+    }
+
+    public void AddCommentAsReply(string key, AddCommentDto addCommentDto)
+    {
+        validator.ValidateGameKey(key);
+        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        {
+            throw new Exception("User is banned.");
+        }*/
+        var parentComment = gameDbService.GetCommentById(addCommentDto.ParentId);
+        var gameId = gameDbService.GetGameIdByKey(key);
+        var comment = new Comment
+        {
+            Id = Guid.NewGuid(),
+            Name = addCommentDto.Comment.Name,
+            Body = $"{parentComment.Name}, {addCommentDto.Comment.Body}",
+            GameId = gameId,
+            ParentCommentId = addCommentDto.ParentId,
+        };
+
+        var commentEntity = gameMapper.Map<Comment, CommentEntity>(comment);
+
+        gameDbService.AddCommentDb(key, commentEntity);
+    }
+
+    public void AddComment(string key, AddCommentDto addCommentDto)
+    {
+        validator.ValidateGameKey(key);
+        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        {
+            throw new Exception("User is banned.");
+        }*/
+        var gameId = gameDbService.GetGameIdByKey(key);
+        var comment = new Comment
+        {
+            Id = Guid.NewGuid(),
+            Name = addCommentDto.Comment.Name,
+            Body = addCommentDto.Comment.Body,
+            GameId = gameId,
+            ParentCommentId = addCommentDto.ParentId,
+        };
+
+        var commentEntity = gameMapper.Map<Comment, CommentEntity>(comment);
+
+        gameDbService.AddCommentDb(key, commentEntity);
+    }
+
+    public ICollection<GetCommentDto> GetComments(string key)
+    {
+        validator.ValidateGameKey(key);
+        var commentEntities = gameDbService.GetCommentsDb(key);
+
+        var commentDtos = commentEntities
+            .Where(entity => entity.ParentCommentId == null)
+            .Select(entity => MapCommentDto(entity, commentEntities))
+            .ToList();
+
+        return commentDtos;
+    }
+
+    public void DeleteComment(string key, Guid id)
+    {
+        gameDbService.DeleteCommentDb(key, id);
+    }
+
+    private static GetCommentDto MapCommentDto(CommentEntity entity, ICollection<CommentEntity> allEntities)
+    {
+        var commentDto = new GetCommentDto
+        {
+            Id = entity.Id,
+            Name = entity.Name,
+            Body = entity.Body,
+            ChildComments = [],
+        };
+
+        var childEntities = allEntities.Where(e => e.ParentCommentId == entity.Id);
+        foreach (var childEntity in childEntities)
+        {
+            var childDto = MapCommentDto(childEntity, allEntities);
+            commentDto.ChildComments.Add(childDto);
+        }
+
+        return commentDto;
     }
 
     private static string GenerateKeyFromName(string name)

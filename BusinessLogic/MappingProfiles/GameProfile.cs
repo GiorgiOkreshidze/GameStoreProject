@@ -2,6 +2,7 @@ using AutoMapper;
 using BusinessLogic.Models;
 #pragma warning disable IDE0005
 using DataAccess.Entities;
+using DTOs.CommentDtos;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
@@ -26,5 +27,7 @@ public class GameProfile : Profile
         CreateMap<PublisherEntity, Publisher>().ReverseMap();
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
         CreateMap<GameDtoWithId, Game>().ReverseMap();
+        CreateMap<AddCommentDto, Comment>().ReverseMap();
+        CreateMap<Comment, CommentEntity>().ReverseMap();
     }
 }

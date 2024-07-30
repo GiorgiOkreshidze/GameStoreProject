@@ -4,6 +4,7 @@ using DataAccess.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    partial class GameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240726085927_Sixth Migration")]
+    partial class SixthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,38 +24,6 @@ namespace DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("DataAccess.Entities.BanEntity", b =>
-                {
-                    b.Property<string>("Duration")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Duration");
-
-                    b.ToTable("BanEntities");
-
-                    b.HasData(
-                        new
-                        {
-                            Duration = "1 hour"
-                        },
-                        new
-                        {
-                            Duration = "1 day"
-                        },
-                        new
-                        {
-                            Duration = "1 week"
-                        },
-                        new
-                        {
-                            Duration = "1 month"
-                        },
-                        new
-                        {
-                            Duration = "permanent"
-                        });
-                });
 
             modelBuilder.Entity("DataAccess.Entities.CommentEntity", b =>
                 {
@@ -182,85 +153,85 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4b2711e8-6a5c-407a-a9b9-b66d2ff5a82e"),
+                            Id = new Guid("4d21f2c9-5b9e-48c3-b90d-ff6e701e9028"),
                             Name = "Strategy"
                         },
                         new
                         {
-                            Id = new Guid("865f2457-f500-4ec8-b9f3-93feda4c8317"),
+                            Id = new Guid("266caa29-06b5-4430-bb0f-8eb421fa58bc"),
                             Name = "RTS",
-                            ParentGenreId = new Guid("4b2711e8-6a5c-407a-a9b9-b66d2ff5a82e")
+                            ParentGenreId = new Guid("4d21f2c9-5b9e-48c3-b90d-ff6e701e9028")
                         },
                         new
                         {
-                            Id = new Guid("ba87ed11-fb38-466c-9648-5761850d41ca"),
+                            Id = new Guid("5db211cc-a327-4c28-9deb-16a8634c6d40"),
                             Name = "TBS",
-                            ParentGenreId = new Guid("4b2711e8-6a5c-407a-a9b9-b66d2ff5a82e")
+                            ParentGenreId = new Guid("4d21f2c9-5b9e-48c3-b90d-ff6e701e9028")
                         },
                         new
                         {
-                            Id = new Guid("b028daa5-e4b9-43aa-a0eb-5ed12e1c2195"),
+                            Id = new Guid("1feb85bd-3b2e-4f51-90dd-accbad905952"),
                             Name = "RPG"
                         },
                         new
                         {
-                            Id = new Guid("29ed8eaf-fca2-4ca0-99ca-3fb7aed19db6"),
+                            Id = new Guid("037b8c48-94ad-4c41-9ee9-74ff9ff5aae2"),
                             Name = "Sports"
                         },
                         new
                         {
-                            Id = new Guid("2d1bdb22-de22-432b-8bf8-537823145ea8"),
+                            Id = new Guid("372bae05-a005-43ca-a2e6-f6ef1f7e144d"),
                             Name = "Races"
                         },
                         new
                         {
-                            Id = new Guid("256616b8-a1fe-4eb7-bee9-beb8de6c88a0"),
+                            Id = new Guid("fc4f1526-912a-4852-9184-adfefa95b352"),
                             Name = "Rally",
-                            ParentGenreId = new Guid("2d1bdb22-de22-432b-8bf8-537823145ea8")
+                            ParentGenreId = new Guid("372bae05-a005-43ca-a2e6-f6ef1f7e144d")
                         },
                         new
                         {
-                            Id = new Guid("35884d14-c840-4a47-9bb0-c888eb2d9617"),
+                            Id = new Guid("d5281819-00da-4577-b54b-ca62e5828415"),
                             Name = "Arcade",
-                            ParentGenreId = new Guid("2d1bdb22-de22-432b-8bf8-537823145ea8")
+                            ParentGenreId = new Guid("372bae05-a005-43ca-a2e6-f6ef1f7e144d")
                         },
                         new
                         {
-                            Id = new Guid("017551a1-a776-49dc-9914-b7cc769578ff"),
+                            Id = new Guid("5da0e0d6-3c22-4ce1-b338-b95dd7dbcd95"),
                             Name = "Formula",
-                            ParentGenreId = new Guid("2d1bdb22-de22-432b-8bf8-537823145ea8")
+                            ParentGenreId = new Guid("372bae05-a005-43ca-a2e6-f6ef1f7e144d")
                         },
                         new
                         {
-                            Id = new Guid("052cced9-0f9a-440f-9138-852feb4e3dc0"),
+                            Id = new Guid("2d7b0217-1338-4c42-94d0-7c067e2f3ced"),
                             Name = "Off-road",
-                            ParentGenreId = new Guid("2d1bdb22-de22-432b-8bf8-537823145ea8")
+                            ParentGenreId = new Guid("372bae05-a005-43ca-a2e6-f6ef1f7e144d")
                         },
                         new
                         {
-                            Id = new Guid("c4c01f04-d6ed-4853-b4d6-133b5f531b15"),
+                            Id = new Guid("5b1c4650-aa37-4ea3-a8c3-e6c3b53becdb"),
                             Name = "Action"
                         },
                         new
                         {
-                            Id = new Guid("2d8a5d3d-5401-4d4e-8aac-ad0a99f0dc49"),
+                            Id = new Guid("48fbec67-e1cf-4080-b9aa-a11041da9c7c"),
                             Name = "FPS",
-                            ParentGenreId = new Guid("c4c01f04-d6ed-4853-b4d6-133b5f531b15")
+                            ParentGenreId = new Guid("5b1c4650-aa37-4ea3-a8c3-e6c3b53becdb")
                         },
                         new
                         {
-                            Id = new Guid("739d6d02-6dd3-4970-9739-c45624934184"),
+                            Id = new Guid("6641c3ab-4c0e-44dc-9b0d-f8a601b275f5"),
                             Name = "TPS",
-                            ParentGenreId = new Guid("c4c01f04-d6ed-4853-b4d6-133b5f531b15")
+                            ParentGenreId = new Guid("5b1c4650-aa37-4ea3-a8c3-e6c3b53becdb")
                         },
                         new
                         {
-                            Id = new Guid("979fc130-d4bf-43b1-a085-39388c3e9116"),
+                            Id = new Guid("5390bb8c-981f-481e-96e2-539f6599a579"),
                             Name = "Adventure"
                         },
                         new
                         {
-                            Id = new Guid("d7e25f21-ed12-4f1d-bd4e-724b219899c6"),
+                            Id = new Guid("9cbd9ead-9db6-441f-8579-d2bde54e0dbc"),
                             Name = "Puzzle & Skill"
                         });
                 });
@@ -367,22 +338,22 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0fc95a9a-92e8-4c21-ba8c-099e2e190bcb"),
+                            Id = new Guid("be29ab2e-3894-4269-9a7e-6c24b673ab30"),
                             Type = "Mobile"
                         },
                         new
                         {
-                            Id = new Guid("7fa7c335-37e0-4e07-8ca6-1607f40ec6df"),
+                            Id = new Guid("b15c33f2-fa1b-42fa-9618-79f2bb6c1163"),
                             Type = "Browser"
                         },
                         new
                         {
-                            Id = new Guid("4179ffe7-c5ea-42ce-8811-0764b8b41211"),
+                            Id = new Guid("1b77e2de-3739-4599-b2c2-8a2427529933"),
                             Type = "Desktop"
                         },
                         new
                         {
-                            Id = new Guid("4967008f-6a4a-496c-8150-1efcb41a5d8e"),
+                            Id = new Guid("9ee9c892-2a73-43b4-a5a9-e68f9dc986bc"),
                             Type = "Console"
                         });
                 });

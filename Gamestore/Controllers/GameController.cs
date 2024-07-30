@@ -1,5 +1,8 @@
 using System.Text;
 using BusinessLogic.Contracts;
+#pragma warning disable IDE0005
+using DTOs.CommentDtos;
+#pragma warning restore IDE0005
 using DTOs.GameDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -92,6 +95,39 @@ public class GameController(IGameService gameService) : Controller
     public IActionResult AddGameInCart(string key)
     {
         gameService.AddGameInCart(key);
+        return Ok();
+    }
+
+    [HttpGet("{key}/comments")]
+    public IActionResult GetComments(string key)
+    {
+        return Ok(gameService.GetComments(key));
+    }
+
+    [HttpPost("{key}/comments")]
+    public IActionResult AddComment(string key, AddCommentDto addCommentDto)
+    {
+        string action = addCommentDto.Action;
+        if (action == "Quote")
+        {
+            gameService.AddCommentAsQuote(key, addCommentDto);
+        }
+        else if (action == "Reply")
+        {
+            gameService.AddCommentAsReply(key, addCommentDto);
+        }
+        else
+        {
+            gameService.AddComment(key, addCommentDto);
+        }
+
+        return Ok();
+    }
+
+    [HttpDelete("{key}/comments/{id}")]
+    public IActionResult DeleteComment(string key, Guid id)
+    {
+        gameService.DeleteComment(key, id);
         return Ok();
     }
 }

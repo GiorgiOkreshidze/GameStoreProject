@@ -18,6 +18,7 @@ public static class BusinessLogicServiceRegistration
         services.AddScoped<IPublisherService, PublisherService>();
         services.AddScoped<IValidationsHandler, ValidationsHandler>();
         services.AddScoped<IOrderService, OrderService>();
+        services.AddScoped<ICommentService, CommentService>();
 
         return services;
     }

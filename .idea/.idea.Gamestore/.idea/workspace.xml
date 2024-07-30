@@ -10,30 +10,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a6f0916-3f3e-4aba-93b7-7c776f6fa568" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DTOs/CustomConvertor/NullableGuidConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/PaymentMethodDtos/PaymentMethods.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/ICommentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/CommentProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/BanModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/Comment.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/CommentService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/AddCommentDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/BanDurationDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/BanUserDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/CommentDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/GetCommentDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/ICommentDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/BanEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726085927_Sixth Migration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726085927_Sixth Migration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726121906_Seventh Migration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726121906_Seventh Migration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Services/CommentDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gamestore/Controllers/CommentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/OrderProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/OrderProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/PaymentMethodModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/PaymentMethodModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/GenreDtos/GenreDtoWithParentId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GenreDtos/GenreDtoWithParentId.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/PaymentMethodDtos/GetPaymentMethodDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PaymentMethodDtos/GetPaymentMethodDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/PaymentMethod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/PaymentMethod.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
     </list>
@@ -51,6 +64,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/2aa401550574f93402eba13ff9a4827ef01a2f3a/src/Mvc/Mvc.Core/src/Infrastructure/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/2aa401550574f93402eba13ff9a4827ef01a2f3a/src/Mvc/Mvc.Core/src/Infrastructure/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/2aa401550574f93402eba13ff9a4827ef01a2f3a/src/Mvc/Mvc.ViewFeatures/src/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/CORS/src/Infrastructure/CorsMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Middleware/Diagnostics/src/DeveloperExceptionPage/DeveloperExceptionPageMiddlewareImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Mvc/Mvc.Core/src/Infrastructure/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,6 +80,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Private.CoreLib/src/System/Runtime/CompilerServices/AsyncTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Diagnostics.DiagnosticSource/src/System/Diagnostics/DiagnosticListener.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/a5cc707d976a14495462c9c492a921ff0927b8f5/src/libraries/Microsoft.Extensions.Options/src/ConfigureNamedOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Private.CoreLib/src/System/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Text.RegularExpressions/src/System/Text/RegularExpressions/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/57/9c681939/AbstractInvocation.cs" root0="SKIP_HIGHLIGHTING" />
@@ -212,7 +228,9 @@
       <workItem from="1721750680540" duration="3468000" />
       <workItem from="1721805667921" duration="191000" />
       <workItem from="1721805881984" duration="1838000" />
-      <workItem from="1721824483594" duration="9584000" />
+      <workItem from="1721824483594" duration="10442000" />
+      <workItem from="1721982762119" duration="12651000" />
+      <workItem from="1722345524747" duration="5107000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -374,7 +392,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721805926510</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Commit.">
+      <option name="closed" value="true" />
+      <created>1721835543433</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1721835543433</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Commit.">
+      <option name="closed" value="true" />
+      <created>1721835579980</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1721835579980</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,30 +460,30 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs</url>
-          <line>50</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\Controllers\OrderController.cs" containingFunctionPresentation="Method 'Payment'">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
+          <line>217</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'AddCommentAsReply'">
             <startOffsets>
-              <option value="1155" />
+              <option value="6700" />
             </startOffsets>
             <endOffsets>
-              <option value="1187" />
+              <option value="6701" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs</url>
-          <line>107</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\OrderService.cs" containingFunctionPresentation="Method 'PaymentByIBoxTermianl'">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
+          <line>201</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'AddCommentAsQuote'">
             <startOffsets>
-              <option value="4017" />
+              <option value="6139" />
             </startOffsets>
             <endOffsets>
-              <option value="4070" />
+              <option value="6186" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

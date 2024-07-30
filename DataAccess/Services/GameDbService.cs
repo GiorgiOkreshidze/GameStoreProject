@@ -143,6 +143,43 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         gameDbContext.SaveChanges();
     }
 
+    public void AddCommentDb(string key, CommentEntity commentEntity)
+    {
+        var gameEntity = gameDbContext.GameEntities.Include(gameEntity => gameEntity.CommentEntities)
+            .FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
+        commentEntity.GameEntity = gameEntity;
+        gameDbContext.CommentEntities.Add(commentEntity);
+        gameDbContext.SaveChanges();
+    }
+
+    public ICollection<CommentEntity> GetCommentsDb(string key)
+    {
+        var entity = gameDbContext.GameEntities.Include(gameEntity => gameEntity.CommentEntities)
+            .FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
+
+        return entity.CommentEntities;
+    }
+
+    public CommentEntity GetCommentById(Guid? commentId)
+    {
+        return gameDbContext.CommentEntities.FirstOrDefault(c => c.Id == commentId) ??
+               throw new ArgumentNullException();
+    }
+
+    public Guid GetGameIdByKey(string key)
+    {
+        return gameDbContext.GameEntities.FirstOrDefault(g => g.Key == key).Id;
+    }
+
+    public void DeleteCommentDb(string key, Guid id)
+    {
+        var entity = gameDbContext.GameEntities.Include(gameEntity => gameEntity.CommentEntities)
+            .FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
+        var commentEntity = entity.CommentEntities.FirstOrDefault(c => c.Id == id) ?? throw new ArgumentNullException();
+        commentEntity.Body = "A comment/quote was deleted";
+        gameDbContext.SaveChanges();
+    }
+
     public bool NotExists(Guid id)
     {
         return !gameDbContext.GameEntities.Any(t => t.Id == id);

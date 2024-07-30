@@ -26,6 +26,16 @@ public interface IGameDbService
 
     public void AddGameEntityToCartDb(GameEntity gameEntity);
 
+    public void AddCommentDb(string key, CommentEntity commentEntity);
+
+    public ICollection<CommentEntity> GetCommentsDb(string key);
+
+    public CommentEntity GetCommentById(Guid? commentId);
+
+    public Guid GetGameIdByKey(string key);
+
+    public void DeleteCommentDb(string key, Guid id);
+
     public bool NotExists(Guid id);
 
     public bool KeyNotExists(string key);

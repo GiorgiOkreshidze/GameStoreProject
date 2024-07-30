@@ -23,6 +23,10 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
 
     public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
+    public DbSet<CommentEntity> CommentEntities { get; set; }
+
+    public DbSet<BanEntity> BanEntities { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<GameEntity>()
@@ -56,6 +60,11 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
                 l => l.HasOne<OrderEntity>().WithMany().HasForeignKey(e => e.OrderId),
                 r => r.HasOne<GameEntity>().WithMany().HasForeignKey(e => e.ProductId));
 
+        modelBuilder.Entity<CommentEntity>()
+            .HasOne(x => x.ParentComment)
+            .WithMany()
+            .HasForeignKey(x => x.ParentCommentId);
+
         modelBuilder.Entity<PlatformEntity>().HasData(
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Mobile" },
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Browser" },
@@ -87,6 +96,13 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             new PaymentMethod { Title = "Bank", Description = "Bank Method Description", ImageUrl = "Bank Method URL" },
             new PaymentMethod { Title = "IBox terminal", Description = "IBox Terminal Method Description", ImageUrl = "IBox Terminal Method URL" },
             new PaymentMethod { Title = "Visa", Description = "Visa Method Description", ImageUrl = "Visa Method URL" });
+
+        modelBuilder.Entity<BanEntity>().HasData(
+            new BanEntity { Duration = "1 hour" },
+            new BanEntity { Duration = "1 day" },
+            new BanEntity { Duration = "1 week" },
+            new BanEntity { Duration = "1 month" },
+            new BanEntity { Duration = "permanent" });
 
         base.OnModelCreating(modelBuilder);
     }
