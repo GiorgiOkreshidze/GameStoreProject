@@ -12,14 +12,23 @@ public class PlatformProfile : Profile
 {
     public PlatformProfile()
     {
-        CreateMap<GameEntity, Game>().ReverseMap();
-        CreateMap<Game, GetGameDto>().ReverseMap();
-        CreateMap<Game, CreateGameDto>().ReverseMap();
-        CreateMap<PlatformEntity, Platform>().ReverseMap();
+        // PlatformDtos to PlatformModels
+        CreateMap<CreatePlatformDto, Platform>()
+            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Platform.Type))
+            .ReverseMap();
+        CreateMap<UpdatePlatformDto, Platform>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Platform.Id))
+            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Platform.Type)).ReverseMap();
         CreateMap<Platform, GetPlatformDto>().ReverseMap();
-        CreateMap<Platform, CreatePlatformDto>().ReverseMap();
         CreateMap<PlatformDtoWithoutId, Platform>().ReverseMap();
         CreateMap<Platform, PlatformDto>().ReverseMap();
-        CreateMap<Platform, UpdatePlatformDto>().ReverseMap();
+
+        // Models to Entities
+        CreateMap<PlatformEntity, Platform>().ReverseMap();
+        CreateMap<GameEntity, Game>().ReverseMap();
+
+        // Other
+        CreateMap<Game, GetGameDto>().ReverseMap();
+        CreateMap<Game, CreateGameDto>().ReverseMap();
     }
 }

@@ -13,6 +13,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BusinessLogic.Services;
 
@@ -94,6 +95,8 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
 
         var fileBytes = File.ReadAllBytes(filePath);
         orderDbService.OrderStatusChangeDb(true);
+        orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
+        orderDbService.DeleteOrderDb(orderEntity.Id);
         return (fileBytes, fileName);
     }
 
@@ -123,8 +126,17 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         if (response.IsSuccessStatusCode)
         {
             string data = response.Content.ReadAsStringAsync().Result;
-            iboxResponse = JsonConvert.DeserializeObject<IBoxTerminalResponseDto>(data);
+            var jsonResult = JObject.Parse(data);
+            iboxResponse = new IBoxTerminalResponseDto
+            {
+                OrderId = Guid.Parse(jsonResult["invoiceNumber"].ToString()),
+                PaymentDate = DateTime.UtcNow,
+                Sum = (int)(jsonResult["amount"] ?? throw new InvalidOperationException("amount is incorrect")),
+                UserId = Guid.Parse(jsonResult["accountNumber"].ToString()),
+            };
+            orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
             orderDbService.OrderStatusChangeDb(true);
+            orderDbService.DeleteOrderDb(orderEntity.Id);
         }
         else
         {
@@ -164,6 +176,8 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         if (response.IsSuccessStatusCode)
         {
             orderDbService.OrderStatusChangeDb(true);
+            orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
+            orderDbService.DeleteOrderDb(orderEntity.Id);
         }
         else
         {

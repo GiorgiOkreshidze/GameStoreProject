@@ -76,4 +76,25 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
         gameDbContext.SaveChanges();
     }
+
+    public void ChangeGameUnitInStock(OrderEntity orderEntity, ICollection<OrderGame> orderGames)
+    {
+        var order = gameDbContext.OrderEntities.Include(o => o.GameEntities)
+            .FirstOrDefault(o => o.Id == orderEntity.Id);
+        foreach (var gameEntity in order.GameEntities)
+        {
+            var game = gameDbContext.GameEntities.FirstOrDefault(g => g.Id == gameEntity.Id);
+            var orderGame = orderGames.FirstOrDefault(o => o.ProductId == gameEntity.Id);
+
+            game.UnitInStock -= orderGame.Quantity;
+            gameDbContext.SaveChanges();
+        }
+    }
+
+    public void DeleteOrderDb(Guid id)
+    {
+        var order = gameDbContext.OrderEntities.FirstOrDefault(o => o.Id == id) ?? throw new ArgumentNullException();
+        gameDbContext.OrderEntities.Remove(order);
+        gameDbContext.SaveChanges();
+    }
 }

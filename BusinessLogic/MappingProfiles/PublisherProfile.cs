@@ -12,13 +12,22 @@ public class PublisherProfile : Profile
 {
     public PublisherProfile()
     {
-        CreateMap<GameEntity, Game>().ReverseMap();
-        CreateMap<Game, GetGameDto>().ReverseMap();
-        CreateMap<Game, CreateGameDto>().ReverseMap();
-        CreateMap<PublisherEntity, Publisher>().ReverseMap();
-        CreateMap<Publisher, CreatePublisherDto>().ReverseMap();
+        // PublisherDtos to PublisherModels
+        CreateMap<CreatePublisherDto, Publisher>()
+            .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Publisher.CompanyName))
+            .ForMember(dest => dest.HomePage, opt => opt.MapFrom(src => src.Publisher.HomePage))
+            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Publisher.Description))
+            .ReverseMap();
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
         CreateMap<Publisher, UpdatePublisherDto>().ReverseMap();
         CreateMap<PublisherDto, Publisher>().ReverseMap();
+
+        // Models to Entities
+        CreateMap<PublisherEntity, Publisher>().ReverseMap();
+        CreateMap<GameEntity, Game>().ReverseMap();
+
+        // Other
+        CreateMap<Game, GetGameDto>().ReverseMap();
+        CreateMap<Game, CreateGameDto>().ReverseMap();
     }
 }

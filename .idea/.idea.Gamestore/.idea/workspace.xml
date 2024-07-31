@@ -10,45 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a6f0916-3f3e-4aba-93b7-7c776f6fa568" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/ICommentService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/CommentProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/BanModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/Comment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/CommentService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/AddCommentDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/BanDurationDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/BanUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/CommentDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/CommentDtos/GetCommentDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/ICommentDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/BanEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726085927_Sixth Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726085927_Sixth Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726121906_Seventh Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240726121906_Seventh Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Services/CommentDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gamestore/Controllers/CommentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GenreProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GenreProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PlatformProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PlatformProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PublisherProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PublisherProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/PlatformService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/PlatformService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +54,14 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Diagnostics.DiagnosticSource/src/System/Diagnostics/DiagnosticListener.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/a5cc707d976a14495462c9c492a921ff0927b8f5/src/libraries/Microsoft.Extensions.Options/src/ConfigureNamedOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/coreclr/System.Private.CoreLib/src/System/Threading/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Net.Http/src/System/Net/Http/Headers/MediaTypeHeaderValue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Net.Http/src/System/Net/Http/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Net.Http/src/System/Net/Http/HttpRuleParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Net.Http/src/System/Net/Http/StringContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Private.CoreLib/src/System/Collections/Generic/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Private.CoreLib/src/System/String.Comparison.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Private.CoreLib/src/System/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Private.CoreLib/src/System/Text/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/e7b8488daf32c7a607632ec4be605ba3ccf171a7/src/libraries/System.Text.RegularExpressions/src/System/Text/RegularExpressions/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/57/9c681939/AbstractInvocation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1fce37416598a5fb677f9b329d52e2e9d64e126621a5229f5a5884d87827b9ad/Mapper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -108,10 +88,11 @@
   "keyToString": {
     ".NET Launch Settings Profile.Gamestore: IIS Express.executor": "Run",
     ".NET Launch Settings Profile.Gamestore: http.executor": "Run",
-    ".NET Launch Settings Profile.Gamestore: https.executor": "Debug",
+    ".NET Launch Settings Profile.Gamestore: https.executor": "Run",
     "2b28115b-6f66-4830-91f0-a6a4e5754d58.executor": "Debug",
     "9afba305-74de-4073-b49e-66039b9fa509.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "XThreadsFramesViewSplitterKey": "0.46846846",
     "c9f8e598-a105-400e-be2f-b1fc9d2e9540.executor": "Debug",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
@@ -230,7 +211,8 @@
       <workItem from="1721805881984" duration="1838000" />
       <workItem from="1721824483594" duration="10442000" />
       <workItem from="1721982762119" duration="12651000" />
-      <workItem from="1722345524747" duration="5107000" />
+      <workItem from="1722345524747" duration="6112000" />
+      <workItem from="1722412970057" duration="10564000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -408,7 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721835579980</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Commit.">
+      <option name="closed" value="true" />
+      <created>1722351305676</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1722351305676</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,35 +447,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Commit." />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
-          <line>217</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'AddCommentAsReply'">
-            <startOffsets>
-              <option value="6700" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6701" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
-          <line>201</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'AddCommentAsQuote'">
-            <startOffsets>
-              <option value="6139" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6186" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="response.RequestMessage" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -15,7 +15,7 @@ public class PublisherService(IPublisherDbService publisherDbService, IMapper pu
 {
     public void CreatePublisher(CreatePublisherDto publisherDto)
     {
-        var publisher = publisherMapper.Map<PublisherDto, Publisher>(publisherDto.Publisher);
+        var publisher = publisherMapper.Map<CreatePublisherDto, Publisher>(publisherDto);
 
         publisher.Id = Guid.NewGuid();
 

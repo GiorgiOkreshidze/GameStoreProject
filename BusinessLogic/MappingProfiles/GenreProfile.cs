@@ -12,14 +12,24 @@ public class GenreProfile : Profile
 {
     public GenreProfile()
     {
-        CreateMap<GameEntity, Game>().ReverseMap();
-        CreateMap<Game, GetGameDto>().ReverseMap();
-        CreateMap<Game, CreateGameDto>().ReverseMap();
-        CreateMap<GenreEntity, Genre>().ReverseMap();
-        CreateMap<Genre, CreateGenreDto>().ReverseMap();
+        // GenreDtos to GenreModels
+        CreateMap<CreateGenreDto, Genre>()
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Genre.Name))
+            .ForMember(dest => dest.ParentGenreId, opt => opt.MapFrom(src => src.Genre.ParentGenreId))
+            .ReverseMap();
+        CreateMap<UpdateGenreDto, Genre>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Genre.Id))
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Genre.Name))
+            .ReverseMap();
         CreateMap<GenreDtoWithParentId, Genre>().ReverseMap();
         CreateMap<Genre, GetGenreDto>().ReverseMap();
         CreateMap<Genre, GenreDto>().ReverseMap();
-        CreateMap<UpdateGenreDto, Genre>().ReverseMap();
+
+        // Models to entities
+        CreateMap<GameEntity, Game>().ReverseMap();
+        CreateMap<GenreEntity, Genre>().ReverseMap();
+
+        // Other
+        CreateMap<Game, GetGameDto>().ReverseMap();
     }
 }

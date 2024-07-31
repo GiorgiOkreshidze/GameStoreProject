@@ -39,10 +39,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public void CreateGame(CreateGameDto createGameDto)
     {
-        Game game = gameMapper.Map<GameDto, Game>(createGameDto.Game);
-        game.Genres = createGameDto.Genres;
-        game.Platforms = createGameDto.Platforms;
-        game.PublisherId = createGameDto.Publisher;
+        Game game = gameMapper.Map<CreateGameDto, Game>(createGameDto);
 
         game.Id = Guid.NewGuid();
 
@@ -85,10 +82,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public void UpdateGame(UpdateGameDto updateGameDto)
     {
-        Game game = gameMapper.Map<GameDtoWithId, Game>(updateGameDto.Game);
-        game.Genres = updateGameDto.Genres;
-        game.Platforms = updateGameDto.Platforms;
-        game.PublisherId = updateGameDto.PublisherId;
+        Game game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
 
         validator.ValidateGameId(game.Id);
         validator.ValidateGenres(game.Genres);
@@ -188,6 +182,11 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     {
         validator.ValidateGameKey(key);
         var gameEntity = gameDbService.GetGameByKeyDb(key);
+        if (gameEntity.UnitInStock <= 0)
+        {
+            throw new InvalidOperationException("Unit in stock is less then one");
+        }
+
         gameDbService.AddGameEntityToCartDb(gameEntity);
     }
 
@@ -245,14 +244,9 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             throw new Exception("User is banned.");
         }*/
         var gameId = gameDbService.GetGameIdByKey(key);
-        var comment = new Comment
-        {
-            Id = Guid.NewGuid(),
-            Name = addCommentDto.Comment.Name,
-            Body = addCommentDto.Comment.Body,
-            GameId = gameId,
-            ParentCommentId = addCommentDto.ParentId,
-        };
+        var comment = gameMapper.Map<AddCommentDto, Comment>(addCommentDto);
+        comment.Id = Guid.NewGuid();
+        comment.GameId = gameId;
 
         var commentEntity = gameMapper.Map<Comment, CommentEntity>(comment);
 
