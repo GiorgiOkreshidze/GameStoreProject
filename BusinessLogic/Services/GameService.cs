@@ -4,7 +4,6 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
-#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.CommentDtos;
@@ -12,7 +11,6 @@ using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
-#pragma warning restore IDE0005
 
 namespace BusinessLogic.Services;
 
@@ -39,7 +37,10 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public void CreateGame(CreateGameDto createGameDto)
     {
-        Game game = gameMapper.Map<CreateGameDto, Game>(createGameDto);
+        var game = gameMapper.Map<GameDto, Game>(createGameDto.Game);
+        game.Platforms = createGameDto.Platforms;
+        game.Genres = createGameDto.Genres;
+        game.PublisherId = createGameDto.Publisher;
 
         game.Id = Guid.NewGuid();
 
@@ -52,9 +53,8 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
         validator.ValidatePlatforms(game.Platforms);
         validator.ValidatePublisherId(game.PublisherId);
 
-        GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
+        var gameEntity = gameMapper.Map<Game, GameEntity>(game);
 
-#pragma warning disable SA1010
         gameEntity.GenreEntities = [];
         gameEntity.PlatformEntities = [];
 
@@ -82,14 +82,14 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 
     public void UpdateGame(UpdateGameDto updateGameDto)
     {
-        Game game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
+        var game = gameMapper.Map<UpdateGameDto, Game>(updateGameDto);
 
         validator.ValidateGameId(game.Id);
         validator.ValidateGenres(game.Genres);
         validator.ValidatePlatforms(game.Platforms);
         validator.ValidatePublisherId(game.PublisherId);
 
-        GameEntity gameEntity = gameMapper.Map<Game, GameEntity>(game);
+        var gameEntity = gameMapper.Map<Game, GameEntity>(game);
 
         gameEntity.GenreEntities = [];
         gameEntity.PlatformEntities = [];
@@ -193,10 +193,11 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     public void AddCommentAsQuote(string key, AddCommentDto addCommentDto)
     {
         validator.ValidateGameKey(key);
-        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        if (gameDbService.IsUserBanned(addCommentDto.Comment.Name))
         {
             throw new Exception("User is banned.");
-        }*/
+        }
+
         var parentComment = gameDbService.GetCommentById(addCommentDto.ParentId);
         var gameId = gameDbService.GetGameIdByKey(key);
         var comment = new Comment
@@ -216,10 +217,11 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     public void AddCommentAsReply(string key, AddCommentDto addCommentDto)
     {
         validator.ValidateGameKey(key);
-        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        if (gameDbService.IsUserBanned(addCommentDto.Comment.Name))
         {
             throw new Exception("User is banned.");
-        }*/
+        }
+
         var parentComment = gameDbService.GetCommentById(addCommentDto.ParentId);
         var gameId = gameDbService.GetGameIdByKey(key);
         var comment = new Comment
@@ -239,10 +241,11 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     public void AddComment(string key, AddCommentDto addCommentDto)
     {
         validator.ValidateGameKey(key);
-        /*if (IsUserBanned(addCommentDto.Comment.Name))
+        if (gameDbService.IsUserBanned(addCommentDto.Comment.Name))
         {
             throw new Exception("User is banned.");
-        }*/
+        }
+
         var gameId = gameDbService.GetGameIdByKey(key);
         var comment = gameMapper.Map<AddCommentDto, Comment>(addCommentDto);
         comment.Id = Guid.NewGuid();

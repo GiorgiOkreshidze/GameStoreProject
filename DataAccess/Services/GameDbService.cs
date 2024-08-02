@@ -173,11 +173,17 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public void DeleteCommentDb(string key, Guid id)
     {
-        var entity = gameDbContext.GameEntities.Include(gameEntity => gameEntity.CommentEntities)
-            .FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
-        var commentEntity = entity.CommentEntities.FirstOrDefault(c => c.Id == id) ?? throw new ArgumentNullException();
-        commentEntity.Body = "A comment/quote was deleted";
+        var deleteBody = "A comment/quote was deleted";
+        var gameId = GetGameIdByKey(key);
+        var commentEntity = gameDbContext.CommentEntities.FirstOrDefault(c => c.Id == id) ?? throw new ArgumentNullException();
+        DeleteCommentRecursively(gameId, commentEntity, deleteBody, commentEntity.Body);
+        commentEntity.Body = deleteBody;
         gameDbContext.SaveChanges();
+    }
+
+    public bool IsUserBanned(string name)
+    {
+        return gameDbContext.BannedUserEntities.Any(u => u.User == name);
     }
 
     public bool NotExists(Guid id)
@@ -188,5 +194,22 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     public bool KeyNotExists(string key)
     {
         return !gameDbContext.GameEntities.Any(t => t.Key == key);
+    }
+
+    private void DeleteCommentRecursively(Guid gameId, CommentEntity commentEntity, string deleteBody, string deletedCommentBody)
+    {
+        var childComments = gameDbContext.CommentEntities.Where(c => c.ParentCommentId == commentEntity.Id).ToList();
+        if (childComments.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var childComment in childComments)
+        {
+            childComment.Body = childComment.Body.Replace(deletedCommentBody + ',', deleteBody + ',');
+            DeleteCommentRecursively(gameId, childComment, deleteBody, deletedCommentBody);
+        }
+
+        gameDbContext.SaveChanges();
     }
 }

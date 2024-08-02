@@ -13,14 +13,11 @@ public class PublisherProfile : Profile
     public PublisherProfile()
     {
         // PublisherDtos to PublisherModels
-        CreateMap<CreatePublisherDto, Publisher>()
-            .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Publisher.CompanyName))
-            .ForMember(dest => dest.HomePage, opt => opt.MapFrom(src => src.Publisher.HomePage))
-            .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Publisher.Description))
+        CreateMap<PublisherDto, Publisher>().ReverseMap();
+        CreateMap<CreatePublisherDto, Publisher>().IncludeMembers(src => src.Publisher)
             .ReverseMap();
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
         CreateMap<Publisher, UpdatePublisherDto>().ReverseMap();
-        CreateMap<PublisherDto, Publisher>().ReverseMap();
 
         // Models to Entities
         CreateMap<PublisherEntity, Publisher>().ReverseMap();

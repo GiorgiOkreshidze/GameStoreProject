@@ -11,7 +11,7 @@ public class CommentProfile : Profile
 {
     public CommentProfile()
     {
-        CreateMap<BanEntity, BanModel>().ReverseMap();
-        CreateMap<BanModel, BanDurationDto>().ReverseMap();
+        CreateMap<BannedUserEntity, BannedUser>().ReverseMap();
+        CreateMap<BannedUser, BanUserDto>().ReverseMap();
     }
 }

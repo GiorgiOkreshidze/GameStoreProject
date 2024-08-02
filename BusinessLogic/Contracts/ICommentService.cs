@@ -6,7 +6,5 @@ namespace BusinessLogic.Contracts;
 
 public interface ICommentService
 {
-    public ICollection<BanDurationDto> GetBanDurations();
-
     public void BanUser(BanUserDto banUserDto);
 }

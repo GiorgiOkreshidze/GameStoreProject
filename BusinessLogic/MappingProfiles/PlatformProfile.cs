@@ -13,15 +13,13 @@ public class PlatformProfile : Profile
     public PlatformProfile()
     {
         // PlatformDtos to PlatformModels
-        CreateMap<CreatePlatformDto, Platform>()
-            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Platform.Type))
-            .ReverseMap();
-        CreateMap<UpdatePlatformDto, Platform>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Platform.Id))
-            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Platform.Type)).ReverseMap();
-        CreateMap<Platform, GetPlatformDto>().ReverseMap();
         CreateMap<PlatformDtoWithoutId, Platform>().ReverseMap();
+        CreateMap<CreatePlatformDto, Platform>().IncludeMembers(src => src.Platform)
+            .ReverseMap();
         CreateMap<Platform, PlatformDto>().ReverseMap();
+        CreateMap<UpdatePlatformDto, Platform>().IncludeMembers(src => src.Platform)
+            .ReverseMap();
+        CreateMap<Platform, GetPlatformDto>().ReverseMap();
 
         // Models to Entities
         CreateMap<PlatformEntity, Platform>().ReverseMap();

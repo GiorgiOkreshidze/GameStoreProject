@@ -10,12 +10,6 @@ namespace Gamestore.Controllers;
 [Route("[controller]")]
 public class CommentController(ICommentService commentService) : Controller
 {
-    [HttpGet("ban/durations1")]
-    public IActionResult GetBanDurations1()
-    {
-        return Ok(commentService.GetBanDurations());
-    }
-
     [HttpGet("ban/durations")]
     public IActionResult GetBanDurations()
     {

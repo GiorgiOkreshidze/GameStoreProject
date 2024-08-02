@@ -36,6 +36,8 @@ public interface IGameDbService
 
     public void DeleteCommentDb(string key, Guid id);
 
+    public bool IsUserBanned(string name);
+
     public bool NotExists(Guid id);
 
     public bool KeyNotExists(string key);

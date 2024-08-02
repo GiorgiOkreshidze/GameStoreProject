@@ -1,15 +1,23 @@
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Services;
 
-#pragma warning disable IDE0305
 public class CommentDbService(GameDbContext gameDbContext) : ICommentDbService
 {
-    public ICollection<BanEntity> GetBanDurationsDb()
+    public void BanUserDb(BannedUserEntity bannedUserEntity)
     {
-        return gameDbContext.BanEntities.AsNoTracking().ToList();
+        var nameExists = gameDbContext.CommentEntities.Any(c => c.Name == bannedUserEntity.User);
+
+        if (nameExists)
+        {
+            gameDbContext.BannedUserEntities.Add(bannedUserEntity);
+            gameDbContext.SaveChanges();
+        }
+        else
+        {
+            throw new Exception("Name Doesn't exists");
+        }
     }
 }

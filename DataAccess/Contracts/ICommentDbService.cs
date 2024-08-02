@@ -4,5 +4,5 @@ namespace DataAccess.Contracts;
 
 public interface ICommentDbService
 {
-    public ICollection<BanEntity> GetBanDurationsDb();
+    public void BanUserDb(BannedUserEntity bannedUserEntity);
 }
