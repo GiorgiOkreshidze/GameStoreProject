@@ -15,17 +15,17 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         var query = gameDbContext.GameEntities.AsQueryable();
 
         // Apply filters
-        if (filter.GenreIds.Any())
+        if (filter.GenreIds != null && filter.GenreIds.Any())
         {
             query = query.Where(g => g.GenreEntities.Any(genre => filter.GenreIds.Contains(genre.Id)));
         }
 
-        if (filter.PlatformIds.Any())
+        if (filter.PlatformIds != null && filter.PlatformIds.Any())
         {
             query = query.Where(g => g.PlatformEntities.Any(platform => filter.PlatformIds.Contains(platform.Id)));
         }
 
-        if (filter.PublisherIds.Any())
+        if (filter.PublisherIds != null && filter.PublisherIds.Any())
         {
             query = query.Where(g => filter.PublisherIds.Contains(g.PublisherId!.Value));
         }
@@ -54,10 +54,10 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         // Apply sorting
         query = sort.SortBy switch
         {
-            "MostPopular" => query.OrderByDescending(g => g.Views),
-            "MostCommented" => query.OrderByDescending(g => g.CommentEntities.Count),
-            "PriceAsc" => query.OrderBy(g => g.Price),
-            "PriceDesc" => query.OrderByDescending(g => g.Price),
+            "Most popular" => query.OrderByDescending(g => g.Views),
+            "Most commented" => query.OrderByDescending(g => g.CommentEntities.Count),
+            "Price ASC" => query.OrderBy(g => g.Price),
+            "Price DESC" => query.OrderByDescending(g => g.Price),
             "New" => query.OrderByDescending(g => g.PublishDate),
             _ => query,
         };
@@ -72,11 +72,11 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         return range switch
         {
-            "LastWeek" => new DateRange(DateTime.Now.AddDays(-7), DateTime.Now),
-            "LastMonth" => new DateRange(DateTime.Now.AddMonths(-1), DateTime.Now),
-            "LastYear" => new DateRange(DateTime.Now.AddYears(-1), DateTime.Now),
-            "TwoYears" => new DateRange(DateTime.Now.AddYears(-2), DateTime.Now),
-            "ThreeYears" => new DateRange(DateTime.Now.AddYears(-3), DateTime.Now),
+            "last week" => new DateRange(DateTime.Now.AddDays(-7), DateTime.Now),
+            "last month" => new DateRange(DateTime.Now.AddMonths(-1), DateTime.Now),
+            "last year" => new DateRange(DateTime.Now.AddYears(-1), DateTime.Now),
+            "2 years" => new DateRange(DateTime.Now.AddYears(-2), DateTime.Now),
+            "3 years" => new DateRange(DateTime.Now.AddYears(-3), DateTime.Now),
             _ => null,
         };
     }
@@ -131,7 +131,10 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public GameEntity GetGameByKeyDb(string key)
     {
-        var gameEntity = gameDbContext.GameEntities.FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
+        var gameEntity = gameDbContext.GameEntities
+            .Include(game => game.PlatformEntities)
+            .Include(game => game.GenreEntities)
+            .FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
 
         gameEntity.Views++;
 
@@ -142,7 +145,10 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public GameEntity GetGameByIdDb(Guid id)
     {
-        var gameEntity = gameDbContext.GameEntities.FirstOrDefault(t => t.Id == id) ?? throw new ArgumentNullException();
+        var gameEntity = gameDbContext.GameEntities
+                             .Include(game => game.PlatformEntities)
+                             .Include(game => game.GenreEntities)
+                             .FirstOrDefault(t => t.Id == id) ?? throw new ArgumentNullException();
 
         gameEntity.Views++;
 

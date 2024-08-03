@@ -139,14 +139,6 @@ public class GameController(IGameService gameService) : Controller
     [HttpGet("sorting-options")]
     public IActionResult GetSortingOptions()
     {
-        var options = new[]
-        {
-            new { Value = "MostPopular", Label = "Most Popular" },
-            new { Value = "MostCommented", Label = "Most Commented" },
-            new { Value = "PriceAsc", Label = "Price ASC" },
-            new { Value = "PriceDesc", Label = "Price DESC" },
-            new { Value = "New", Label = "New" },
-        };
-        return Ok(options);
+        return Ok(new List<string> { "Most popular", "Most commented", "Price ASC", "Price DESC", "New" });
     }
 }
