@@ -44,10 +44,13 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             CurrentPage = gameEntities.PageNumber,
         };
 
-        // Return the result wrapped in an IPagedList<GetPagedGameDto>
-        var result = new StaticPagedList<GetPagedGameDto>([getGameDto], pagination.PageNumber, pagination.PageSize, gameEntities.TotalItemCount);
+        StaticPagedList<GetPagedGameDto> result = !PaginationIsDefault(pagination)
+            ? new StaticPagedList<GetPagedGameDto>([getGameDto], pagination.PageNumber, pagination.PageSize, gameEntities.TotalItemCount)
+            : new StaticPagedList<GetPagedGameDto>([getGameDto], 1, getGameDto.Games.Count, getGameDto.Games.Count);
         return result;
     }
+
+    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto.PageNumber <= 0 && paginationDto.PageSize <= 0;
 
     public void CreateGame(CreateGameDto createGameDto)
     {

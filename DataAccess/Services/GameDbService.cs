@@ -15,58 +15,91 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         var query = gameDbContext.GameEntities.AsQueryable();
 
         // Apply filters
-        if (filter.GenreIds != null && filter.GenreIds.Any())
+        if (!FilterIsDefault(filter))
         {
-            query = query.Where(g => g.GenreEntities.Any(genre => filter.GenreIds.Contains(genre.Id)));
+            if (filter.GenreIds != null && filter.GenreIds.Any())
+            {
+                query = query.Where(g => g.GenreEntities.Any(genre => filter.GenreIds.Contains(genre.Id)));
+            }
+
+            if (filter.PlatformIds != null && filter.PlatformIds.Any())
+            {
+                query = query.Where(g => g.PlatformEntities.Any(platform => filter.PlatformIds.Contains(platform.Id)));
+            }
+
+            if (filter.PublisherIds != null && filter.PublisherIds.Any())
+            {
+                query = query.Where(g => filter.PublisherIds.Contains(g.PublisherId!.Value));
+            }
+
+            if (filter.MinPrice.HasValue)
+            {
+                query = query.Where(g => g.Price >= filter.MinPrice.Value);
+            }
+
+            if (filter.MaxPrice.HasValue)
+            {
+                query = query.Where(g => g.Price <= filter.MaxPrice.Value);
+            }
+
+            if (!string.IsNullOrEmpty(filter.Name) && filter.Name.Length >= 3)
+            {
+                query = query.Where(g => g.Name.Contains(filter.Name));
+            }
+
+            if (!string.IsNullOrEmpty(filter.PublishDateRange))
+            {
+                var dateRange = GetDateRange(filter.PublishDateRange);
+                query = query.Where(g => g.PublishDate >= dateRange.Start && g.PublishDate <= dateRange.End);
+            }
         }
 
-        if (filter.PlatformIds != null && filter.PlatformIds.Any())
+        if (!SortIsDefault(sort))
         {
-            query = query.Where(g => g.PlatformEntities.Any(platform => filter.PlatformIds.Contains(platform.Id)));
+            // Apply sorting
+            query = sort.SortBy switch
+            {
+                "Most popular" => query.OrderByDescending(g => g.Views),
+                "Most commented" => query.OrderByDescending(g => g.CommentEntities.Count),
+                "Price ASC" => query.OrderBy(g => g.Price),
+                "Price DESC" => query.OrderByDescending(g => g.Price),
+                "New" => query.OrderByDescending(g => g.PublishDate),
+                _ => query,
+            };
         }
-
-        if (filter.PublisherIds != null && filter.PublisherIds.Any())
-        {
-            query = query.Where(g => filter.PublisherIds.Contains(g.PublisherId!.Value));
-        }
-
-        if (filter.MinPrice.HasValue)
-        {
-            query = query.Where(g => g.Price >= filter.MinPrice.Value);
-        }
-
-        if (filter.MaxPrice.HasValue)
-        {
-            query = query.Where(g => g.Price <= filter.MaxPrice.Value);
-        }
-
-        if (!string.IsNullOrEmpty(filter.Name) && filter.Name.Length >= 3)
-        {
-            query = query.Where(g => g.Name.Contains(filter.Name));
-        }
-
-        if (!string.IsNullOrEmpty(filter.PublishDateRange))
-        {
-            var dateRange = GetDateRange(filter.PublishDateRange);
-            query = query.Where(g => g.PublishDate >= dateRange.Start && g.PublishDate <= dateRange.End);
-        }
-
-        // Apply sorting
-        query = sort.SortBy switch
-        {
-            "Most popular" => query.OrderByDescending(g => g.Views),
-            "Most commented" => query.OrderByDescending(g => g.CommentEntities.Count),
-            "Price ASC" => query.OrderBy(g => g.Price),
-            "Price DESC" => query.OrderByDescending(g => g.Price),
-            "New" => query.OrderByDescending(g => g.PublishDate),
-            _ => query,
-        };
 
         // Apply pagination
-        var pagedList = query.ToPagedList(pagination.PageNumber, pagination.PageSize);
+        IPagedList<GameEntity> pagedResult;
+        if (!PaginationIsDefault(pagination))
+        {
+            try
+            {
+                pagedResult = query.ToPagedList(pagination.PageNumber, pagination.PageSize);
+            }
+            catch (Exception ex)
+            {
+                throw new InvalidOperationException("An error occurred while applying pagination.", ex);
+            }
+        }
+        else
+        {
+            pagedResult = new StaticPagedList<GameEntity>(query.ToList(), 1, query.Count(), query.Count());
+        }
 
-        return pagedList;
+        return pagedResult;
     }
+
+    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto.PageNumber <= 0 && paginationDto.PageSize <= 0;
+
+    public static bool FilterIsDefault(GameFilterDto filterDto) => (filterDto.GenreIds == null || !filterDto.GenreIds.Any())
+                                                  && (filterDto.PlatformIds == null || !filterDto.PlatformIds.Any())
+                                                  && (filterDto.PublisherIds == null || !filterDto.PublisherIds.Any())
+                                                  && !filterDto.MinPrice.HasValue
+                                                  && !filterDto.MaxPrice.HasValue
+                                                  && string.IsNullOrEmpty(filterDto.Name)
+                                                  && string.IsNullOrEmpty(filterDto.PublishDateRange);
+
+    public static bool SortIsDefault(GameSortDto sortDto) => string.IsNullOrEmpty(sortDto.SortBy);
 
     public static DateRange GetDateRange(string range)
     {
