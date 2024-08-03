@@ -11,6 +11,7 @@ using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
+using X.PagedList;
 
 namespace BusinessLogic.Services;
 
@@ -19,20 +20,33 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 {
     private static readonly Regex MyRegex = new(@"\s+", RegexOptions.Compiled);
 
-    public ICollection<GetGameDto> GetAllGames()
+    public IPagedList<GetPagedGameDto> GetGames(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination)
     {
-        var gameEntities = gameDbService.GetAllGamesDb();
+        IPagedList<GameEntity> gameEntities = gameDbService.GetGamesDb(filter, sort, pagination);
 
-        var gameDtos = new List<GetGameDto>();
-
-        foreach (var gameEntity in gameEntities)
+        // Map GameEntity to GameDtoWithId
+        var gameDtosWithId = gameEntities.Select(game => new GameDtoWithId
         {
-            var game = gameMapper.Map<GameEntity, Game>(gameEntity);
-            var gameDto = gameMapper.Map<Game, GetGameDto>(game);
-            gameDtos.Add(gameDto);
-        }
+            Id = game.Id,
+            Name = game.Name,
+            Key = game.Key,
+            Description = game.Description,
+            Price = game.Price,
+            UnitInStock = game.UnitInStock,
+            Discount = game.Discount,
+        }).ToList();
 
-        return gameDtos;
+        // Create GetPagedGameDto
+        var getGameDto = new GetPagedGameDto
+        {
+            Games = new StaticPagedList<GameDtoWithId>(gameDtosWithId, gameEntities.PageNumber, gameEntities.PageSize, gameEntities.TotalItemCount),
+            TotalPages = gameEntities.PageCount,
+            CurrentPage = gameEntities.PageNumber,
+        };
+
+        // Return the result wrapped in an IPagedList<GetPagedGameDto>
+        var result = new StaticPagedList<GetPagedGameDto>([getGameDto], pagination.PageNumber, pagination.PageSize, gameEntities.TotalItemCount);
+        return result;
     }
 
     public void CreateGame(CreateGameDto createGameDto)

@@ -134,7 +134,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -167,6 +171,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.2.0.435, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.0.3, )"
             }
           },
           "imports": [
@@ -250,6 +258,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[1.2.0.435, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.0.3, )"
             }
           },
           "imports": [

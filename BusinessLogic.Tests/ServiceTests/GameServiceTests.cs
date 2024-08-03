@@ -41,7 +41,7 @@ public class GameServiceTests
         _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _validatorMock.Object);
     }
 
-    [Fact]
+    /*[Fact]
     public void GameService_GetAllGames_ReturnsAllGameDtos()
     {
         // Arrange
@@ -57,7 +57,7 @@ public class GameServiceTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(gameDtos);
-    }
+    }*/
 
     [Fact]
     public void GameService_GetGameByKey_ReturnsGameDtoByKey()

@@ -8,4 +8,8 @@
         <LangVersion>12</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="X.PagedList" Version="10.0.3" />
+    </ItemGroup>
+
 </Project>

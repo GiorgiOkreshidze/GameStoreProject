@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6V96s+wZ/6se5ApXF05t1pu1BZ4Kbzi2Lk9TBtyqrQxzzSUJbeO2SpufYNi7Plp3C1u4Hm7wO1hasTDhlD3xNw==",
+  "dgSpecHash": "vNv3q8rEpMUUU+Ddwte2VMCZ2cmKH81WJUGVQTpXOtOElkaHIfydfNHQJhGNa6rA4VOvjM3T2+DdjMFA1y9qGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.435\\stylecop.analyzers.unstable.1.2.0.435.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\x.pagedlist\\10.0.3\\x.pagedlist.10.0.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"

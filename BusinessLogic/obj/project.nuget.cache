@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aqUplV2Gsaq7gBG0VKnKlQMrH+A43Xq0sRcrbKPhjTvQev6InM2qqJ/3gHcOBlvgBuZTaS9v3Nm/VVTac1oteA==",
+  "dgSpecHash": "UTU3BXM8L+HXruuEtM5LWq/siuzrvU3zSkTGrVvF0doWt0CRsN8HMCZgi6YBtuu7qz528UZIFf5grjIX5OT1WQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
   "expectedPackageFiles": [
@@ -130,6 +130,7 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\x.pagedlist\\10.0.3\\x.pagedlist.10.0.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"

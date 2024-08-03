@@ -1,10 +1,12 @@
 using DataAccess.Entities;
+using DTOs.GameDtos;
+using X.PagedList;
 
 namespace DataAccess.Contracts;
 
 public interface IGameDbService
 {
-    public ICollection<GameEntity> GetAllGamesDb();
+    public IPagedList<GameEntity> GetGamesDb(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination);
 
     public void CreateGameDb(GameEntity gameEntity);
 

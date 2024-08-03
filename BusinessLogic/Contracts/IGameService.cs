@@ -1,3 +1,4 @@
+using X.PagedList;
 #pragma warning disable IDE0005
 using DTOs.CommentDtos;
 using DTOs.GameDtos;
@@ -10,7 +11,7 @@ namespace BusinessLogic.Contracts;
 
 public interface IGameService
 {
-    public ICollection<GetGameDto> GetAllGames();
+    public IPagedList<GetPagedGameDto> GetGames(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination);
 
     public void CreateGame(CreateGameDto createGameDto);
 

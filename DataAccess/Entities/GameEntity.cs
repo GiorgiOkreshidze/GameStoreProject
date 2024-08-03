@@ -38,4 +38,8 @@ public class GameEntity
     public ICollection<OrderEntity> OrderEntities { get; set; }
 
     public ICollection<CommentEntity> CommentEntities { get; set; }
+
+    public int Views { get; set; }
+
+    public DateTime PublishDate { get; set; } = DateTime.Now;
 }

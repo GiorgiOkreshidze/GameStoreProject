@@ -22,10 +22,9 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet]
-    public IActionResult Read()
+    public IActionResult GetGames([FromQuery] GameFilterDto filter, [FromQuery] GameSortDto sort, [FromQuery] GamePaginationDto pagination)
     {
-        var games = gameService.GetAllGames();
-
+        var games = gameService.GetGames(filter, sort, pagination);
         return Ok(games);
     }
 
@@ -129,5 +128,25 @@ public class GameController(IGameService gameService) : Controller
     {
         gameService.DeleteComment(key, id);
         return Ok();
+    }
+
+    [HttpGet("pagination-options")]
+    public IActionResult GetPaginationOptions()
+    {
+        return Ok(new List<string> { "10", "20", "50", "100", "all" });
+    }
+
+    [HttpGet("sorting-options")]
+    public IActionResult GetSortingOptions()
+    {
+        var options = new[]
+        {
+            new { Value = "MostPopular", Label = "Most Popular" },
+            new { Value = "MostCommented", Label = "Most Commented" },
+            new { Value = "PriceAsc", Label = "Price ASC" },
+            new { Value = "PriceDesc", Label = "Price DESC" },
+            new { Value = "New", Label = "New" },
+        };
+        return Ok(options);
     }
 }
