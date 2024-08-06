@@ -24,7 +24,6 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
     {
         IPagedList<GameEntity> gameEntities = gameDbService.GetGamesDb(filter, sort, pagination);
 
-        // Map GameEntity to GameDtoWithId
         var gameDtosWithId = gameEntities.Select(game => new GameDtoWithId
         {
             Id = game.Id,
@@ -36,7 +35,6 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             Discount = game.Discount,
         }).ToList();
 
-        // Create GetPagedGameDto
         var getGameDto = new GetPagedGameDto
         {
             Games = new StaticPagedList<GameDtoWithId>(gameDtosWithId, gameEntities.PageNumber, gameEntities.PageSize, gameEntities.TotalItemCount),

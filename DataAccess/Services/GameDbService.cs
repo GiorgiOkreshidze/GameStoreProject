@@ -14,7 +14,6 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
     {
         var query = gameDbContext.GameEntities.AsQueryable();
 
-        // Apply filters
         if (!FilterIsDefault(filter))
         {
             if (filter.GenreIds != null && filter.GenreIds.Any())
@@ -56,7 +55,6 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
         if (!SortIsDefault(sort))
         {
-            // Apply sorting
             query = sort.SortBy switch
             {
                 "Most popular" => query.OrderByDescending(g => g.Views),
@@ -68,7 +66,6 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
             };
         }
 
-        // Apply pagination
         IPagedList<GameEntity> pagedResult;
         if (!PaginationIsDefault(pagination))
         {

@@ -47,10 +47,13 @@ public static class PublisherEntityUtil
     {
         return new UpdatePublisherDto
         {
-            Id = PublisherEntityTest.Id,
-            CompanyName = PublisherEntityTest.CompanyName,
-            HomePage = PublisherEntityTest.HomePage,
-            Description = PublisherEntityTest.Description,
+            Publisher = new PublisherDtoWithId()
+            {
+                Id = PublisherEntityTest.Id,
+                CompanyName = PublisherEntityTest.CompanyName,
+                HomePage = PublisherEntityTest.HomePage,
+                Description = PublisherEntityTest.Description,
+            },
         };
     }
 

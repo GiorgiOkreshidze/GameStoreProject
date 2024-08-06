@@ -17,7 +17,8 @@ public class PublisherProfile : Profile
         CreateMap<CreatePublisherDto, Publisher>().IncludeMembers(src => src.Publisher)
             .ReverseMap();
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
-        CreateMap<Publisher, UpdatePublisherDto>().ReverseMap();
+        CreateMap<PublisherDtoWithId, Publisher>().ReverseMap();
+        CreateMap<UpdatePublisherDto, Publisher>().IncludeMembers(src => src.Publisher).ReverseMap();
 
         // Models to Entities
         CreateMap<PublisherEntity, Publisher>().ReverseMap();
