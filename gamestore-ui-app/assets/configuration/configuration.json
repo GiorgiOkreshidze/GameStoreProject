@@ -1,13 +1,16 @@
 {
   "baseApiUrl": "https://localhost:7185/",
 
+  "getGameFileApiUrl": "Game/{key}/file",
+  "getPublishedDateOptionsApiUrl": "Option/publish-date-options",
+  "getSortingOptionsApiUrl": "Game/sorting-options",
+  "getPaggingOptionsApiUrl": "Game/pagination-options",
   "gameApiUrl": "Game/{key}",
   "gameByIdApiUrl": "Game/find/{id}",
   "gamesApiUrl": "Game",
   "gamesByGenreApiUrl": "Genre/{id}/games",
-  "gamesByPublisherApiUrl": "Publisher/{companyName}/games",
+  "gamesByPublisherApiUrl": "Publisher/{companyname}/games",
   "gamesByPlatformApiUrl": "Platform/{id}/games",
-  "getGameFile": "Game/{key}/file",
   "updateGameApiUrl": "Game",
   "addGameApiUrl": "Game",
   "deleteGameApiUrl": "Game/{key}",
@@ -27,7 +30,7 @@
   "addPlatformApiUrl": "Platform",
   "deletePlatformApiUrl": "Platform/{id}",
 
-  "publisherApiUrl": "Publisher/{companyName}",
+  "publisherApiUrl": "Publisher/{companyname}",
   "publishersApiUrl": "Publisher",
   "publisherByGameApiUrl": "Game/{key}/publisher",
   "addPublisherApiUrl": "Publisher",
@@ -41,5 +44,11 @@
   "cancelGameBuyApiUrl": "Order/cart/{key}",
   "basketApiUrl": "Order/cart",
   "makeOrderInfoApiUrl": "Order/payment-methods",
-  "payApiUrl": "Order/payment"
+  "payApiUrl": "Order/payment",
+
+  "addCommentApiUrl": "Game/{key}/comments",
+  "commentsByGameApiUrl": "Game/{key}/comments",
+  "deleteCommentApiUrl": "Game/{key}/comments/{id}",
+  "getBanDurationsApiUrl": "Comment/ban/durations",
+  "banUserApiUrl": "Comment/ban"
 }

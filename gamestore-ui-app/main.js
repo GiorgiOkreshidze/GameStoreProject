@@ -60,7 +60,7 @@ class AppRoutingModule {
 }
 AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__.Router)); };
 AppRoutingModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule] });
+AppRoutingModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })], _angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_3__.RouterModule] }); })();
 
 
@@ -299,73 +299,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CheckboxesInputComponent": () => (/* binding */ CheckboxesInputComponent)
 /* harmony export */ });
-/* harmony import */ var guid_typescript__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! guid-typescript */ 8952);
-/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base.component */ 2844);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4364);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/checkbox */ 4058);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 1707);
-
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../base.component */ 2844);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/checkbox */ 4058);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 1707);
 
 
 
 
 
 function CheckboxesInputComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r0.name);
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r0.name);
 } }
 function CheckboxesInputComponent_div_2_span_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "span");
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const i_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]().index;
-    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate"](ctx_r4.getItem(i_r3));
+    const i_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().index;
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r4.getItem(i_r3));
 } }
 function CheckboxesInputComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 3);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](1, "mat-checkbox", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, CheckboxesInputComponent_div_2_span_2_Template, 2, 1, "span", 1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](1, "mat-checkbox", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, CheckboxesInputComponent_div_2_span_2_Template, 2, 1, "span", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const control_r2 = ctx.$implicit;
     const i_r3 = ctx.index;
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("formControl", control_r2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !!ctx_r1.getItem(i_r3));
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formControl", control_r2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !!ctx_r1.getItem(i_r3));
 } }
-class CheckboxesInputComponent extends _base_component__WEBPACK_IMPORTED_MODULE_1__.BaseComponent {
+class CheckboxesInputComponent extends _base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
     constructor() {
         super(...arguments);
-        this.id = guid_typescript__WEBPACK_IMPORTED_MODULE_0__.Guid.create().toString();
         this.name = '';
     }
     getItem(index) {
         return this.items[index];
     }
 }
-CheckboxesInputComponent.ɵfac = /*@__PURE__*/ function () { let ɵCheckboxesInputComponent_BaseFactory; return function CheckboxesInputComponent_Factory(t) { return (ɵCheckboxesInputComponent_BaseFactory || (ɵCheckboxesInputComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetInheritedFactory"](CheckboxesInputComponent)))(t || CheckboxesInputComponent); }; }();
-CheckboxesInputComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: CheckboxesInputComponent, selectors: [["gamestore-checkboxes-input"]], inputs: { controls: "controls", items: "items", name: "name" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 2, consts: [[1, "checkboxes-input-wrapper"], [4, "ngIf"], ["class", "checkbox-container", 4, "ngFor", "ngForOf"], [1, "checkbox-container"], [3, "formControl"]], template: function CheckboxesInputComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, CheckboxesInputComponent_div_1_Template, 2, 1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](2, CheckboxesInputComponent_div_2_Template, 3, 2, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+CheckboxesInputComponent.ɵfac = /*@__PURE__*/ function () { let ɵCheckboxesInputComponent_BaseFactory; return function CheckboxesInputComponent_Factory(t) { return (ɵCheckboxesInputComponent_BaseFactory || (ɵCheckboxesInputComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetInheritedFactory"](CheckboxesInputComponent)))(t || CheckboxesInputComponent); }; }();
+CheckboxesInputComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CheckboxesInputComponent, selectors: [["gamestore-checkboxes-input"]], inputs: { controls: "controls", items: "items", name: "name" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 2, consts: [[1, "checkboxes-input-wrapper"], [4, "ngIf"], ["class", "checkbox-container", 4, "ngFor", "ngForOf"], [1, "checkbox-container"], [3, "formControl"]], template: function CheckboxesInputComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, CheckboxesInputComponent_div_1_Template, 2, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, CheckboxesInputComponent_div_2_Template, 3, 2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !!(ctx.name == null ? null : ctx.name.length));
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.controls);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_4__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_5__.FormControlDirective], styles: [".checkboxes-input-wrapper[_ngcontent-%COMP%] {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.checkboxes-input-wrapper[_ngcontent-%COMP%]   .checkbox-container[_ngcontent-%COMP%] {\n  margin-bottom: 7px;\n}\n.checkboxes-input-wrapper[_ngcontent-%COMP%]   .checkbox-container[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  padding-left: 10px;\n  top: 2px;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNoZWNrYm94ZXMtaW5wdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FBQ0o7QUFDSTtFQUNJLGtCQUFBO0FBQ1I7QUFDUTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FBQ1oiLCJmaWxlIjoiY2hlY2tib3hlcy1pbnB1dC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jaGVja2JveGVzLWlucHV0LXdyYXBwZXIge1xyXG4gICAgcGFkZGluZy10b3A6IDVweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cHg7XHJcblxyXG4gICAgLmNoZWNrYm94LWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG5cclxuICAgICAgICBzcGFuIHtcclxuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gICAgICAgICAgICB0b3A6IDJweDtcclxuICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbn0iXX0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !!(ctx.name == null ? null : ctx.name.length));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.controls);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_3__.MatCheckbox, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlDirective], styles: [".checkboxes-input-wrapper[_ngcontent-%COMP%] {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.checkboxes-input-wrapper[_ngcontent-%COMP%]   .checkbox-container[_ngcontent-%COMP%] {\n  margin-bottom: 7px;\n}\n.checkboxes-input-wrapper[_ngcontent-%COMP%]   .checkbox-container[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  padding-left: 10px;\n  top: 2px;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNoZWNrYm94ZXMtaW5wdXQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxnQkFBQTtFQUNBLG1CQUFBO0FBQ0o7QUFDSTtFQUNJLGtCQUFBO0FBQ1I7QUFDUTtFQUNJLGtCQUFBO0VBQ0EsUUFBQTtFQUNBLGtCQUFBO0FBQ1oiLCJmaWxlIjoiY2hlY2tib3hlcy1pbnB1dC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jaGVja2JveGVzLWlucHV0LXdyYXBwZXIge1xyXG4gICAgcGFkZGluZy10b3A6IDVweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cHg7XHJcblxyXG4gICAgLmNoZWNrYm94LWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG5cclxuICAgICAgICBzcGFuIHtcclxuICAgICAgICAgICAgcGFkZGluZy1sZWZ0OiAxMHB4O1xyXG4gICAgICAgICAgICB0b3A6IDJweDtcclxuICAgICAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuXHJcbn0iXX0= */"] });
 
 
 /***/ }),
@@ -381,8 +378,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CommonComponentsModule": () => (/* binding */ CommonComponentsModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/common */ 4364);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ 1707);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app-routing.module */ 158);
 /* harmony import */ var _delete_wrapper_component_delete_wrapper_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./delete-wrapper-component/delete-wrapper.component */ 2303);
 /* harmony import */ var _form_component_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form-component/form.component */ 8205);
@@ -391,20 +388,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _list_component_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./list-component/list.component */ 9860);
 /* harmony import */ var _list_item_component_list_item_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list-item-component/list-item.component */ 2439);
 /* harmony import */ var _text_input_component_text_input_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./text-input-component/text-input.component */ 2082);
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/dialog */ 2213);
-/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/progress-spinner */ 181);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/dialog */ 2213);
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/progress-spinner */ 181);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @angular/material/radio */ 5644);
 /* harmony import */ var _loader_component_loader_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./loader-component/loader.component */ 7001);
-/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/input */ 4742);
-/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/checkbox */ 4058);
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/icon */ 2529);
-/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/list */ 8417);
-/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/select */ 7007);
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/input */ 4742);
+/* harmony import */ var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/material/checkbox */ 4058);
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/icon */ 2529);
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/list */ 8417);
+/* harmony import */ var _angular_material_select__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @angular/material/select */ 7007);
 /* harmony import */ var _textarea_input_component_textarea_input_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./textarea-input-component/textarea-input.component */ 3281);
 /* harmony import */ var _selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./selector-input-component/selector-input.component */ 9260);
 /* harmony import */ var _checkboxes_input_component_checkboxes_input_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./checkboxes-input-component/checkboxes-input.component */ 5583);
 /* harmony import */ var _number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./number-input-component/number-input.component */ 9567);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _radio_input_component_radio_input_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./radio-input-component/radio-input.component */ 5962);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/core */ 2316);
+
+
 
 
 
@@ -432,21 +433,22 @@ __webpack_require__.r(__webpack_exports__);
 class CommonComponentsModule {
 }
 CommonComponentsModule.ɵfac = function CommonComponentsModule_Factory(t) { return new (t || CommonComponentsModule)(); };
-CommonComponentsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineNgModule"]({ type: CommonComponentsModule });
-CommonComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵdefineInjector"]({ imports: [[
-            _angular_common__WEBPACK_IMPORTED_MODULE_14__.CommonModule,
+CommonComponentsModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineNgModule"]({ type: CommonComponentsModule });
+CommonComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵdefineInjector"]({ imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_15__.CommonModule,
             _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-            _angular_forms__WEBPACK_IMPORTED_MODULE_15__.ReactiveFormsModule,
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__.MatDialogModule,
-            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_17__.MatProgressSpinnerModule,
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButtonModule,
-            _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule,
-            _angular_material_list__WEBPACK_IMPORTED_MODULE_20__.MatListModule,
-            _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__.MatIconModule,
-            _angular_material_select__WEBPACK_IMPORTED_MODULE_22__.MatSelectModule,
-            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_23__.MatCheckboxModule,
+            _angular_forms__WEBPACK_IMPORTED_MODULE_16__.ReactiveFormsModule,
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__.MatDialogModule,
+            _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__.MatProgressSpinnerModule,
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_19__.MatButtonModule,
+            _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule,
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_21__.MatListModule,
+            _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIconModule,
+            _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.MatSelectModule,
+            _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckboxModule,
+            _angular_material_radio__WEBPACK_IMPORTED_MODULE_25__.MatRadioModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_13__["ɵɵsetNgModuleScope"](CommonComponentsModule, { declarations: [_list_item_component_list_item_component__WEBPACK_IMPORTED_MODULE_6__.ListItemComponent,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_14__["ɵɵsetNgModuleScope"](CommonComponentsModule, { declarations: [_list_item_component_list_item_component__WEBPACK_IMPORTED_MODULE_6__.ListItemComponent,
         _list_component_list_component__WEBPACK_IMPORTED_MODULE_5__.ListComponent,
         _info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_4__.InfoWrapperComponent,
         _info_component_info_component__WEBPACK_IMPORTED_MODULE_3__.InfoComponent,
@@ -457,17 +459,19 @@ CommonComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MOD
         _textarea_input_component_textarea_input_component__WEBPACK_IMPORTED_MODULE_9__.TextareaInputComponent,
         _selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_10__.SelectorInputComponent,
         _checkboxes_input_component_checkboxes_input_component__WEBPACK_IMPORTED_MODULE_11__.CheckboxesInputComponent,
-        _number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_12__.NumberInputComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_14__.CommonModule,
+        _number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_12__.NumberInputComponent,
+        _radio_input_component_radio_input_component__WEBPACK_IMPORTED_MODULE_13__.RadioInputComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_15__.CommonModule,
         _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
-        _angular_forms__WEBPACK_IMPORTED_MODULE_15__.ReactiveFormsModule,
-        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__.MatDialogModule,
-        _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_17__.MatProgressSpinnerModule,
-        _angular_material_button__WEBPACK_IMPORTED_MODULE_18__.MatButtonModule,
-        _angular_material_input__WEBPACK_IMPORTED_MODULE_19__.MatInputModule,
-        _angular_material_list__WEBPACK_IMPORTED_MODULE_20__.MatListModule,
-        _angular_material_icon__WEBPACK_IMPORTED_MODULE_21__.MatIconModule,
-        _angular_material_select__WEBPACK_IMPORTED_MODULE_22__.MatSelectModule,
-        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_23__.MatCheckboxModule], exports: [_list_item_component_list_item_component__WEBPACK_IMPORTED_MODULE_6__.ListItemComponent,
+        _angular_forms__WEBPACK_IMPORTED_MODULE_16__.ReactiveFormsModule,
+        _angular_material_dialog__WEBPACK_IMPORTED_MODULE_17__.MatDialogModule,
+        _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_18__.MatProgressSpinnerModule,
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_19__.MatButtonModule,
+        _angular_material_input__WEBPACK_IMPORTED_MODULE_20__.MatInputModule,
+        _angular_material_list__WEBPACK_IMPORTED_MODULE_21__.MatListModule,
+        _angular_material_icon__WEBPACK_IMPORTED_MODULE_22__.MatIconModule,
+        _angular_material_select__WEBPACK_IMPORTED_MODULE_23__.MatSelectModule,
+        _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_24__.MatCheckboxModule,
+        _angular_material_radio__WEBPACK_IMPORTED_MODULE_25__.MatRadioModule], exports: [_list_item_component_list_item_component__WEBPACK_IMPORTED_MODULE_6__.ListItemComponent,
         _list_component_list_component__WEBPACK_IMPORTED_MODULE_5__.ListComponent,
         _info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_4__.InfoWrapperComponent,
         _info_component_info_component__WEBPACK_IMPORTED_MODULE_3__.InfoComponent,
@@ -477,7 +481,8 @@ CommonComponentsModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MOD
         _delete_wrapper_component_delete_wrapper_component__WEBPACK_IMPORTED_MODULE_1__.DeleteWrapperComponent,
         _selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_10__.SelectorInputComponent,
         _checkboxes_input_component_checkboxes_input_component__WEBPACK_IMPORTED_MODULE_11__.CheckboxesInputComponent,
-        _number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_12__.NumberInputComponent] }); })();
+        _number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_12__.NumberInputComponent,
+        _radio_input_component_radio_input_component__WEBPACK_IMPORTED_MODULE_13__.RadioInputComponent] }); })();
 
 
 /***/ }),
@@ -1229,6 +1234,75 @@ NumberInputComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
+/***/ 5962:
+/*!***************************************************************************!*\
+  !*** ./src/app/componetns/radio-input-component/radio-input.component.ts ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RadioInputComponent": () => (/* binding */ RadioInputComponent)
+/* harmony export */ });
+/* harmony import */ var _base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../base.component */ 2844);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_radio__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/radio */ 5644);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 1707);
+
+
+
+
+
+function RadioInputComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx_r0.name);
+} }
+function RadioInputComponent_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-radio-button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const item_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", item_r2.value);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", item_r2.title, " ");
+} }
+class RadioInputComponent extends _base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor() {
+        super(...arguments);
+        this.name = '';
+    }
+}
+RadioInputComponent.ɵfac = /*@__PURE__*/ function () { let ɵRadioInputComponent_BaseFactory; return function RadioInputComponent_Factory(t) { return (ɵRadioInputComponent_BaseFactory || (ɵRadioInputComponent_BaseFactory = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetInheritedFactory"](RadioInputComponent)))(t || RadioInputComponent); }; }();
+RadioInputComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: RadioInputComponent, selectors: [["gamestore-radio-input"]], inputs: { control: "control", items: "items", name: "name" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵInheritDefinitionFeature"]], decls: 4, vars: 3, consts: [[1, "radio-input-wrapper"], [4, "ngIf"], [3, "formControl"], ["class", "radio-container", 4, "ngFor", "ngForOf"], [1, "radio-container"], [3, "value"]], template: function RadioInputComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, RadioInputComponent_div_1_Template, 2, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "mat-radio-group", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, RadioInputComponent_div_3_Template, 3, 2, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !!(ctx.name == null ? null : ctx.name.length));
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formControl", ctx.control);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.items);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__.NgIf, _angular_material_radio__WEBPACK_IMPORTED_MODULE_3__.MatRadioGroup, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControlDirective, _angular_common__WEBPACK_IMPORTED_MODULE_2__.NgForOf, _angular_material_radio__WEBPACK_IMPORTED_MODULE_3__.MatRadioButton], styles: [".radio-input-wrapper[_ngcontent-%COMP%] {\n  padding-top: 5px;\n  padding-bottom: 5px;\n}\n.radio-input-wrapper[_ngcontent-%COMP%]   .radio-container[_ngcontent-%COMP%] {\n  margin-bottom: 7px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJhZGlvLWlucHV0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSxtQkFBQTtBQUNKO0FBQ0k7RUFDSSxrQkFBQTtBQUNSIiwiZmlsZSI6InJhZGlvLWlucHV0LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJhZGlvLWlucHV0LXdyYXBwZXIge1xyXG4gICAgcGFkZGluZy10b3A6IDVweDtcclxuICAgIHBhZGRpbmctYm90dG9tOiA1cHg7XHJcblxyXG4gICAgLnJhZGlvLWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG4gICAgfVxyXG5cclxufSJdfQ== */"] });
+
+
+/***/ }),
+
 /***/ 9260:
 /*!*********************************************************************************!*\
   !*** ./src/app/componetns/selector-input-component/selector-input.component.ts ***!
@@ -1516,11 +1590,14 @@ class Configuration {
         this.gamesApiUrl = '';
         this.gamesByGenreApiUrl = '';
         this.gamesByPlatformApiUrl = '';
-        this.getGameFile = '';
+        this.getGameFileApiUrl = '';
         this.updateGameApiUrl = '';
         this.addGameApiUrl = '';
         this.deleteGameApiUrl = '';
         this.gamesByPublisherApiUrl = '';
+        this.getPublishedDateOptionsApiUrl = '';
+        this.getSortingOptionsApiUrl = '';
+        this.getPaggingOptionsApiUrl = '';
         this.genreApiUrl = '';
         this.genresApiUrl = '';
         this.genresByGameApiUrl = '';
@@ -1548,6 +1625,13 @@ class Configuration {
         this.basketApiUrl = '';
         this.makeOrderInfoApiUrl = '';
         this.payApiUrl = '';
+        this.addReplyCommentApiUrl = '';
+        this.addCommentApiUrl = '';
+        this.commentsByGameApiUrl = '';
+        this.addQouteCommentApiUrl = '';
+        this.deleteCommentApiUrl = '';
+        this.getBanDurationsApiUrl = '';
+        this.banUserApiUrl = '';
     }
 }
 
@@ -2084,6 +2168,7 @@ class EnLabels {
         this.deleteButtonLabel = 'Delete';
         this.updateButtonLabel = 'Update';
         this.replyButtonLabel = 'Reply';
+        this.quoteButtonLabel = 'Quoute';
         this.toPageLabel = 'To Page';
         this.downloadButtonLabel = 'Download';
         this.totalGamesLabel = 'Games count';
@@ -2092,12 +2177,18 @@ class EnLabels {
         this.totalLabel = 'Total';
         this.payButtonLabel = 'Pay';
         this.makeOrderButtonLabel = 'Make Order';
+        this.banButtonLabel = 'Ban';
+        this.banDurationLabel = 'Ban duration';
+        this.filterButtonLabel = 'Filter';
         this.gameKeyLabel = 'Key';
         this.gameNameLabel = 'Name';
         this.gameDescriptionLabel = 'Description';
         this.gameDiscountLabel = 'Discount';
         this.gameUnitInStockLabel = 'Unit in Stock';
         this.gamePriceLabel = 'Price';
+        this.gameMinPriceLabel = 'Min price';
+        this.gameMaxPriceLabel = 'Max price';
+        this.gameDatePublishing = 'Date publishing';
         this.publisherCompanyNameLabel = 'Company Name';
         this.publisherDescriptionLabel = 'Description';
         this.publisherHomePageLabel = 'Home Page';
@@ -2116,6 +2207,7 @@ class EnLabels {
         this.deleteMessage = 'Are you sure about deleting?';
         this.enterValidMessage = 'Please enter valid value';
         this.emptyBasketMessage = 'Basket is empty';
+        this.banMessage = 'Are you sure about ban?';
     }
 }
 
@@ -2729,6 +2821,486 @@ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetComponentScope"](_delete_publ
 
 /***/ }),
 
+/***/ 3448:
+/*!*******************************************************************************************!*\
+  !*** ./src/app/pages/game-page/components/add-comment-component/add-comment.component.ts ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "AddCommentComponent": () => (/* binding */ AddCommentComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ngneat/until-destroy */ 9758);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs */ 9441);
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var _comment_component_comment_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../comment-component/comment-action */ 4232);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _componetns_form_component_form_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../componetns/form-component/form.component */ 8205);
+/* harmony import */ var _componetns_text_input_component_text_input_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../componetns/text-input-component/text-input.component */ 2082);
+/* harmony import */ var _componetns_textarea_input_component_textarea_input_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../componetns/textarea-input-component/textarea-input.component */ 3281);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AddCommentComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](2, "button", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("click", function AddCommentComponent_div_1_Template_button_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r2.selectCancel.emit(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtext"](3, "X");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtextInterpolate2"](" ", ctx_r0.actionLabel, ": ", ctx_r0.currentCommentValue.name, " ");
+} }
+function AddCommentComponent_div_2_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](1, "gamestore-form", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵlistener"]("save", function AddCommentComponent_div_2_Template_gamestore_form_save_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"](); return ctx_r4.onSave(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](2, "gamestore-text-input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelement"](3, "gamestore-textarea-input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("form", ctx_r1.form);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx_r1.getFormControl("name"))("disableValidation", true);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("control", ctx_r1.getFormControl("body"))("disableValidation", true);
+} }
+let AddCommentComponent = class AddCommentComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(builder) {
+        super();
+        this.builder = builder;
+        this.clearForm = new rxjs__WEBPACK_IMPORTED_MODULE_6__.Subject();
+        this.selectCancel = new _angular_core__WEBPACK_IMPORTED_MODULE_5__.EventEmitter();
+        this.saveComment = new _angular_core__WEBPACK_IMPORTED_MODULE_5__.EventEmitter();
+    }
+    set currentComment(value) {
+        this.action = value === null || value === void 0 ? void 0 : value.action;
+        this.currentCommentValue = value === null || value === void 0 ? void 0 : value.comment;
+        this.createForm();
+    }
+    get actionLabel() {
+        switch (this.action) {
+            case _comment_component_comment_action__WEBPACK_IMPORTED_MODULE_1__.CommentAction.Reply:
+                return this.labels.replyButtonLabel;
+            case _comment_component_comment_action__WEBPACK_IMPORTED_MODULE_1__.CommentAction.Quote:
+                return this.labels.quoteButtonLabel;
+            default:
+                return '';
+        }
+    }
+    ngOnInit() {
+        this.createForm();
+        this === null || this === void 0 ? void 0 : this.clearForm.pipe((0,_ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_7__.untilDestroyed)(this)).subscribe((_) => this.createForm());
+    }
+    getFormControl(name) {
+        var _a;
+        return (_a = this.form) === null || _a === void 0 ? void 0 : _a.get(name);
+    }
+    onSave() {
+        const comment = this.form.value;
+        this.saveComment.emit(comment);
+    }
+    createForm() {
+        this.form = this.builder.group({
+            id: [''],
+            name: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+            body: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_8__.Validators.required],
+        });
+    }
+};
+AddCommentComponent.ɵfac = function AddCommentComponent_Factory(t) { return new (t || AddCommentComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormBuilder)); };
+AddCommentComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineComponent"]({ type: AddCommentComponent, selectors: [["gamestore-add-comment"]], inputs: { currentComment: "currentComment", clearForm: "clearForm" }, outputs: { selectCancel: "selectCancel", saveComment: "saveComment" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 2, consts: [[1, "add-comment-container"], [4, "ngIf"], ["mat-button", "", "color", "accent", 3, "click"], ["idName", "id", 3, "form", "save"], [3, "control", "disableValidation"]], template: function AddCommentComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](1, AddCommentComponent_div_1_Template, 4, 2, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵtemplate"](2, AddCommentComponent_div_2_Template, 4, 5, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !!ctx.currentCommentValue && !!ctx.action);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵproperty"]("ngIf", !!ctx.form);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_9__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_10__.MatButton, _componetns_form_component_form_component__WEBPACK_IMPORTED_MODULE_2__.FormComponent, _componetns_text_input_component_text_input_component__WEBPACK_IMPORTED_MODULE_3__.TextInputComponent, _componetns_textarea_input_component_textarea_input_component__WEBPACK_IMPORTED_MODULE_4__.TextareaInputComponent], styles: [".add-comment-container[_ngcontent-%COMP%] {\n  margin-bottom: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFkZC1jb21tZW50LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksbUJBQUE7QUFDSiIsImZpbGUiOiJhZGQtY29tbWVudC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5hZGQtY29tbWVudC1jb250YWluZXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufSJdfQ== */"] });
+AddCommentComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_11__.__decorate)([
+    (0,_ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_7__.UntilDestroy)()
+], AddCommentComponent);
+
+
+
+/***/ }),
+
+/***/ 6229:
+/*!*************************************************************************************!*\
+  !*** ./src/app/pages/game-page/components/ban-user-component/ban-user.component.ts ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "BanUserComponent": () => (/* binding */ BanUserComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/comment.service */ 3792);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../componetns/selector-input-component/selector-input.component */ 9260);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/button */ 781);
+
+
+
+
+
+
+
+
+function BanUserComponent_article_0_Template(rf, ctx) { if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "article");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "h3");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](6, "gamestore-selector-input", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](8, "button", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function BanUserComponent_article_0_Template_button_click_8_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r1.onBan(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.labels.banMessage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("name", ctx_r0.labels.banDurationLabel)("control", ctx_r0.control)("values", ctx_r0.banDurations);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", !ctx_r0.control || ctx_r0.control.invalid);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.banButtonLabel, " ");
+} }
+class BanUserComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(commentService) {
+        super();
+        this.commentService = commentService;
+        this.ban = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.EventEmitter();
+    }
+    ngOnInit() {
+        this.commentService.getBanDurations().subscribe((x) => (this.banDurations = x.map((z) => {
+            return { name: z, value: z };
+        })));
+        this.control = new _angular_forms__WEBPACK_IMPORTED_MODULE_4__.FormControl('', _angular_forms__WEBPACK_IMPORTED_MODULE_4__.Validators.required);
+    }
+    onBan() {
+        var _a;
+        if (!((_a = this.control) === null || _a === void 0 ? void 0 : _a.value)) {
+            return;
+        }
+        this.ban.emit(this.control.value.toString());
+    }
+}
+BanUserComponent.ɵfac = function BanUserComponent_Factory(t) { return new (t || BanUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_1__.CommentService)); };
+BanUserComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: BanUserComponent, selectors: [["gamestore-ban-user"]], inputs: { name: "name" }, outputs: { ban: "ban" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [[4, "ngIf"], [3, "name", "control", "values"], ["mat-raised-button", "", "color", "warn", 3, "disabled", "click"]], template: function BanUserComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, BanUserComponent_article_0_Template, 10, 7, "article", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !!ctx.control && !!ctx.banDurations);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.NgIf, _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__.SelectorInputComponent, _angular_material_button__WEBPACK_IMPORTED_MODULE_6__.MatButton], styles: ["h3[_ngcontent-%COMP%] {\n  font-weight: 500;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJhbi11c2VyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7QUFDSiIsImZpbGUiOiJiYW4tdXNlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgze1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxufSJdfQ== */"] });
+
+
+/***/ }),
+
+/***/ 4232:
+/*!********************************************************************************!*\
+  !*** ./src/app/pages/game-page/components/comment-component/comment-action.ts ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CommentAction": () => (/* binding */ CommentAction)
+/* harmony export */ });
+var CommentAction;
+(function (CommentAction) {
+    CommentAction["Reply"] = "Reply";
+    CommentAction["Quote"] = "Quote";
+})(CommentAction || (CommentAction = {}));
+
+
+/***/ }),
+
+/***/ 6819:
+/*!***********************************************************************************!*\
+  !*** ./src/app/pages/game-page/components/comment-component/comment.component.ts ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CommentComponent": () => (/* binding */ CommentComponent)
+/* harmony export */ });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var _comment_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment-action */ 4232);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ 781);
+
+
+
+
+
+
+function CommentComponent_div_0_div_12_gamestore_comment_1_Template(rf, ctx) { if (rf & 1) {
+    const _r5 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "gamestore-comment", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("select", function CommentComponent_div_0_div_12_gamestore_comment_1_Template_gamestore_comment_select_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r5); const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3); return ctx_r4.select.emit($event); })("deleteComment", function CommentComponent_div_0_div_12_gamestore_comment_1_Template_gamestore_comment_deleteComment_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r5); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3); return ctx_r6.deleteComment.emit($event); })("banComment", function CommentComponent_div_0_div_12_gamestore_comment_1_Template_gamestore_comment_banComment_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r5); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](3); return ctx_r7.banComment.emit($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const childComment_r3 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("comment", childComment_r3);
+} }
+function CommentComponent_div_0_div_12_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](1, CommentComponent_div_0_div_12_gamestore_comment_1_Template, 1, 1, "gamestore-comment", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx_r1.comment.childComments);
+} }
+function CommentComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function CommentComponent_div_0_Template_button_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r9); const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r8.onAction(ctx_r8.action.Reply); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function CommentComponent_div_0_Template_button_click_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r9); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r10.onAction(ctx_r10.action.Quote); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](7, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function CommentComponent_div_0_Template_button_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r9); const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r11.deleteComment.emit(ctx_r11.comment); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "button", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function CommentComponent_div_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵrestoreView"](_r9); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"](); return ctx_r12.banComment.emit(ctx_r12.comment); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](12, CommentComponent_div_0_div_12_Template, 2, 1, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpropertyInterpolate1"]("id", "comment", ctx_r0.comment.id, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r0.comment.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.replyButtonLabel, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.quoteButtonLabel, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.deleteButtonLabel, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.banButtonLabel, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("innerHtml", ctx_r0.comment.body, _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsanitizeHtml"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !!(ctx_r0.comment.childComments == null ? null : ctx_r0.comment.childComments.length));
+} }
+class CommentComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor() {
+        super();
+        this.select = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+        this.deleteComment = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+        this.banComment = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+        this.action = _comment_action__WEBPACK_IMPORTED_MODULE_1__.CommentAction;
+    }
+    onAction(action) {
+        this.select.emit({ comment: this.comment, action });
+    }
+}
+CommentComponent.ɵfac = function CommentComponent_Factory(t) { return new (t || CommentComponent)(); };
+CommentComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: CommentComponent, selectors: [["gamestore-comment"]], inputs: { comment: "comment" }, outputs: { select: "select", deleteComment: "deleteComment", banComment: "banComment" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [["class", "comment-container", 3, "id", 4, "ngIf"], [1, "comment-container", 3, "id"], [1, "comment-name"], ["mat-button", "", "color", "accent", 3, "click"], ["mat-raised-button", "", "color", "warn", 3, "click"], [1, "comment-body", 3, "innerHtml"], ["class", "child-comments", 4, "ngIf"], [1, "child-comments"], [3, "comment", "select", "deleteComment", "banComment", 4, "ngFor", "ngForOf"], [3, "comment", "select", "deleteComment", "banComment"]], template: function CommentComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](0, CommentComponent_div_0_Template, 13, 8, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngIf", !!ctx.comment);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_4__.MatButton, _angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, CommentComponent], styles: [".comment-container[_ngcontent-%COMP%] {\n  margin-bottom: 7px;\n}\n.comment-container[_ngcontent-%COMP%]   .comment-name[_ngcontent-%COMP%] {\n  font-weight: 500;\n  margin-bottom: 3px;\n}\n.comment-container[_ngcontent-%COMP%]   .child-comments[_ngcontent-%COMP%] {\n  padding-left: 15px;\n  box-sizing: border-box;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbW1lbnQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtBQUNKO0FBQ0k7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0FBQ1I7QUFFSTtFQUNJLGtCQUFBO0VBQ0Esc0JBQUE7QUFBUiIsImZpbGUiOiJjb21tZW50LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbW1lbnQtY29udGFpbmVye1xyXG4gICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG5cclxuICAgIC5jb21tZW50LW5hbWUge1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gICAgfVxyXG5cclxuICAgIC5jaGlsZC1jb21tZW50cyB7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAxNXB4O1xyXG4gICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XHJcbiAgICB9XHJcbn0iXX0= */"] });
+
+
+/***/ }),
+
+/***/ 8003:
+/*!*************************************************************************************!*\
+  !*** ./src/app/pages/game-page/components/comments-component/comments.component.ts ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CommentsComponent": () => (/* binding */ CommentsComponent)
+/* harmony export */ });
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ 9441);
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var src_app_componetns_delete_wrapper_component_delete_wrapper_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/componetns/delete-wrapper-component/delete-wrapper.component */ 2303);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ 8636);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ 2663);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ 9902);
+/* harmony import */ var _ban_user_component_ban_user_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ban-user-component/ban-user.component */ 6229);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/comment.service */ 3792);
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/dialog */ 2213);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _add_comment_component_add_comment_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../add-comment-component/add-comment.component */ 3448);
+/* harmony import */ var _comment_component_comment_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../comment-component/comment.component */ 6819);
+
+
+
+
+
+
+
+
+
+
+
+function CommentsComponent_div_0_gamestore_comment_2_Template(rf, ctx) { if (rf & 1) {
+    const _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "gamestore-comment", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("select", function CommentsComponent_div_0_gamestore_comment_2_Template_gamestore_comment_select_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r4); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2); return ctx_r3.onSelect($event); })("deleteComment", function CommentsComponent_div_0_gamestore_comment_2_Template_gamestore_comment_deleteComment_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r4); const ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2); return ctx_r5.onDeleteComment($event); })("banComment", function CommentsComponent_div_0_gamestore_comment_2_Template_gamestore_comment_banComment_0_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r4); const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](2); return ctx_r6.onBanComment($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const comment_r2 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("comment", comment_r2);
+} }
+function CommentsComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "gamestore-add-comment", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("selectCancel", function CommentsComponent_div_0_Template_gamestore_add_comment_selectCancel_1_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r7.onSelectCancel(); })("saveComment", function CommentsComponent_div_0_Template_gamestore_add_comment_saveComment_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵrestoreView"](_r8); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"](); return ctx_r9.onSave($event); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](2, CommentsComponent_div_0_gamestore_comment_2_Template, 1, 1, "gamestore-comment", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("currentComment", ctx_r0.selectedComment)("clearForm", ctx_r0.clearCommentInput);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngForOf", ctx_r0.comments);
+} }
+class CommentsComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(commentsService, dialog) {
+        super();
+        this.commentsService = commentsService;
+        this.dialog = dialog;
+        this.clearCommentInput = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
+        this.comments = [];
+    }
+    ngOnInit() {
+        this.loadComments();
+    }
+    onSelect(selected) {
+        this.onSelectCancel();
+        this.selectedComment = selected;
+    }
+    onSave(comment) {
+        var _a, _b, _c, _d, _e;
+        this.commentsService
+            .addComment(comment, this.gameKey, (_c = (_b = (_a = this.selectedComment) === null || _a === void 0 ? void 0 : _a.comment) === null || _b === void 0 ? void 0 : _b.id) !== null && _c !== void 0 ? _c : '', (_e = (_d = this.selectedComment) === null || _d === void 0 ? void 0 : _d.action) !== null && _e !== void 0 ? _e : '')
+            .subscribe((x) => {
+            this.onSelectCancel();
+            this.clearCommentInput.next();
+            if (!!(x === null || x === void 0 ? void 0 : x.length)) {
+                this.comments = x;
+            }
+            else {
+                this.loadComments();
+            }
+        });
+    }
+    onSelectCancel() {
+        this.selectedComment = undefined;
+    }
+    onDeleteComment(comment) {
+        const deleteDialog = this.dialog.open(src_app_componetns_delete_wrapper_component_delete_wrapper_component__WEBPACK_IMPORTED_MODULE_1__.DeleteWrapperComponent);
+        deleteDialog.componentInstance.name = comment.name;
+        this.handleDialog(deleteDialog, deleteDialog.componentInstance.delete, (_) => {
+            var _a;
+            return this.commentsService
+                .deleteComment((_a = comment === null || comment === void 0 ? void 0 : comment.id) !== null && _a !== void 0 ? _a : '', this.gameKey)
+                .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => this.loadComments()));
+        });
+    }
+    onBanComment(comment) {
+        const banDialog = this.dialog.open(_ban_user_component_ban_user_component__WEBPACK_IMPORTED_MODULE_2__.BanUserComponent);
+        banDialog.componentInstance.name = comment.name;
+        this.handleDialog(banDialog, banDialog.componentInstance.ban, (x) => this.commentsService
+            .banUser(x, comment.name)
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)(() => this.loadComments())));
+    }
+    handleDialog(dialog, event, eventHandler) {
+        const closed = new rxjs__WEBPACK_IMPORTED_MODULE_7__.Subject();
+        event
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_9__.takeUntil)(closed), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.tap)((_) => dialog.close()), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_10__.switchMap)((x) => eventHandler(x)))
+            .subscribe();
+        dialog.afterClosed().subscribe((_) => {
+            closed.next();
+            closed.complete();
+        });
+    }
+    loadComments() {
+        this.commentsService
+            .getCommentsByGameKey(this.gameKey)
+            .subscribe((x) => (this.comments = x));
+    }
+}
+CommentsComponent.ɵfac = function CommentsComponent_Factory(t) { return new (t || CommentsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_3__.CommentService), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_11__.MatDialog)); };
+CommentsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: CommentsComponent, selectors: [["gamestore-comments"]], inputs: { gameKey: "gameKey" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [["class", "comments-container", 4, "ngIf"], [1, "comments-container"], [3, "currentComment", "clearForm", "selectCancel", "saveComment"], [3, "comment", "select", "deleteComment", "banComment", 4, "ngFor", "ngForOf"], [3, "comment", "select", "deleteComment", "banComment"]], template: function CommentsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, CommentsComponent_div_0_Template, 3, 3, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !!ctx.comments);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_12__.NgIf, _add_comment_component_add_comment_component__WEBPACK_IMPORTED_MODULE_4__.AddCommentComponent, _angular_common__WEBPACK_IMPORTED_MODULE_12__.NgForOf, _comment_component_comment_component__WEBPACK_IMPORTED_MODULE_5__.CommentComponent], styles: [".comments-container[_ngcontent-%COMP%] {\n  border-top: 1px solid #4a494a;\n  padding-top: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbW1lbnRzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsNkJBQUE7RUFDQSxpQkFBQTtBQUNGIiwiZmlsZSI6ImNvbW1lbnRzLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbW1lbnRzLWNvbnRhaW5lciB7XHJcbiAgYm9yZGVyLXRvcDogMXB4IHNvbGlkICM0YTQ5NGE7XHJcbiAgcGFkZGluZy10b3A6IDEwcHg7XHJcbn0iXX0= */"] });
+
+
+/***/ }),
+
 /***/ 2042:
 /*!********************************************************!*\
   !*** ./src/app/pages/game-page/game-page.component.ts ***!
@@ -2784,6 +3356,7 @@ function GamePageComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](13, "gamestore-comments", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵnextContext"]();
@@ -2799,6 +3372,8 @@ function GamePageComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("infoList", ctx_r0.gameInfoList);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](4);
     _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtextInterpolate"](ctx_r0.labels.downloadButtonLabel);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("gameKey", ctx_r0.game.key);
 } }
 class GamePageComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
     constructor(gameService, genreService, platformService, publisherService, orderService, route, router) {
@@ -2925,8 +3500,8 @@ GamePageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6
     } if (rf & 2) {
         let _t;
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵloadQuery"]()) && (ctx.downloadLink = _t.first);
-    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [[4, "ngIf"], [1, "to-list-button"], ["mat-button", "", 3, "routerLink"], [1, "buy-button"], ["type", "button", "mat-raised-button", "", "color", "primary", 3, "click"], [3, "deleteLink", "updateLink"], [3, "infoList"], ["mat-button", "", "href", "", "download", ""], ["download", ""]], template: function GamePageComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, GamePageComponent_div_0_Template, 13, 7, "div", 0);
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]], decls: 1, vars: 1, consts: [[4, "ngIf"], [1, "to-list-button"], ["mat-button", "", 3, "routerLink"], [1, "buy-button"], ["type", "button", "mat-raised-button", "", "color", "primary", 3, "click"], [3, "deleteLink", "updateLink"], [3, "infoList"], ["mat-button", "", "href", "", "download", ""], ["download", ""], [3, "gameKey"]], template: function GamePageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵtemplate"](0, GamePageComponent_div_0_Template, 14, 8, "div", 0);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("ngIf", !!ctx.game);
     } }, styles: [".to-list-button[_ngcontent-%COMP%], .buy-button[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdhbWUtcGFnZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLG1CQUFBO0FBQ0oiLCJmaWxlIjoiZ2FtZS1wYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRvLWxpc3QtYnV0dG9uLCAuYnV5LWJ1dHRvbiAge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMTBweDtcclxufSJdfQ== */"] });
@@ -2945,20 +3520,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GamePageModule": () => (/* binding */ GamePageModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common */ 4364);
 /* harmony import */ var src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/common-components.module */ 1951);
 /* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
 /* harmony import */ var _game_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./game-page.component */ 2042);
 /* harmony import */ var src_app_app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/app-routing.module */ 158);
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/button */ 781);
 /* harmony import */ var src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/genre.service */ 7776);
 /* harmony import */ var src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/platform.service */ 8634);
 /* harmony import */ var src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/publisher.service */ 7441);
 /* harmony import */ var src_app_services_order_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/order.service */ 8132);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ 1258);
-/* harmony import */ var _componetns_info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../componetns/info-wrapper-component/info-wrapper.component */ 7990);
-/* harmony import */ var _componetns_info_component_info_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../componetns/info-component/info.component */ 4130);
+/* harmony import */ var _components_add_comment_component_add_comment_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/add-comment-component/add-comment.component */ 3448);
+/* harmony import */ var _components_comment_component_comment_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/comment-component/comment.component */ 6819);
+/* harmony import */ var _components_comments_component_comments_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/comments-component/comments.component */ 8003);
+/* harmony import */ var src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! src/app/services/comment.service */ 3792);
+/* harmony import */ var _components_ban_user_component_ban_user_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ban-user-component/ban-user.component */ 6229);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 1258);
+/* harmony import */ var _componetns_info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../componetns/info-wrapper-component/info-wrapper.component */ 7990);
+/* harmony import */ var _componetns_info_component_info_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../componetns/info-component/info.component */ 4130);
+
+
+
+
+
 
 
 
@@ -2978,24 +3563,461 @@ __webpack_require__.r(__webpack_exports__);
 class GamePageModule {
 }
 GamePageModule.ɵfac = function GamePageModule_Factory(t) { return new (t || GamePageModule)(); };
-GamePageModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: GamePageModule });
-GamePageModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [
+GamePageModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineNgModule"]({ type: GamePageModule });
+GamePageModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjector"]({ providers: [
         src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService,
         src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_4__.GenreService,
         src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_5__.PlatformService,
         src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_6__.PublisherService,
         src_app_services_order_service__WEBPACK_IMPORTED_MODULE_7__.OrderService,
+        src_app_services_comment_service__WEBPACK_IMPORTED_MODULE_11__.CommentService
     ], imports: [[
-            _angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule,
+            _angular_common__WEBPACK_IMPORTED_MODULE_16__.CommonModule,
             src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule,
             src_app_app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButtonModule,
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatButtonModule,
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](GamePageModule, { declarations: [_game_page_component__WEBPACK_IMPORTED_MODULE_2__.GamePageComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule,
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵsetNgModuleScope"](GamePageModule, { declarations: [_game_page_component__WEBPACK_IMPORTED_MODULE_2__.GamePageComponent,
+        _components_add_comment_component_add_comment_component__WEBPACK_IMPORTED_MODULE_8__.AddCommentComponent,
+        _components_comments_component_comments_component__WEBPACK_IMPORTED_MODULE_10__.CommentsComponent,
+        _components_comment_component_comment_component__WEBPACK_IMPORTED_MODULE_9__.CommentComponent,
+        _components_ban_user_component_ban_user_component__WEBPACK_IMPORTED_MODULE_12__.BanUserComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_16__.CommonModule,
         src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule,
         src_app_app_routing_module__WEBPACK_IMPORTED_MODULE_3__.AppRoutingModule,
-        _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButtonModule] }); })();
-_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetComponentScope"](_game_page_component__WEBPACK_IMPORTED_MODULE_2__.GamePageComponent, [_angular_common__WEBPACK_IMPORTED_MODULE_11__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatAnchor, _angular_router__WEBPACK_IMPORTED_MODULE_13__.RouterLinkWithHref, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButton, _componetns_info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_8__.InfoWrapperComponent, _componetns_info_component_info_component__WEBPACK_IMPORTED_MODULE_9__.InfoComponent], []);
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatButtonModule] }); })();
+_angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵsetComponentScope"](_game_page_component__WEBPACK_IMPORTED_MODULE_2__.GamePageComponent, [_angular_common__WEBPACK_IMPORTED_MODULE_16__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatAnchor, _angular_router__WEBPACK_IMPORTED_MODULE_18__.RouterLinkWithHref, _angular_material_button__WEBPACK_IMPORTED_MODULE_17__.MatButton, _componetns_info_wrapper_component_info_wrapper_component__WEBPACK_IMPORTED_MODULE_13__.InfoWrapperComponent, _componetns_info_component_info_component__WEBPACK_IMPORTED_MODULE_14__.InfoComponent, _components_comments_component_comments_component__WEBPACK_IMPORTED_MODULE_10__.CommentsComponent], []);
+
+
+/***/ }),
+
+/***/ 8289:
+/*!******************************************************************************!*\
+  !*** ./src/app/pages/games-page/components/filter-wrapper/filter-trigger.ts ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FilterTrigger": () => (/* binding */ FilterTrigger)
+/* harmony export */ });
+var FilterTrigger;
+(function (FilterTrigger) {
+    FilterTrigger["ApplyFilters"] = "ApplyFilters";
+    FilterTrigger["PageChange"] = "PageChange";
+    FilterTrigger["SortingChange"] = "SortingChange";
+    FilterTrigger["PageCountChange"] = "PageCountChange";
+})(FilterTrigger || (FilterTrigger = {}));
+
+
+/***/ }),
+
+/***/ 9586:
+/*!****************************************************************************************!*\
+  !*** ./src/app/pages/games-page/components/filter-wrapper/filter-wrapper.component.ts ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FilterWrapperComponent": () => (/* binding */ FilterWrapperComponent)
+/* harmony export */ });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/common/http */ 3882);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @ngneat/until-destroy */ 9758);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs */ 9441);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! rxjs */ 2720);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! rxjs/operators */ 2663);
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var _filter_trigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filter-trigger */ 8289);
+/* harmony import */ var src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/genre.service */ 7776);
+/* harmony import */ var src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/platform.service */ 8634);
+/* harmony import */ var src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/publisher.service */ 7441);
+/* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ 1258);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _componetns_checkboxes_input_component_checkboxes_input_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../componetns/checkboxes-input-component/checkboxes-input.component */ 5583);
+/* harmony import */ var _componetns_number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../componetns/number-input-component/number-input.component */ 9567);
+/* harmony import */ var _componetns_radio_input_component_radio_input_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../componetns/radio-input-component/radio-input.component */ 5962);
+/* harmony import */ var _componetns_text_input_component_text_input_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../componetns/text-input-component/text-input.component */ 2082);
+/* harmony import */ var _sort_wrapper_sort_wrapper_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../sort-wrapper/sort-wrapper.component */ 5457);
+/* harmony import */ var _pagging_wrapper_pagging_wrapper_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pagging-wrapper/pagging-wrapper.component */ 4804);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function FilterWrapperComponent_article_0_Template(rf, ctx) { if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](0, "article");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](1, "aside", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](2, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](3, "button", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵlistener"]("click", function FilterWrapperComponent_article_0_Template_button_click_3_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"](); return ctx_r1.applyFilters(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtext"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](5, "gamestore-checkboxes-input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](6, "gamestore-checkboxes-input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](7, "gamestore-checkboxes-input", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](8, "gamestore-number-input", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](9, "gamestore-number-input", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](10, "gamestore-radio-input", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelement"](11, "gamestore-text-input", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](12, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](13, "gamestore-sort-wrapper", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementStart"](14, "gamestore-pagging-wrapper", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵprojection"](15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("disabled", ctx_r0.form.disabled);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtextInterpolate1"](" ", ctx_r0.labels.filterButtonLabel, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.genresMenuItem)("controls", ctx_r0.getFormControlArray("genres"))("items", ctx_r0.genreItems);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.platformsMenuItem)("controls", ctx_r0.getFormControlArray("platforms"))("items", ctx_r0.platformItems);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.publishersMenuItem)("controls", ctx_r0.getFormControlArray("publishers"))("items", ctx_r0.publisherItems);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.gameMinPriceLabel)("control", ctx_r0.getFormControl("minPrice"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.gameMaxPriceLabel)("control", ctx_r0.getFormControl("maxPrice"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.gameDatePublishing)("control", ctx_r0.getFormControl("datePublishing"))("items", ctx_r0.datesPublishingItems);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("name", ctx_r0.labels.gameNameLabel)("control", ctx_r0.getFormControl("name"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("sortControl", ctx_r0.getFormControl("sort"));
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("pageCountControl", ctx_r0.getFormControl("pageCount"))("pageControl", ctx_r0.getFormControl("page"))("totalPages", ctx_r0.totalPages);
+} }
+const _c0 = ["*"];
+let FilterWrapperComponent = class FilterWrapperComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(genreService, platformService, publisherService, gameService, route, builder) {
+        super();
+        this.genreService = genreService;
+        this.platformService = platformService;
+        this.publisherService = publisherService;
+        this.gameService = gameService;
+        this.route = route;
+        this.builder = builder;
+        this.unsubscribe = new rxjs__WEBPACK_IMPORTED_MODULE_13__.Subject();
+        this.totalPages = 1;
+        this.currentPage = 1;
+        this.apply = new _angular_core__WEBPACK_IMPORTED_MODULE_12__.EventEmitter();
+        this.genreItems = [];
+        this.platformItems = [];
+        this.publisherItems = [];
+        this.datesPublishingItems = [];
+        this.genres = [];
+        this.publishers = [];
+        this.platforms = [];
+        this.datesPublishing = [];
+    }
+    ngOnInit() {
+        (0,rxjs__WEBPACK_IMPORTED_MODULE_14__.forkJoin)({
+            genres: this.genreService.getGenres(),
+            platforms: this.platformService.getPlatforms(),
+            publishers: this.publisherService.getPublishers(),
+            datesPublishing: this.gameService.getPublishedDateOptions(),
+        }).subscribe((x) => {
+            this.platforms = x.platforms;
+            this.publishers = x.publishers;
+            this.genres = x.genres;
+            this.datesPublishing = x.datesPublishing;
+            this.createForm(this.route.queryParams.getValue());
+            this.applyFilters(_filter_trigger__WEBPACK_IMPORTED_MODULE_1__.FilterTrigger.ApplyFilters);
+        });
+        this.pagesSubject.pipe((0,_ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_15__.untilDestroyed)(this)).subscribe((x) => {
+            var _a;
+            this.totalPages = x.totalPages;
+            (_a = this.getFormControl('page')) === null || _a === void 0 ? void 0 : _a.setValue(x.page);
+        });
+        this.gamesLoadSubject.pipe((0,_ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_15__.untilDestroyed)(this)).subscribe((_) => {
+            var _a;
+            (_a = this.form) === null || _a === void 0 ? void 0 : _a.enable();
+            this.subscribeControlChanges();
+        });
+    }
+    getFormControl(name) {
+        var _a;
+        return (_a = this.form) === null || _a === void 0 ? void 0 : _a.get(name);
+    }
+    getFormControlArray(name) {
+        var _a;
+        return ((_a = this.form) === null || _a === void 0 ? void 0 : _a.get(name)).controls.map((x) => x);
+    }
+    applyFilters(trigger = _filter_trigger__WEBPACK_IMPORTED_MODULE_1__.FilterTrigger.ApplyFilters) {
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
+        if ((_a = this.form) === null || _a === void 0 ? void 0 : _a.disabled) {
+            return;
+        }
+        this.unsubscribe.next();
+        (_b = this.form) === null || _b === void 0 ? void 0 : _b.disable();
+        const selectedGenres = this.genres
+            .filter((x, i) => !!this.form.value.genres[i])
+            .map((x) => { var _a; return (_a = x.id) !== null && _a !== void 0 ? _a : ''; });
+        const selectedPlatforms = this.platforms
+            .filter((x, i) => !!this.form.value.platforms[i])
+            .map((x) => { var _a; return (_a = x.id) !== null && _a !== void 0 ? _a : ''; });
+        const selectedPublihers = this.publishers
+            .filter((x, i) => !!this.form.value.publishers[i])
+            .map((x) => { var _a; return (_a = x.id) !== null && _a !== void 0 ? _a : ''; });
+        const filterModel = {
+            genres: selectedGenres !== null && selectedGenres !== void 0 ? selectedGenres : '',
+            platforms: selectedPlatforms !== null && selectedPlatforms !== void 0 ? selectedPlatforms : '',
+            publishers: selectedPublihers !== null && selectedPublihers !== void 0 ? selectedPublihers : '',
+            maxPrice: (_c = this.form.value.maxPrice) !== null && _c !== void 0 ? _c : '',
+            minPrice: (_d = this.form.value.minPrice) !== null && _d !== void 0 ? _d : '',
+            name: (_e = this.form.value.name) !== null && _e !== void 0 ? _e : '',
+            datePublishing: (_f = this.form.value.datePublishing) !== null && _f !== void 0 ? _f : '',
+            sort: (_g = this.form.value.sort) !== null && _g !== void 0 ? _g : '',
+            page: (_h = this.form.value.page) !== null && _h !== void 0 ? _h : '',
+            pageCount: (_j = this.form.value.pageCount) !== null && _j !== void 0 ? _j : '',
+            trigger: (_k = trigger === null || trigger === void 0 ? void 0 : trigger.toString()) !== null && _k !== void 0 ? _k : '',
+        };
+        const params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HttpParams({
+            fromObject: filterModel,
+            encoder: new _angular_common_http__WEBPACK_IMPORTED_MODULE_16__.HttpUrlEncodingCodec(),
+        });
+        this.apply.emit(params);
+    }
+    createForm(params) {
+        var _a, _b, _c, _d, _e, _f, _g;
+        this.form = this.builder.group({
+            genres: this.builder.array(this.genres.map((x) => { var _a; return !!((_a = params['genres']) === null || _a === void 0 ? void 0 : _a.includes(x.id)); })),
+            platforms: this.builder.array(this.platforms.map((x) => { var _a; return !!((_a = params['platforms']) === null || _a === void 0 ? void 0 : _a.includes(x.id)); })),
+            publishers: this.builder.array(this.publishers.map((x) => { var _a; return !!((_a = params['publishers']) === null || _a === void 0 ? void 0 : _a.includes(x.id)); })),
+            maxPrice: [(_a = params['maxPrice']) !== null && _a !== void 0 ? _a : ''],
+            minPrice: [(_b = params['minPrice']) !== null && _b !== void 0 ? _b : ''],
+            name: [(_c = params['name']) !== null && _c !== void 0 ? _c : ''],
+            datePublishing: [(_d = params['datePublishing']) !== null && _d !== void 0 ? _d : ''],
+            sort: [(_e = params['sort']) !== null && _e !== void 0 ? _e : ''],
+            page: [Number.parseInt((_f = params['page']) !== null && _f !== void 0 ? _f : this.currentPage.toString())],
+            pageCount: [(_g = params['pageCount']) !== null && _g !== void 0 ? _g : ''],
+        });
+        this.genreItems = this.genres.map((x) => x.name);
+        this.platformItems = this.platforms.map((x) => x.type);
+        this.publisherItems = this.publishers.map((x) => x.companyName);
+        this.datesPublishingItems = this.datesPublishing.map((x) => {
+            return { value: x, title: x };
+        });
+        this.subscribeControlChanges();
+    }
+    subscribeControlChanges() {
+        this.getFormControl('sort')
+            .valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__.takeUntil)(this.unsubscribe))
+            .subscribe((_) => this.applyFilters(_filter_trigger__WEBPACK_IMPORTED_MODULE_1__.FilterTrigger.SortingChange));
+        this.getFormControl('page')
+            .valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__.takeUntil)(this.unsubscribe))
+            .subscribe((_) => this.applyFilters(_filter_trigger__WEBPACK_IMPORTED_MODULE_1__.FilterTrigger.PageChange));
+        this.getFormControl('pageCount')
+            .valueChanges.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_17__.takeUntil)(this.unsubscribe))
+            .subscribe((_) => this.applyFilters(_filter_trigger__WEBPACK_IMPORTED_MODULE_1__.FilterTrigger.PageCountChange));
+    }
+};
+FilterWrapperComponent.ɵfac = function FilterWrapperComponent_Factory(t) { return new (t || FilterWrapperComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_2__.GenreService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_3__.PlatformService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_4__.PublisherService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](src_app_services_game_service__WEBPACK_IMPORTED_MODULE_5__.GameService), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_18__.ActivatedRoute), _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_19__.FormBuilder)); };
+FilterWrapperComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵdefineComponent"]({ type: FilterWrapperComponent, selectors: [["gamestore-filter-wrapper"]], inputs: { totalPages: "totalPages", currentPage: "currentPage", pagesSubject: "pagesSubject", gamesLoadSubject: "gamesLoadSubject" }, outputs: { apply: "apply" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 1, consts: [[4, "ngIf"], [1, "filters-container"], [1, "filter-button"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "disabled", "click"], [3, "name", "controls", "items"], [3, "name", "control"], [3, "name", "control", "items"], [1, "content-container"], [3, "sortControl"], [3, "pageCountControl", "pageControl", "totalPages"]], template: function FilterWrapperComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵtemplate"](0, FilterWrapperComponent_article_0_Template, 16, 24, "article", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_12__["ɵɵproperty"]("ngIf", !!ctx.form);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_20__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_21__.MatButton, _componetns_checkboxes_input_component_checkboxes_input_component__WEBPACK_IMPORTED_MODULE_6__.CheckboxesInputComponent, _componetns_number_input_component_number_input_component__WEBPACK_IMPORTED_MODULE_7__.NumberInputComponent, _componetns_radio_input_component_radio_input_component__WEBPACK_IMPORTED_MODULE_8__.RadioInputComponent, _componetns_text_input_component_text_input_component__WEBPACK_IMPORTED_MODULE_9__.TextInputComponent, _sort_wrapper_sort_wrapper_component__WEBPACK_IMPORTED_MODULE_10__.SortWrapperComponent, _pagging_wrapper_pagging_wrapper_component__WEBPACK_IMPORTED_MODULE_11__.PaggingWrapperComponent], styles: ["article[_ngcontent-%COMP%] {\n  float: left;\n  width: 100%;\n}\narticle[_ngcontent-%COMP%]   .filters-container[_ngcontent-%COMP%] {\n  float: left;\n  width: 300px;\n}\narticle[_ngcontent-%COMP%]   .filters-container[_ngcontent-%COMP%]   .filter-button[_ngcontent-%COMP%] {\n  margin-bottom: 15px;\n  text-align: center;\n}\narticle[_ngcontent-%COMP%]   .content-container[_ngcontent-%COMP%] {\n  float: left;\n  width: calc(100% - 300px);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZpbHRlci13cmFwcGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksV0FBQTtFQUNBLFdBQUE7QUFDSjtBQUNJO0VBQ0ksV0FBQTtFQUNBLFlBQUE7QUFDUjtBQUNRO0VBQ0ksbUJBQUE7RUFDQSxrQkFBQTtBQUNaO0FBR0k7RUFDSSxXQUFBO0VBQ0EseUJBQUE7QUFEUiIsImZpbGUiOiJmaWx0ZXItd3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImFydGljbGUge1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuXHJcbiAgICAuZmlsdGVycy1jb250YWluZXIge1xyXG4gICAgICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgICAgIHdpZHRoOiAzMDBweDtcclxuXHJcbiAgICAgICAgLmZpbHRlci1idXR0b24ge1xyXG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNXB4O1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jb250ZW50LWNvbnRhaW5lciB7XHJcbiAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgICAgd2lkdGg6IGNhbGMoMTAwJSAtIDMwMHB4KTtcclxuICAgIH1cclxufSJdfQ== */"] });
+FilterWrapperComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_22__.__decorate)([
+    (0,_ngneat_until_destroy__WEBPACK_IMPORTED_MODULE_15__.UntilDestroy)()
+], FilterWrapperComponent);
+
+
+
+/***/ }),
+
+/***/ 4804:
+/*!******************************************************************************************!*\
+  !*** ./src/app/pages/games-page/components/pagging-wrapper/pagging-wrapper.component.ts ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "PaggingWrapperComponent": () => (/* binding */ PaggingWrapperComponent)
+/* harmony export */ });
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../componetns/selector-input-component/selector-input.component */ 9260);
+
+
+
+
+
+
+function PaggingWrapperComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](4, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](5, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function PaggingWrapperComponent_div_0_Template_button_click_5_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r2); const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r1.onPrevChange(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](6, " < ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](7, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "button", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function PaggingWrapperComponent_div_0_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r2); const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r3.onNextChange(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](10, " > ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](11, "gamestore-selector-input", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx_r0.currentPage <= 1 || ctx_r0.pageControl.disabled);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r0.currentPage);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("disabled", ctx_r0.currentPage >= ctx_r0.totalPages || ctx_r0.pageControl.disabled);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("control", ctx_r0.pageCountControl)("values", ctx_r0.paggings);
+} }
+const _c0 = ["*"];
+class PaggingWrapperComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(gameService) {
+        super();
+        this.gameService = gameService;
+        this.totalPages = 1;
+        this.paggings = [];
+    }
+    get currentPage() {
+        var _a;
+        const pageFromControl = Number.parseInt((_a = this.pageControl.value) !== null && _a !== void 0 ? _a : '1');
+        return !!pageFromControl ? pageFromControl : 1;
+    }
+    ngOnInit() {
+        this.gameService.getPaggingOptions().subscribe((x) => {
+            this.paggings = x.map((z) => {
+                return { name: z, value: z };
+            });
+        });
+    }
+    onPrevChange() {
+        if (this.currentPage <= 1) {
+            return;
+        }
+        this.pageControl.setValue(this.currentPage - 1);
+    }
+    onNextChange() {
+        if (this.currentPage >= this.totalPages) {
+            return;
+        }
+        this.pageControl.setValue(this.currentPage + 1);
+    }
+}
+PaggingWrapperComponent.ɵfac = function PaggingWrapperComponent_Factory(t) { return new (t || PaggingWrapperComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService)); };
+PaggingWrapperComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: PaggingWrapperComponent, selectors: [["gamestore-pagging-wrapper"]], inputs: { pageCountControl: "pageCountControl", pageControl: "pageControl", totalPages: "totalPages" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 1, consts: [["class", "pagging-container", 4, "ngIf"], [1, "pagging-container"], [1, "content-container"], [1, "bottom-panel-container"], [1, "page-controls"], ["mat-stroked-button", "", "type", "button", 3, "disabled", "click"], [3, "control", "values"]], template: function PaggingWrapperComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, PaggingWrapperComponent_div_0_Template, 12, 5, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !!ctx.pageCountControl && !!ctx.pageControl);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _angular_material_button__WEBPACK_IMPORTED_MODULE_5__.MatButton, _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__.SelectorInputComponent], styles: [".pagging-container[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.pagging-container[_ngcontent-%COMP%]   .bottom-panel-container[_ngcontent-%COMP%] {\n  text-align: right;\n}\n.pagging-container[_ngcontent-%COMP%]   .bottom-panel-container[_ngcontent-%COMP%]   gamestore-selector-input[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n.pagging-container[_ngcontent-%COMP%]   .bottom-panel-container[_ngcontent-%COMP%]   .page-controls[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding-right: 15px;\n}\n.pagging-container[_ngcontent-%COMP%]   .bottom-panel-container[_ngcontent-%COMP%]   .page-controls[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.pagging-container[_ngcontent-%COMP%]   .content-container[_ngcontent-%COMP%] {\n  margin-bottom: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2dpbmctd3JhcHBlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUFDSjtBQUNJO0VBQ0ksaUJBQUE7QUFDUjtBQUNRO0VBQ0kscUJBQUE7QUFDWjtBQUVRO0VBQ0kscUJBQUE7RUFDQSxtQkFBQTtBQUFaO0FBRVk7RUFDSSxrQkFBQTtFQUNBLG1CQUFBO0FBQWhCO0FBS0k7RUFDSSxtQkFBQTtBQUhSIiwiZmlsZSI6InBhZ2dpbmctd3JhcHBlci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYWdnaW5nLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuXHJcbiAgICAuYm90dG9tLXBhbmVsLWNvbnRhaW5lciB7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcblxyXG4gICAgICAgIGdhbWVzdG9yZS1zZWxlY3Rvci1pbnB1dCB7XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICB9XHJcblxyXG4gICAgICAgIC5wYWdlLWNvbnRyb2xzIHtcclxuICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xyXG5cclxuICAgICAgICAgICAgc3BhbiB7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XHJcbiAgICAgICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAxNXB4O1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jb250ZW50LWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDtcclxuICAgIH1cclxufSJdfQ== */"] });
+
+
+/***/ }),
+
+/***/ 5457:
+/*!************************************************************************************!*\
+  !*** ./src/app/pages/games-page/components/sort-wrapper/sort-wrapper.component.ts ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SortWrapperComponent": () => (/* binding */ SortWrapperComponent)
+/* harmony export */ });
+/* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../componetns/selector-input-component/selector-input.component */ 9260);
+
+
+
+
+
+function SortWrapperComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "gamestore-selector-input", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](3, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("control", ctx_r0.sortControl)("values", ctx_r0.sortings);
+} }
+const _c0 = ["*"];
+class SortWrapperComponent extends src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__.BaseComponent {
+    constructor(gameService) {
+        super();
+        this.gameService = gameService;
+        this.sortings = [];
+    }
+    ngOnInit() {
+        this.gameService.getSortingOptions().subscribe((x) => {
+            this.sortings = x.map((z) => {
+                return { name: z, value: z };
+            });
+        });
+    }
+}
+SortWrapperComponent.ɵfac = function SortWrapperComponent_Factory(t) { return new (t || SortWrapperComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService)); };
+SortWrapperComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: SortWrapperComponent, selectors: [["gamestore-sort-wrapper"]], inputs: { sortControl: "sortControl" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 1, consts: [["class", "sort-container", 4, "ngIf"], [1, "sort-container"], [1, "top-panel-container"], [3, "control", "values"], [1, "content-container"]], template: function SortWrapperComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, SortWrapperComponent_div_0_Template, 5, 2, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !!ctx.sortControl);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__.NgIf, _componetns_selector_input_component_selector_input_component__WEBPACK_IMPORTED_MODULE_2__.SelectorInputComponent], styles: [".sort-container[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.sort-container[_ngcontent-%COMP%]   .top-panel-container[_ngcontent-%COMP%] {\n  text-align: right;\n}\n.sort-container[_ngcontent-%COMP%]   .top-panel-container[_ngcontent-%COMP%]   gamestore-selector-input[_ngcontent-%COMP%] {\n  display: inline-block;\n}\n.sort-container[_ngcontent-%COMP%]   .content-container[_ngcontent-%COMP%] {\n  margin-top: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNvcnQtd3JhcHBlci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7QUFDSjtBQUNJO0VBQ0ksaUJBQUE7QUFDUjtBQUNRO0VBQ0kscUJBQUE7QUFDWjtBQUdJO0VBQ0ksZ0JBQUE7QUFEUiIsImZpbGUiOiJzb3J0LXdyYXBwZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc29ydC1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcblxyXG4gICAgLnRvcC1wYW5lbC1jb250YWluZXIge1xyXG4gICAgICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG5cclxuICAgICAgICBnYW1lc3RvcmUtc2VsZWN0b3ItaW5wdXQge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIC5jb250ZW50LWNvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMjBweDtcclxuICAgIH1cclxufSJdfQ== */"] });
 
 
 /***/ }),
@@ -3011,10 +4033,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GamesPageComponent": () => (/* binding */ GamesPageComponent)
 /* harmony export */ });
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ 3927);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6491);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 9441);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 8636);
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 3927);
 /* harmony import */ var src_app_componetns_base_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/base.component */ 2844);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2316);
 /* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
+
 
 
 
@@ -3024,11 +4050,21 @@ class GamesPageComponent extends src_app_componetns_base_component__WEBPACK_IMPO
         super();
         this.gameService = gameService;
         this.gamesList = [];
+        this.pagesSubject = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({
+            totalPages: 1,
+            page: 1,
+        });
+        this.gamesLoadSubject = new rxjs__WEBPACK_IMPORTED_MODULE_3__.Subject();
     }
-    ngOnInit() {
+    loadGames(filterParams) {
         this.gameService
-            .getGames()
-            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)((games) => games.map((game) => {
+            .getGames(filterParams)
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)((x) => {
+            this.pagesSubject.next({
+                totalPages: !!x.totalPages ? x.totalPages : 1,
+                page: !!x.currentPage ? x.currentPage : 1,
+            });
+        }), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.map)((gamesInfo) => gamesInfo.games.map((game) => {
             const gameItem = {
                 title: game.name,
                 pageLink: `${this.links.get(this.pageRoutes.Game)}/${game.key}`,
@@ -3037,17 +4073,26 @@ class GamesPageComponent extends src_app_componetns_base_component__WEBPACK_IMPO
             };
             return gameItem;
         })))
-            .subscribe((x) => (this.gamesList = x !== null && x !== void 0 ? x : []));
+            .subscribe((x) => this.onGamesLoaded(x), () => this.onGamesLoaded([]));
+    }
+    onGamesLoaded(games) {
+        this.gamesList = games !== null && games !== void 0 ? games : [];
+        this.gamesLoadSubject.next();
     }
 }
-GamesPageComponent.ɵfac = function GamesPageComponent_Factory(t) { return new (t || GamesPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService)); };
-GamesPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: GamesPageComponent, selectors: [["gamestore-games"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], decls: 2, vars: 2, consts: [[3, "listItems", "addLink"]], template: function GamesPageComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "article");
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "gamestore-list", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+GamesPageComponent.ɵfac = function GamesPageComponent_Factory(t) { return new (t || GamesPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdirectiveInject"](src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService)); };
+GamesPageComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineComponent"]({ type: GamesPageComponent, selectors: [["gamestore-games"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵInheritDefinitionFeature"]], decls: 3, vars: 4, consts: [[3, "pagesSubject", "gamesLoadSubject", "apply"], [3, "listItems", "addLink"]], template: function GamesPageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementStart"](1, "gamestore-filter-wrapper", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵlistener"]("apply", function GamesPageComponent_Template_gamestore_filter_wrapper_apply_1_listener($event) { return ctx.loadGames($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelement"](2, "gamestore-list", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("listItems", ctx.gamesList)("addLink", ctx.links.get(ctx.pageRoutes.AddGame));
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("pagesSubject", ctx.pagesSubject)("gamesLoadSubject", ctx.gamesLoadSubject);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵproperty"]("listItems", ctx.gamesList)("addLink", ctx.links.get(ctx.pageRoutes.AddGame));
     } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJnYW1lcy1wYWdlLmNvbXBvbmVudC5zY3NzIn0= */"] });
 
 
@@ -3064,12 +4109,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "GamesPageModule": () => (/* binding */ GamesPageModule)
 /* harmony export */ });
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 4364);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ 4364);
 /* harmony import */ var src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/app/componetns/common-components.module */ 1951);
 /* harmony import */ var src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/services/game.service */ 1397);
 /* harmony import */ var _games_page_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./games-page.component */ 3299);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
-/* harmony import */ var _componetns_list_component_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../componetns/list-component/list.component */ 9860);
+/* harmony import */ var _components_filter_wrapper_filter_wrapper_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/filter-wrapper/filter-wrapper.component */ 9586);
+/* harmony import */ var src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/services/platform.service */ 8634);
+/* harmony import */ var src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/genre.service */ 7776);
+/* harmony import */ var src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/publisher.service */ 7441);
+/* harmony import */ var _components_sort_wrapper_sort_wrapper_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/sort-wrapper/sort-wrapper.component */ 5457);
+/* harmony import */ var _components_pagging_wrapper_pagging_wrapper_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/pagging-wrapper/pagging-wrapper.component */ 4804);
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/button */ 781);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _componetns_list_component_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../componetns/list-component/list.component */ 9860);
+
+
+
+
+
+
+
 
 
 
@@ -3079,10 +4138,13 @@ __webpack_require__.r(__webpack_exports__);
 class GamesPageModule {
 }
 GamesPageModule.ɵfac = function GamesPageModule_Factory(t) { return new (t || GamesPageModule)(); };
-GamesPageModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineNgModule"]({ type: GamesPageModule });
-GamesPageModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjector"]({ providers: [src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService], imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetNgModuleScope"](GamesPageModule, { declarations: [_games_page_component__WEBPACK_IMPORTED_MODULE_2__.GamesPageComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_5__.CommonModule, src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule] }); })();
-_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵsetComponentScope"](_games_page_component__WEBPACK_IMPORTED_MODULE_2__.GamesPageComponent, [_componetns_list_component_list_component__WEBPACK_IMPORTED_MODULE_3__.ListComponent], []);
+GamesPageModule.ɵmod = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineNgModule"]({ type: GamesPageModule });
+GamesPageModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵdefineInjector"]({ providers: [src_app_services_game_service__WEBPACK_IMPORTED_MODULE_1__.GameService, src_app_services_platform_service__WEBPACK_IMPORTED_MODULE_4__.PlatformService, src_app_services_genre_service__WEBPACK_IMPORTED_MODULE_5__.GenreService, src_app_services_publisher_service__WEBPACK_IMPORTED_MODULE_6__.PublisherService], imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule, src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButtonModule]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetNgModuleScope"](GamesPageModule, { declarations: [_games_page_component__WEBPACK_IMPORTED_MODULE_2__.GamesPageComponent,
+        _components_filter_wrapper_filter_wrapper_component__WEBPACK_IMPORTED_MODULE_3__.FilterWrapperComponent,
+        _components_sort_wrapper_sort_wrapper_component__WEBPACK_IMPORTED_MODULE_7__.SortWrapperComponent,
+        _components_pagging_wrapper_pagging_wrapper_component__WEBPACK_IMPORTED_MODULE_8__.PaggingWrapperComponent], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_11__.CommonModule, src_app_componetns_common_components_module__WEBPACK_IMPORTED_MODULE_0__.CommonComponentsModule, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButtonModule] }); })();
+_angular_core__WEBPACK_IMPORTED_MODULE_10__["ɵɵsetComponentScope"](_games_page_component__WEBPACK_IMPORTED_MODULE_2__.GamesPageComponent, [_components_filter_wrapper_filter_wrapper_component__WEBPACK_IMPORTED_MODULE_3__.FilterWrapperComponent, _componetns_list_component_list_component__WEBPACK_IMPORTED_MODULE_9__.ListComponent], []);
 
 
 /***/ }),
@@ -5354,6 +6416,12 @@ class BaseService {
             observe: 'response',
         }));
     }
+    getWithParams(url, params) {
+        return this.interceptRequest(this.http.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_0__.appConfiguration.baseApiUrl + url, {
+            params: params,
+            observe: 'response',
+        }));
+    }
     getFile(url) {
         return this.interceptRequest(this.http.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_0__.appConfiguration.baseApiUrl + url, {
             responseType: 'blob',
@@ -5361,7 +6429,10 @@ class BaseService {
         }));
     }
     getFilePost(url, body) {
-        return this.interceptRequest(this.http.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_0__.appConfiguration.baseApiUrl + url, body, { responseType: 'blob', observe: 'response' }));
+        return this.interceptRequest(this.http.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_0__.appConfiguration.baseApiUrl + url, body, {
+            responseType: 'blob',
+            observe: 'response',
+        }));
     }
     post(url, body) {
         return this.interceptRequest(this.http.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_0__.appConfiguration.baseApiUrl + url, body, {
@@ -5383,6 +6454,60 @@ class BaseService {
         return this.loaderService.openForLoading(request.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.tap)((x) => _configuration_shared_info__WEBPACK_IMPORTED_MODULE_1__.gameCountSubject.next(x.headers.get('x-total-numbers-of-games'))), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.map)((x) => { var _a; return (_a = x.body) !== null && _a !== void 0 ? _a : {}; })));
     }
 }
+
+
+/***/ }),
+
+/***/ 3792:
+/*!*********************************************!*\
+  !*** ./src/app/services/comment.service.ts ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CommentService": () => (/* binding */ CommentService)
+/* harmony export */ });
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../configuration/configuration-resolver */ 5482);
+/* harmony import */ var _base_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./base.service */ 5136);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ 3882);
+/* harmony import */ var _componetns_loader_component_loader_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../componetns/loader-component/loader.service */ 6216);
+
+
+
+
+
+
+class CommentService extends _base_service__WEBPACK_IMPORTED_MODULE_2__.BaseService {
+    constructor(http, loaderService) {
+        super(http, loaderService);
+    }
+    getCommentsByGameKey(gameKey) {
+        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.commentsByGameApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeKeyIdentifier, gameKey));
+    }
+    addComment(comment, gameKey, parentId, action) {
+        return this.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.addCommentApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeKeyIdentifier, gameKey), {
+            comment,
+            parentId,
+            action,
+        });
+    }
+    banUser(duration, user) {
+        return this.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.banUserApiUrl, { user, duration });
+    }
+    deleteComment(id, gameKey) {
+        return this.delete(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.deleteCommentApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeKeyIdentifier, gameKey)
+            .replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeIdIdentifier, id), {});
+    }
+    getBanDurations() {
+        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getBanDurationsApiUrl);
+    }
+}
+CommentService.ɵfac = function CommentService_Factory(t) { return new (t || CommentService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_componetns_loader_component_loader_service__WEBPACK_IMPORTED_MODULE_3__.LoaderService)); };
+CommentService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: CommentService, factory: CommentService.ɵfac });
 
 
 /***/ }),
@@ -5420,8 +6545,8 @@ class GameService extends _base_service__WEBPACK_IMPORTED_MODULE_2__.BaseService
     getGameById(id) {
         return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.gameByIdApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeIdIdentifier, id));
     }
-    getGames() {
-        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.gamesApiUrl);
+    getGames(filterParams) {
+        return this.getWithParams(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.gamesApiUrl, filterParams);
     }
     addGame(game, genres, platforms, publisher) {
         return this.post(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.addGameApiUrl, {
@@ -5452,7 +6577,16 @@ class GameService extends _base_service__WEBPACK_IMPORTED_MODULE_2__.BaseService
         return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.gamesByPublisherApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeCompanyNameIdentifier, companyName));
     }
     getGameFile(key) {
-        return this.getFile(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getGameFile.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeKeyIdentifier, key));
+        return this.getFile(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getGameFileApiUrl.replace(src_environments_environment__WEBPACK_IMPORTED_MODULE_0__.environment.routeKeyIdentifier, key));
+    }
+    getPublishedDateOptions() {
+        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getPublishedDateOptionsApiUrl);
+    }
+    getSortingOptions() {
+        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getSortingOptionsApiUrl);
+    }
+    getPaggingOptions() {
+        return this.get(_configuration_configuration_resolver__WEBPACK_IMPORTED_MODULE_1__.appConfiguration.getPaggingOptionsApiUrl);
     }
 }
 GameService.ɵfac = function GameService_Factory(t) { return new (t || GameService)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_componetns_loader_component_loader_service__WEBPACK_IMPORTED_MODULE_3__.LoaderService)); };
