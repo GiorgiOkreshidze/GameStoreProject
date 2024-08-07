@@ -1,10 +1,12 @@
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
+using DataAccess.Enums;
 using DTOs.GameDtos;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 using X.PagedList.Extensions;
+using ArgumentNullException = System.ArgumentNullException;
 
 namespace DataAccess.Services;
 #pragma warning disable IDE0305
@@ -225,7 +227,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         OrderGame orderGame;
         var newGuid = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
 
-        if (gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == newGuid) is null)
+        if (gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == newGuid && o.Status == OrderStatus.Open) is null)
         {
             entity = new OrderEntity();
             orderGame = new OrderGame
@@ -243,7 +245,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         else
         {
             entity = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities)
-                .FirstOrDefault(o => o.CustomerId == newGuid) ?? throw new ArgumentNullException();
+                .FirstOrDefault(o => o.CustomerId == newGuid && o.Status == OrderStatus.Open) ?? throw new ArgumentNullException();
         }
 
         if (entity.GameEntities.Contains(gameEntity))
@@ -255,6 +257,11 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         else
         {
             entity.GameEntities.Add(gameEntity);
+            gameDbContext.SaveChanges();
+            orderGame = gameDbContext.OrderGames.FirstOrDefault(o => o.ProductId == gameEntity.Id) ?? throw new ArgumentNullException();
+            orderGame.Price = gameEntity.Price;
+            orderGame.Discount = gameEntity.Discount;
+            orderGame.Quantity = 1;
         }
 
         gameDbContext.SaveChanges();

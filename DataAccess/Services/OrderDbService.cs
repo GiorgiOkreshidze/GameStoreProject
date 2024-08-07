@@ -30,7 +30,8 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
     {
         var gameEntity = gameDbContext.GameEntities.FirstOrDefault(g => g.Key == key) ?? throw new ArgumentNullException();
         var orderEntity = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities)
-                              .FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ??
+                              .FirstOrDefault(o => (o.CustomerId == VirtualCustomerGuid && o.Status == OrderStatus.Checkout)
+                                                   || (o.CustomerId == VirtualCustomerGuid && o.Status == OrderStatus.Open)) ??
                           throw new ArgumentNullException();
         if (orderEntity.GameEntities.Count == 1)
         {
@@ -47,7 +48,10 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public ICollection<OrderGame> GetCartDb()
     {
-        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid);
+        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => (o.CustomerId == VirtualCustomerGuid
+                                                                          && o.Status == OrderStatus.Open)
+                                                                          || (o.CustomerId == VirtualCustomerGuid
+                                                                              && o.Status == OrderStatus.Checkout));
 
         return orderEntity is null ? [] : gameDbContext.OrderGames.Where(o => o.OrderId == orderEntity.Id).ToList();
     }
@@ -59,12 +63,15 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public OrderEntity GetOrderEntity()
     {
-        return gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ?? throw new ArgumentNullException();
+        return gameDbContext.OrderEntities.FirstOrDefault(o => (o.CustomerId == VirtualCustomerGuid
+                                                                && o.Status == OrderStatus.Open)
+                                                               || (o.CustomerId == VirtualCustomerGuid
+                                                                   && o.Status == OrderStatus.Checkout)) ?? throw new ArgumentNullException();
     }
 
-    public void OrderStatusChangeDb(bool nextStatus)
+    public void OrderStatusChangeDb(bool nextStatus, Guid id)
     {
-        var orderEntity = GetOrderEntity();
+        var orderEntity = GetOrderByIdDb(id);
         if (nextStatus)
         {
             orderEntity.Status += 1;

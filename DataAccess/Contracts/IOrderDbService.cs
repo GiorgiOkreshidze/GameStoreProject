@@ -18,7 +18,7 @@ public interface IOrderDbService
 
     public OrderEntity GetOrderEntity();
 
-    public void OrderStatusChangeDb(bool nextStatus);
+    public void OrderStatusChangeDb(bool nextStatus, Guid id);
 
     public void ChangeGameUnitInStock(OrderEntity orderEntity, ICollection<OrderGame> orderGames);
 
