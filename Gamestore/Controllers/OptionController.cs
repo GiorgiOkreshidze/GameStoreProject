@@ -6,7 +6,7 @@ namespace Gamestore.Controllers;
 [Route("[controller]")]
 public class OptionController : Controller
 {
-    [HttpGet]
+    [HttpGet("publish-date-options")]
     public IActionResult GetDateFilterOptions()
     {
         return Ok(new List<string> { "last week", "last month", "last year", "2 years", "3 years" });

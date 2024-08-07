@@ -47,9 +47,9 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public ICollection<OrderGame> GetCartDb()
     {
-        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid) ?? throw new ArgumentNullException();
+        var orderEntity = gameDbContext.OrderEntities.FirstOrDefault(o => o.CustomerId == VirtualCustomerGuid);
 
-        return gameDbContext.OrderGames.Where(o => o.OrderId == orderEntity.Id).ToList();
+        return orderEntity is null ? [] : gameDbContext.OrderGames.Where(o => o.OrderId == orderEntity.Id).ToList();
     }
 
     public ICollection<PaymentMethod> GetPaymentMethodsDb()

@@ -20,7 +20,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
 {
     private static readonly Regex MyRegex = new(@"\s+", RegexOptions.Compiled);
 
-    public IPagedList<GetPagedGameDto> GetGames(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination)
+    public GetPagedGameDto GetGames(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination)
     {
         IPagedList<GameEntity> gameEntities = gameDbService.GetGamesDb(filter, sort, pagination);
 
@@ -42,10 +42,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
             CurrentPage = gameEntities.PageNumber,
         };
 
-        StaticPagedList<GetPagedGameDto> result = !PaginationIsDefault(pagination)
-            ? new StaticPagedList<GetPagedGameDto>([getGameDto], pagination.PageNumber, pagination.PageSize, gameEntities.TotalItemCount)
-            : new StaticPagedList<GetPagedGameDto>([getGameDto], 1, getGameDto.Games.Count, getGameDto.Games.Count);
-        return result;
+        return getGameDto;
     }
 
     public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto.PageNumber <= 0 && paginationDto.PageSize <= 0;

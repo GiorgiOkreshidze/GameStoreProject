@@ -293,7 +293,8 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         var deleteBody = "A comment/quote was deleted";
         var gameId = GetGameIdByKey(key);
         var commentEntity = gameDbContext.CommentEntities.FirstOrDefault(c => c.Id == id) ?? throw new ArgumentNullException();
-        DeleteCommentRecursively(gameId, commentEntity, deleteBody, commentEntity.Body);
+        int commas = CountCommas(commentEntity.Body);
+        DeleteCommentRecursively(gameId, commentEntity, deleteBody, commentEntity.Body, commas);
         commentEntity.Body = deleteBody;
         gameDbContext.SaveChanges();
     }
@@ -313,7 +314,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         return !gameDbContext.GameEntities.Any(t => t.Key == key);
     }
 
-    private void DeleteCommentRecursively(Guid gameId, CommentEntity commentEntity, string deleteBody, string deletedCommentBody)
+    private void DeleteCommentRecursively(Guid gameId, CommentEntity commentEntity, string deleteBody, string deletedCommentBody, int commas)
     {
         var childComments = gameDbContext.CommentEntities.Where(c => c.ParentCommentId == commentEntity.Id).ToList();
         if (childComments.Count == 0)
@@ -323,10 +324,52 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
         foreach (var childComment in childComments)
         {
-            childComment.Body = childComment.Body.Replace(deletedCommentBody + ',', deleteBody + ',');
-            DeleteCommentRecursively(gameId, childComment, deleteBody, deletedCommentBody);
+            var split = childComment.Body.Split(',');
+
+            var arrays = SplitArray(split, commas + 1);
+
+            var head = string.Join(',', arrays[0]);
+
+            head = deleteBody;
+
+            var tail = string.Join(',', arrays[1]);
+
+            var body = head + "," + tail;
+
+            childComment.Body = body;
+
+            DeleteCommentRecursively(gameId, childComment, deleteBody, deletedCommentBody, commas);
         }
 
         gameDbContext.SaveChanges();
+    }
+
+    private static int CountCommas(string input)
+    {
+        return input == null ? throw new ArgumentNullException(nameof(input)) : input.Count(c => c == ',');
+    }
+
+    private static List<T[]> SplitArray<T>(T[] array, int subArrayLength)
+    {
+        var result = new List<T[]>();
+
+        var head = new T[subArrayLength];
+        var tail = new T[array.Length - subArrayLength];
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (i < subArrayLength)
+            {
+                head[i] = array[i];
+            }
+            else
+            {
+                tail[i - subArrayLength] = array[i];
+            }
+        }
+
+        result.Add(head);
+        result.Add(tail);
+        return result;
     }
 }
