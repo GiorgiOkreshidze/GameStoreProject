@@ -3,8 +3,10 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
+#pragma warning restore IDE0005
 using DTOs.OrderDtos;
 using DTOs.PaymentDtos;
 using DTOs.PaymentMethodDtos;
@@ -12,13 +14,19 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Layout.Element;
 using Microsoft.Extensions.Configuration;
+#pragma warning disable IDE0005
+using MongoDbAccess.Models;
+#pragma warning restore IDE0005
+#pragma warning disable IDE0005
+using MongoDbAccess.Contracts;
+#pragma warning restore IDE0005
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace BusinessLogic.Services;
 
 public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, IValidationsHandler validator,
-    IConfiguration configuration, HttpClient httpClient) : IOrderService
+    IConfiguration configuration, HttpClient httpClient, IOrderMongoService orderMongoService) : IOrderService
 {
     public ICollection<GetOrderDto> GetAllOrders()
     {
@@ -181,6 +189,24 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
             orderDbService.OrderStatusChangeDb(false, orderEntity.Id);
             throw new ApplicationException(response.Content.ReadAsStringAsync().Result);
         }
+    }
+
+    public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto)
+    {
+        DateTime startDate = intervalDto.Start ?? DateTime.MinValue;
+        DateTime endDate = intervalDto.End ?? DateTime.MaxValue;
+
+        var orderEnitites = orderDbService.OrdersByIntervalDb(startDate, endDate);
+        var orderDocuments = orderMongoService.OrdersByIntervalMongo(startDate, endDate);
+
+        var orders1 = orderMapper.Map<ICollection<OrderDocument>, ICollection<CombinedOrderModel>>(orderDocuments);
+        var orders2 = orderMapper.Map<ICollection<OrderEntity>, ICollection<CombinedOrderModel>>(orderEnitites);
+
+        var combinedOrders = orders1.Concat(orders2).ToList();
+
+        var orderDtos = orderMapper.Map<ICollection<CombinedOrderModel>, ICollection<OrderDto>>(combinedOrders);
+
+        return orderDtos;
     }
 
     private MemoryStream GenerateInvoice(OrderEntity orderEntity, int sumOfPrices)

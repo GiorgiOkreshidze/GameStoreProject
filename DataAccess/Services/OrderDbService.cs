@@ -99,6 +99,11 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
         }
     }
 
+    public ICollection<OrderEntity> OrdersByIntervalDb(DateTime start, DateTime end)
+    {
+        return gameDbContext.OrderEntities.Where(o => o.Date >= start && o.Date <= end).ToList();
+    }
+
     public void DeleteOrderDb(Guid id)
     {
         var order = gameDbContext.OrderEntities.FirstOrDefault(o => o.Id == id) ?? throw new ArgumentNullException();

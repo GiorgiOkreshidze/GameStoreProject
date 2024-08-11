@@ -22,5 +22,7 @@ public interface IOrderDbService
 
     public void ChangeGameUnitInStock(OrderEntity orderEntity, ICollection<OrderGame> orderGames);
 
+    public ICollection<OrderEntity> OrdersByIntervalDb(DateTime start, DateTime end);
+
     public void DeleteOrderDb(Guid id);
 }

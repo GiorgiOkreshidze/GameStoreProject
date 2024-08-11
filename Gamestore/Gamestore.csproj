@@ -21,6 +21,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
+      <ProjectReference Include="..\MongoDbAccess\MongoDbAccess.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,4 +1,7 @@
 using BusinessLogic.Contracts;
+#pragma warning disable IDE0005
+using DTOs.OrderDtos;
+#pragma warning restore IDE0005
 using DTOs.PaymentDtos;
 using Microsoft.AspNetCore.Mvc;
 
@@ -66,5 +69,12 @@ public class OrderController(IOrderService orderService) : Controller
         }
 
         return BadRequest("Unsupported payment method.");
+    }
+
+    [HttpGet("history")]
+    public IActionResult CombinedOrdersByInterval([FromQuery] IntervalDto intervalDto)
+    {
+        var orders = orderService.CombinedOrdersByInterval(intervalDto);
+        return Ok(orders);
     }
 }

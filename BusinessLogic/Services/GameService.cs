@@ -4,8 +4,10 @@ using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
 using BusinessLogic.Validations;
+#pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
+#pragma warning restore IDE0005
 using DTOs.CommentDtos;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;

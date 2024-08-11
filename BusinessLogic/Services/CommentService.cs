@@ -1,9 +1,9 @@
 using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
-using DataAccess.Entities;
 #pragma warning disable IDE0005
 using DataAccess.Contracts;
+using DataAccess.Entities;
 using DTOs.CommentDtos;
 #pragma warning restore IDE0005
 

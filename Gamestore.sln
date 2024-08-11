@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic.Tests", "BusinessLogic.Tests\BusinessLogic.Tests.csproj", "{E32221F2-3BD3-4D2F-A616-AEABD966ED30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDbAccess", "MongoDbAccess\MongoDbAccess.csproj", "{BA902D5A-3159-46D8-8B1D-5D8039F4AF5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{E32221F2-3BD3-4D2F-A616-AEABD966ED30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E32221F2-3BD3-4D2F-A616-AEABD966ED30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E32221F2-3BD3-4D2F-A616-AEABD966ED30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA902D5A-3159-46D8-8B1D-5D8039F4AF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA902D5A-3159-46D8-8B1D-5D8039F4AF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA902D5A-3159-46D8-8B1D-5D8039F4AF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA902D5A-3159-46D8-8B1D-5D8039F4AF5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

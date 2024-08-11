@@ -25,4 +25,6 @@ public interface IOrderService
     public IBoxTerminalResponseDto PaymentByIBoxTermianl();
 
     public void PaymentByVisa(PaymentDto paymentDto);
+
+    public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto);
 }

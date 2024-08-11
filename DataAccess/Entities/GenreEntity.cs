@@ -12,6 +12,10 @@ public class GenreEntity
     [Required]
     public string Name { get; set; }
 
+    public string Description { get; set; }
+
+    public string Picture { get; set; }
+
     public Guid? ParentGenreId { get; set; }
 
     public GenreEntity? ParentGenre { get; set; }

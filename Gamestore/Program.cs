@@ -2,6 +2,7 @@
 using BusinessLogic;
 using DataAccess;
 using DTOs.CustomConvertor;
+using MongoDbAccess;
 #pragma warning restore IDE0005
 using Gamestore.Middlewares.Exception;
 using Gamestore.Middlewares.Logging;
@@ -16,6 +17,7 @@ builder.Services.AddMvc();
 
 builder.Services.AddBusinessLogicServices();
 builder.Services.AddDatabaseServices(builder.Configuration);
+builder.Services.AddMongoDbServices(builder.Configuration);
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
