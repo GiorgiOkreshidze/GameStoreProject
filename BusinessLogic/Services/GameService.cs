@@ -47,7 +47,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
         return getGameDto;
     }
 
-    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto.PageNumber <= 0 && paginationDto.PageSize <= 0;
+    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto is { PageNumber: <= 0, PageSize: <= 0 };
 
     public void CreateGame(CreateGameDto createGameDto)
     {

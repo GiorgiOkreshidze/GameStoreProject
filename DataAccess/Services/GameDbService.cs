@@ -57,7 +57,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
         if (!SortIsDefault(sort))
         {
-            query = sort.SortBy switch
+            query = sort.Sort switch
             {
                 "Most popular" => query.OrderByDescending(g => g.Views),
                 "Most commented" => query.OrderByDescending(g => g.CommentEntities.Count),
@@ -88,7 +88,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         return pagedResult;
     }
 
-    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto.PageNumber <= 0 && paginationDto.PageSize <= 0;
+    public static bool PaginationIsDefault(GamePaginationDto paginationDto) => paginationDto is { PageNumber: <= 1, PageSize: <= 0 };
 
     public static bool FilterIsDefault(GameFilterDto filterDto) => (filterDto.GenreIds == null || !filterDto.GenreIds.Any())
                                                   && (filterDto.PlatformIds == null || !filterDto.PlatformIds.Any())
@@ -98,7 +98,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
                                                   && string.IsNullOrEmpty(filterDto.Name)
                                                   && string.IsNullOrEmpty(filterDto.PublishDateRange);
 
-    public static bool SortIsDefault(GameSortDto sortDto) => string.IsNullOrEmpty(sortDto.SortBy);
+    public static bool SortIsDefault(GameSortDto sortDto) => string.IsNullOrEmpty(sortDto.Sort);
 
     public static DateRange GetDateRange(string range)
     {

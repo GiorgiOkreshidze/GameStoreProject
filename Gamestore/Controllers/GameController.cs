@@ -22,10 +22,16 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet]
-    public IActionResult GetGames([FromQuery] GameFilterDto filter, [FromQuery] GameSortDto sort, [FromQuery] GamePaginationDto pagination)
+    public IActionResult GetGames([FromQuery] GameFilterDto filter)
     {
-        var games = gameService.GetGames(filter, sort, pagination);
-        return Ok(games);
+        return Ok(gameService.GetGames(
+            filter,
+            new GameSortDto { Sort = filter.Sort },
+            new GamePaginationDto
+            {
+                PageNumber = filter.Page,
+                PageSize = filter.PageCount,
+            }));
     }
 
     [HttpPut]

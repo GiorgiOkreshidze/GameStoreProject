@@ -10,7 +10,7 @@ public interface ISupplierMongoService
 
     public SupplierDocument GetSupplierByIdMongo(string id);
 
-    public void UpdateSupplierMongo(string id, SupplierDocument updatedSupplier);
+    public void UpdateSupplierMongo(SupplierDocument updatedSupplier);
 
     public void DeleteSupplierMongo(string id);
 }

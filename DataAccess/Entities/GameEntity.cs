@@ -39,11 +39,11 @@ public class GameEntity
 
     public ICollection<CommentEntity> CommentEntities { get; set; }
 
-    public string QuantityPerUnit { get; set; }
+    /*public string QuantityPerUnit { get; set; } = string.Empty;
 
     public int UnitsOnOrder { get; set; }
 
-    public int ReorderLevel { get; set; }
+    public int ReorderLevel { get; set; }*/
 
     public int Views { get; set; }
 

@@ -31,14 +31,9 @@ public class CategoryMongoService : ICategoryMongoService
         _categoriesCollection.InsertOne(category);
     }
 
-    public void UpdateCategoryMongo(string id, CategoryDocument category)
+    public void UpdateCategoryMongo(CategoryDocument category)
     {
-        if (id != category.Id)
-        {
-            throw new ArgumentException("The provided ID does not match the category ID.");
-        }
-
-        var result = _categoriesCollection.ReplaceOne(cat => cat.Id == id, category);
+        var result = _categoriesCollection.ReplaceOne(cat => cat.Id == category.Id, category);
         if (result.ModifiedCount == 0)
         {
             throw new InvalidOperationException("Failed to update the category.");

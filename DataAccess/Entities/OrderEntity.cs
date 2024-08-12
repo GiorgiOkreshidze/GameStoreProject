@@ -10,25 +10,25 @@ public class OrderEntity
 
     public DateTime Date { get; set; } = DateTime.Now;
 
-    public DateTime RequiredDate { get; set; }
+    /*public DateTime RequiredDate { get; set; } = DateTime.Now;
 
-    public DateTime ShippedDate { get; set; }
+    public DateTime ShippedDate { get; set; } = DateTime.Now;
 
     public int ShipVia { get; set; }
 
     public double Freight { get; set; }
 
-    public string ShipName { get; set; }
+    public string ShipName { get; set; } = string.Empty;
 
-    public string ShipAddress { get; set; }
+    public string ShipAddress { get; set; } = string.Empty;
 
-    public string ShipCity { get; set; }
+    public string ShipCity { get; set; } = string.Empty;
 
-    public string ShipRegion { get; set; }
+    public string ShipRegion { get; set; } = string.Empty;
 
-    public string ShipPostalCode { get; set; }
+    public string ShipPostalCode { get; set; } = string.Empty;
 
-    public string ShipCountry { get; set; }
+    public string ShipCountry { get; set; } = string.Empty;*/
 
     [Required]
     public Guid CustomerId { get; set; } = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");

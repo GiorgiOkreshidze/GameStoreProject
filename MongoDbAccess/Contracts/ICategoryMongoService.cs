@@ -10,7 +10,7 @@ public interface ICategoryMongoService
 
     public void CreateCategoryMongo(CategoryDocument category);
 
-    public void UpdateCategoryMongo(string id, CategoryDocument category);
+    public void UpdateCategoryMongo(CategoryDocument category);
 
     public void DeleteCategoryMongo(string id);
 }

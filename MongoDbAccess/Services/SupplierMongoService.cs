@@ -32,12 +32,12 @@ public class SupplierMongoService : ISupplierMongoService
                ?? throw new KeyNotFoundException("Supplier not found.");
     }
 
-    public void UpdateSupplierMongo(string id, SupplierDocument updatedSupplier)
+    public void UpdateSupplierMongo(SupplierDocument updatedSupplier)
     {
-        var result = _suppliersCollection.ReplaceOne(s => s.Id == id, updatedSupplier);
-        if (result.MatchedCount == 0)
+        var result = _suppliersCollection.ReplaceOne(s => s.Id == updatedSupplier.Id, updatedSupplier);
+        if (result.ModifiedCount == 0)
         {
-            throw new KeyNotFoundException("Supplier not found.");
+            throw new InvalidOperationException("Failed to update product");
         }
     }
 
@@ -46,7 +46,7 @@ public class SupplierMongoService : ISupplierMongoService
         var result = _suppliersCollection.DeleteOne(s => s.Id == id);
         if (result.DeletedCount == 0)
         {
-            throw new KeyNotFoundException("Supplier not found.");
+            throw new InvalidOperationException("Failed to delete product");
         }
     }
 }

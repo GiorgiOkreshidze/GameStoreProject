@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace DTOs.GameDtos;
 
 public class GameFilterDto
@@ -15,4 +17,11 @@ public class GameFilterDto
     public string? Name { get; set; }
 
     public string? PublishDateRange { get; set; }
+
+    public string? Sort { get; set; }
+
+    public int Page { get; set; }
+
+    [ModelBinder(BinderType = typeof(IntBinder))]
+    public int PageCount { get; set; }
 }
