@@ -11,10 +11,10 @@ namespace Gamestore.Controllers;
 [Route("[controller]")]
 public class OrderController(IOrderService orderService) : Controller
 {
-    [HttpGet]
-    public IActionResult GetAllOrders()
+    [HttpGet("history")]
+    public IActionResult GetAllOrders([FromQuery] IntervalDto intervalDto)
     {
-        return Ok(orderService.GetAllOrders());
+        return Ok(orderService.GetAllOrders(intervalDto));
     }
 
     [HttpGet("{id}")]
@@ -71,10 +71,10 @@ public class OrderController(IOrderService orderService) : Controller
         return BadRequest("Unsupported payment method.");
     }
 
-    [HttpGet("history")]
+    /*[HttpGet("history")]
     public IActionResult CombinedOrdersByInterval([FromQuery] IntervalDto intervalDto)
     {
         var orders = orderService.CombinedOrdersByInterval(intervalDto);
         return Ok(orders);
-    }
+    }*/
 }

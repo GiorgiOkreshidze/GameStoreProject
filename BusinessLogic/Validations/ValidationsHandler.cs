@@ -72,10 +72,10 @@ public class ValidationsHandler(IGameDbService gameDbService, IGenreDbService ge
 
     public void ValidateGenre(Guid id)
     {
-        if (genreDbService.NotExists(id))
+        /*if (genreDbService.NotExists(id))
         {
             throw new GenreNotExistsException("Genre with genreId not exists");
-        }
+        }*/
     }
 
     public void ValidateGenreName(string name)

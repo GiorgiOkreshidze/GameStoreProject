@@ -22,14 +22,48 @@ public class OrderProfile : Profile
         CreateMap<Order, OrderEntity>().ReverseMap();
         CreateMap<CombinedOrderModel, OrderEntity>().ReverseMap();
         CreateMap<CombinedOrderModel, OrderDocument>()
-            .ForMember(dest => dest.OrderDate, opt => opt.MapFrom(src => src.Date))
+            .ForMember(
+                dest => dest.OrderDate,
+                opt => opt.MapFrom(src => src.Date))
             .ReverseMap()
-            .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.OrderDate));
+            .ForMember(
+                dest => dest.Date,
+                opt => opt.MapFrom(src => src.OrderDate));
         CreateMap<GetOrderDto, Order>().ReverseMap();
         CreateMap<OrderDto, CombinedOrderModel>().ReverseMap();
         CreateMap<OrderGameModel, OrderGame>().ReverseMap();
         CreateMap<OrderGameModel, GetOrderDetailsDto>().ReverseMap();
         CreateMap<PaymentMethodModel, PaymentMethod>().ReverseMap();
         CreateMap<PaymentMethodModel, PaymentMethods>().ReverseMap();
+
+        CreateMap<OrderEntity, OrderDocument>()
+            .ForMember(
+                dest => dest.Id,
+                opt => opt.Ignore())
+            .ForMember(
+                dest => dest.OrderDate,
+                opt => opt.MapFrom(src => src.Date))
+            .ForMember(
+                dest => dest.CustomerID,
+                opt => opt.Ignore())
+            .ReverseMap()
+            .ForMember(
+                dest => dest.Id,
+                opt => opt.Ignore())
+            .ForMember(
+                dest => dest.CustomerId,
+                opt => opt.Ignore())
+            .ForMember(
+                dest => dest.Date,
+                opt => opt.MapFrom(src => src.OrderDate));
+
+        CreateMap<OrderDetailsDocument, OrderGame>()
+            .ForMember(dest => dest.ProductId, opt => opt.Ignore())
+            .ForMember(dest => dest.OrderId, opt => opt.Ignore())
+            .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.UnitPrice))
+            .ReverseMap()
+            .ForMember(dest => dest.ProductID, opt => opt.Ignore())
+            .ForMember(dest => dest.OrderID, opt => opt.Ignore())
+            .ForMember(dest => dest.UnitPrice, opt => opt.MapFrom(src => src.Price));
     }
 }

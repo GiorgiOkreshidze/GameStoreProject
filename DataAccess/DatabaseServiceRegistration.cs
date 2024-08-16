@@ -20,6 +20,7 @@ public static class DatabaseServiceRegistration
         services.AddScoped<IPublisherDbService, PublisherDbService>();
         services.AddScoped<IOrderDbService, OrderDbService>();
         services.AddScoped<ICommentDbService, CommentDbService>();
+        services.AddScoped<IDatabasesSyncDbService, DatabasesSyncDbService>();
 
         return services;
     }

@@ -1,12 +1,10 @@
 using DataAccess.Entities;
-using DTOs.GameDtos;
-using X.PagedList;
 
 namespace DataAccess.Contracts;
 
 public interface IGameDbService
 {
-    public IPagedList<GameEntity> GetGamesDb(GameFilterDto filter, GameSortDto sort, GamePaginationDto pagination);
+    public ICollection<GameEntity> GetGamesDb();
 
     public void CreateGameDb(GameEntity gameEntity);
 
@@ -43,4 +41,6 @@ public interface IGameDbService
     public bool NotExists(Guid id);
 
     public bool KeyNotExists(string key);
+
+    public void AddCommentWithoutGameDb(CommentEntity commentEntity);
 }

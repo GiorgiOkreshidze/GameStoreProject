@@ -10,7 +10,7 @@ public class OrderEntity
 
     public DateTime Date { get; set; } = DateTime.Now;
 
-    /*public DateTime RequiredDate { get; set; } = DateTime.Now;
+    public DateTime RequiredDate { get; set; } = DateTime.Now;
 
     public DateTime ShippedDate { get; set; } = DateTime.Now;
 
@@ -28,7 +28,7 @@ public class OrderEntity
 
     public string ShipPostalCode { get; set; } = string.Empty;
 
-    public string ShipCountry { get; set; } = string.Empty;*/
+    public string ShipCountry { get; set; } = string.Empty;
 
     [Required]
     public Guid CustomerId { get; set; } = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");

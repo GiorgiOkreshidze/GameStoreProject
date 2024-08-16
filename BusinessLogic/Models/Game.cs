@@ -21,4 +21,14 @@ public class Game
     public ICollection<Guid> Platforms { get; set; }
 
     public ICollection<Guid> Genres { get; set; }
+
+    public string QuantityPerUnit { get; set; } = string.Empty;
+
+    public int UnitsOnOrder { get; set; }
+
+    public int ReorderLevel { get; set; }
+
+    public int Views { get; set; }
+
+    public DateTime PublishDate { get; set; } = DateTime.Now;
 }

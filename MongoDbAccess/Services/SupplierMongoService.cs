@@ -8,12 +8,19 @@ namespace MongoDbAccess.Services;
 public class SupplierMongoService : ISupplierMongoService
 {
     private readonly IMongoCollection<SupplierDocument> _suppliersCollection;
+    private readonly IMongoCollection<ProductDocument> _productsCollection;
 
     public SupplierMongoService(IOptions<MongoDbSettings> dbSettings)
     {
         var mongoClient = new MongoClient(dbSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(dbSettings.Value.DatabaseName);
         _suppliersCollection = mongoDatabase.GetCollection<SupplierDocument>(dbSettings.Value.SuppliersCollectionName);
+        _productsCollection = mongoDatabase.GetCollection<ProductDocument>(dbSettings.Value.ProductsCollectionName);
+    }
+
+    public SupplierDocument GetSupplierByCompanyName(string companyName)
+    {
+        return _suppliersCollection.Find(s => s.CompanyName == companyName).FirstOrDefault();
     }
 
     public void CreateSupplierMongo(SupplierDocument supplier)
@@ -48,5 +55,15 @@ public class SupplierMongoService : ISupplierMongoService
         {
             throw new InvalidOperationException("Failed to delete product");
         }
+    }
+
+    public bool CompanyNameNotExists(string companyName)
+    {
+        return !_suppliersCollection.Find(s => s.CompanyName == companyName).Any();
+    }
+
+    public ICollection<ProductDocument> GetProductsBySupplierId(int supplierId)
+    {
+        return _productsCollection.Find(p => p.SupplierID == supplierId).ToList();
     }
 }

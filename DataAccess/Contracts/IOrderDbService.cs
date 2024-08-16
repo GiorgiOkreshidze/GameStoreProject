@@ -25,4 +25,10 @@ public interface IOrderDbService
     public ICollection<OrderEntity> OrdersByIntervalDb(DateTime start, DateTime end);
 
     public void DeleteOrderDb(Guid id);
+
+    public bool NotExists(Guid id);
+
+    public ICollection<Guid> GetOrdersGamesId(OrderEntity orderEntity);
+
+    public int QuantityOfGame(Guid id);
 }

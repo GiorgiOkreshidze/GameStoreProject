@@ -17,9 +17,25 @@ public class SupplierDocument
 
     public string ContactTitle { get; set; }
 
-    public string Address { get; set; }
+    [BsonIgnore]
+    public string Address
+    {
+        get => AddressValue.IsString ? AddressValue.AsString : AddressValue.ToString();
+        set => AddressValue = new BsonString(value);
+    }
 
-    public string City { get; set; }
+    [BsonElement("Address")]
+    public BsonValue AddressValue { get; set; }
+
+    [BsonIgnore]
+    public string City
+    {
+        get => CityValue.IsString ? CityValue.AsString : CityValue.ToString();
+        set => CityValue = new BsonString(value);
+    }
+
+    [BsonElement("City")]
+    public BsonValue CityValue { get; set; }
 
     public string Region { get; set; }
 
@@ -30,14 +46,42 @@ public class SupplierDocument
         set => PostalCodeValue = new BsonString(value);
     }
 
-    [BsonElement("ShipAddress")]
+    [BsonElement("PostalCode")]
     public BsonValue PostalCodeValue { get; set; }
 
-    public string Country { get; set; }
+    [BsonIgnore]
+    public string Country
+    {
+        get => CountryValue.IsString ? CountryValue.AsString : CountryValue.ToString();
+        set => CountryValue = new BsonString(value);
+    }
 
-    public string Phone { get; set; }
+    [BsonElement("Country")]
+    public BsonValue CountryValue { get; set; }
 
-    public string Fax { get; set; }
+    [BsonIgnore]
+    public string Phone
+    {
+        get => PhoneValue.IsString ? PhoneValue.AsString : PhoneValue.ToString();
+        set => PhoneValue = new BsonString(value);
+    }
+
+    [BsonElement("Phone")]
+    public BsonValue PhoneValue { get; set; }
+
+    [BsonIgnore]
+    public string Fax
+    {
+        get => FaxValue.IsString ? FaxValue.AsString : FaxValue.ToString();
+        set => FaxValue = new BsonString(value);
+    }
+
+    [BsonElement("Fax")]
+    public BsonValue FaxValue { get; set; }
 
     public string HomePage { get; set; }
+
+    [BsonElement("field12")]
+    [BsonIgnoreIfNull]
+    public string Field12 { get; set; }
 }

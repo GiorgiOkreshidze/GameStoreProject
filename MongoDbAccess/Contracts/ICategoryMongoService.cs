@@ -13,4 +13,6 @@ public interface ICategoryMongoService
     public void UpdateCategoryMongo(CategoryDocument category);
 
     public void DeleteCategoryMongo(string id);
+
+    public ICollection<ProductDocument> GetProductsByCategoryId(int categoryId);
 }

@@ -19,7 +19,7 @@ public class ProductDocument
 
     public string QuantityPerUnit { get; set; }
 
-    public decimal UnitPrice { get; set; }
+    public double UnitPrice { get; set; }
 
     public int UnitsInStock { get; set; }
 
@@ -31,5 +31,5 @@ public class ProductDocument
 
     public string GameKey { get; set; }
 
-    public int ViewCount { get; set; }
+    public int Views { get; set; }
 }

@@ -17,4 +17,6 @@ public class MongoDbSettings
     public string ChangeLogCollectionName { get; set; }
 
     public string SuppliersCollectionName { get; set; }
+
+    public string OrderDetailsCollectionName { get; set; }
 }

@@ -10,12 +10,16 @@ namespace MongoDbAccess.Services;
 public class ProductMongoService : IProductMongoService
 {
     private readonly IMongoCollection<ProductDocument> _productsCollection;
+    private readonly IMongoCollection<SupplierDocument> _supplierCollection;
+    private readonly IMongoCollection<CategoryDocument> _categoryCollection;
 
     public ProductMongoService(IOptions<MongoDbSettings> dbSettings)
     {
         var mongoClient = new MongoClient(dbSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(dbSettings.Value.DatabaseName);
         _productsCollection = mongoDatabase.GetCollection<ProductDocument>(dbSettings.Value.ProductsCollectionName);
+        _supplierCollection = mongoDatabase.GetCollection<SupplierDocument>(dbSettings.Value.SuppliersCollectionName);
+        _categoryCollection = mongoDatabase.GetCollection<CategoryDocument>(dbSettings.Value.CategoriesCollectionName);
     }
 
     public ICollection<ProductDocument> GetAllMongo()
@@ -26,7 +30,7 @@ public class ProductMongoService : IProductMongoService
     public ProductDocument GetProductByIdMongo(string id)
     {
         var filter = Builders<ProductDocument>.Filter.Eq(p => p.Id, id);
-        var update = Builders<ProductDocument>.Update.Inc(p => p.ViewCount, 1);
+        var update = Builders<ProductDocument>.Update.Inc(p => p.Views, 1);
 
         var updatedProduct = _productsCollection.FindOneAndUpdate(filter, update);
 
@@ -35,7 +39,7 @@ public class ProductMongoService : IProductMongoService
 
     public void CreateProduct(ProductDocument productDocument)
     {
-        productDocument.ViewCount = 0;
+        productDocument.Views = 0;
         _productsCollection.InsertOne(productDocument);
     }
 
@@ -57,74 +61,28 @@ public class ProductMongoService : IProductMongoService
         }
     }
 
-    public void BuyProduct(string productId, int quantity)
+    public SupplierDocument GetSupplierOfProduct(int supplierId)
     {
-        var product = GetProductByIdMongo(productId);
-        if (product.UnitsInStock < quantity)
-        {
-            throw new InvalidOperationException("Insufficient stock available");
-        }
-
-        // Update the product stock
-        var update = Builders<ProductDocument>.Update
-            .Set(p => p.UnitsInStock, product.UnitsInStock - quantity);
-        var updateResult = _productsCollection.UpdateOne(p => p.Id == productId, update);
-        if (updateResult.ModifiedCount == 0)
-        {
-            throw new InvalidOperationException("Failed to purchase product");
-        }
+        return _supplierCollection.Find(s => s.SupplierID == supplierId).FirstOrDefault();
     }
 
-    /*public (ICollection<ProductDocument> Products, long TotalCount) GetSortedAndPagedProducts(ProductFilterDto filter, ProductSortDto sort, ProductPaginationDto pagination)
+    public CategoryDocument GetCategoryOfProduct(int categoryId)
     {
-        var query = Builders<ProductDocument>.Filter.Empty;
+        return _categoryCollection.Find(c => c.CategoryID == categoryId).FirstOrDefault();
+    }
 
-        // Apply filters
-        if (filter.MinPrice.HasValue)
-        {
-            query &= Builders<ProductDocument>.Filter.Gte(p => p.UnitPrice, filter.MinPrice.Value);
-        }
+    public bool KeyNotExists(string key)
+    {
+        return !_productsCollection.Find(p => p.GameKey == key).Any();
+    }
 
-        if (filter.MaxPrice.HasValue)
-        {
-            query &= Builders<ProductDocument>.Filter.Lte(p => p.UnitPrice, filter.MaxPrice.Value);
-        }
+    public ProductDocument GetProductByGameKey(string key)
+    {
+        var filter = Builders<ProductDocument>.Filter.Eq(p => p.GameKey, key);
+        var update = Builders<ProductDocument>.Update.Inc(p => p.Views, 1);
 
-        if (filter.CategoryIds != null && filter.CategoryIds.Any())
-        {
-            query &= Builders<ProductDocument>.Filter.In(p => p.CategoryID, filter.CategoryIds);
-        }
+        var updatedProduct = _productsCollection.FindOneAndUpdate(filter, update);
 
-        if (filter.SupplierIds != null && filter.SupplierIds.Any())
-        {
-            query &= Builders<ProductDocument>.Filter.In(p => p.SupplierID, filter.SupplierIds);
-        }
-
-        if (!string.IsNullOrEmpty(filter.Name) && filter.Name.Length >= 3)
-        {
-            query &= Builders<ProductDocument>.Filter.Regex(p => p.ProductName, new BsonRegularExpression(filter.Name, "i"));
-        }
-
-        // Get total count for pagination
-        var totalCount = _productsCollection.CountDocuments(query);
-
-        // Apply sorting
-        var sortDefinition = sort.SortBy switch
-        {
-            "Name ASC" => Builders<ProductDocument>.Sort.Ascending(p => p.ProductName),
-            "Name DESC" => Builders<ProductDocument>.Sort.Descending(p => p.ProductName),
-            "Price ASC" => Builders<ProductDocument>.Sort.Ascending(p => p.UnitPrice),
-            "Price DESC" => Builders<ProductDocument>.Sort.Descending(p => p.UnitPrice),
-            _ => Builders<ProductDocument>.Sort.Ascending(p => p.ProductID), // Default sort
-        };
-
-        // Apply pagination
-        var products = _productsCollection.Find(query)
-            .Sort(sortDefinition)
-            .Skip((pagination.PageNumber - 1) * pagination.PageSize)
-            .Limit(pagination.PageSize)
-            .ToList();
-
-        return (products, totalCount);
-    }*/
+        return updatedProduct;
+    }
 }

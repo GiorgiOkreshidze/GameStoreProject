@@ -20,5 +20,5 @@ public class CommentEntity
     [Required]
     public Guid GameId { get; set; }
 
-    public GameEntity GameEntity { get; set; }
+    public virtual GameEntity GameEntity { get; set; }
 }

@@ -14,5 +14,11 @@ public interface IProductMongoService
 
     public void DeleteProduct(string id);
 
-    public void BuyProduct(string productId, int quantity);
+    public SupplierDocument GetSupplierOfProduct(int supplierId);
+
+    public CategoryDocument GetCategoryOfProduct(int categoryId);
+
+    public bool KeyNotExists(string key);
+
+    public ProductDocument GetProductByGameKey(string key);
 }

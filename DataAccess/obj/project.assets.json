@@ -3046,8 +3046,7 @@
       "Microsoft.EntityFrameworkCore >= 7.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.20",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.20",
-      "StyleCop.Analyzers.Unstable >= 1.2.0.435",
-      "X.PagedList >= 10.0.3"
+      "StyleCop.Analyzers.Unstable >= 1.2.0.435"
     ]
   },
   "packageFolders": {
@@ -3119,10 +3118,6 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[1.2.0.435, )"
-          },
-          "X.PagedList": {
-            "target": "Package",
-            "version": "[10.0.3, )"
           }
         },
         "imports": [

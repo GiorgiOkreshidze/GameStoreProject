@@ -2699,6 +2699,7 @@
           "DTOs": "1.0.0",
           "DataAccess": "1.0.0",
           "MongoDbAccess": "1.0.0",
+          "X.PagedList": "10.0.3",
           "itext7": "8.0.4",
           "itext7.bouncy-castle-adapter": "8.0.4"
         },
@@ -2715,8 +2716,7 @@
         "dependencies": {
           "DTOs": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.20",
-          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
-          "X.PagedList": "10.0.3"
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20"
         },
         "compile": {
           "bin/placeholder/DataAccess.dll": {}

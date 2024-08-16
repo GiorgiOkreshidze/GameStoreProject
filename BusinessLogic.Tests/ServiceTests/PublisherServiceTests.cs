@@ -7,6 +7,7 @@ using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.PublisherDtos;
 using FluentAssertions;
+using MongoDbAccess.Contracts;
 using Moq;
 
 namespace BusinessLogicTests.ServiceTests;
@@ -18,6 +19,10 @@ public class PublisherServiceTests
     private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new();
     private readonly IMapper _publisherMapper;
     private readonly Mock<IValidationsHandler> _validatorMock = new();
+    private readonly Mock<ISupplierMongoService> _supplierMock = new();
+    private readonly Mock<IDatabasesSyncDbService> _databaseSyncDbMock = new();
+    private readonly Mock<IProductMongoService> _productmongoMock = new();
+    private readonly Mock<IGenreDbService> _genreDbMock = new();
 
     public PublisherServiceTests()
     {
@@ -33,7 +38,14 @@ public class PublisherServiceTests
             cfg.CreateMap<PublisherDto, Publisher>().ReverseMap();
         });
         _publisherMapper = config.CreateMapper();
-        _publisherServiceTest = new PublisherService(_publisherDbServiceMock.Object, _publisherMapper, _validatorMock.Object);
+        _publisherServiceTest = new PublisherService(
+            _publisherDbServiceMock.Object,
+            _supplierMock.Object,
+            _databaseSyncDbMock.Object,
+            _publisherMapper,
+            _validatorMock.Object,
+            _productmongoMock.Object,
+            _genreDbMock.Object);
     }
 
     [Fact]

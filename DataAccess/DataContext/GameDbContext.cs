@@ -27,6 +27,8 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
 
     public DbSet<BannedUserEntity> BannedUserEntities { get; set; }
 
+    public DbSet<DatabaseIds> DatabaseIdsSet { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<GameEntity>()

@@ -4,6 +4,7 @@ using DataAccess.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    partial class GameDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240812132353_Tenth Migration")]
+    partial class TenthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,21 +69,6 @@ namespace DataAccess.Migrations
                     b.HasIndex("ParentCommentId");
 
                     b.ToTable("CommentEntities");
-                });
-
-            modelBuilder.Entity("DataAccess.Entities.DatabaseIds", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("MongoId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DatabaseIdsSet");
                 });
 
             modelBuilder.Entity("DataAccess.Entities.GameEntity", b =>
@@ -203,113 +191,113 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("907cd8f6-1c02-40c6-8f0e-39ff27fb04c0"),
+                            Id = new Guid("80fed641-b822-4718-8ca8-15da6b61fb2b"),
                             Description = "",
                             Name = "Strategy",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("19848fd6-94b6-496f-abf5-5a62fdcb778f"),
+                            Id = new Guid("acf85088-2604-4066-a554-dd91aaad5856"),
                             Description = "",
                             Name = "RTS",
-                            ParentGenreId = new Guid("907cd8f6-1c02-40c6-8f0e-39ff27fb04c0"),
+                            ParentGenreId = new Guid("80fed641-b822-4718-8ca8-15da6b61fb2b"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("171d27a1-9c7d-475f-ba29-ebcdc8e0b601"),
+                            Id = new Guid("556cd4fd-78c2-42be-8f96-074b266f9372"),
                             Description = "",
                             Name = "TBS",
-                            ParentGenreId = new Guid("907cd8f6-1c02-40c6-8f0e-39ff27fb04c0"),
+                            ParentGenreId = new Guid("80fed641-b822-4718-8ca8-15da6b61fb2b"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("7dbff9a4-98d4-44d6-b207-3d211aadd05e"),
+                            Id = new Guid("9bbe051e-c76c-4768-b104-3a7fdd66506a"),
                             Description = "",
                             Name = "RPG",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("ea509420-c34f-4b52-98c3-ac6cab368983"),
+                            Id = new Guid("d598350e-d7d2-4851-afbd-ee84428ec7a7"),
                             Description = "",
                             Name = "Sports",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("def2e7a3-ff09-4706-9641-10e72fb7244e"),
+                            Id = new Guid("bce50724-9419-472c-9d43-e0e7436b9678"),
                             Description = "",
                             Name = "Races",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("19103674-1a64-437d-b7c3-0d43067817e1"),
+                            Id = new Guid("1c152611-98b7-46e3-b9b4-1ef88f92589f"),
                             Description = "",
                             Name = "Rally",
-                            ParentGenreId = new Guid("def2e7a3-ff09-4706-9641-10e72fb7244e"),
+                            ParentGenreId = new Guid("bce50724-9419-472c-9d43-e0e7436b9678"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("32776058-6efc-4ef6-a994-39b466b7b21e"),
+                            Id = new Guid("b961e2bf-f34c-45ec-9cf5-0db2f4b04c6e"),
                             Description = "",
                             Name = "Arcade",
-                            ParentGenreId = new Guid("def2e7a3-ff09-4706-9641-10e72fb7244e"),
+                            ParentGenreId = new Guid("bce50724-9419-472c-9d43-e0e7436b9678"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("fedc097f-ef50-497a-85cc-11d0597ca62b"),
+                            Id = new Guid("1fb5c57f-3589-4af7-a107-09d653ee4bbf"),
                             Description = "",
                             Name = "Formula",
-                            ParentGenreId = new Guid("def2e7a3-ff09-4706-9641-10e72fb7244e"),
+                            ParentGenreId = new Guid("bce50724-9419-472c-9d43-e0e7436b9678"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("baa636cf-ffc1-4681-bf8a-1dd17ea8c45c"),
+                            Id = new Guid("b42aa2fb-f03f-44bb-abc0-7920b4c76104"),
                             Description = "",
                             Name = "Off-road",
-                            ParentGenreId = new Guid("def2e7a3-ff09-4706-9641-10e72fb7244e"),
+                            ParentGenreId = new Guid("bce50724-9419-472c-9d43-e0e7436b9678"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("62558ff1-ecc8-487a-936d-4eaaae3d1da2"),
+                            Id = new Guid("948cee7b-b6fb-44a6-b4e7-598bce096b30"),
                             Description = "",
                             Name = "Action",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("6b71aebf-a0d9-4924-8ed4-800ca30f17a4"),
+                            Id = new Guid("6e3a8446-0c24-4854-85d1-8ab0a5119d99"),
                             Description = "",
                             Name = "FPS",
-                            ParentGenreId = new Guid("62558ff1-ecc8-487a-936d-4eaaae3d1da2"),
+                            ParentGenreId = new Guid("948cee7b-b6fb-44a6-b4e7-598bce096b30"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("97511906-00bc-4273-83a5-e3781da9ddda"),
+                            Id = new Guid("5d87f2dc-8c65-4a54-8647-6405b7b788eb"),
                             Description = "",
                             Name = "TPS",
-                            ParentGenreId = new Guid("62558ff1-ecc8-487a-936d-4eaaae3d1da2"),
+                            ParentGenreId = new Guid("948cee7b-b6fb-44a6-b4e7-598bce096b30"),
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("c30e0492-e7d5-4352-b8f8-88996d571f13"),
+                            Id = new Guid("a3b13d1c-d407-4ce4-bec6-6c3b10482bb5"),
                             Description = "",
                             Name = "Adventure",
                             Picture = ""
                         },
                         new
                         {
-                            Id = new Guid("6af9f94c-6cde-47bc-8cfd-7d5b3ff64e74"),
+                            Id = new Guid("03ebd16b-ee06-467f-b436-a3e0e92a3475"),
                             Description = "",
                             Name = "Puzzle & Skill",
                             Picture = ""
@@ -454,22 +442,22 @@ namespace DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1c1f4dea-2dc5-4298-887d-20cd2ca51f22"),
+                            Id = new Guid("96629d81-cc69-4542-91f5-7b6abf52f1dd"),
                             Type = "Mobile"
                         },
                         new
                         {
-                            Id = new Guid("9f51b327-b006-4e70-ba8d-90bb65019cb3"),
+                            Id = new Guid("2fec40db-be43-4bef-84b0-2987a0847035"),
                             Type = "Browser"
                         },
                         new
                         {
-                            Id = new Guid("e89f026a-2ba8-4661-873e-1b6885c84690"),
+                            Id = new Guid("5c2ce715-850c-4f36-adcb-123d308d2ecf"),
                             Type = "Desktop"
                         },
                         new
                         {
-                            Id = new Guid("32228abf-c751-4323-ac16-39f5198979e1"),
+                            Id = new Guid("31bed5a7-481a-44bd-8723-a7805e9aa8ac"),
                             Type = "Console"
                         });
                 });

@@ -12,6 +12,12 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
     {
         gameDbContext.GenreEntities.Add(genreEntity);
         gameDbContext.SaveChanges();
+
+        var gameEntry = gameDbContext.Entry(genreEntity);
+        if (gameEntry.State != EntityState.Detached)
+        {
+            gameEntry.State = EntityState.Detached;
+        }
     }
 
     public GenreEntity GetGenreByGuid(Guid id)
@@ -53,7 +59,7 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
 
     public bool NotExists(Guid id)
     {
-        return !gameDbContext.GenreEntities.Any(t => t.Id == id);
+        return !gameDbContext.GenreEntities.AsNoTracking().Any(t => t.Id == id);
     }
 
     public bool NameExists(string name)

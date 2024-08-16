@@ -8,12 +8,14 @@ namespace MongoDbAccess.Services;
 public class CategoryMongoService : ICategoryMongoService
 {
     private readonly IMongoCollection<CategoryDocument> _categoriesCollection;
+    private readonly IMongoCollection<ProductDocument> _productsCollection;
 
     public CategoryMongoService(IOptions<MongoDbSettings> dbSettings)
     {
         var mongoClient = new MongoClient(dbSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(dbSettings.Value.DatabaseName);
         _categoriesCollection = mongoDatabase.GetCollection<CategoryDocument>(dbSettings.Value.CategoriesCollectionName);
+        _productsCollection = mongoDatabase.GetCollection<ProductDocument>(dbSettings.Value.ProductsCollectionName);
     }
 
     public ICollection<CategoryDocument> GetAllMongo()
@@ -47,5 +49,10 @@ public class CategoryMongoService : ICategoryMongoService
         {
             throw new InvalidOperationException("Failed to delete the category.");
         }
+    }
+
+    public ICollection<ProductDocument> GetProductsByCategoryId(int categoryId)
+    {
+        return _productsCollection.Find(p => p.CategoryID == categoryId).ToList();
     }
 }

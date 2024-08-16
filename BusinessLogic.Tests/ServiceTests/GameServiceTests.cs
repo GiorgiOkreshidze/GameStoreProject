@@ -9,6 +9,7 @@ using DTOs.GenreDtos;
 using DTOs.PlatformDtos;
 using DTOs.PublisherDtos;
 using FluentAssertions;
+using MongoDbAccess.Contracts;
 using Moq;
 
 namespace BusinessLogicTests.ServiceTests;
@@ -20,6 +21,10 @@ public class GameServiceTests
     private readonly Mock<IGameDbService> _gameDbServiceMock = new();
     private readonly IMapper _gameMapper;
     private readonly Mock<IValidationsHandler> _validatorMock = new();
+    private readonly Mock<IProductMongoService> _productMock = new();
+    private readonly Mock<IDatabasesSyncDbService> _databasesSyncMock = new();
+    private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new();
+    private readonly Mock<IGenreDbService> _genreDbServiceMock = new();
 
     public GameServiceTests()
     {
@@ -38,7 +43,14 @@ public class GameServiceTests
             cfg.CreateMap<GameDto, Game>().ReverseMap();
         });
         _gameMapper = config.CreateMapper();
-        _gameServiceTest = new GameService(_gameDbServiceMock.Object, _gameMapper, _validatorMock.Object);
+        _gameServiceTest = new GameService(
+            _gameDbServiceMock.Object,
+            _gameMapper,
+            _validatorMock.Object,
+            _databasesSyncMock.Object,
+            _productMock.Object,
+            _publisherDbServiceMock.Object,
+            _genreDbServiceMock.Object);
     }
 
     /*[Fact]

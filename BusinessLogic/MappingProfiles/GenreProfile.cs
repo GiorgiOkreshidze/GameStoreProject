@@ -1,5 +1,6 @@
 using AutoMapper;
 using BusinessLogic.Models;
+using MongoDbAccess.Models;
 #pragma warning disable IDE0005
 using DataAccess.Entities;
 using DTOs.GameDtos;
@@ -27,5 +28,11 @@ public class GenreProfile : Profile
 
         // Other
         CreateMap<Game, GetGameDto>().ReverseMap();
+        CreateMap<GenreEntity, CategoryDocument>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Name))
+            .ReverseMap()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.CategoryName));
     }
 }

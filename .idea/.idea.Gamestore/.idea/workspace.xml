@@ -10,25 +10,90 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a6f0916-3f3e-4aba-93b7-7c776f6fa568" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DTOs/GameDtos/IntBinder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/DateRange.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IDatabasesSyncDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/DatabaseIds.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240812132353_Tenth Migration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240812132353_Tenth Migration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240813084653_Eleventh Migration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240813084653_Eleventh Migration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataAccess/Services/DatabasesSyncDbService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MongoDbAccess/Models/OrderDetailsDocument.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GameServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GameServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GenreServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GenreServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PublisherServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PublisherServiceTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogic.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GenreProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GenreProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/OrderProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/OrderProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PublisherProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/PublisherProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Genre.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Genre.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Publisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Publisher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/DTOs.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/DTOs.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GameFilterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GameFilterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GameSortDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GameSortDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/Validations/ValidationsHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Validations/ValidationsHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GameDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GameDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GameDtoWithId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GameDtoWithId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GenreDtos/GenreDtoWithParentId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GenreDtos/GenreDtoWithParentId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/GenreDtos/GetGenreDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GenreDtos/GetGenreDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/PublisherDtos/PublisherDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PublisherDtos/PublisherDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/PublisherDtos/PublisherDtoWithId.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/PublisherDtos/PublisherDtoWithId.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataAccess.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GenreEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GenreEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Entities/PublisherEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/PublisherEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Services/GenreDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GenreDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/Services/PublisherDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/PublisherDbService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/ICategoryMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/ICategoryMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IChangeLogMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IChangeLogMongoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IOrderMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IOrderMongoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IProductMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IProductMongoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/ISupplierMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/ISupplierMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/ChangeLogDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/ChangeLogDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/CategoryDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/CategoryDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/MongoDbSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/MongoDbSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/OrderDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/OrderDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/ProductDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/ProductDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Models/SupplierDocument.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Models/SupplierDocument.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/MongoDbServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/MongoDbServiceRegistration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/CategoryMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/CategoryMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/ChangeLogMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/ChangeLogMongoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/OrderMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/OrderMongoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/ProductMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/ProductMongoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/SupplierMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/SupplierMongoService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" afterDir="false" />
@@ -56,6 +121,9 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Security/Authorization/Policy/src/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/b8139c5ee58f1708b0e3368a1b241400edd6cbc4/src/Servers/Kestrel/Core/src/Internal/Http/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/136f129ddca49729a24f0e65465fc638bd584c70/src/EFCore.Relational/Query/Internal/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/136f129ddca49729a24f0e65465fc638bd584c70/src/EFCore/ChangeTracking/Internal/EntityGraphAttacher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/136f129ddca49729a24f0e65465fc638bd584c70/src/EFCore/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/efcore/136f129ddca49729a24f0e65465fc638bd584c70/src/EFCore/Query/Internal/ParameterExtractingExpressionVisitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/coreclr/System.Private.CoreLib/src/System/Type.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/3b8b000a0e115700b18265d8ec8c6307056dc94d/src/libraries/System.Diagnostics.DiagnosticSource/src/System/Diagnostics/DiagnosticListener.cs" root0="SKIP_HIGHLIGHTING" />
@@ -118,11 +186,11 @@
   "keyToString": {
     ".NET Launch Settings Profile.Gamestore: IIS Express.executor": "Run",
     ".NET Launch Settings Profile.Gamestore: http.executor": "Run",
-    ".NET Launch Settings Profile.Gamestore: https.executor": "Run",
+    ".NET Launch Settings Profile.Gamestore: https.executor": "Debug",
     "2b28115b-6f66-4830-91f0-a6a4e5754d58.executor": "Debug",
     "9afba305-74de-4073-b49e-66039b9fa509.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "XThreadsFramesViewSplitterKey": "0.47951442",
+    "XThreadsFramesViewSplitterKey": "0.5197368",
     "c9f8e598-a105-400e-be2f-b1fc9d2e9540.executor": "Debug",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -258,7 +326,11 @@
       <workItem from="1723372673094" duration="574000" />
       <workItem from="1723373272939" duration="3661000" />
       <workItem from="1723377022869" duration="7856000" />
-      <workItem from="1723441867220" duration="10440000" />
+      <workItem from="1723441867220" duration="18725000" />
+      <workItem from="1723537117975" duration="17423000" />
+      <workItem from="1723639055471" duration="12909000" />
+      <workItem from="1723792562680" duration="7641000" />
+      <workItem from="1723800448192" duration="21697000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -532,7 +604,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723389048914</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Commit.">
+      <option name="closed" value="true" />
+      <created>1723453385050</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1723453385050</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,17 +670,82 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Gamestore/Controllers/GameController.cs</url>
-          <line>26</line>
-          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\Controllers\GameController.cs" containingFunctionPresentation="Method 'GetGames'">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs</url>
+          <line>90</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\PublisherService.cs" containingFunctionPresentation="Method 'UpdatePublisher'">
             <startOffsets>
-              <option value="612" />
+              <option value="3421" />
             </startOffsets>
             <endOffsets>
-              <option value="867" />
+              <option value="3538" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs</url>
+          <line>68</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GenreService.cs" containingFunctionPresentation="Method 'UpdateGenre'">
+            <startOffsets>
+              <option value="2640" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2713" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs</url>
+          <line>97</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\PublisherService.cs" containingFunctionPresentation="Method 'UpdatePublisher'">
+            <startOffsets>
+              <option value="3983" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3984" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
+          <line>550</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'AddComment'">
+            <startOffsets>
+              <option value="21021" />
+            </startOffsets>
+            <endOffsets>
+              <option value="21097" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs</url>
+          <line>33</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GenreService.cs" containingFunctionPresentation="Method 'CreateGenre'">
+            <startOffsets>
+              <option value="1225" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1306" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/BusinessLogic/Services/GameService.cs</url>
+          <line>213</line>
+          <properties documentPath="C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\Services\GameService.cs" containingFunctionPresentation="Method 'CreateGame'">
+            <startOffsets>
+              <option value="8802" />
+            </startOffsets>
+            <endOffsets>
+              <option value="8832" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

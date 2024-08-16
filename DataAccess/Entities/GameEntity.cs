@@ -15,7 +15,7 @@ public class GameEntity
     [Required]
     public string Key { get; set; }
 
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     [Required]
     public double Price { get; set; }
@@ -39,11 +39,11 @@ public class GameEntity
 
     public ICollection<CommentEntity> CommentEntities { get; set; }
 
-    /*public string QuantityPerUnit { get; set; } = string.Empty;
+    public string QuantityPerUnit { get; set; } = string.Empty;
 
     public int UnitsOnOrder { get; set; }
 
-    public int ReorderLevel { get; set; }*/
+    public int ReorderLevel { get; set; }
 
     public int Views { get; set; }
 

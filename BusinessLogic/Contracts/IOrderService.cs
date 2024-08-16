@@ -8,7 +8,7 @@ namespace BusinessLogic.Contracts;
 
 public interface IOrderService
 {
-    public ICollection<GetOrderDto> GetAllOrders();
+    public ICollection<GetOrderDto> GetAllOrders(IntervalDto intervalDto);
 
     public GetOrderDto GetOrderById(Guid id);
 
@@ -26,5 +26,5 @@ public interface IOrderService
 
     public void PaymentByVisa(PaymentDto paymentDto);
 
-    public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto);
+    /*public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto);*/
 }

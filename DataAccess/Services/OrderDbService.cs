@@ -99,6 +99,24 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
         }
     }
 
+    public int QuantityOfGame(Guid id)
+    {
+        return gameDbContext.OrderGames.FirstOrDefault(o => o.ProductId == id).Quantity;
+    }
+
+    public ICollection<Guid> GetOrdersGamesId(OrderEntity orderEntity)
+    {
+        ICollection<Guid> collection = [];
+        var order = gameDbContext.OrderEntities.Include(o => o.GameEntities)
+            .FirstOrDefault(o => o.Id == orderEntity.Id);
+        foreach (var gameEntity in order.GameEntities)
+        {
+            collection.Add(gameEntity.Id);
+        }
+
+        return collection;
+    }
+
     public ICollection<OrderEntity> OrdersByIntervalDb(DateTime start, DateTime end)
     {
         return gameDbContext.OrderEntities.Where(o => o.Date >= start && o.Date <= end).ToList();
@@ -109,5 +127,10 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
         var order = gameDbContext.OrderEntities.FirstOrDefault(o => o.Id == id) ?? throw new ArgumentNullException();
         gameDbContext.OrderEntities.Remove(order);
         gameDbContext.SaveChanges();
+    }
+
+    public bool NotExists(Guid id)
+    {
+        return !gameDbContext.OrderEntities.AsNoTracking().Any(t => t.Id == id);
     }
 }

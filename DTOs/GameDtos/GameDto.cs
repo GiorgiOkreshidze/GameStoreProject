@@ -13,4 +13,10 @@ public class GameDto
     public int UnitInStock { get; set; }
 
     public int Discount { get; set; }
+
+    public string QuantityPerUnit { get; set; } = string.Empty;
+
+    public int UnitsOnOrder { get; set; }
+
+    public int ReorderLevel { get; set; }
 }

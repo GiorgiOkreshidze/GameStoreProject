@@ -26,11 +26,32 @@ using Newtonsoft.Json.Linq;
 namespace BusinessLogic.Services;
 
 public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, IValidationsHandler validator,
-    IConfiguration configuration, HttpClient httpClient, IOrderMongoService orderMongoService) : IOrderService
+    IConfiguration configuration, IDatabasesSyncDbService databasesSyncDbService, HttpClient httpClient, IOrderMongoService orderMongoService) : IOrderService
 {
-    public ICollection<GetOrderDto> GetAllOrders()
+    public ICollection<GetOrderDto> GetAllOrders(IntervalDto intervalDto)
     {
-        var orderEntities = orderDbService.GetAllOrdersDb();
+        /*var orderEntities = orderDbService.GetAllOrdersDb();
+        var orderDocuments = orderMongoService.GetAllMongo();*/
+
+        DateTime startDate = intervalDto.Start ?? DateTime.MinValue;
+        DateTime endDate = intervalDto.End ?? DateTime.MaxValue;
+
+        var orderEntities = orderDbService.OrdersByIntervalDb(startDate, endDate);
+        var orderDocuments = orderMongoService.OrdersByIntervalMongo(startDate, endDate);
+
+        foreach (var orderDocument in orderDocuments)
+        {
+            var id = databasesSyncDbService.TransferMongoIdToDb(orderDocument.Id);
+            var customerId = databasesSyncDbService.TransferMongoIdToDb(orderDocument.CustomerID);
+            var orderEntity = orderMapper.Map<OrderDocument, OrderEntity>(orderDocument);
+            orderEntity.Id = id;
+            orderEntity.CustomerId = customerId;
+            if (orderEntities.All(p => p.Id != id))
+            {
+                orderEntities.Add(orderEntity);
+            }
+        }
+
         var orders = orderMapper.Map<ICollection<OrderEntity>, ICollection<Order>>(orderEntities);
         var orderDtos = orderMapper.Map<ICollection<Order>, ICollection<GetOrderDto>>(orders);
 
@@ -39,7 +60,26 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
 
     public GetOrderDto GetOrderById(Guid id)
     {
-        var orderEntity = orderDbService.GetOrderByIdDb(id);
+        OrderEntity orderEntity;
+        if (orderDbService.NotExists(id))
+        {
+            if (databasesSyncDbService.ExistsInIdsSet(id))
+            {
+                var mongoId = databasesSyncDbService.GetMongoId(id);
+                var orderDocument = orderMongoService.GetOrderById(mongoId);
+                orderEntity = orderMapper.Map<OrderDocument, OrderEntity>(orderDocument);
+                orderEntity.Id = id;
+            }
+            else
+            {
+                throw new Exception("Id doesn't exists");
+            }
+        }
+        else
+        {
+            orderEntity = orderDbService.GetOrderByIdDb(id);
+        }
+
         var order = orderMapper.Map<OrderEntity, Order>(orderEntity);
         var orderDto = orderMapper.Map<Order, GetOrderDto>(order);
 
@@ -48,7 +88,37 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
 
     public ICollection<GetOrderDetailsDto> GetAllOrdersDetails(Guid id)
     {
-        var orderGames = orderDbService.GetAllOrdersDetailsDb(id);
+        ICollection<OrderGame> orderGames = [];
+        if (orderDbService.NotExists(id))
+        {
+            if (databasesSyncDbService.ExistsInIdsSet(id))
+            {
+                var mongoId = databasesSyncDbService.GetMongoId(id);
+                var orderDocument = orderMongoService.GetOrderById(mongoId);
+                var orderDetailsDocuments = orderMongoService.GetOrderDetailsByOrderId(orderDocument.OrderID);
+                foreach (var orderDetailsDocument in orderDetailsDocuments)
+                {
+                    var productDocument = orderMongoService.GetProductByProductId(orderDetailsDocument.ProductID);
+                    var productId = databasesSyncDbService.TransferMongoIdToDb(productDocument.Id);
+                    var orderGame = orderMapper.Map<OrderDetailsDocument, OrderGame>(orderDetailsDocument);
+                    orderGame.OrderId = id;
+                    orderGame.ProductId = productId;
+                    if (orderGames.All(p => p.OrderId != id))
+                    {
+                        orderGames.Add(orderGame);
+                    }
+                }
+            }
+            else
+            {
+                throw new Exception("Id doesn't exists");
+            }
+        }
+        else
+        {
+            orderGames = orderDbService.GetAllOrdersDetailsDb(id);
+        }
+
         var orderGameModels = orderMapper.Map<ICollection<OrderGame>, ICollection<OrderGameModel>>(orderGames);
         var orderDetailsDtos =
             orderMapper.Map<ICollection<OrderGameModel>, ICollection<GetOrderDetailsDto>>(orderGameModels);
@@ -104,6 +174,17 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         var fileBytes = File.ReadAllBytes(filePath);
         orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
         orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
+        if (databasesSyncDbService.ExistsInIdsSet(orderEntity.Id))
+        {
+            var gameIds = orderDbService.GetOrdersGamesId(orderEntity);
+            foreach (var id in gameIds)
+            {
+                var quantity = orderDbService.QuantityOfGame(id);
+                var mongoId = databasesSyncDbService.GetMongoId(orderEntity.Id);
+                orderMongoService.ChangeProductUnitsInStock(mongoId, quantity);
+            }
+        }
+
         return (fileBytes, fileName);
     }
 
@@ -142,6 +223,17 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
                 UserId = Guid.Parse(jsonResult["accountNumber"].ToString()),
             };
             orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
+            if (databasesSyncDbService.ExistsInIdsSet(orderEntity.Id))
+            {
+                var gameIds = orderDbService.GetOrdersGamesId(orderEntity);
+                foreach (var id in gameIds)
+                {
+                    var quantity = orderDbService.QuantityOfGame(id);
+                    var mongoId = databasesSyncDbService.GetMongoId(orderEntity.Id);
+                    orderMongoService.ChangeProductUnitsInStock(mongoId, quantity);
+                }
+            }
+
             orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
         }
         else
@@ -183,6 +275,16 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         {
             orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
             orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
+            if (databasesSyncDbService.ExistsInIdsSet(orderEntity.Id))
+            {
+                var gameIds = orderDbService.GetOrdersGamesId(orderEntity);
+                foreach (var id in gameIds)
+                {
+                    var quantity = orderDbService.QuantityOfGame(id);
+                    var mongoId = databasesSyncDbService.GetMongoId(orderEntity.Id);
+                    orderMongoService.ChangeProductUnitsInStock(mongoId, quantity);
+                }
+            }
         }
         else
         {
@@ -191,7 +293,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         }
     }
 
-    public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto)
+    /*public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto)
     {
         DateTime startDate = intervalDto.Start ?? DateTime.MinValue;
         DateTime endDate = intervalDto.End ?? DateTime.MaxValue;
@@ -207,7 +309,7 @@ public class OrderService(IOrderDbService orderDbService, IMapper orderMapper, I
         var orderDtos = orderMapper.Map<ICollection<CombinedOrderModel>, ICollection<OrderDto>>(combinedOrders);
 
         return orderDtos;
-    }
+    }*/
 
     private MemoryStream GenerateInvoice(OrderEntity orderEntity, int sumOfPrices)
     {

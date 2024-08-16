@@ -33,7 +33,7 @@ public class OrderDocument
     [BsonIgnore]
     public DateTime ShippedDate
     {
-        get => DateTime.Parse(ShippedDateString, null, DateTimeStyles.RoundtripKind);
+        get => ShippedDateString == "NULL" ? DateTime.MinValue : DateTime.Parse(ShippedDateString, null, DateTimeStyles.RoundtripKind);
         set => ShippedDateString = value.ToString("o", CultureInfo.InvariantCulture);
     }
 

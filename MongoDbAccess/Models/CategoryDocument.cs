@@ -15,5 +15,9 @@ public class CategoryDocument
 
     public string Description { get; set; }
 
-    public byte[] Picture { get; set; }
+    public string Picture { get; set; }
+
+    [BsonElement("field4")]
+    [BsonIgnoreIfNull]
+    public string Field4 { get; set; }
 }

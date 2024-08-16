@@ -17,6 +17,7 @@ public static class MongoDbServiceRegistration
         services.AddScoped<ICategoryMongoService, CategoryMongoService>();
         services.AddScoped<IShipperMongoService, ShipperMongoService>();
         services.AddScoped<IOrderMongoService, OrderMongoService>();
+        services.AddScoped<ISupplierMongoService, SupplierMongoService>();
 
         return services;
     }

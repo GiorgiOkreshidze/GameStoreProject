@@ -12,7 +12,7 @@ public class PublisherEntity
     [Required]
     public string CompanyName { get; set; }
 
-    /*public string ContactName { get; set; } = string.Empty;
+    public string ContactName { get; set; } = string.Empty;
 
     public string ContactTitle { get; set; } = string.Empty;
 
@@ -28,11 +28,11 @@ public class PublisherEntity
 
     public string Phone { get; set; } = string.Empty;
 
-    public string Fax { get; set; } = string.Empty;*/
+    public string Fax { get; set; } = string.Empty;
 
-    public string HomePage { get; set; }
+    public string HomePage { get; set; } = string.Empty;
 
-    public string Description { get; set; }
+    public string Description { get; set; } = string.Empty;
 
     public ICollection<GameEntity> GameEntities { get; set; }
 }

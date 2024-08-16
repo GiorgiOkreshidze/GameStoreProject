@@ -12,6 +12,12 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
     {
         gameDbContext.PublisherEntities.Add(publisherEntity);
         gameDbContext.SaveChanges();
+
+        var gameEntry = gameDbContext.Entry(publisherEntity);
+        if (gameEntry.State != EntityState.Detached)
+        {
+            gameEntry.State = EntityState.Detached;
+        }
     }
 
     public PublisherEntity GetPublisherByCompanyNameDb(string companyName)
@@ -49,7 +55,7 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
 
     public bool PublisherNotExists(Guid? id)
     {
-        return !gameDbContext.PublisherEntities.Any(t => t.Id == id);
+        return !gameDbContext.PublisherEntities.AsNoTracking().Any(t => t.Id == id);
     }
 
     public bool CompanyNameNotExists(string companyName)
