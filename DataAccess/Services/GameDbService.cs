@@ -20,7 +20,7 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         gameDbContext.AttachRange(gameEntity.GenreEntities);
         gameDbContext.GameEntities.Add(gameEntity);
         gameDbContext.SaveChanges();
-        foreach (var platformEntity in gameEntity.PlatformEntities)
+        /*foreach (var platformEntity in gameEntity.PlatformEntities)
         {
             var entry = gameDbContext.Entry(platformEntity);
             entry.State = EntityState.Detached;
@@ -37,34 +37,59 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
         {
             gameDbContext.Attach(gameEntity);
             gameEntry.State = EntityState.Detached;
-        }
+        }*/
     }
 
     public void UpdateGameDb(GameEntity gameEntity)
     {
         ClearGenresByGameId(gameEntity.Id);
         ClearPlatformsByGameId(gameEntity.Id);
+
+        // Attach platform entities only if they are not already tracked
         foreach (var platformEntity in gameEntity.PlatformEntities)
         {
-            var entry = gameDbContext.Entry(platformEntity);
-            if (entry.State == EntityState.Detached)
+            var trackedEntity = gameDbContext.ChangeTracker.Entries<PlatformEntity>()
+                .FirstOrDefault(e => e.Entity.Id == platformEntity.Id);
+
+            if (trackedEntity == null)
             {
                 gameDbContext.Attach(platformEntity);
-                entry.State = EntityState.Unchanged;
+            }
+            else
+            {
+                trackedEntity.State = EntityState.Unchanged;
             }
         }
 
+        // Attach genre entities only if they are not already tracked
         foreach (var genreEntity in gameEntity.GenreEntities)
         {
-            var entry = gameDbContext.Entry(genreEntity);
-            if (entry.State == EntityState.Detached)
+            var trackedEntity = gameDbContext.ChangeTracker.Entries<GenreEntity>()
+                .FirstOrDefault(e => e.Entity.Id == genreEntity.Id);
+
+            if (trackedEntity == null)
             {
                 gameDbContext.Attach(genreEntity);
-                entry.State = EntityState.Unchanged;
+            }
+            else
+            {
+                trackedEntity.State = EntityState.Unchanged;
             }
         }
 
-        gameDbContext.GameEntities.Update(gameEntity);
+        // Track and update the game entity
+        var trackedGameEntity = gameDbContext.GameEntities.Local
+            .FirstOrDefault(e => e.Id == gameEntity.Id);
+
+        if (trackedGameEntity == null)
+        {
+            gameDbContext.Attach(gameEntity);
+        }
+        else
+        {
+            gameDbContext.Entry(trackedGameEntity).CurrentValues.SetValues(gameEntity);
+        }
+
         gameDbContext.SaveChanges();
     }
 
@@ -107,9 +132,9 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
         gameEntity.Views++;
 
-        UpdateGameDb(gameEntity);
+        gameDbContext.SaveChanges();
 
-        return gameDbContext.GameEntities.FirstOrDefault(t => t.Key == key);
+        return gameEntity;
     }
 
     public GameEntity GetGameByIdDb(Guid id)
@@ -142,9 +167,17 @@ public class GameDbService(GameDbContext gameDbContext) : IGameDbService
 
     public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key)
     {
-        var entity = gameDbContext.GameEntities
-            .Include(x => x.PlatformEntities)
-            .FirstOrDefault(t => t.Key == key) ?? throw new ArgumentNullException();
+        GameEntity entity;
+        if (KeyNotExists(key))
+        {
+            return null;
+        }
+        else
+        {
+            entity = gameDbContext.GameEntities
+                .Include(x => x.PlatformEntities)
+                .FirstOrDefault(t => t.Key == key);
+        }
 
         return entity.PlatformEntities;
     }

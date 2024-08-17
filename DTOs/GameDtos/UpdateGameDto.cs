@@ -8,5 +8,5 @@ public class UpdateGameDto
 
     public ICollection<Guid> Genres { get; set; }
 
-    public Guid? PublisherId { get; set; }
+    public Guid? Publisher { get; set; }
 }

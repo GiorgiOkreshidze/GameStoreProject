@@ -25,6 +25,8 @@ public class GameServiceTests
     private readonly Mock<IDatabasesSyncDbService> _databasesSyncMock = new();
     private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new();
     private readonly Mock<IGenreDbService> _genreDbServiceMock = new();
+    private readonly Mock<ISupplierMongoService> _supplierMongoMock = new();
+    private readonly Mock<ICategoryMongoService> _categoryMongoMock = new();
 
     public GameServiceTests()
     {
@@ -50,7 +52,9 @@ public class GameServiceTests
             _databasesSyncMock.Object,
             _productMock.Object,
             _publisherDbServiceMock.Object,
-            _genreDbServiceMock.Object);
+            _genreDbServiceMock.Object,
+            _supplierMongoMock.Object,
+            _categoryMongoMock.Object);
     }
 
     /*[Fact]

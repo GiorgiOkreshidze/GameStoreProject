@@ -56,7 +56,7 @@ public static class GameEntityUtil
                 Discount = GameEntityTest.Discount,
                 Price = GameEntityTest.Price,
             },
-            PublisherId = GameEntityTest.PublisherId,
+            Publisher = GameEntityTest.PublisherId,
             Genres = CreateGenreEntityIds(),
             Platforms = CreatePlatformEntityIds(),
         };

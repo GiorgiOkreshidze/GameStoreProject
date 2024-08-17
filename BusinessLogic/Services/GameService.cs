@@ -390,11 +390,7 @@ public class GameService(IGameDbService gameDbService, IMapper gameMapper,
         {
             genreEntities = gameDbService.GetGenresOfGameDb(key);
 
-            if (productMongoService.KeyNotExists(key))
-            {
-                throw new Exception($"this {key} gameKey not exists");
-            }
-            else
+            if (!productMongoService.KeyNotExists(key))
             {
                 var productDocument = productMongoService.GetProductByGameKey(key);
                 var dbId = databasesSyncDbService.TransferMongoIdToDb(productDocument.Id);

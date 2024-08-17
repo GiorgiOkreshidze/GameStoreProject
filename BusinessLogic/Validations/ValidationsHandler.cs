@@ -40,10 +40,10 @@ public class ValidationsHandler(IGameDbService gameDbService, IGenreDbService ge
 
     public void ValidateGameKey(string key)
     {
-        if (gameDbService.KeyNotExists(key))
+        /*if (gameDbService.KeyNotExists(key))
         {
             throw new KeyNotFoundException();
-        }
+        }*/
     }
 
     public void ValidatePublisherId(Guid? id)

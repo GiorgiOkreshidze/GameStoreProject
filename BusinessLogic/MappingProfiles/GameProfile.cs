@@ -29,7 +29,9 @@ public class GameProfile : Profile
             .ForMember(dest => dest.UnitsOnOrder, opt => opt.MapFrom(src => src.UnitsOnOrder))
             .ForMember(dest => dest.ReorderLevel, opt => opt.MapFrom(src => src.ReorderLevel));
         CreateMap<UpdateGameDto, Game>().IncludeMembers(src => src.Game)
-            .ReverseMap();
+            .ForMember(dest => dest.PublisherId, opt => opt.MapFrom(src => src.Publisher))
+            .ReverseMap()
+            .ForMember(dest => dest.Publisher, opt => opt.MapFrom(src => src.PublisherId));
         CreateMap<Game, GetGameDto>().ReverseMap();
 
         // Models to entities
