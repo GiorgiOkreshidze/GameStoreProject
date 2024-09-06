@@ -2,21 +2,24 @@
 using BusinessLogic.Contracts;
 using DTOs.CommentDtos;
 #pragma warning restore IDE0005
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/ban")]
 public class CommentController(ICommentService commentService) : Controller
 {
-    [HttpGet("ban/durations")]
+    [HttpGet("durations")]
+    [Authorize(Policy = "RequireGetBanDurationsPermission")]
     public IActionResult GetBanDurations()
     {
         return Ok(new List<string> { "1 Hour", "1 Day", "1 Week", "1 Month", "Permanent" });
     }
 
-    [HttpPost("ban")]
+    [HttpPost("")]
+    [Authorize(Policy = "RequireBanUserPermission")]
     public IActionResult BanUser(BanUserDto banUserDto)
     {
         commentService.BanUser(banUserDto);

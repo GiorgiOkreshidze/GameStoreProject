@@ -12,7 +12,7 @@ public class OrderEntity
 
     public DateTime RequiredDate { get; set; } = DateTime.Now;
 
-    public DateTime ShippedDate { get; set; } = DateTime.Now;
+    public DateTime ShippedDate { get; set; }
 
     public int ShipVia { get; set; }
 

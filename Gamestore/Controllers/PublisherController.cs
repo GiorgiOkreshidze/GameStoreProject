@@ -2,16 +2,19 @@
 using BusinessLogic.Contracts;
 using DTOs.PublisherDtos;
 #pragma warning restore IDE0005
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PublisherController(IPublisherService publisherService) : Controller
+public class PublisherController(IPublisherService publisherService,
+    IGameService gameService) : Controller
 {
     [HttpPost]
-    public IActionResult Create(CreatePublisherDto publisherDto)
+    [Authorize(Policy = "RequireCreatePublisherPermission")]
+    public IActionResult CreatePublisher(CreatePublisherDto publisherDto)
     {
         publisherService.CreatePublisher(publisherDto);
 
@@ -19,6 +22,7 @@ public class PublisherController(IPublisherService publisherService) : Controlle
     }
 
     [HttpGet("{companyName}")]
+    [Authorize(Policy = "RequireGetPublisherByCompanyNamePermission")]
     public IActionResult GetPublisherByCompanyName(string companyName)
     {
         var publisher = publisherService.GetPublisherByCompanyName(companyName);
@@ -27,6 +31,7 @@ public class PublisherController(IPublisherService publisherService) : Controlle
     }
 
     [HttpGet]
+    [Authorize(Policy = "RequireGetAllPublishersPermission")]
     public IActionResult GetAllPublishers()
     {
         var publishers = publisherService.GetAllPublishers();
@@ -35,6 +40,7 @@ public class PublisherController(IPublisherService publisherService) : Controlle
     }
 
     [HttpPut]
+    [Authorize(Policy = "RequireUpdatePublisherPermission")]
     public IActionResult UpdatePublisher(UpdatePublisherDto updatePublisherDto)
     {
         publisherService.UpdatePublisher(updatePublisherDto);
@@ -43,6 +49,7 @@ public class PublisherController(IPublisherService publisherService) : Controlle
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Policy = "RequireDeletePublisherPermission")]
     public IActionResult DeletePublisher(Guid id)
     {
         publisherService.DeletePublisher(id);
@@ -51,9 +58,10 @@ public class PublisherController(IPublisherService publisherService) : Controlle
     }
 
     [HttpGet("{companyName}/games")]
+    [Authorize(Policy = "RequireGetGamesByPublisherNamePermission")]
     public IActionResult GetGamesByPublisherName(string companyName)
     {
-        var gameDtos = publisherService.GetGamesOfPublisher(companyName);
+        var gameDtos = gameService.GetGamesOfPublisher(companyName);
 
         return Ok(gameDtos);
     }

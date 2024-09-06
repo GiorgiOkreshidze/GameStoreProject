@@ -23,6 +23,11 @@ public class CategoryMongoService : ICategoryMongoService
         return _categoriesCollection.Find(_ => true).ToList();
     }
 
+    public ICollection<CategoryDocument> GetAllMongoFiltered(ICollection<string> collection)
+    {
+        return _categoriesCollection.Find(a => !collection.Contains(a.Id)).ToList();
+    }
+
     public CategoryDocument GetCategoryByIdMongo(string id)
     {
         return _categoriesCollection.Find(category => category.Id == id).FirstOrDefault();
@@ -54,5 +59,22 @@ public class CategoryMongoService : ICategoryMongoService
     public ICollection<ProductDocument> GetProductsByCategoryId(int categoryId)
     {
         return _productsCollection.Find(p => p.CategoryID == categoryId).ToList();
+    }
+
+    public ICollection<ProductDocument> GetProductsByCategoryIdFiltered(int categoryId, ICollection<string> collection)
+    {
+        return _productsCollection.Find(p => p.CategoryID == categoryId && !collection.Contains(p.Id)).ToList();
+    }
+
+    public CategoryDocument GetCategoryByProductKey(string key)
+    {
+        var document = _productsCollection.Find(p => p.GameKey == key).FirstOrDefault() ?? new ProductDocument();
+        int categoryId = document.CategoryID;
+        return _categoriesCollection.Find(s => s.CategoryID == categoryId).FirstOrDefault();
+    }
+
+    public CategoryDocument GetCategoryByCategoryId(int categoryId)
+    {
+        return _categoriesCollection.Find(s => s.CategoryID == categoryId).FirstOrDefault();
     }
 }

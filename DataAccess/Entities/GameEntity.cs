@@ -48,4 +48,6 @@ public class GameEntity
     public int Views { get; set; }
 
     public DateTime PublishDate { get; set; } = DateTime.Now;
+
+    public bool Deleted { get; set; }
 }

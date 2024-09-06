@@ -1,13 +1,11 @@
 using AutoMapper;
 using BusinessLogic.Models;
 using BusinessLogic.Services;
-using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.PublisherDtos;
 using FluentAssertions;
-using MongoDbAccess.Contracts;
 using Moq;
 
 namespace BusinessLogicTests.ServiceTests;
@@ -18,11 +16,6 @@ public class PublisherServiceTests
 
     private readonly Mock<IPublisherDbService> _publisherDbServiceMock = new();
     private readonly IMapper _publisherMapper;
-    private readonly Mock<IValidationsHandler> _validatorMock = new();
-    private readonly Mock<ISupplierMongoService> _supplierMock = new();
-    private readonly Mock<IDatabasesSyncDbService> _databaseSyncDbMock = new();
-    private readonly Mock<IProductMongoService> _productmongoMock = new();
-    private readonly Mock<IGenreDbService> _genreDbMock = new();
 
     public PublisherServiceTests()
     {
@@ -40,12 +33,7 @@ public class PublisherServiceTests
         _publisherMapper = config.CreateMapper();
         _publisherServiceTest = new PublisherService(
             _publisherDbServiceMock.Object,
-            _supplierMock.Object,
-            _databaseSyncDbMock.Object,
-            _publisherMapper,
-            _validatorMock.Object,
-            _productmongoMock.Object,
-            _genreDbMock.Object);
+            _publisherMapper);
     }
 
     [Fact]
@@ -115,23 +103,6 @@ public class PublisherServiceTests
     }
 
     [Fact]
-    public void PublisherService_GetGamesOfPublisher_ReturnsGameDtos()
-    {
-        // Arrange
-        var publisherEntity = TestUtils.PublisherEntityUtil.CreatePublisherEntity();
-        _publisherDbServiceMock.Setup(x => x.GetGamesOfPublisherDb(publisherEntity.CompanyName)).Returns(publisherEntity.GameEntities);
-
-        var games = _publisherMapper.Map<ICollection<GameEntity>, ICollection<Game>>(publisherEntity.GameEntities);
-        var gameDtos = _publisherMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(games);
-
-        // Act
-        var result = _publisherServiceTest.GetGamesOfPublisher(publisherEntity.CompanyName);
-
-        // Assert
-        gameDtos.Zip(result).ToList().ForEach(pair => ValidateGames(pair.First, pair.Second));
-    }
-
-    [Fact]
     public void PublisherService_GetAllPublishers_ReturnsAllPublisherDtos()
     {
         // Arrange
@@ -147,13 +118,5 @@ public class PublisherServiceTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(publisherDtos);
-    }
-
-    private static void ValidateGames(GetGameDto gameDto, GetGameDto result)
-    {
-        gameDto.Name.Should().Be(result.Name);
-        gameDto.Id.Should().Be(result.Id);
-        gameDto.Key.Should().Be(result.Key);
-        gameDto.Description.Should().Be(result.Description);
     }
 }

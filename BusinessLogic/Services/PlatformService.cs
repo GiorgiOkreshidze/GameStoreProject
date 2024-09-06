@@ -1,7 +1,6 @@
 using AutoMapper;
 using BusinessLogic.Contracts;
 using BusinessLogic.Models;
-using BusinessLogic.Validations;
 #pragma warning disable IDE0005
 using DataAccess.Contracts;
 using DataAccess.Entities;
@@ -11,7 +10,8 @@ using DTOs.PlatformDtos;
 
 namespace BusinessLogic.Services;
 
-public class PlatformService(IPlatformDbService platformDbService, IMapper platformMapper, IValidationsHandler validator)
+public class PlatformService(IPlatformDbService platformDbService,
+    IMapper platformMapper)
     : IPlatformService
 {
     public void CreatePlatform(CreatePlatformDto createPlatformDto)
@@ -19,8 +19,6 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
         var platform = platformMapper.Map<CreatePlatformDto, Platform>(createPlatformDto);
 
         platform.Id = Guid.NewGuid();
-
-        validator.ValidatePlatformType(platform.Type);
 
         var platformEntity = platformMapper.Map<Platform, PlatformEntity>(platform);
 
@@ -40,8 +38,6 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
     public void UpdatePlatform(UpdatePlatformDto updatePlatformDto)
     {
         var platform = platformMapper.Map<UpdatePlatformDto, Platform>(updatePlatformDto);
-        validator.ValidatePlatform(platform.Id);
-        validator.ValidatePlatformType(platform.Type);
         var platformEntity = platformMapper.Map<Platform, PlatformEntity>(platform);
 
         platformDbService.UpdatePlatformDb(platformEntity);
@@ -49,14 +45,12 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
 
     public void DeletePlatform(Guid id)
     {
-        validator.ValidatePlatform(id);
         var entity = platformDbService.GetPlatformByGuid(id);
         platformDbService.DeletePlatformDb(entity);
     }
 
     public PlatformDto GetPlatformById(Guid id)
     {
-        validator.ValidatePlatform(id);
         var platformEntity = platformDbService.GetPlatformByGuid(id);
 
         var platform = platformMapper.Map<PlatformEntity, Platform>(platformEntity);
@@ -65,14 +59,13 @@ public class PlatformService(IPlatformDbService platformDbService, IMapper platf
         return platformDto;
     }
 
-    public ICollection<GetGameDto> GetGamesByPlatformId(Guid id)
+    public ICollection<PlatformDto> GetPlatformsOfGame(string key)
     {
-        validator.ValidatePlatform(id);
-        var gameEntities = platformDbService.GetGamesByPlatformId(id);
+        var platformEntities = platformDbService.GetPlatformsOfGameDb(key);
 
-        var game = platformMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
-        var gameDtos = platformMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(game);
+        var platform = platformMapper.Map<ICollection<PlatformEntity>, ICollection<Platform>>(platformEntities);
+        var platformDtos = platformMapper.Map<ICollection<Platform>, ICollection<PlatformDto>>(platform);
 
-        return gameDtos;
+        return platformDtos;
     }
 }

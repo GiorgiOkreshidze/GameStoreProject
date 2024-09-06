@@ -26,5 +26,13 @@ public interface IOrderService
 
     public void PaymentByVisa(PaymentDto paymentDto);
 
+    public void UpdateOrderDetailQuantity(Guid id, CountDto countDto);
+
+    public bool DeleteOrderDetails(Guid id);
+
+    public bool ShipOrder(Guid id);
+
+    public bool AddGameToOrderByKey(Guid id, string key);
+
     /*public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto);*/
 }

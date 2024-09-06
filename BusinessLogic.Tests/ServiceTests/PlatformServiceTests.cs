@@ -1,7 +1,6 @@
 using AutoMapper;
 using BusinessLogic.Models;
 using BusinessLogic.Services;
-using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
@@ -17,7 +16,6 @@ public class PlatformServiceTests
 
     private readonly Mock<IPlatformDbService> _platformDbServiceMock = new();
     private readonly IMapper _platformMapper;
-    private readonly Mock<IValidationsHandler> _validatorMock = new();
 
     public PlatformServiceTests()
     {
@@ -34,7 +32,7 @@ public class PlatformServiceTests
             cfg.CreateMap<PlatformDtoWithoutId, Platform>().ReverseMap();
         });
         _platformMapper = config.CreateMapper();
-        _platformServiceTest = new PlatformService(_platformDbServiceMock.Object, _platformMapper, _validatorMock.Object);
+        _platformServiceTest = new PlatformService(_platformDbServiceMock.Object, _platformMapper);
     }
 
     [Fact]
@@ -69,23 +67,6 @@ public class PlatformServiceTests
         // Assert
         Assert.Equal(platformDto.Id, result.Id);
         Assert.Equal(platformDto.Type, result.Type);
-    }
-
-    [Fact]
-    public void PlatformService_GetGamesByPlatformId_ReturnsGameDtos()
-    {
-        // Arrange
-        var platformEntity = TestUtils.PlatformEntityUtil.CreatePlatformEntity();
-        _platformDbServiceMock.Setup(x => x.GetGamesByPlatformId(platformEntity.Id)).Returns(platformEntity.GameEntities);
-
-        var games = _platformMapper.Map<ICollection<GameEntity>, ICollection<Game>>(platformEntity.GameEntities);
-        var gameDtos = _platformMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(games);
-
-        // Act
-        var result = _platformServiceTest.GetGamesByPlatformId(platformEntity.Id);
-
-        // Assert
-        gameDtos.Zip(result).ToList().ForEach(pair => ValidateGames(pair.First, pair.Second));
     }
 
     [Fact]
@@ -136,13 +117,5 @@ public class PlatformServiceTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(platformDtos);
-    }
-
-    private static void ValidateGames(GetGameDto gameDto, GetGameDto result)
-    {
-        gameDto.Name.Should().Be(result.Name);
-        gameDto.Id.Should().Be(result.Id);
-        gameDto.Key.Should().Be(result.Key);
-        gameDto.Description.Should().Be(result.Description);
     }
 }

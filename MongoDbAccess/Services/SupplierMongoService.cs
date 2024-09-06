@@ -23,6 +23,11 @@ public class SupplierMongoService : ISupplierMongoService
         return _suppliersCollection.Find(s => s.CompanyName == companyName).FirstOrDefault();
     }
 
+    public SupplierDocument GetSupplierById(string supplierId)
+    {
+        return _suppliersCollection.Find(s => s.Id == supplierId).FirstOrDefault();
+    }
+
     public void CreateSupplierMongo(SupplierDocument supplier)
     {
         _suppliersCollection.InsertOne(supplier);
@@ -31,6 +36,11 @@ public class SupplierMongoService : ISupplierMongoService
     public ICollection<SupplierDocument> GetAllSuppliersMongo()
     {
         return _suppliersCollection.Find(_ => true).ToList();
+    }
+
+    public ICollection<SupplierDocument> GetSuppliersFiltered(ICollection<string> collection)
+    {
+        return _suppliersCollection.Find(a => !collection.Contains(a.Id)).ToList();
     }
 
     public SupplierDocument GetSupplierByIdMongo(string id)
@@ -65,5 +75,21 @@ public class SupplierMongoService : ISupplierMongoService
     public ICollection<ProductDocument> GetProductsBySupplierId(int supplierId)
     {
         return _productsCollection.Find(p => p.SupplierID == supplierId).ToList();
+    }
+
+    public ICollection<ProductDocument> GetProductsBySupplierIdFiltered(int supplierId, ICollection<string> collection)
+    {
+        return _productsCollection.Find(p => p.SupplierID == supplierId && !collection.Contains(p.Id)).ToList();
+    }
+
+    public SupplierDocument GetPublisherByGameKey(string gameKey)
+    {
+        int supplierId = _productsCollection.Find(p => p.GameKey == gameKey).FirstOrDefault().SupplierID;
+        return _suppliersCollection.Find(s => s.SupplierID == supplierId).FirstOrDefault();
+    }
+
+    public SupplierDocument GetSupplierBySupplierId(int supplierId)
+    {
+        return _suppliersCollection.Find(s => s.SupplierID == supplierId).FirstOrDefault();
     }
 }

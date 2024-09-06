@@ -1,9 +1,12 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 using BusinessLogic.Contracts;
 #pragma warning disable IDE0005
 using DTOs.CommentDtos;
 #pragma warning restore IDE0005
 using DTOs.GameDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -11,10 +14,15 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GameController(IGameService gameService) : Controller
+public class GameController(IGameService gameService,
+    ICommentService commentService,
+    IGenreService genreService,
+    IPlatformService platformService,
+    IPublisherService publisherService) : Controller
 {
     [HttpPost]
-    public IActionResult Create(CreateGameDto createGameDto)
+    [Authorize(Policy = "RequireCreateGamePermission")]
+    public IActionResult CreateGame(CreateGameDto createGameDto)
     {
         gameService.CreateGame(createGameDto);
 
@@ -22,6 +30,7 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet]
+    [Authorize(Policy = "RequireGetGamesPermission")]
     public IActionResult GetGames([FromQuery] GameFilterDto filter)
     {
         return Ok(gameService.GetGames(
@@ -35,7 +44,8 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpPut]
-    public IActionResult Update(UpdateGameDto updateGameDto)
+    [Authorize(Policy = "RequireUpdateGamePermission")]
+    public IActionResult UpdateGame(UpdateGameDto updateGameDto)
     {
         gameService.UpdateGame(updateGameDto);
 
@@ -43,7 +53,8 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpDelete("{key}")]
-    public IActionResult Delete(string key)
+    [Authorize(Policy = "RequireDeleteGamePermission")]
+    public IActionResult DeleteGame(string key)
     {
         gameService.DeleteGame(key);
 
@@ -51,14 +62,16 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet("{key}")]
+    [Authorize(Policy = "RequireGetGameByKeyPermission")]
     public IActionResult GetGameByKey(string key)
     {
-        var game = gameService.GetGameByKey(key);
+        var game = gameService.GetGameByKey(key, true);
 
         return Ok(game);
     }
 
     [HttpGet("find/{id}")]
+    [Authorize(Policy = "RequireGetGameByIdPermission")]
     public IActionResult GetGameById(Guid id)
     {
         var game = gameService.GetGameById(id);
@@ -67,24 +80,28 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet("{key}/genres")]
+    [Authorize(Policy = "RequireGetGenresOfGamePermission")]
     public IActionResult GetGenresOfGame(string key)
     {
-        return Ok(gameService.GetGenresOfGame(key));
+        return Ok(genreService.GetGenresOfGame(key));
     }
 
     [HttpGet("{key}/platforms")]
+    [Authorize(Policy = "RequireGetPlatformsOfGamePermission")]
     public IActionResult GetPlatformsOfGame(string key)
     {
-        return Ok(gameService.GetPlatformsOfGame(key));
+        return Ok(platformService.GetPlatformsOfGame(key));
     }
 
     [HttpGet("{key}/publisher")]
+    [Authorize(Policy = "RequireGetPublisherOfGamePermission")]
     public IActionResult GetPublisherOfGame(string key)
     {
-        return Ok(gameService.GetPublisherOfGame(key));
+        return Ok(publisherService.GetPublisherOfGame(key));
     }
 
     [HttpGet("{key}/file")]
+    [Authorize(Policy = "RequireDownloadGameFilePermission")]
     public IActionResult DownloadGameFile(string key)
     {
         var game = gameService.GetGameByKey(key);
@@ -97,6 +114,7 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpPost("{key}/buy")]
+    [Authorize(Policy = "RequireAddGameInCartPermission")]
     public IActionResult AddGameInCart(string key)
     {
         gameService.AddGameInCart(key);
@@ -104,16 +122,23 @@ public class GameController(IGameService gameService) : Controller
     }
 
     [HttpGet("{key}/comments")]
+    [Authorize(Policy = "RequireGetCommentsPermission")]
     public IActionResult GetComments(string key)
     {
-        return Ok(gameService.GetComments(key));
+        return Ok(commentService.GetComments(key));
     }
 
     [HttpPost("{key}/comments")]
+    [Authorize(Policy = "RequireAddCommentPermission")]
     public IActionResult AddComment(string key, AddCommentDto addCommentDto)
     {
-        string action = addCommentDto.Action;
-        if (action == "Quote")
+        // string action = addCommentDto.Action;
+        var token = GetToken();
+        var userName = GetNameFromToken(token);
+        addCommentDto.Comment.Name = userName;
+        commentService.AddComment(key, addCommentDto);
+
+        /*if (action == "Quote")
         {
             gameService.AddCommentAsQuote(key, addCommentDto);
         }
@@ -124,27 +149,52 @@ public class GameController(IGameService gameService) : Controller
         else
         {
             gameService.AddComment(key, addCommentDto);
-        }
+        }*/
 
         return Ok();
     }
 
     [HttpDelete("{key}/comments/{id}")]
+    [Authorize(Policy = "RequireDeleteCommentPermission")]
     public IActionResult DeleteComment(string key, Guid id)
     {
-        gameService.DeleteComment(key, id);
+        commentService.DeleteComment(key, id);
         return Ok();
     }
 
     [HttpGet("pagination-options")]
+    [Authorize(Policy = "RequireGetPaginationOptionsPermission")]
     public IActionResult GetPaginationOptions()
     {
         return Ok(new List<string> { "10", "20", "50", "100", "all" });
     }
 
     [HttpGet("sorting-options")]
+    [Authorize(Policy = "RequireGetSortingOptionsPermission")]
     public IActionResult GetSortingOptions()
     {
         return Ok(new List<string> { "Most popular", "Most commented", "Price ASC", "Price DESC", "New" });
+    }
+
+    [HttpGet("all")]
+    [Authorize(Policy = "RequireGetAllGamesPermission")]
+    public IActionResult GetAllGames()
+    {
+        return Ok(gameService.GetAllGames());
+    }
+
+    private string GetToken()
+    {
+        var token = HttpContext.Request.Headers["Authorization"].ToString();
+        return token.Replace("bearer ", string.Empty);
+    }
+
+    private static string GetNameFromToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jwtToken = handler.ReadJwtToken(token);
+
+        var nameClaim = jwtToken.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Name);
+        return nameClaim?.Value;
     }
 }

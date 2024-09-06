@@ -8,6 +8,8 @@ public class Comment
 
     public string Body { get; set; }
 
+    public string Action { get; set; }
+
     public Guid? ParentCommentId { get; set; }
 
     public Guid GameId { get; set; }

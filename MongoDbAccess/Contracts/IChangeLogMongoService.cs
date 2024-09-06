@@ -4,7 +4,7 @@ namespace MongoDbAccess.Contracts;
 
 public interface IChangeLogMongoService
 {
-    public void LogChange<T>(string entityName, string action, string user, T oldVersion, T newVersion);
+    public void LogChange<T>(string entityName, string action, T oldVersion, T newVersion);
 
     public List<ChangeLogDocument> GetLogs();
 }

@@ -13,5 +13,12 @@ public class CommentProfile : Profile
     {
         CreateMap<BannedUserEntity, BannedUser>().ReverseMap();
         CreateMap<BannedUser, BanUserDto>().ReverseMap();
+
+        CreateMap<Comment, CommentEntity>().ReverseMap();
+        CreateMap<CommentDto, Comment>().ReverseMap();
+        CreateMap<AddCommentDto, Comment>().IncludeMembers(src => src.Comment)
+            .ForMember(dest => dest.ParentCommentId, opt => opt.MapFrom(src => src.ParentId))
+            .ReverseMap()
+            .ForMember(dest => dest.ParentId, opt => opt.MapFrom(src => src.ParentCommentId));
     }
 }

@@ -17,16 +17,20 @@ public class ChangeLogMongoService : IChangeLogMongoService
         _changeLogCollection = mongoDatabase.GetCollection<ChangeLogDocument>(dbSettings.Value.ChangeLogCollectionName);
     }
 
-    public void LogChange<T>(string entityName, string action, string user, T oldVersion, T newVersion)
+    public void LogChange<T>(string entityName, string action, T oldVersion, T newVersion)
     {
+        var settings = new JsonSerializerSettings
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+        };
+
         var logEntry = new ChangeLogDocument()
         {
             EntityName = entityName,
             Action = action,
-            User = user,
             Timestamp = DateTime.UtcNow,
-            OldVersion = (oldVersion != null ? JsonConvert.SerializeObject(oldVersion) : null) ?? throw new InvalidOperationException(),
-            NewVersion = (newVersion != null ? JsonConvert.SerializeObject(newVersion) : null) ?? throw new InvalidOperationException(),
+            OldVersion = JsonConvert.SerializeObject(oldVersion, settings),
+            NewVersion = JsonConvert.SerializeObject(newVersion, settings),
         };
 
         _changeLogCollection.InsertOne(logEntry);

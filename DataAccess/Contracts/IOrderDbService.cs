@@ -28,7 +28,13 @@ public interface IOrderDbService
 
     public bool NotExists(Guid id);
 
-    public ICollection<Guid> GetOrdersGamesId(OrderEntity orderEntity);
+    public int QuantityOfGame(Guid productId, Guid orderId);
 
-    public int QuantityOfGame(Guid id);
+    public void UpdateOrderDetailQuantityDb(Guid id, int count);
+
+    public bool DeleteOrderDetailsDb(Guid id);
+
+    public bool ShipOrderDb(Guid id);
+
+    public bool AddGameToOrderByKeyDb(Guid id, string key);
 }

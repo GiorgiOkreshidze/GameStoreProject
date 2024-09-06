@@ -4,11 +4,11 @@ namespace DTOs.GameDtos;
 
 public class GameFilterDto
 {
-    public List<Guid>? GenreIds { get; set; }
+    public List<Guid>? Genres { get; set; }
 
-    public List<Guid>? PlatformIds { get; set; }
+    public List<Guid>? Platforms { get; set; }
 
-    public List<Guid>? PublisherIds { get; set; }
+    public List<Guid>? Publishers { get; set; }
 
     public double? MinPrice { get; set; }
 

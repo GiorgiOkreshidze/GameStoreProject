@@ -14,9 +14,11 @@ public interface IPlatformDbService
 
     public PlatformEntity GetPlatformByGuid(Guid id);
 
-    public ICollection<GameEntity> GetGamesByPlatformId(Guid id);
-
     public bool NotExists(Guid id);
 
     public bool TypeExists(string type);
+
+    public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key);
+
+    public bool PlatformNameExistsDb(string platformName);
 }

@@ -19,7 +19,7 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
 
     public OrderEntity GetOrderByIdDb(Guid id)
     {
-        return gameDbContext.OrderEntities.FirstOrDefault(o => o.Id == id) ?? throw new ArgumentNullException();
+        return gameDbContext.OrderEntities.FirstOrDefault(o => o.Id == id);
     }
 
     public ICollection<OrderGame> GetAllOrdersDetailsDb(Guid id)
@@ -99,9 +99,80 @@ public class OrderDbService(GameDbContext gameDbContext) : IOrderDbService
         }
     }
 
-    public int QuantityOfGame(Guid id)
+    public int QuantityOfGame(Guid productId, Guid orderId)
     {
-        return gameDbContext.OrderGames.FirstOrDefault(o => o.ProductId == id).Quantity;
+        return gameDbContext.OrderGames.FirstOrDefault(o => o.ProductId == productId &&
+                                                            o.OrderId == orderId).Quantity;
+    }
+
+    public void UpdateOrderDetailQuantityDb(Guid id, int count)
+    {
+        var orderDetails = gameDbContext.OrderGames.FirstOrDefault(o => o.OrderId == id);
+
+        orderDetails.Quantity = count;
+        gameDbContext.SaveChanges();
+    }
+
+    public bool DeleteOrderDetailsDb(Guid id)
+    {
+        var result = gameDbContext.OrderGames.FirstOrDefault(orderGame => orderGame.OrderGameId == id);
+
+        if (result is null)
+        {
+            return false;
+        }
+
+        gameDbContext.OrderGames.Remove(result);
+        gameDbContext.SaveChanges();
+        return true;
+    }
+
+    public bool ShipOrderDb(Guid id)
+    {
+        var result = gameDbContext.OrderEntities.FirstOrDefault(order => order.Id == id);
+
+        if (result is null)
+        {
+            return false;
+        }
+
+        result.ShippedDate = DateTime.Now;
+        gameDbContext.SaveChanges();
+        return true;
+    }
+
+    public bool AddGameToOrderByKeyDb(Guid id, string key)
+    {
+        var order = gameDbContext.OrderEntities.Include(orderEntity => orderEntity.GameEntities).FirstOrDefault(order => order.Id == id);
+        if (order is null)
+        {
+            return false;
+        }
+
+        var game = gameDbContext.GameEntities.FirstOrDefault(game => game.Key == key);
+        if (game is null)
+        {
+            return false;
+        }
+
+        if (order.GameEntities.Contains(game))
+        {
+            var orderGame = gameDbContext.OrderGames.FirstOrDefault(o => o.OrderId == order.Id) ??
+                        throw new ArgumentNullException();
+            orderGame.Quantity += 1;
+        }
+        else
+        {
+            order.GameEntities.Add(game);
+            gameDbContext.SaveChanges();
+            var orderGame = gameDbContext.OrderGames.FirstOrDefault(o => o.ProductId == game.Id) ?? throw new ArgumentNullException();
+            orderGame.Price = game.Price;
+            orderGame.Discount = game.Discount;
+            orderGame.Quantity = 1;
+        }
+
+        gameDbContext.SaveChanges();
+        return true;
     }
 
     public ICollection<Guid> GetOrdersGamesId(OrderEntity orderEntity)

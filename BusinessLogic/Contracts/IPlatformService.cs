@@ -17,5 +17,5 @@ public interface IPlatformService
 
     public PlatformDto GetPlatformById(Guid id);
 
-    public ICollection<GetGameDto> GetGamesByPlatformId(Guid id);
+    public ICollection<PlatformDto> GetPlatformsOfGame(string key);
 }

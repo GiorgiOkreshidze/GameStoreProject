@@ -144,6 +144,9 @@
             "projectReferences": {
               "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
                 "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              },
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
               }
             }
           }
@@ -172,6 +175,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.20, )"
+            },
+            "Scutor.AspnetCore.Wireup": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "StyleCop.Analyzers.Unstable": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -256,6 +263,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "StyleCop.Analyzers.Unstable": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -350,6 +361,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.33, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -377,6 +392,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [
@@ -448,7 +467,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -462,6 +485,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[9.0.0-preview.6.24327.7, )"

@@ -18,25 +18,17 @@ public interface IGameService
 
     public void DeleteGame(string key);
 
-    public GetGameDto GetGameByKey(string key);
+    public GetGameDto GetGameByKey(string key, bool countView = false);
 
-    public GetGameDto GetGameById(Guid id);
-
-    public ICollection<GenreDto> GetGenresOfGame(string key);
-
-    public ICollection<PlatformDto> GetPlatformsOfGame(string key);
-
-    public GetPublisherDto GetPublisherOfGame(string key);
+    public GetGameDto GetGameById(Guid id, bool countView = false);
 
     public void AddGameInCart(string key);
 
-    public void AddCommentAsQuote(string key, AddCommentDto addCommentDto);
+    public ICollection<GetGameDto> GetAllGames();
 
-    public void AddCommentAsReply(string key, AddCommentDto addCommentDto);
+    public ICollection<GetGameDto> GetGamesByPlatformId(Guid id);
 
-    public void AddComment(string key, AddCommentDto addCommentDto);
+    public ICollection<GetGameDto> GetGamesByGenreId(Guid id);
 
-    public ICollection<GetCommentDto> GetComments(string key);
-
-    public void DeleteComment(string key, Guid id);
+    public ICollection<GetGameDto> GetGamesOfPublisher(string companyName);
 }

@@ -36,14 +36,6 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
         return gameDbContext.PlatformEntities.FirstOrDefault(t => t.Id == id) ?? throw new SqlNullValueException();
     }
 
-    public ICollection<GameEntity> GetGamesByPlatformId(Guid id)
-    {
-        return gameDbContext.PlatformEntities
-            .Where(t => t.Id == id)
-            .SelectMany(t => t.GameEntities)
-            .ToList();
-    }
-
     public bool NotExists(Guid id)
     {
         return !gameDbContext.PlatformEntities.Any(t => t.Id == id);
@@ -52,5 +44,19 @@ public class PlatformDbService(GameDbContext gameDbContext) : IPlatformDbService
     public bool TypeExists(string type)
     {
         return gameDbContext.PlatformEntities.Any(t => t.Type == type);
+    }
+
+    public ICollection<PlatformEntity> GetPlatformsOfGameDb(string key)
+    {
+        var entities = gameDbContext.PlatformEntities.Where(p => p.GameEntities.Any(a => a.Key == key)).ToList();
+
+        return entities;
+    }
+
+    public bool PlatformNameExistsDb(string platformName)
+    {
+        var entities = gameDbContext.PlatformEntities.Any(p => p.Type == platformName);
+
+        return entities;
     }
 }

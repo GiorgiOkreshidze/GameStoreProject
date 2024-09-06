@@ -1,4 +1,5 @@
 using BusinessLogic.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Gamestore.Controllers;
@@ -8,6 +9,7 @@ namespace Gamestore.Controllers;
 public class ShipperController(IShipperService shipperService) : Controller
 {
     [HttpGet]
+    [Authorize(Policy = "RequireGetShippersPermission")]
     public IActionResult GetShippers()
     {
         return Ok(shipperService.GetShippers());

@@ -10,9 +10,13 @@ public interface IOrderMongoService
 
     public ICollection<OrderDocument> OrdersByIntervalMongo(DateTime start, DateTime end);
 
+    public ICollection<OrderDocument> OrdersByIntervalMongo(DateTime start, DateTime end, ICollection<string> mongoIds);
+
     public OrderDocument GetOrderById(string id);
 
     public ICollection<OrderDetailsDocument> GetOrderDetailsByOrderId(int orderId);
+
+    public ICollection<OrderDetailsDocument> GetOrderDetailsByOrderId(int orderId, ICollection<string> mongoIds);
 
     public ProductDocument GetProductByProductId(int productId);
 

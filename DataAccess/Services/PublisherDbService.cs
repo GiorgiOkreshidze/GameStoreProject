@@ -22,7 +22,14 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
 
     public PublisherEntity GetPublisherByCompanyNameDb(string companyName)
     {
-        var publisherEntity = gameDbContext.PublisherEntities.FirstOrDefault(x => x.CompanyName == companyName) ?? throw new SqlNullValueException();
+        var publisherEntity = gameDbContext.PublisherEntities.AsNoTracking().FirstOrDefault(x => x.CompanyName == companyName);
+
+        return publisherEntity;
+    }
+
+    public PublisherEntity GetPublisherByGuid(Guid id)
+    {
+        var publisherEntity = gameDbContext.PublisherEntities.AsNoTracking().FirstOrDefault(x => x.Id == id);
 
         return publisherEntity;
     }
@@ -46,13 +53,6 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
         gameDbContext.SaveChanges();
     }
 
-    public ICollection<GameEntity> GetGamesOfPublisherDb(string companyName)
-    {
-        return gameDbContext.GameEntities
-            .Where(t => t.PublisherEntity.CompanyName == companyName)
-            .ToList();
-    }
-
     public bool PublisherNotExists(Guid? id)
     {
         return !gameDbContext.PublisherEntities.AsNoTracking().Any(t => t.Id == id);
@@ -61,5 +61,10 @@ public class PublisherDbService(GameDbContext gameDbContext) : IPublisherDbServi
     public bool CompanyNameNotExists(string companyName)
     {
         return !gameDbContext.PublisherEntities.Any(t => t.CompanyName == companyName);
+    }
+
+    public PublisherEntity GetPublisherOfGameDb(string key)
+    {
+        return gameDbContext.PublisherEntities.Where(p => p.GameEntities.Any(g => g.Key == key)).FirstOrDefault();
     }
 }

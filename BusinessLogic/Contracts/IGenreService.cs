@@ -17,7 +17,7 @@ public interface IGenreService
 
     public GetGenreDto GetGenre(Guid id);
 
-    public ICollection<GetGameDto> GetGamesByGenreId(Guid id);
-
     public ICollection<GenreDto> GetSubGenres(Guid id);
+
+    public ICollection<GenreDto> GetGenresOfGame(string key);
 }

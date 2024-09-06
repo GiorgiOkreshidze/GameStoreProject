@@ -1,6 +1,7 @@
 using AutoMapper;
 using BusinessLogic.Models;
 using MongoDbAccess.Models;
+using MongoDbAccess.MongoDTOs;
 #pragma warning disable IDE0005
 using DataAccess.Entities;
 using DTOs.CommentDtos;
@@ -47,6 +48,11 @@ public class GameProfile : Profile
         CreateMap<Publisher, GetPublisherDto>().ReverseMap();
         CreateMap<CommentDto, Comment>().ReverseMap();
         CreateMap<AddCommentDto, Comment>().IncludeMembers(src => src.Comment)
+            .ReverseMap();
+        CreateMap<GameFilterDto, ProductMongoFilter>()
+            .ForMember(dest => dest.ExcludeProducts, opt => opt.Ignore())
+            .ForMember(dest => dest.Categories, opt => opt.Ignore())
+            .ForMember(dest => dest.Suppliers, opt => opt.Ignore())
             .ReverseMap();
 
         CreateMap<PublisherEntity, SupplierDocument>()

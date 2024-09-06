@@ -1,4 +1,3 @@
-using System.Data.SqlTypes;
 using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
@@ -13,16 +12,16 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
         gameDbContext.GenreEntities.Add(genreEntity);
         gameDbContext.SaveChanges();
 
-        /*var gameEntry = gameDbContext.Entry(genreEntity);
+        var gameEntry = gameDbContext.Entry(genreEntity);
         if (gameEntry.State != EntityState.Detached)
         {
             gameEntry.State = EntityState.Detached;
-        }*/
+        }
     }
 
     public GenreEntity GetGenreByGuid(Guid id)
     {
-        return gameDbContext.GenreEntities.FirstOrDefault(t => t.Id == id) ?? throw new SqlNullValueException();
+        return gameDbContext.GenreEntities.FirstOrDefault(t => t.Id == id);
     }
 
     public ICollection<GenreEntity> GetAllGenresDb()
@@ -65,5 +64,12 @@ public class GenreDbService(GameDbContext gameDbContext) : IGenreDbService
     public bool NameExists(string name)
     {
         return gameDbContext.GenreEntities.Any(t => t.Name == name);
+    }
+
+    public ICollection<GenreEntity> GetGenresOfGameDb(string key)
+    {
+        var genres = gameDbContext.GenreEntities.Where(g => g.GameEntities.Any(e => e.Key == key)).ToList();
+
+        return genres;
     }
 }

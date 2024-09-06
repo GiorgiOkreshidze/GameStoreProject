@@ -13,6 +13,10 @@ public class CommentEntity
     [Required]
     public string Body { get; set; }
 
+    public string Action { get; set; } = string.Empty;
+
+    public bool Deleted { get; set; }
+
     public Guid? ParentCommentId { get; set; }
 
     public CommentEntity? ParentComment { get; set; }

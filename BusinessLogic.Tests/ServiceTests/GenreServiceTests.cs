@@ -1,13 +1,11 @@
 using AutoMapper;
 using BusinessLogic.Models;
 using BusinessLogic.Services;
-using BusinessLogic.Validations;
 using DataAccess.Contracts;
 using DataAccess.Entities;
 using DTOs.GameDtos;
 using DTOs.GenreDtos;
 using FluentAssertions;
-using MongoDbAccess.Contracts;
 using Moq;
 
 namespace BusinessLogicTests.ServiceTests;
@@ -18,11 +16,6 @@ public class GenreServiceTests
 
     private readonly Mock<IGenreDbService> _genreDbServiceMock = new();
     private readonly IMapper _genreMapper;
-    private readonly Mock<IValidationsHandler> _validatorMock = new();
-    private readonly Mock<ICategoryMongoService> _categoryMock = new();
-    private readonly Mock<IDatabasesSyncDbService> _databaseSyncMock = new();
-    private readonly Mock<IProductMongoService> _productMongoMock = new();
-    private readonly Mock<IPublisherDbService> _publisherDbMock = new();
 
     public GenreServiceTests()
     {
@@ -41,12 +34,7 @@ public class GenreServiceTests
         _genreMapper = config.CreateMapper();
         _genreServiceTest = new GenreService(
             _genreDbServiceMock.Object,
-            _categoryMock.Object,
-            _databaseSyncMock.Object,
-            _genreMapper,
-            _validatorMock.Object,
-            _productMongoMock.Object,
-            _publisherDbMock.Object);
+            _genreMapper);
     }
 
     [Fact]
@@ -81,23 +69,6 @@ public class GenreServiceTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(genreDto);
-    }
-
-    [Fact]
-    public void GenreService_GetGamesByGenreId_ReturnsGameDtos()
-    {
-        // Arrange
-        var genreEntity = TestUtils.GenreEntityUtil.CreateGenreEntity();
-        _genreDbServiceMock.Setup(x => x.GetGamesByGenreId(genreEntity.Id)).Returns(genreEntity.GameEntities);
-
-        var games = _genreMapper.Map<ICollection<GameEntity>, ICollection<Game>>(genreEntity.GameEntities);
-        var gameDtos = _genreMapper.Map<ICollection<Game>, ICollection<GetGameDto>>(games);
-
-        // Act
-        var result = _genreServiceTest.GetGamesByGenreId(genreEntity.Id);
-
-        // Assert
-        gameDtos.Zip(result).ToList().ForEach(pair => ValidateGames(pair.First, pair.Second));
     }
 
     [Fact]
@@ -168,13 +139,5 @@ public class GenreServiceTests
         // Assert
         result.Should().NotBeNull();
         result.Should().BeEquivalentTo(genreDtos);
-    }
-
-    private static void ValidateGames(GetGameDto gameDto, GetGameDto result)
-    {
-        gameDto.Name.Should().Be(result.Name);
-        gameDto.Id.Should().Be(result.Id);
-        gameDto.Key.Should().Be(result.Key);
-        gameDto.Description.Should().Be(result.Description);
     }
 }

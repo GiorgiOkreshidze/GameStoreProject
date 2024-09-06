@@ -17,5 +17,5 @@ public interface IPublisherService
 
     public void DeletePublisher(Guid id);
 
-    public ICollection<GetGameDto> GetGamesOfPublisher(string companyName);
+    public GetPublisherDto GetPublisherOfGame(string key);
 }

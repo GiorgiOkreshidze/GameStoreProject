@@ -4,6 +4,9 @@ namespace DataAccess.Entities;
 
 public class OrderGame
 {
+    [Key]
+    public Guid OrderGameId { get; set; } = Guid.NewGuid();
+
     [Required]
     public Guid OrderId { get; set; }
 

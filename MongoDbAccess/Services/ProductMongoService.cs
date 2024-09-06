@@ -1,9 +1,11 @@
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 
 // using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDbAccess.Contracts;
 using MongoDbAccess.Models;
+using MongoDbAccess.MongoDTOs;
 
 namespace MongoDbAccess.Services;
 
@@ -22,10 +24,80 @@ public class ProductMongoService : IProductMongoService
         _categoryCollection = mongoDatabase.GetCollection<CategoryDocument>(dbSettings.Value.CategoriesCollectionName);
     }
 
-    public ICollection<ProductDocument> GetAllMongo()
+    public ICollection<ProductDocument> GetAllMongo(ProductMongoFilter filter)
     {
-        return _productsCollection.Find(_ => true).ToList();
+        var filterBuilder = Builders<ProductDocument>.Filter;
+        var filterDefinition = filterBuilder.Empty;
+
+        if (!FilterIsDefault(filter))
+        {
+            if (filter.ExcludeProducts is not null)
+            {
+                if (filter.ExcludeProducts.Any())
+                {
+                    var categoryFilter = filterBuilder.Nin(doc => doc.Id, filter.ExcludeProducts);
+                    filterDefinition = filterBuilder.And(filterDefinition, categoryFilter);
+                }
+            }
+
+            if (filter.Categories is not null)
+            {
+                ICollection<int> categoryIntIDs = [];
+                foreach (var categoryId in filter.Categories)
+                {
+                    categoryIntIDs.Add(_categoryCollection.Find(c => c.Id == categoryId).FirstOrDefault().CategoryID);
+                }
+
+                if (categoryIntIDs.Any())
+                {
+                    var categoryFilter = filterBuilder.In(doc => doc.CategoryID, categoryIntIDs);
+                    filterDefinition = filterBuilder.And(filterDefinition, categoryFilter);
+                }
+            }
+
+            if (filter.Suppliers is not null)
+            {
+                ICollection<int> supplierIntIDs = [];
+                foreach (var supplierId in filter.Suppliers)
+                {
+                    supplierIntIDs.Add(_supplierCollection.Find(c => c.Id == supplierId).FirstOrDefault().SupplierID);
+                }
+
+                if (supplierIntIDs.Any())
+                {
+                    var publisherFilter = filterBuilder.In(doc => doc.SupplierID, supplierIntIDs);
+                    filterDefinition = filterBuilder.And(filterDefinition, publisherFilter);
+                }
+            }
+
+            if (filter.MinPrice.HasValue)
+            {
+                var minPriceFilter = filterBuilder.Gte(doc => doc.UnitPrice, filter.MinPrice.Value);
+                filterDefinition = filterBuilder.And(filterDefinition, minPriceFilter);
+            }
+
+            if (filter.MaxPrice.HasValue)
+            {
+                var maxPriceFilter = filterBuilder.Lte(doc => doc.UnitPrice, filter.MaxPrice.Value);
+                filterDefinition = filterBuilder.And(filterDefinition, maxPriceFilter);
+            }
+
+            if (!string.IsNullOrEmpty(filter.Name) && filter.Name.Length >= 3)
+            {
+                var nameFilter = filterBuilder.Regex(doc => doc.ProductName, new BsonRegularExpression(filter.Name, "i"));
+                filterDefinition = filterBuilder.And(filterDefinition, nameFilter);
+            }
+        }
+
+        return _productsCollection.Find(filterDefinition).ToList();
     }
+
+    public static bool FilterIsDefault(ProductMongoFilter filterDto) => (filterDto.Suppliers == null || !filterDto.Suppliers.Any())
+                                                                   && (filterDto.Categories == null || !filterDto.Categories.Any())
+                                                                   && (filterDto.ExcludeProducts == null || !filterDto.ExcludeProducts.Any())
+                                                                   && !filterDto.MinPrice.HasValue
+                                                                   && !filterDto.MaxPrice.HasValue
+                                                                   && string.IsNullOrEmpty(filterDto.Name);
 
     public ProductDocument GetProductByIdMongo(string id)
     {
@@ -84,5 +156,10 @@ public class ProductMongoService : IProductMongoService
         var updatedProduct = _productsCollection.FindOneAndUpdate(filter, update);
 
         return updatedProduct;
+    }
+
+    public ICollection<ProductDocument> GetAllWithoutFilterMongo()
+    {
+        return _productsCollection.Find(_ => true).ToList();
     }
 }

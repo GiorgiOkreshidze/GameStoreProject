@@ -36,6 +36,15 @@ public class OrderMongoService : IOrderMongoService
                                           && o.OrderDateString.CompareTo(endString) <= 0).ToList();
     }
 
+    public ICollection<OrderDocument> OrdersByIntervalMongo(DateTime start, DateTime end, ICollection<string> mongoIds)
+    {
+        string startString = start.ToString("o", CultureInfo.InvariantCulture);
+        string endString = end.ToString("o", CultureInfo.InvariantCulture);
+
+        return _orderCollection.Find(o => o.OrderDateString.CompareTo(startString) >= 0
+                                          && o.OrderDateString.CompareTo(endString) <= 0 && !mongoIds.Contains(o.Id)).ToList();
+    }
+
     public OrderDocument GetOrderById(string id)
     {
         return _orderCollection.Find(o => o.Id == id).FirstOrDefault();
@@ -44,6 +53,11 @@ public class OrderMongoService : IOrderMongoService
     public ICollection<OrderDetailsDocument> GetOrderDetailsByOrderId(int orderId)
     {
         return _orderDetailsCollection.Find(o => o.OrderID == orderId).ToList();
+    }
+
+    public ICollection<OrderDetailsDocument> GetOrderDetailsByOrderId(int orderId, ICollection<string> mongoIds)
+    {
+        return _orderDetailsCollection.Find(o => o.OrderID == orderId && !mongoIds.Contains(o.Id)).ToList();
     }
 
     public ProductDocument GetProductByProductId(int productId)

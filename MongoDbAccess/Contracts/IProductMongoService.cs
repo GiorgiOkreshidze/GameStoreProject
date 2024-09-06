@@ -1,10 +1,11 @@
 using MongoDbAccess.Models;
+using MongoDbAccess.MongoDTOs;
 
 namespace MongoDbAccess.Contracts;
 
 public interface IProductMongoService
 {
-    public ICollection<ProductDocument> GetAllMongo();
+    public ICollection<ProductDocument> GetAllMongo(ProductMongoFilter filter);
 
     public ProductDocument GetProductByIdMongo(string id);
 
@@ -21,4 +22,6 @@ public interface IProductMongoService
     public bool KeyNotExists(string key);
 
     public ProductDocument GetProductByGameKey(string key);
+
+    public ICollection<ProductDocument> GetAllWithoutFilterMongo();
 }
