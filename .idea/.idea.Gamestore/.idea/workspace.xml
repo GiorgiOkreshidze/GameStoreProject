@@ -9,212 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d727c6b2-f0f2-465b-b6c9-9cfa86d39e71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IAccessService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IRoleService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/HelperFunctions/HelperFunctions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/RoleProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/UserProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/PermissionModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/Role.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/Comment/AddCommentAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/Comment/DeleteCommentAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/Game/BuyGameAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/Game/DeleteGameAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/Game/UpdateGameAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/General/GeneralPermissionAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Responsibilities/AccessResponsibility/IAccessHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/AccessService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/RoleService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/UserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/CommentStrategies/ICommentStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/CommentStrategies/QuoteCommentStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/CommentStrategies/RegularCommentStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/CommentStrategies/ReplyCommentStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/CommentValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/GameValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/GenreValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/PlatformValidation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/PublisherValidation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Validations/Validator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/ValueObjects/CommentActionType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/OrderDtos/CountDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/AddRoleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/GetPermissionDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/GetRoleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/RoleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/RoleDtoWithId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RoleDtos/UpdateRoleDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/AccessDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/AddUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/GetUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/ModelDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/TokenDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/UpdateUserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/UserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDtos/UserDtoWithId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IRoleDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/IUserDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/PermissionEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/PermissionRole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/RoleEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/UserEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/UserRole.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/CommentDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/GameDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/GenreDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/OrderDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/PlatformDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/LoggingDecorators/PublisherDbServiceLoggingDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240817111521_Thirteenth Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240817111521_Thirteenth Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240819132147_Fourteenth Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240819132147_Fourteenth Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240819144009_Fifteenth Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240819144009_Fifteenth Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240823074901_Sixteenth Migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20240823074901_Sixteenth Migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Services/RoleDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Services/UserDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationContracts/IGameServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationContracts/IGenreServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationContracts/IPublisherServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationServices/CommentServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationServices/GameServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationServices/GenreServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationServices/OrderDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/StoreIntegrationServices/PublisherServiceDecorator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/ValueObjects/DatabaseObjectType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gamestore/Controllers/RoleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gamestore/Controllers/UserController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gamestore/Middlewares/Filter/ActionRight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MongoDbAccess/MongoDTOs/ProductMongoFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/dataSources/37d36753-9cc8-419e-81a0-7201395ef836.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/dataSources/37d36753-9cc8-419e-81a0-7201395ef836/storage_v2/_src_/database/GamestoreDb.7bTrhw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/dataSources/37d36753-9cc8-419e-81a0-7201395ef836/storage_v2/_src_/database/GamestoreDb.7bTrhw/schema/dbo.sYMBAA.meta" beforeDir="false" />
+    <list default="true" id="d727c6b2-f0f2-465b-b6c9-9cfa86d39e71" name="Changes" comment="Commit.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/config/applicationhost.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GameServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GameServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GenreServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/GenreServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PlatformServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PlatformServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PublisherServiceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic.Tests/ServiceTests/PublisherServiceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic.Tests/ValidationsTests/ValidationsHandlerTests.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/ICommentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/ICommentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IGenreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IGenreService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IOrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IPlatformService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IPlatformService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Contracts/IPublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/IPublisherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/CommentProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/CommentProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/GameProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Models/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/CommentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/CommentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GameService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/GenreService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/PlatformService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/PlatformService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/PublisherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Validations/IValidationsHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Validations/ValidationsHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/CommentDtos/CommentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/CommentDtos/CommentDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/DTOs.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/DTOs.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/GameDtos/GameFilterDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/GameDtos/GameFilterDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/DTOs.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/ICommentDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/ICommentDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IDatabasesSyncDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IDatabasesSyncDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IGenreDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IGenreDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IOrderDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IPlatformDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IPlatformDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IPublisherDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IPublisherDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/CommentEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/DatabaseIds.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/DatabaseIds.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/GameEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/OrderEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/OrderGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/OrderGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/CommentDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/CommentDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/DatabasesSyncDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/DatabasesSyncDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GameDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/GenreDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/GenreDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/PlatformDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/PlatformDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/PublisherDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/PublisherDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/DataAccess.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/CommentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/CommentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/GenreController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/OptionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/OptionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/OrderController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/PlatformController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/PlatformController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/PublisherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/ShipperController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/ShipperController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/TestController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Gamestore.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Gamestore.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/ICategoryMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/ICategoryMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IChangeLogMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IChangeLogMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IOrderMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IOrderMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/IProductMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/IProductMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Contracts/ISupplierMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Contracts/ISupplierMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/MongoDbAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/MongoDbAccess.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/MongoDbServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/MongoDbServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/CategoryMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/CategoryMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/ChangeLogMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/ChangeLogMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/OrderMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/OrderMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/ProductMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/ProductMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/Services/SupplierMongoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/Services/SupplierMongoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/MongoDbAccess.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/MongoDbAccess.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/MongoDbAccess.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/MongoDbAccess.csproj.nuget.g.props" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -340,8 +144,17 @@
       <workItem from="1725392020144" duration="43220000" />
       <workItem from="1725610503041" duration="5283000" />
       <workItem from="1725629181128" duration="287000" />
-      <workItem from="1725629489517" duration="741000" />
+      <workItem from="1725629489517" duration="1647000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit.">
+      <option name="closed" value="true" />
+      <created>1725630816914</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725630816914</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +164,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
