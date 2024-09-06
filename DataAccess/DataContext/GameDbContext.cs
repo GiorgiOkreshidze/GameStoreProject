@@ -205,7 +205,7 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             new PermissionEntity { Id = Guid.NewGuid(), Name = "DeletePublisher" },
 
             // Admin Additional Permissions
-            new PermissionEntity { Id = Guid.NewGuid(), Name = "CanSeeDeletedGames" },
+            new PermissionEntity { Id = Guid.NewGuid(), Name = "SeeDeletedGames" },
             new PermissionEntity { Id = Guid.NewGuid(), Name = "GetAllRoles" },
             new PermissionEntity { Id = Guid.NewGuid(), Name = "GetRoleById" },
             new PermissionEntity { Id = Guid.NewGuid(), Name = "DeleteRoleById" },
@@ -219,6 +219,8 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             new PermissionEntity { Id = Guid.NewGuid(), Name = "AddUser" },
             new PermissionEntity { Id = Guid.NewGuid(), Name = "UpdateUser" },
             new PermissionEntity { Id = Guid.NewGuid(), Name = "GetRolesOfUser" },
+            new PermissionEntity { Id = Guid.NewGuid(), Name = "ManageDeletedGames" },
+            new PermissionEntity { Id = Guid.NewGuid(), Name = "ManageAllComments" },
         };
 
         // Seed roles
@@ -350,6 +352,8 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             "AddUser",
             "UpdateUser",
             "GetRolesOfUser",
+            "ManageDeletedGames",
+            "ManageAllComments"
         ]).ToList();
         foreach (var permission in permissions.Where(p => adminPermissions.Contains(p.Name)))
         {
