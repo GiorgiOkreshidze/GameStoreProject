@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68e94ebc89a4f38dc4b575339cd65c394740e665")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8121c5a6f5eafa7565b9b345c88cc21a29d6218b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
