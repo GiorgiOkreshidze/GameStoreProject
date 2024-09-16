@@ -1,12 +1,12 @@
-using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using BusinessLogic.HelperFunctions;
 
 namespace BusinessLogic.Responsibilities.AccessResponsibility.General;
 
 public class GeneralPermissionAccessHandler : IAccessHandler
 {
-    public bool HasAccess(string actionType, string objectIdentifier, JwtSecurityToken token)
+    public bool HasAccess(string actionType, string objectIdentifier, IEnumerable<Claim> claims)
     {
-        return token.HasPermission(actionType);
+        return claims.HasPermission(actionType);
     }
 }

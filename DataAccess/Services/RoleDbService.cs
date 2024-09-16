@@ -2,10 +2,11 @@ using DataAccess.Contracts;
 using DataAccess.DataContext;
 using DataAccess.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace DataAccess.Services;
 
-public class RoleDbService(GameDbContext gameDbContext) : IRoleDbService
+public class RoleDbService(GameDbContext gameDbContext, IMemoryCache cache) : IRoleDbService
 {
     public ICollection<RoleEntity> GetAllRolesDb()
     {
@@ -71,6 +72,17 @@ public class RoleDbService(GameDbContext gameDbContext) : IRoleDbService
         gameDbContext.AttachRange(roleEntity.Permissions);
         gameDbContext.RoleEntities.Update(roleEntity);
         gameDbContext.SaveChanges();
+    }
+
+    public ICollection<PermissionEntity> GetGuestPermissionEntities()
+    {
+        if (!cache.TryGetValue("GuestPermissions", out ICollection<PermissionEntity> guestPermissions))
+        {
+            guestPermissions = [.. gameDbContext.PermissionEntities.AsNoTracking().Where(p => p.AllowedOnGuest)];
+            cache.Set("GuestPermissions", guestPermissions, TimeSpan.FromHours(1));
+        }
+
+        return guestPermissions;
     }
 
     private void ClearPermissionsFromRole(Guid id)

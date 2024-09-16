@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
       <PackageReference Include="itext7" Version="8.0.4" />
       <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.4" />
       <PackageReference Include="X.PagedList" Version="10.0.3" />

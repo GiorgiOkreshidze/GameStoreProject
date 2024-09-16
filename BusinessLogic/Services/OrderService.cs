@@ -49,6 +49,16 @@ public class OrderService(IOrderDbService orderDbService,
         return orderDtos;
     }
 
+    public ICollection<GetOrderDto> GetOrders()
+    {
+        var orderEntities = orderDbService.GetAllOrdersDb();
+
+        var orders = orderMapper.Map<ICollection<OrderEntity>, ICollection<Order>>(orderEntities);
+        var orderDtos = orderMapper.Map<ICollection<Order>, ICollection<GetOrderDto>>(orders);
+
+        return orderDtos;
+    }
+
     public GetOrderDto GetOrderById(Guid id)
     {
         OrderEntity orderEntity = orderDbService.GetOrderByIdDb(id);

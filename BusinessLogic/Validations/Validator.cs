@@ -1,26 +1,12 @@
-using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.Tokens;
 
 namespace BusinessLogic.Validations;
 
 #pragma warning disable SA1401
 #pragma warning disable CA1051
 
-public class Validator
+public class Validator(IHttpContextAccessor httpContextAccessor)
 {
-    // ReSharper disable once InconsistentNaming
-    protected readonly JwtSecurityToken _token;
-
-    public Validator(IHttpContextAccessor httpContextAccessor)
-    {
-        var token = httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
-        if (token.IsNullOrEmpty())
-        {
-            return;
-        }
-
-        token = token.Replace("bearer ", string.Empty);
-        _token = new JwtSecurityTokenHandler().ReadJwtToken(token);
-    }
+    protected readonly IEnumerable<Claim> _claims = httpContextAccessor.HttpContext.User.Claims;
 }

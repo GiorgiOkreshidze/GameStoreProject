@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDbAccess.Contracts;
 using MongoDbAccess.Models;
@@ -35,13 +36,41 @@ public class CategoryMongoService : ICategoryMongoService
 
     public void CreateCategoryMongo(CategoryDocument category)
     {
-        _categoriesCollection.InsertOne(category);
+        if (!ObjectId.TryParse(category.Id, out _))
+        {
+            category.Id = ObjectId.GenerateNewId().ToString();
+        }
+
+        var insertCommand = new BsonDocument
+        {
+            { "insert", _categoriesCollection.CollectionNamespace.CollectionName },
+            { "documents", new BsonArray { category.ToBsonDocument() } },
+        };
+
+        _categoriesCollection.Database.RunCommand<BsonDocument>(insertCommand);
     }
 
     public void UpdateCategoryMongo(CategoryDocument category)
     {
-        var result = _categoriesCollection.ReplaceOne(cat => cat.Id == category.Id, category);
-        if (result.ModifiedCount == 0)
+        var updateCommand = new BsonDocument
+        {
+            { "update", _categoriesCollection.CollectionNamespace.CollectionName },
+            {
+                "updates", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(category.Id) } } },
+                        { "u", category.ToBsonDocument() },
+                        { "upsert", false },
+                    },
+                }
+            },
+        };
+
+        var updateResult = _categoriesCollection.Database.RunCommand<BsonDocument>(updateCommand);
+        var modifiedCount = updateResult["nModified"].AsInt32;
+        if (modifiedCount == 0)
         {
             throw new InvalidOperationException("Failed to update the category.");
         }
@@ -49,8 +78,24 @@ public class CategoryMongoService : ICategoryMongoService
 
     public void DeleteCategoryMongo(string id)
     {
-        var result = _categoriesCollection.DeleteOne(cat => cat.Id == id);
-        if (result.DeletedCount == 0)
+        var deleteCommand = new BsonDocument
+        {
+            { "delete", _categoriesCollection.CollectionNamespace.CollectionName },
+            {
+                "deletes", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(id) } } },
+                        { "limit", 1 },
+                    },
+                }
+            },
+        };
+
+        var deleteResult = _categoriesCollection.Database.RunCommand<BsonDocument>(deleteCommand);
+        var deletedCount = deleteResult["n"].AsInt32;
+        if (deletedCount == 0)
         {
             throw new InvalidOperationException("Failed to delete the category.");
         }

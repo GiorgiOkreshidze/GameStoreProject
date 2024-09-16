@@ -1,5 +1,5 @@
 using System.Globalization;
-using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 using AutoMapper;
 using BusinessLogic.Contracts;
@@ -33,8 +33,10 @@ public class GameService(IGameDbService gameDbService,
 
         var query = gameEntities.AsEnumerable();
 
-        var token = GetToken();
-        var canSeeDeletedGames = CanSeeDeletedGames(token);
+        var claims = accessor.HttpContext.User.Claims;
+        var canSeeDeletedGames = CanSeeDeletedGames(claims);
+        /*var token = GetToken();
+        var canSeeDeletedGames = CanSeeDeletedGames(token);*/
 
         if (!canSeeDeletedGames)
         {
@@ -250,8 +252,11 @@ public class GameService(IGameDbService gameDbService,
 
         var game = gameMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
 
+        var claims = accessor.HttpContext.User.Claims;
+        var canSeeDeletedGames = CanSeeDeletedGames(claims);
+        /*
         var token = GetToken();
-        var canSeeDeletedGames = CanSeeDeletedGames(token);
+        var canSeeDeletedGames = CanSeeDeletedGames(token);*/
 
         if (!canSeeDeletedGames)
         {
@@ -269,8 +274,11 @@ public class GameService(IGameDbService gameDbService,
 
         var game = gameMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
 
+        var claims = accessor.HttpContext.User.Claims;
+        var canSeeDeletedGames = CanSeeDeletedGames(claims);
+        /*
         var token = GetToken();
-        var canSeeDeletedGames = CanSeeDeletedGames(token);
+        var canSeeDeletedGames = CanSeeDeletedGames(token);*/
 
         if (!canSeeDeletedGames)
         {
@@ -288,8 +296,11 @@ public class GameService(IGameDbService gameDbService,
 
         var games = gameMapper.Map<ICollection<GameEntity>, ICollection<Game>>(gameEntities);
 
+        var claims = accessor.HttpContext.User.Claims;
+        var canSeeDeletedGames = CanSeeDeletedGames(claims);
+        /*
         var token = GetToken();
-        var canSeeDeletedGames = CanSeeDeletedGames(token);
+        var canSeeDeletedGames = CanSeeDeletedGames(token);*/
 
         if (!canSeeDeletedGames)
         {
@@ -313,7 +324,7 @@ public class GameService(IGameDbService gameDbService,
         return uniqueKey;
     }
 
-    private string GetToken()
+    /*private string GetToken()
     {
         var token = accessor.HttpContext.Request.Headers["Authorization"].ToString();
         return token.Replace("bearer ", string.Empty);
@@ -327,6 +338,14 @@ public class GameService(IGameDbService gameDbService,
         var permission = jwtToken.Claims
             .Where(claim => claim.Type == "Permission")
             .Any(claim => claim.Value == "SeeDeletedGames");
+
+        return permission;
+    }*/
+
+    private static bool CanSeeDeletedGames(IEnumerable<Claim> claims)
+    {
+        var permission = claims.Where(claim => claim.Type == "Permission")
+            .Any(claim => claim.Value == "CanSeeDeletedGames");
 
         return permission;
     }

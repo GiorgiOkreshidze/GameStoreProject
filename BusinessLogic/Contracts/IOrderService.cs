@@ -10,6 +10,8 @@ public interface IOrderService
 {
     public ICollection<GetOrderDto> GetAllOrders(IntervalDto intervalDto);
 
+    public ICollection<GetOrderDto> GetOrders();
+
     public GetOrderDto GetOrderById(Guid id);
 
     public ICollection<GetOrderDetailsDto> GetAllOrdersDetails(Guid id);

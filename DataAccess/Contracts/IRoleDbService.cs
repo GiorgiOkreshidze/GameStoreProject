@@ -17,4 +17,6 @@ public interface IRoleDbService
     public void AddRoleDb(RoleEntity roleEntity, ICollection<string> permissions);
 
     public void UpdateRoleDb(RoleEntity roleEntity, ICollection<string> permissions);
+
+    public ICollection<PermissionEntity> GetGuestPermissionEntities();
 }

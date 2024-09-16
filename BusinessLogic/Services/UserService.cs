@@ -34,19 +34,13 @@ public class UserService(IUserDbService userDbService, IMapper userMapper) : IUs
 
     public bool DeleteUserById(Guid id)
     {
-        try
-        {
-            return userDbService.DeleteUserByIdDb(id);
-        }
-        catch (Exception ex)
-        {
-            throw new ApplicationException("An error occurred while deleting the user.", ex);
-        }
+        return userDbService.DeleteUserByIdDb(id);
     }
 
     public bool AddUser(AddUserDto userDto)
     {
         var user = userMapper.Map<AddUserDto, User>(userDto);
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
         var userEntity = userMapper.Map<User, UserEntity>(user);
 
         userEntity.Id = Guid.NewGuid();
@@ -67,6 +61,7 @@ public class UserService(IUserDbService userDbService, IMapper userMapper) : IUs
     public bool UpdateUser(UpdateUserDto userDto)
     {
         var user = userMapper.Map<UpdateUserDto, User>(userDto);
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
         var userEntity = userMapper.Map<User, UserEntity>(user);
 
         userEntity.Roles = [];
@@ -122,5 +117,11 @@ public class UserService(IUserDbService userDbService, IMapper userMapper) : IUs
         var permissionDtos = userMapper.Map<ICollection<PermissionModel>, ICollection<GetPermissionDto>>(permissions);
 
         return permissionDtos;
+    }
+
+    public bool CheckPassword(LoginDto dto)
+    {
+        var user = userDbService.GetUserByNameDb(dto.Model.Login);
+        return BCrypt.Net.BCrypt.Verify(dto.Model.Password, user.PasswordHash);
     }
 }

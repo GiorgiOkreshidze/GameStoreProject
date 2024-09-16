@@ -29,7 +29,7 @@ public class CommentValidator(IHttpContextAccessor httpContextAccessor,
             throw new ArgumentException("Comment with given ID does not exist");
         }
 
-        if (!(_token.GetUserName() == comment.Name || _token.HasPermission("ManageAllComments")))
+        if (!(_claims.GetUserName() == comment.Name || _claims.HasPermission("ManageAllComments")))
         {
             throw new UnauthorizedAccessException("You can't delete other user's comments");
         }
@@ -42,7 +42,7 @@ public class CommentValidator(IHttpContextAccessor httpContextAccessor,
 
     public void CanAddComment(string key)
     {
-        if (commentDbService.IsUserBanned(_token.GetUserName()))
+        if (commentDbService.IsUserBanned(_claims.GetUserName()))
         {
             throw new UnauthorizedAccessException("You are banned!");
         }

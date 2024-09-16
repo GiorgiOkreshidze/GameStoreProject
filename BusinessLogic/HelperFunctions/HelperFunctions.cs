@@ -1,19 +1,17 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace BusinessLogic.HelperFunctions;
 
 public static class HelperFunctions
 {
-    public static bool HasPermission(this JwtSecurityToken token, string permission)
+    public static bool HasPermission(this IEnumerable<Claim> claims, string permission)
     {
-        return token.Claims
-            .Any(claim => claim.Type == "Permission" && claim.Value == permission);
+        return claims.Any(claim => claim.Type == "Permission" && claim.Value == permission);
     }
 
-    public static string GetUserName(this JwtSecurityToken token)
+    public static string GetUserName(this IEnumerable<Claim> claims)
     {
-        var nameClaim = token.Claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Name);
+        var nameClaim = claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Name);
         return nameClaim?.Value;
     }
 }

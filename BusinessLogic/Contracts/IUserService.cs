@@ -26,4 +26,6 @@ public interface IUserService
     public ICollection<GetRoleDto> GetRolesOfUserByName(string name);
 
     public ICollection<GetPermissionDto> GetPermissionsOfUserByName(string name);
+
+    public bool CheckPassword(LoginDto dto);
 }

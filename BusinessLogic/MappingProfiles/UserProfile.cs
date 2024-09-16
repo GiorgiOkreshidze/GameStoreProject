@@ -24,9 +24,15 @@ public class UserProfile : Profile
         CreateMap<User, UserDto>().ReverseMap();
         CreateMap<User, UserDtoWithId>().ReverseMap();
         CreateMap<User, AddUserDto>()
-            .ReverseMap().IncludeMembers(src => src.User);
+            .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.PasswordHash))
+            .ReverseMap()
+            .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(src => src.Password))
+            .IncludeMembers(src => src.User);
         CreateMap<User, UpdateUserDto>()
-            .ReverseMap().IncludeMembers(src => src.User);
+            .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.PasswordHash))
+            .ReverseMap()
+            .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(src => src.Password))
+            .IncludeMembers(src => src.User);
         CreateMap<Role, GetRoleDto>().ReverseMap();
     }
 }

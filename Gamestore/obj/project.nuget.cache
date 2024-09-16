@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZzK/Cnq45mutj9SV2tlPuus/Ddx2mXoTdZvL81kxNeeeZkhG+M2DvG/9dcvoMFxOYi8NKUJ67VM9e6wisy8vw==",
+  "dgSpecHash": "YGEiBC4BEm5cghi3Zg0YmH9QUjUKSLh6RjH/imZlf5zZK+c7+feiCkur5vy67h1o3m5i2vB8WaJ5kbFiL1uFJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

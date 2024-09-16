@@ -24,6 +24,11 @@ public class UserController(IUserService userService, IAccessService accessServi
             return BadRequest("User name not exists");
         }
 
+        if (!userService.CheckPassword(loginDto))
+        {
+            return BadRequest("User password is incorrect");
+        }
+
         var permissions = userService.GetPermissionsOfUserByName(loginDto.Model.Login);
 
         var roles = userService.GetRolesOfUserByName(loginDto.Model.Login);
@@ -58,9 +63,20 @@ public class UserController(IUserService userService, IAccessService accessServi
     [Authorize(Policy = "RequireDeleteUserByIdPermission")]
     public IActionResult DeleteUserById(Guid id)
     {
-        var result = userService.DeleteUserById(id);
-
-        return !result ? NotFound(new { Message = "User not found" }) : Ok(new { Message = "User deleted successfully" });
+        try
+        {
+            var result = userService.DeleteUserById(id);
+            return !result ? NotFound(new { Message = "User not found" }) : Ok(new { Message = "User deleted successfully" });
+        }
+        catch (Exception)
+        {
+            return new ContentResult
+            {
+                StatusCode = StatusCodes.Status403Forbidden,
+                Content = "You do not have permission to Admin.",
+                ContentType = "text/plain",
+            };
+        }
     }
 
     [HttpPost]

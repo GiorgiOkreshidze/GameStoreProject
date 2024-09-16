@@ -57,7 +57,7 @@ public class GameValidator(IHttpContextAccessor httpContextAccessor,
             throw new InvalidDataException("GameDoesNotExist");
         }
 
-        if (game.Deleted || _token.HasPermission("ManageDeletedGames"))
+        if (game.Deleted || _claims.HasPermission("ManageDeletedGames"))
         {
             throw new InvalidOperationException("Game is already deleted");
         }

@@ -15,7 +15,7 @@ public class OrderDecorator(
 {
     public ICollection<OrderEntity> GetAllOrdersDb()
     {
-        throw new NotImplementedException();
+        return orderDbService.GetAllOrdersDb();
     }
 
     public OrderEntity GetOrderByIdDb(Guid id)

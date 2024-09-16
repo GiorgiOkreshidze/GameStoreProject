@@ -112,13 +112,42 @@ public class ProductMongoService : IProductMongoService
     public void CreateProduct(ProductDocument productDocument)
     {
         productDocument.Views = 0;
-        _productsCollection.InsertOne(productDocument);
+
+        if (!ObjectId.TryParse(productDocument.Id, out _))
+        {
+            productDocument.Id = ObjectId.GenerateNewId().ToString();
+        }
+
+        var insertCommand = new BsonDocument
+        {
+            { "insert", _productsCollection.CollectionNamespace.CollectionName },
+            { "documents", new BsonArray { productDocument.ToBsonDocument() } },
+        };
+
+        _productsCollection.Database.RunCommand<BsonDocument>(insertCommand);
     }
 
     public void UpdateProduct(ProductDocument productDocument)
     {
-        var updateResult = _productsCollection.ReplaceOne(p => p.Id == productDocument.Id, productDocument);
-        if (updateResult.ModifiedCount == 0)
+        var updateCommand = new BsonDocument
+        {
+            { "update", _productsCollection.CollectionNamespace.CollectionName },
+            {
+                "updates", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(productDocument.Id) } } },
+                        { "u", productDocument.ToBsonDocument() },
+                        { "upsert", false },
+                    },
+                }
+            },
+        };
+
+        var updateResult = _productsCollection.Database.RunCommand<BsonDocument>(updateCommand);
+        var modifiedCount = updateResult["nModified"].AsInt32;
+        if (modifiedCount == 0)
         {
             throw new InvalidOperationException("Failed to update product");
         }
@@ -126,8 +155,24 @@ public class ProductMongoService : IProductMongoService
 
     public void DeleteProduct(string id)
     {
-        var deleteResult = _productsCollection.DeleteOne(p => p.Id == id);
-        if (deleteResult.DeletedCount == 0)
+        var deleteCommand = new BsonDocument
+        {
+            { "delete", _productsCollection.CollectionNamespace.CollectionName },
+            {
+                "deletes", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(id) } } },
+                        { "limit", 1 },
+                    },
+                }
+            },
+        };
+
+        var deleteResult = _productsCollection.Database.RunCommand<BsonDocument>(deleteCommand);
+        var deletedCount = deleteResult["n"].AsInt32;
+        if (deletedCount == 0)
         {
             throw new InvalidOperationException("Failed to delete product");
         }

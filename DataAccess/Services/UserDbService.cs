@@ -22,6 +22,11 @@ public class UserDbService(GameDbContext gameDbContext) : IUserDbService
     {
         var userEntity = gameDbContext.UserEntities.FirstOrDefault(user => user.Id == id);
 
+        if (userEntity.Name == "Admin")
+        {
+            throw new Exception();
+        }
+
         if (userEntity is null)
         {
             return false;

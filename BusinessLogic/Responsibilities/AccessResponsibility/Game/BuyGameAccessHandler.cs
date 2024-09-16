@@ -1,11 +1,11 @@
-using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using BusinessLogic.Validations;
 
 namespace BusinessLogic.Responsibilities.AccessResponsibility.Game;
 
 public class BuyGameAccessHandler(GameValidator gameValidator) : IAccessHandler
 {
-    public bool HasAccess(string actionType, string objectIdentifier, JwtSecurityToken token)
+    public bool HasAccess(string actionType, string objectIdentifier, IEnumerable<Claim> claims)
     {
         if (actionType == "Buy")
         {

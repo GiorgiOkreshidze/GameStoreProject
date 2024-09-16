@@ -19,6 +19,13 @@ public class OrderController(IOrderService orderService) : Controller
         return Ok(orderService.GetAllOrders(intervalDto));
     }
 
+    [HttpGet]
+    [Authorize(Policy = "RequireGetOrdersPermission")]
+    public IActionResult GetOrders()
+    {
+        return Ok(orderService.GetOrders());
+    }
+
     [HttpGet("{id}")]
     [Authorize(Policy = "RequireGetOrderByIdPermission")]
     public IActionResult GetOrderById(Guid id)

@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDbAccess.Contracts;
 using MongoDbAccess.Models;
@@ -30,7 +31,18 @@ public class SupplierMongoService : ISupplierMongoService
 
     public void CreateSupplierMongo(SupplierDocument supplier)
     {
-        _suppliersCollection.InsertOne(supplier);
+        if (!ObjectId.TryParse(supplier.Id, out _))
+        {
+            supplier.Id = ObjectId.GenerateNewId().ToString();
+        }
+
+        var insertCommand = new BsonDocument
+        {
+            { "insert", _suppliersCollection.CollectionNamespace.CollectionName },
+            { "documents", new BsonArray { supplier.ToBsonDocument() } },
+        };
+
+        _suppliersCollection.Database.RunCommand<BsonDocument>(insertCommand);
     }
 
     public ICollection<SupplierDocument> GetAllSuppliersMongo()
@@ -51,19 +63,52 @@ public class SupplierMongoService : ISupplierMongoService
 
     public void UpdateSupplierMongo(SupplierDocument updatedSupplier)
     {
-        var result = _suppliersCollection.ReplaceOne(s => s.Id == updatedSupplier.Id, updatedSupplier);
-        if (result.ModifiedCount == 0)
+        var updateCommand = new BsonDocument
         {
-            throw new InvalidOperationException("Failed to update product");
+            { "update", _suppliersCollection.CollectionNamespace.CollectionName },
+            {
+                "updates", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(updatedSupplier.Id) } } },
+                        { "u", updatedSupplier.ToBsonDocument() },
+                        { "upsert", false },
+                    },
+                }
+            },
+        };
+
+        var updateResult = _suppliersCollection.Database.RunCommand<BsonDocument>(updateCommand);
+        var modifiedCount = updateResult["nModified"].AsInt32;
+        if (modifiedCount == 0)
+        {
+            throw new InvalidOperationException("Failed to update supplier");
         }
     }
 
     public void DeleteSupplierMongo(string id)
     {
-        var result = _suppliersCollection.DeleteOne(s => s.Id == id);
-        if (result.DeletedCount == 0)
+        var deleteCommand = new BsonDocument
         {
-            throw new InvalidOperationException("Failed to delete product");
+            { "delete", _suppliersCollection.CollectionNamespace.CollectionName },
+            {
+                "deletes", new BsonArray
+                {
+                    new BsonDocument
+                    {
+                        { "q", new BsonDocument { { "_id", new ObjectId(id) } } },
+                        { "limit", 1 },
+                    },
+                }
+            },
+        };
+
+        var deleteResult = _suppliersCollection.Database.RunCommand<BsonDocument>(deleteCommand);
+        var deletedCount = deleteResult["n"].AsInt32;
+        if (deletedCount == 0)
+        {
+            throw new InvalidOperationException("Failed to delete supplier");
         }
     }
 

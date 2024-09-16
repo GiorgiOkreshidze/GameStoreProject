@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xp0ak6Z8izqEifzhssutXPt2G1JWrhHBvV/0HTowwR7APFlDkzYgemGn2iEnGAKdVUkGuZ7di/DHqvcdph1QcA==",
+  "dgSpecHash": "3BkUaE9mRj3AMQVk4Bhp8EAQXaCec/hLqdF3Gcu4wsoHlh0qrvXoe4+ZlN9RpYsaNMgnrLwDcIHpw57yVZvswA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

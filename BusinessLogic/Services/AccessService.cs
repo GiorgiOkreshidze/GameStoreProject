@@ -1,4 +1,3 @@
-using System.IdentityModel.Tokens.Jwt;
 using BusinessLogic.Contracts;
 using BusinessLogic.Responsibilities.AccessResponsibility;
 using DTOs.UserDtos;
@@ -11,13 +10,13 @@ public class AccessService(IEnumerable<IAccessHandler> accessHandlers,
 {
     public bool HasAccess(AccessDto accessDto)
     {
-        var tokenString = httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
+        var claims = httpContextAccessor.HttpContext.User.Claims;
+        /*var tokenString = httpContextAccessor.HttpContext.Request.Headers["Authorization"].ToString();
         tokenString = tokenString.Replace("bearer ", string.Empty);
-        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);
-
+        var token = new JwtSecurityTokenHandler().ReadJwtToken(tokenString);*/
         foreach (var accessHandler in accessHandlers)
         {
-            if (!accessHandler.HasAccess(accessDto.TargetPage, accessDto.TargetId, token))
+            if (!accessHandler.HasAccess(accessDto.TargetPage, accessDto.TargetId, claims))
             {
                 return false;
             }

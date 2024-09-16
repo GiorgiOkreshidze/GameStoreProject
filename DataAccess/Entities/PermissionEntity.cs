@@ -12,4 +12,6 @@ public class PermissionEntity
     public string Name { get; set; }
 
     public ICollection<RoleEntity> Roles { get; set; }
+
+    public bool AllowedOnGuest { get; set; }
 }

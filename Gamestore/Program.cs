@@ -121,6 +121,7 @@ builder.Services.AddAuthorization(options =>
         { "RequireGetAllGamesPermission", ["GetAllGames"] },
         { "RequireGetBanDurationsPermission", ["GetBanDurations"] },
         { "RequireBanUserPermission", ["BanUser"] },
+        { "RequireGetOrdersPermission", ["GetOrders"] },
     };
 
     foreach (var policy in policies)
@@ -131,6 +132,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddScoped<GamesCountMiddleware>();
+builder.Services.AddScoped<UnauthenticatedUserMiddleware>();
 
 builder.Services.AddMemoryCache();
 
@@ -178,10 +180,10 @@ app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseMiddleware<ExceptionHandler>();
 
 app.UseAuthentication();
+/*app.UnauthenticatedUserMiddleware();*/
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.UseGamesCountMiddleware();
 
 using (var scope = app.Services.CreateScope())
