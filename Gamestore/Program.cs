@@ -180,7 +180,7 @@ app.UseMiddleware<RequestLoggingMiddleware>();
 app.UseMiddleware<ExceptionHandler>();
 
 app.UseAuthentication();
-/*app.UnauthenticatedUserMiddleware();*/
+app.UnauthenticatedUserMiddleware();
 app.UseAuthorization();
 
 app.MapControllers();
