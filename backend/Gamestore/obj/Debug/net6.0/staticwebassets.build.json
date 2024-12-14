@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "VGl4PGjftt8c9bfbKjbQj4omUyuC3tpY1Lnn6fBXL7o=",
+  "Source": "Gamestore",
+  "BasePath": "_content/Gamestore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Gamestore\\wwwroot",
+      "Source": "Gamestore",
+      "ContentRoot": "D:\\All Projects in .NET\\GameStore\\backend\\Gamestore\\wwwroot\\",
+      "BasePath": "_content/Gamestore",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

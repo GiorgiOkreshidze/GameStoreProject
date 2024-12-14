@@ -1,0 +1,43 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\refint\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\ref\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.csproj.AssemblyReference.cache
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.csproj.AssemblyReference.cache
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfoInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfo.cs
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.csproj.CoreCompileInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\refint\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.xml
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\DTOs.pdb
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.deps.json
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\bin\Debug\net6.0\DTOs.xml
+C:\Users\Licen\RiderProjects\Gamestore\DTOs\obj\Debug\net6.0\ref\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\DTOs\bin\Debug\net6.0\DTOs.deps.json
+D:\All Projects in .NET\GameStore\backend\DTOs\bin\Debug\net6.0\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\DTOs\bin\Debug\net6.0\DTOs.pdb
+D:\All Projects in .NET\GameStore\backend\DTOs\bin\Debug\net6.0\DTOs.xml
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.csproj.AssemblyReference.cache
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.GeneratedMSBuildEditorConfig.editorconfig
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfoInputs.cache
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.AssemblyInfo.cs
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.csproj.CoreCompileInputs.cache
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.sourcelink.json
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\refint\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.xml
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\DTOs.pdb
+D:\All Projects in .NET\GameStore\backend\DTOs\obj\Debug\net6.0\ref\DTOs.dll

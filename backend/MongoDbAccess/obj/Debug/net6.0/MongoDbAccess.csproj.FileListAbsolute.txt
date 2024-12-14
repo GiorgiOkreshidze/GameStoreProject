@@ -1,0 +1,55 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.AssemblyReference.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\refint\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\ref\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbA.22EE98DC.Up2Date
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\refint\MongoDbAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.AssemblyReference.cache
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfoInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfo.cs
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.CoreCompileInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.deps.json
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\DTOs.xml
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.CopyComplete
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\ref\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.deps.json
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.dll
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.pdb
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\DTOs.pdb
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\bin\Debug\net6.0\DTOs.xml
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.AssemblyReference.cache
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfoInputs.cache
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.AssemblyInfo.cs
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.csproj.CoreCompileInputs.cache
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.sourcelink.json
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbA.22EE98DC.Up2Date
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.dll
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\refint\MongoDbAccess.dll
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\MongoDbAccess.pdb
+D:\All Projects in .NET\GameStore\backend\MongoDbAccess\obj\Debug\net6.0\ref\MongoDbAccess.dll

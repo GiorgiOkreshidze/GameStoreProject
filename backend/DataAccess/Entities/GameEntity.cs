@@ -26,6 +26,18 @@ public class GameEntity
     [Required]
     public int Discount { get; set; }
 
+    public string QuantityPerUnit { get; set; } = string.Empty;
+
+    public int UnitsOnOrder { get; set; }
+
+    public int ReorderLevel { get; set; }
+
+    public int Views { get; set; }
+
+    public DateTime PublishDate { get; set; } = DateTime.Now;
+
+    public bool Deleted { get; set; }
+
     [Required]
     public Guid? PublisherId { get; set; }
 
@@ -38,16 +50,4 @@ public class GameEntity
     public ICollection<OrderEntity> OrderEntities { get; set; }
 
     public ICollection<CommentEntity> CommentEntities { get; set; }
-
-    public string QuantityPerUnit { get; set; } = string.Empty;
-
-    public int UnitsOnOrder { get; set; }
-
-    public int ReorderLevel { get; set; }
-
-    public int Views { get; set; }
-
-    public DateTime PublishDate { get; set; } = DateTime.Now;
-
-    public bool Deleted { get; set; }
 }

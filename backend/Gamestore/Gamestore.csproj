@@ -27,7 +27,41 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="logs\" />
       <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="logs\exceptions-20240916.txt" />
+      <None Remove="logs\exceptions-20240915.txt" />
+      <None Remove="logs\exceptions-20240904.txt" />
+      <None Remove="logs\exceptions-20240901.txt" />
+      <None Remove="logs\exceptions-20240823.txt" />
+      <None Remove="logs\exceptions-20240821.txt" />
+      <None Remove="logs\exceptions-20240820.txt" />
+      <None Remove="logs\exceptions-20240819.txt" />
+      <None Remove="logs\exceptions-20240817.txt" />
+      <None Remove="logs\exceptions-20240811.txt" />
+      <None Remove="logs\exceptions-20240731.txt" />
+      <None Remove="logs\exceptions-20240730.txt" />
+      <None Remove="logs\exceptions-20240726.txt" />
+      <None Remove="logs\exceptions-20240724.txt" />
+      <None Remove="logs\log-20241214.txt" />
+      <None Remove="logs\log-20240913.txt" />
+      <None Remove="logs\log-20240906.txt" />
+      <None Remove="logs\log-20240905.txt" />
+      <None Remove="logs\log-20240903.txt" />
+      <None Remove="logs\log-20240902.txt" />
+      <None Remove="logs\log-20240901.txt" />
+      <None Remove="logs\log-20240831.txt" />
+      <None Remove="logs\log-20240830.txt" />
+      <None Remove="logs\log-20240823.txt" />
+      <None Remove="logs\log-20240820.txt" />
+      <None Remove="logs\log-20240817.txt" />
+      <None Remove="logs\log-20240814.txt" />
+      <None Remove="logs\log-20240812.txt" />
+      <None Remove="logs\log-20240807.txt" />
+      <None Remove="logs\log-20240806.txt" />
     </ItemGroup>
 
 </Project>

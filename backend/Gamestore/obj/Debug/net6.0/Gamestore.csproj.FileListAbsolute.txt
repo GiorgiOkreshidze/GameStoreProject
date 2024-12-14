@@ -1,0 +1,491 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\appsettings.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.staticwebassets.runtime.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.exe
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.runtimeconfig.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.AssemblyReference.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.Gamestore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.build.Gamestore.props
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Gamestore.props
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Gamestore.props
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\scopedcss\bundle\Gamestore.styles.css
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.Up2Date
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\refint\Gamestore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.genruntimeconfig.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\ref\Gamestore.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.forms.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.io.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.layout.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.pdfua.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.sign.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.svg.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.commons.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DnsClient.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Snappier.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Scrutor.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\refint\Gamestore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\appsettings.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.staticwebassets.runtime.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.exe
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.deps.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.runtimeconfig.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AWSSDK.Core.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DnsClient.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.forms.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.io.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.layout.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.pdfua.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.sign.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.svg.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\itext.commons.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Bson.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Driver.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Scrutor.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\SharpCompress.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Snappier.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\ZstdSharp.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BusinessLogic.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DataAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\DTOs.xml
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.AssemblyReference.cache
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfoInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfo.cs
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.CoreCompileInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.Gamestore.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.build.Gamestore.props
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Gamestore.props
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Gamestore.props
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\scopedcss\bundle\Gamestore.styles.css
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.csproj.CopyComplete
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\Gamestore.genruntimeconfig.cache
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\ref\Gamestore.dll
+C:\Users\Licen\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Scutor.AspnetCore.Wireup.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Scutor.AspnetCore.Wireup.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Gamestore.staticwebassets.endpoints.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\bin\Debug\net6.0\Bogus.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.Gamestore.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\appsettings.Development.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\appsettings.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.staticwebassets.endpoints.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.staticwebassets.runtime.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.exe
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.deps.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.runtimeconfig.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Gamestore.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\AutoMapper.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\AWSSDK.Core.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\AWSSDK.SecurityToken.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Azure.Core.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Azure.Identity.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\BCrypt.Net-Next.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Bogus.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DnsClient.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Humanizer.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.barcodes.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.forms.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.io.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.kernel.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.layout.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.pdfa.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.pdfua.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.sign.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.styledxmlparser.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.svg.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.bouncy-castle-adapter.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\itext.commons.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDB.Bson.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDB.Driver.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDB.Driver.Core.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDB.Libmongocrypt.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Mono.TextTemplating.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Scrutor.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Scutor.AspnetCore.Wireup.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\SharpCompress.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Snappier.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.CodeDom.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Memory.Data.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Text.Json.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\X.PagedList.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\ZstdSharp.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\BusinessLogic.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DataAccess.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDbAccess.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\BusinessLogic.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\BusinessLogic.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDbAccess.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DataAccess.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DataAccess.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DTOs.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\bin\Debug\net6.0\DTOs.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.csproj.AssemblyReference.cache
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.GeneratedMSBuildEditorConfig.editorconfig
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfoInputs.cache
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.AssemblyInfo.cs
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.csproj.CoreCompileInputs.cache
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cs
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.MvcApplicationPartsAssemblyInfo.cache
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.sourcelink.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\scopedcss\bundle\Gamestore.styles.css
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets.build.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets.development.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets.build.endpoints.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.Gamestore.Microsoft.AspNetCore.StaticWebAssets.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.Gamestore.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.build.Gamestore.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Gamestore.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Gamestore.props
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\staticwebassets.pack.json
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.csproj.Up2Date
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\refint\Gamestore.dll
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.xml
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.pdb
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\Gamestore.genruntimeconfig.cache
+D:\All Projects in .NET\GameStore\backend\Gamestore\obj\Debug\net6.0\ref\Gamestore.dll

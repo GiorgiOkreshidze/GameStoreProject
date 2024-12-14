@@ -324,24 +324,6 @@ public class GameService(IGameDbService gameDbService,
         return uniqueKey;
     }
 
-    /*private string GetToken()
-    {
-        var token = accessor.HttpContext.Request.Headers["Authorization"].ToString();
-        return token.Replace("bearer ", string.Empty);
-    }
-
-    private static bool CanSeeDeletedGames(string token)
-    {
-        var handler = new JwtSecurityTokenHandler();
-        var jwtToken = handler.ReadJwtToken(token);
-
-        var permission = jwtToken.Claims
-            .Where(claim => claim.Type == "Permission")
-            .Any(claim => claim.Value == "SeeDeletedGames");
-
-        return permission;
-    }*/
-
     private static bool CanSeeDeletedGames(IEnumerable<Claim> claims)
     {
         var permission = claims.Where(claim => claim.Type == "Permission")

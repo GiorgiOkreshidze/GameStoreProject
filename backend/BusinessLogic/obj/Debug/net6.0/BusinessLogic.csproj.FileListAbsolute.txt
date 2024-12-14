@@ -1,0 +1,73 @@
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.xml
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.xml
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\BusinessLogic.xml
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.dll
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DataAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\DTOs.xml
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.pdb
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.xml
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CopyComplete
+C:\Users\Licen\RiderProjects\Gamestore\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
+C:\Users\Giorgi Okreshidze\RiderProjects\Gamestore\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\BusinessLogic.deps.json
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\BusinessLogic.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\BusinessLogic.pdb
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\BusinessLogic.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DataAccess.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DTOs.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DataAccess.pdb
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DataAccess.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DTOs.pdb
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\DTOs.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.pdb
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\bin\Debug\net6.0\MongoDbAccess.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.AssemblyReference.cache
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfoInputs.cache
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.AssemblyInfo.cs
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.sourcelink.json
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\Business.CF5D6E35.Up2Date
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\refint\BusinessLogic.dll
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.xml
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\BusinessLogic.pdb
+D:\All Projects in .NET\GameStore\backend\BusinessLogic\obj\Debug\net6.0\ref\BusinessLogic.dll
