@@ -9,7 +9,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GenreController(IGenreService genreService,
+public class GenresController(IGenreService genreService,
     IGameService gameService) : Controller
 {
     [HttpPost]

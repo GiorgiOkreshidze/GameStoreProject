@@ -46,6 +46,8 @@ public static class DatabaseServiceRegistration
         services.Decorate<IGenreDbService, GenreDbServiceLoggingDecorator>();
         services.Decorate<ICommentDbService, CommentDbServiceLoggingDecorator>();
         services.Decorate<IPlatformDbService, PlatformDbServiceLoggingDecorator>();
+        
+        services.AddScoped<IDataSeederDbService, DataSeederDbService>();
 
         return services;
     }

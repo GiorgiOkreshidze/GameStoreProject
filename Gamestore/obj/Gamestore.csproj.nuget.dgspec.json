@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj": {}
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore\\Gamestore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj": {
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -33,24 +29,29 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj"
               },
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
               }
             }
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -63,12 +64,6 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
-            },
-            "StyleCop.Analyzers.Unstable": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0.435, )"
             },
             "X.PagedList": {
               "target": "Package",
@@ -97,15 +92,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -113,25 +108,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -146,21 +137,26 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj"
               },
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
               }
             }
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -169,6 +165,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -187,12 +187,6 @@
             "Scutor.AspnetCore.Wireup": {
               "target": "Package",
               "version": "[1.0.0, )"
-            },
-            "StyleCop.Analyzers.Unstable": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0.435, )"
             }
           },
           "imports": [
@@ -209,15 +203,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -225,25 +219,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj",
+        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj",
         "projectName": "DTOs",
-        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj",
+        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj",
         "packagesPath": "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\obj\\",
+        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -261,11 +251,16 @@
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -274,12 +269,6 @@
             "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "StyleCop.Analyzers.Unstable": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0.435, )"
             },
             "X.PagedList": {
               "target": "Package",
@@ -300,15 +289,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -316,25 +305,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj": {
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore\\Gamestore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj",
+        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore\\Gamestore.csproj",
         "projectName": "Gamestore",
-        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore.csproj",
+        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore\\Gamestore.csproj",
         "packagesPath": "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\obj\\",
+        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\Gamestore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -349,21 +334,26 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\BusinessLogic\\BusinessLogic.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj"
               },
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj"
               }
             }
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -391,12 +381,6 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "StyleCop.Analyzers.Unstable": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0.435, )"
-            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -420,19 +404,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -443,25 +427,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
+    "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj",
         "projectName": "MongoDbAccess",
-        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj",
+        "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\MongoDbAccess.csproj",
         "packagesPath": "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\MongoDbAccess\\obj\\",
+        "outputPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\MongoDbAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
           "C:\\Users\\Giorgi Okreshidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -476,18 +456,23 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj": {
-                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\DTOs\\DTOs.csproj"
+              "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj": {
+                "projectPath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\DTOs\\DTOs.csproj"
               }
             }
           }
         },
         "warningProperties": {
-          "allWarningsAsErrors": true,
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net6.0": {
@@ -512,12 +497,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
-            },
-            "StyleCop.Analyzers.Unstable": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[1.2.0.435, )"
             }
           },
           "imports": [
@@ -534,15 +513,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.31, 6.0.31]"
+              "version": "[6.0.36, 6.0.36]"
             }
           ],
           "frameworkReferences": {
@@ -550,7 +529,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

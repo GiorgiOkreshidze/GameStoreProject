@@ -6,7 +6,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ShipperController(IShipperService shipperService) : Controller
+public class ShippersController(IShipperService shipperService) : Controller
 {
     [HttpGet]
     [Authorize(Policy = "RequireGetShippersPermission")]

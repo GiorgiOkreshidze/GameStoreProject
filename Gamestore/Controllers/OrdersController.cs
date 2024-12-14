@@ -10,7 +10,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class OrderController(IOrderService orderService) : Controller
+public class OrdersController(IOrderService orderService) : Controller
 {
     [HttpGet("history")]
     [Authorize(Policy = "RequireGetAllOrdersPermission")]

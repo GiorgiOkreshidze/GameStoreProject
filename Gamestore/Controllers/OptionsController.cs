@@ -5,7 +5,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class OptionController : Controller
+public class OptionsController : Controller
 {
     [HttpGet("publish-date-options")]
     [Authorize(Policy = "RequireGetDateFilterOptionsPermission")]

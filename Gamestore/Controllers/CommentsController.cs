@@ -9,7 +9,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]/ban")]
-public class CommentController(ICommentService commentService) : Controller
+public class CommentsController(ICommentService commentService) : Controller
 {
     [HttpGet("durations")]
     [Authorize(Policy = "RequireGetBanDurationsPermission")]

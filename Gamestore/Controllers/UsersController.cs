@@ -14,7 +14,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController(IUserService userService, IAccessService accessService, IConfiguration configuration) : Controller
+public class UsersController(IUserService userService, IAccessService accessService, IConfiguration configuration) : Controller
 {
     [HttpPost("login")]
     public IActionResult Login(LoginDto loginDto)

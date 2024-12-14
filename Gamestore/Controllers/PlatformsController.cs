@@ -7,7 +7,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PlatformController(IPlatformService platformService,
+public class PlatformsController(IPlatformService platformService,
     IGameService gameService) : Controller
 {
     [HttpPost]

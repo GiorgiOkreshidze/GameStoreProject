@@ -14,11 +14,13 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GameController(IGameService gameService,
+public class GamesController(
+    IGameService gameService,
     ICommentService commentService,
     IGenreService genreService,
     IPlatformService platformService,
-    IPublisherService publisherService) : Controller
+    IPublisherService publisherService,
+    IDataSeederService dataSeederService) : Controller
 {
     [HttpPost]
     [Authorize(Policy = "RequireCreateGamePermission")]
@@ -137,20 +139,7 @@ public class GameController(IGameService gameService,
         var userName = GetNameFromToken(token);
         addCommentDto.Comment.Name = userName;
         commentService.AddComment(key, addCommentDto);
-
-        /*if (action == "Quote")
-        {
-            gameService.AddCommentAsQuote(key, addCommentDto);
-        }
-        else if (action == "Reply")
-        {
-            gameService.AddCommentAsReply(key, addCommentDto);
-        }
-        else
-        {
-            gameService.AddComment(key, addCommentDto);
-        }*/
-
+        
         return Ok();
     }
 
@@ -181,6 +170,13 @@ public class GameController(IGameService gameService,
     public IActionResult GetAllGames()
     {
         return Ok(gameService.GetAllGames());
+    }
+    
+    [HttpPost("Seed/{count:int}/games")]
+    public async Task<IActionResult> SeedGames(int count)
+    {
+        await dataSeederService.SeedGamesAsync(count);
+        return Ok();
     }
 
     private string GetToken()

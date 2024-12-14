@@ -9,7 +9,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class RoleController(IRoleService roleService) : Controller
+public class RolesController(IRoleService roleService) : Controller
 {
     [HttpGet]
     [Authorize(Policy = "RequireGetAllRolesPermission")]

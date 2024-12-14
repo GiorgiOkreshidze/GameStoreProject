@@ -10,12 +10,10 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("MongoDbAccess.Tests")]
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DynamicProxyGenAssembly2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddaf3c692b660ce00f5d370827dc12a2b5b8d958")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bb814d68a4a0665848c5675f373e608357cce21")]
 [assembly: System.Reflection.AssemblyProductAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MongoDbAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

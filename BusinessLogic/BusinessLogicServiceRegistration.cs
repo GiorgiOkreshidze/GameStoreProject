@@ -47,6 +47,8 @@ public static class BusinessLogicServiceRegistration
         services.AddScoped<IAccessHandler, AddCommentAccessHandler>();
         services.AddScoped<IAccessHandler, DeleteCommentAccessHandler>();
 
+        services.AddScoped<IDataSeederService, DataSeederService>();
+        
         return services;
     }
 }

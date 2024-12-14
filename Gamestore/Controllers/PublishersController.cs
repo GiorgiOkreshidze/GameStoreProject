@@ -9,7 +9,7 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class PublisherController(IPublisherService publisherService,
+public class PublishersController(IPublisherService publisherService,
     IGameService gameService) : Controller
 {
     [HttpPost]
