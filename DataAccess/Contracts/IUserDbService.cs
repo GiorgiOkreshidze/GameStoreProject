@@ -1,3 +1,4 @@
+using System.Collections;
 using DataAccess.Entities;
 using DTOs.UserDtos;
 
@@ -28,4 +29,8 @@ public interface IUserDbService
     bool UserCanPerformAction(string userName, string permissionName);
 
     UserEntity GetUserByNameDb(string targetUser);
+
+    public Task<ICollection<string>> GetManagerAndAdminEmailsAsync();
+
+    public Task<string> GetUserEmailAsync(Guid id);
 }

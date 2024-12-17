@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,11 @@ public class UserEntity
     public string Name { get; set; }
 
     public string PasswordHash { get; set; }
+    
+    [Required]
+    public string Email { get; set; }
 
     public ICollection<RoleEntity> Roles { get; set; }
+
+    public ICollection<NotificationMethodEntity> NotificationPreferences { get; set; }
 }

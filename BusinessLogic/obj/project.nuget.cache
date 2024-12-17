@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ca/lsn6O2kA=",
+  "dgSpecHash": "/d5r3axoIHI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Giorgi Okreshidze\\RiderProjects\\Gamestore\\Gamestore\\BusinessLogic\\BusinessLogic.csproj",
   "expectedPackageFiles": [
@@ -133,8 +133,10 @@
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\scrutor\\2.2.2\\scrutor.2.2.2.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\scutor.aspnetcore.wireup\\1.0.0\\scutor.aspnetcore.wireup.1.0.0.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\sendgrid\\9.29.3\\sendgrid.9.29.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
+    "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\starkbank-ecdsa\\1.3.3\\starkbank-ecdsa.1.3.3.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Giorgi Okreshidze\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

@@ -49,6 +49,8 @@ public static class DatabaseServiceRegistration
         
         services.AddScoped<IDataSeederDbService, DataSeederDbService>();
 
+        services.AddScoped<INotificationsDbService, NotificationsDbService>();
+
         return services;
     }
 }

@@ -1,4 +1,5 @@
 using DataAccess.Entities;
+using DTOs.NotificationDtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.DataContext;
@@ -38,6 +39,10 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
     public DbSet<PermissionEntity> PermissionEntities { get; set; }
 
     public DbSet<PermissionRole> PermissionRoles { get; set; }
+    
+    public DbSet<NotificationMethodEntity> NotificationMethodEntities { get; set; }
+
+    public DbSet<UserNotificationMethod> UserNotificationMethods { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -90,7 +95,24 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
             .UsingEntity<PermissionRole>(
                 l => l.HasOne<PermissionEntity>().WithMany().HasForeignKey(e => e.PermissionEntityId),
                 r => r.HasOne<RoleEntity>().WithMany().HasForeignKey(e => e.RoleEntityId));
+        
+        modelBuilder.Entity<UserNotificationMethod>()
+            .HasKey(unm => new { unm.UserId, unm.NotificationMethodId });
 
+        modelBuilder.Entity<NotificationMethodEntity>()
+            .HasMany(n => n.UserEntities)
+            .WithMany(u => u.NotificationPreferences)
+            .UsingEntity<UserNotificationMethod>(
+                l => l.HasOne<UserEntity>().WithMany().HasForeignKey(e => e.UserId),
+                r =>
+                    r.HasOne<NotificationMethodEntity>().WithMany().HasForeignKey(e => e.NotificationMethodId));
+
+
+        modelBuilder.Entity<NotificationMethodEntity>().HasData(
+            new NotificationMethodEntity { Id = Guid.NewGuid(), Type = "SMS"},
+            new NotificationMethodEntity { Id = Guid.NewGuid(), Type = "push"},
+            new NotificationMethodEntity { Id = Guid.NewGuid(), Type = "email"});
+        
         modelBuilder.Entity<PlatformEntity>().HasData(
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Mobile" },
             new PlatformEntity { Id = Guid.NewGuid(), Type = "Browser" },
@@ -398,6 +420,7 @@ public class GameDbContext(DbContextOptions<GameDbContext> options) : DbContext(
                     Id = adminUserId,
                     Name = "Admin",
                     PasswordHash = BCrypt.Net.BCrypt.HashPassword("Admin"),
+                    Email = "example@gamestore.com"
                 });
         modelBuilder.Entity<UserRole>().HasData(
             new UserRole

@@ -120,11 +120,4 @@ public class OrdersController(IOrderService orderService) : Controller
 
         return !result ? NotFound(new { Message = "game or order not found" }) : Ok(new { Message = "Game Added successfully" });
     }
-
-    /*[HttpGet("history")]
-    public IActionResult CombinedOrdersByInterval([FromQuery] IntervalDto intervalDto)
-    {
-        var orders = orderService.CombinedOrdersByInterval(intervalDto);
-        return Ok(orders);
-    }*/
 }

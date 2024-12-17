@@ -5,6 +5,8 @@ using DTOs.UserDtos;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using BusinessLogic.HelperFunctions;
+using DTOs.NotificationDtos;
 using DTOs.RoleDtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,7 +16,11 @@ namespace Gamestore.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UsersController(IUserService userService, IAccessService accessService, IConfiguration configuration) : Controller
+public class UsersController(
+    IUserService userService,
+    IAccessService accessService,
+    IConfiguration configuration,
+    INotificationsService notificationsService) : Controller
 {
     [HttpPost("login")]
     public IActionResult Login(LoginDto loginDto)
@@ -104,6 +110,31 @@ public class UsersController(IUserService userService, IAccessService accessServ
         var roles = userService.GetRolesOfUser(id);
 
         return roles is null ? NotFound(new { Message = "User not found" }) : Ok(roles);
+    }
+
+    [HttpGet("notifications")]
+    public async Task<IActionResult> GetNotificationMethodsAsync()
+    {
+        var notificationMethods = await notificationsService.GetNotificationMethodsAsync();
+        return Ok(notificationMethods);
+    }
+
+    [HttpGet("my/notifications")]
+    [Authorize]
+    public async Task<IActionResult> GetUsersNotificationMethodsAsync()
+    {
+        var userName = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
+        var userNotificationMethods = await notificationsService.GetUserNotificationMethodsAsync(userName);
+        return Ok(userNotificationMethods);
+    }
+
+    [HttpPut("notifications")]
+    [Authorize]
+    public IActionResult UpdateUserSelectedNotifications([FromBody] NotificationPreferenceUpdateDto notificationDto)
+    {
+        var userName = HttpContext.User.FindFirst(ClaimTypes.Name)?.Value;
+        notificationsService.UpdateUserSelectedNotifications(notificationDto, userName);
+        return Ok();
     }
 
     private TokenDto CreateToken(LoginDto login, ICollection<GetRoleDto> roles, ICollection<GetPermissionDto> permissionDtos)

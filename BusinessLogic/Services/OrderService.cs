@@ -31,13 +31,11 @@ public class OrderService(IOrderDbService orderDbService,
     IDatabasesSyncDbService databasesSyncDbService,
     HttpClient httpClient,
     IOrderMongoService orderMongoService,
-    GameValidator gameValidator) : IOrderService
+    GameValidator gameValidator,
+    INotificationsService notificationsService) : IOrderService
 {
     public ICollection<GetOrderDto> GetAllOrders(IntervalDto intervalDto)
     {
-        /*var orderEntities = orderDbService.GetAllOrdersDb();
-        var orderDocuments = orderMongoService.GetAllMongo();*/
-
         DateTime startDate = intervalDto.Start ?? DateTime.MinValue;
         DateTime endDate = intervalDto.End ?? DateTime.MaxValue;
 
@@ -118,7 +116,7 @@ public class OrderService(IOrderDbService orderDbService,
         }
 
         var sumOfPrices = CountSumOfPrices(orderGames);
-        orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+        OrderStatusChange(true, orderEntity.Id);
         var invoice = GenerateInvoice(orderEntity, sumOfPrices);
         var fileName = $"Invoice_{Guid.Empty}.pdf";
         var filePath = Path.Combine(Path.GetTempPath(), fileName);
@@ -130,7 +128,7 @@ public class OrderService(IOrderDbService orderDbService,
         }
 
         var fileBytes = File.ReadAllBytes(filePath);
-        orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+        OrderStatusChange(true, orderEntity.Id);
         orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
 
         return (fileBytes, fileName);
@@ -141,7 +139,7 @@ public class OrderService(IOrderDbService orderDbService,
         var baseUrl = configuration["Microservice:BaseUrl"];
         httpClient.BaseAddress = baseUrl != null ? new Uri(baseUrl) : throw new ArgumentNullException("baseUrl of Microservice is Null");
         var orderEntity = orderDbService.GetOrderEntity();
-        orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+        OrderStatusChange(true, orderEntity.Id);
         var orderGames = orderDbService.GetAllOrdersDetailsDb(orderEntity.Id);
         foreach (var orderGame in orderGames)
         {
@@ -187,11 +185,11 @@ public class OrderService(IOrderDbService orderDbService,
                 }
             }
 
-            orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+            OrderStatusChange(true, orderEntity.Id);
         }
         else
         {
-            orderDbService.OrderStatusChangeDb(false, orderEntity.Id);
+            OrderStatusChange(false, orderEntity.Id);
             throw new ApplicationException(response.Content.ReadAsStringAsync().Result);
         }
 
@@ -203,7 +201,7 @@ public class OrderService(IOrderDbService orderDbService,
         var baseUrl = configuration["Microservice:BaseUrl"];
         httpClient.BaseAddress = baseUrl != null ? new Uri(baseUrl) : throw new ArgumentNullException("baseUrl of Microservice is Null");
         var orderEntity = orderDbService.GetOrderEntity();
-        orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+        OrderStatusChange(true, orderEntity.Id);
         var orderGames = orderDbService.GetAllOrdersDetailsDb(orderEntity.Id);
         foreach (var orderGame in orderGames)
         {
@@ -230,7 +228,7 @@ public class OrderService(IOrderDbService orderDbService,
 
         if (response.IsSuccessStatusCode)
         {
-            orderDbService.OrderStatusChangeDb(true, orderEntity.Id);
+            OrderStatusChange(true, orderEntity.Id);
             orderDbService.ChangeGameUnitInStock(orderEntity, orderGames);
             foreach (var orderGame in orderGames)
             {
@@ -246,9 +244,17 @@ public class OrderService(IOrderDbService orderDbService,
         }
         else
         {
-            orderDbService.OrderStatusChangeDb(false, orderEntity.Id);
+            OrderStatusChange(false, orderEntity.Id);
             throw new ApplicationException(response.Content.ReadAsStringAsync().Result);
         }
+    }
+    
+    private void OrderStatusChange(bool nextStatus, Guid id)
+    {
+        orderDbService.OrderStatusChangeDb(nextStatus, id);
+        var orderEntity = orderDbService.GetOrderByIdDb(id);
+        var order = orderMapper.Map<OrderEntity, Order>(orderEntity);
+        notificationsService.NotifyOrderStatusChangeAsync(order, order.Status.ToString());
     }
 
     public void UpdateOrderDetailQuantity(Guid id, CountDto countDto)
@@ -270,24 +276,6 @@ public class OrderService(IOrderDbService orderDbService,
     {
         return orderDbService.AddGameToOrderByKeyDb(id, key);
     }
-
-    /*public ICollection<OrderDto> CombinedOrdersByInterval(IntervalDto intervalDto)
-    {
-        DateTime startDate = intervalDto.Start ?? DateTime.MinValue;
-        DateTime endDate = intervalDto.End ?? DateTime.MaxValue;
-
-        var orderEnitites = orderDbService.OrdersByIntervalDb(startDate, endDate);
-        var orderDocuments = orderMongoService.OrdersByIntervalMongo(startDate, endDate);
-
-        var orders1 = orderMapper.Map<ICollection<OrderDocument>, ICollection<CombinedOrderModel>>(orderDocuments);
-        var orders2 = orderMapper.Map<ICollection<OrderEntity>, ICollection<CombinedOrderModel>>(orderEnitites);
-
-        var combinedOrders = orders1.Concat(orders2).ToList();
-
-        var orderDtos = orderMapper.Map<ICollection<CombinedOrderModel>, ICollection<OrderDto>>(combinedOrders);
-
-        return orderDtos;
-    }*/
 
     private MemoryStream GenerateInvoice(OrderEntity orderEntity, int sumOfPrices)
     {

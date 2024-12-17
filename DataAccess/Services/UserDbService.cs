@@ -171,6 +171,19 @@ public class UserDbService(GameDbContext gameDbContext) : IUserDbService
         return gameDbContext.UserEntities.FirstOrDefault(u => u.Name == targetUser);
     }
 
+    public async Task<ICollection<string>> GetManagerAndAdminEmailsAsync()
+    {
+        return await gameDbContext.UserEntities
+            .Where(user => user.Roles.Any(r => r.Name == "Admin" || r.Name == "Manager"))
+            .Select(user => user.Email)
+            .ToListAsync();
+    }
+
+    public async Task<string> GetUserEmailAsync(Guid id)
+    {
+        return await gameDbContext.UserEntities.Where(user => user.Id == id).Select(user => user.Email).FirstOrDefaultAsync();
+    }
+
     private void ClearRolesFromUser(Guid id)
     {
         var userRoles = gameDbContext.UserRoles.Where(userRole => userRole.UserEntityId == id).ToList();

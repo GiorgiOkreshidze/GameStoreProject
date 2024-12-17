@@ -6,6 +6,7 @@ using BusinessLogic.Responsibilities.AccessResponsibility.Game;
 using BusinessLogic.Responsibilities.AccessResponsibility.General;
 using BusinessLogic.Services;
 using BusinessLogic.Strategies.CommentStrategies;
+using BusinessLogic.Strategies.NotificationStrategies;
 using BusinessLogic.Validations;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -48,6 +49,12 @@ public static class BusinessLogicServiceRegistration
         services.AddScoped<IAccessHandler, DeleteCommentAccessHandler>();
 
         services.AddScoped<IDataSeederService, DataSeederService>();
+
+        services.AddScoped<INotificationsService, NotificationsService>();
+        
+        services.AddScoped<INotificationStrategy, EmailNotificationStrategy>();
+        services.AddScoped<INotificationStrategy, SmsNotificationStrategy>();
+        services.AddScoped<INotificationStrategy, PushNotificationStrategy>();
         
         return services;
     }
