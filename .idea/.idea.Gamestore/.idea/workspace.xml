@@ -9,53 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d727c6b2-f0f2-465b-b6c9-9cfa86d39e71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Contracts/INotificationsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/MappingProfiles/NotificationMethodProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Models/NotificationMethod.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Services/NotificationsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/NotificationStrategies/EmailNotificationStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/NotificationStrategies/INotificationStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/NotificationStrategies/PushNotificationStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BusinessLogic/Strategies/NotificationStrategies/SmsNotificationStrategy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/NotificationDtos/NotificationMethodsDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/NotificationDtos/NotificationPreferenceUpdateDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Contracts/INotificationsDbService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/NotificationMethodEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Entities/UserNotificationMethod.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20241217104606_AddedNotificationMethodEntity.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Migrations/20241217104606_AddedNotificationMethodEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataAccess/Services/NotificationsDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Gamestore/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogic.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogic.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/BusinessLogicServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/Services/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/BusinessLogic.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BusinessLogic/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Contracts/IUserDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Contracts/IUserDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DataContext/GameDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/DatabaseServiceRegistration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Entities/UserEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Entities/UserEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Migrations/GameDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/OrderDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/Services/UserDbService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/Services/UserDbService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DataAccess/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/OrdersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/Gamestore.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Gamestore/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MongoDbAccess/obj/Debug/net6.0/MongoDbAccess.csproj.AssemblyReference.cache" afterDir="false" />
-    </list>
+    <list default="true" id="d727c6b2-f0f2-465b-b6c9-9cfa86d39e71" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/DataAccess/Migrations/20240916092553_Twentyeight Migration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DataAccess/Migrations/20240916113910_Twentyninth Migration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DataAccess/Migrations/20241217104606_AddedNotificationMethodEntity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DataAccess/Migrations/20241217140807_AddedEmailFieldToUserEntity.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
@@ -203,7 +158,7 @@
       <workItem from="1726414390598" duration="6116000" />
       <workItem from="1726475117147" duration="8896000" />
       <workItem from="1734197923950" duration="1431000" />
-      <workItem from="1734421089028" duration="17248000" />
+      <workItem from="1734421089028" duration="17488000" />
     </task>
     <task id="LOCAL-00001" summary="Commit.">
       <option name="closed" value="true" />
@@ -245,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734198988552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added user notification functionality">
+      <option name="closed" value="true" />
+      <created>1734444666965</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734444666966</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +231,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Commit." />
     <MESSAGE value="Implemented Bogus to generate large volumes of mock data for API performance testing. Ensured API calls complete within 10 seconds under normal conditions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Bogus to generate large volumes of mock data for API performance testing. Ensured API calls complete within 10 seconds under normal conditions." />
+    <MESSAGE value="Added user notification functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added user notification functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
